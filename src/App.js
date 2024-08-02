@@ -54,17 +54,17 @@ function App() {
           <Route path="/QuickServices/PayYourBill/PayWater" element={<PayWater toggleComponent={toggleComponent} />} />
           <Route path="/QuickServices/PayYourBill/TopUpPayment" element={<TopUpPayment toggleComponent={toggleComponent} />} />
           <Route path="/QuickServices/TopUpService" element={<TopUpService toggleComponent={toggleComponent} />} />
-          <Route path="/QuickServices/GasService" element={<GasService toggleComponent={toggleComponent} />} />  {/* Add GasService Route */}
-          <Route path="/QuickServices/PayYourBill/PayGas" element={<PayGas toggleComponent={toggleComponent} />} />  {/* Add PayGas Route */}
-          <Route path="/QuickServices/LightService" element={<LightService toggleComponent={toggleComponent} />} />  {/* Add LightService Route */}
-          <Route path="/QuickServices/PayYourBill/PayLight" element={<PayLight toggleComponent={toggleComponent} />} />  {/* Add PayLight Route */}
-          <Route path="/QuickServices/InternetService" element={<InternetService toggleComponent={toggleComponent} />} />  {/* Add InternetService Route */}
-          <Route path="/QuickServices/PayYourBill/PayInternet" element={<PayInternet toggleComponent={toggleComponent} />} />  {/* Add PayInternet Route */}
-          <Route path="/QuickServices/GiftService" element={<GiftService toggleComponent={toggleComponent} />} />  {/* Add GiftService Route */}
-          <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
-          <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
-          <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
-          <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
+          <Route path="/QuickServices/GasService" element={<GasService toggleComponent={toggleComponent} />} /> 
+          <Route path="/QuickServices/PayYourBill/PayGas" element={<PayGas toggleComponent={toggleComponent} />} /> 
+          <Route path="/QuickServices/LightService" element={<LightService toggleComponent={toggleComponent} />} />  
+          <Route path="/QuickServices/PayYourBill/PayLight" element={<PayLight toggleComponent={toggleComponent} />} />  
+          <Route path="/QuickServices/InternetService" element={<InternetService toggleComponent={toggleComponent} />} />
+          <Route path="/QuickServices/PayYourBill/PayInternet" element={<PayInternet toggleComponent={toggleComponent} />} />
+          <Route path="/QuickServices/GiftService" element={<GiftService toggleComponent={toggleComponent} />} /> 
+          <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} /> 
+          <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} /> 
+          <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
+          <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  
         </Routes>
       </div>
     </Router>
