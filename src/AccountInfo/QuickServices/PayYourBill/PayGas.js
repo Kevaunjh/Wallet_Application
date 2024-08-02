@@ -39,15 +39,7 @@ function PayLight() {
           </Link>
         </div>
 
-        <div className="flex flex-col items-center mb-6">
-          <img
-            src={successImage}
-            alt="Transaction Successful"
-            className="w-24 h-24 mb-4"
-          />
-          <h2 className="text-3xl font-bold mb-2">Transaction Successful</h2>
-          <p className="text-lg text-center">Your payment has successfully been completed.</p>
-        </div>
+      
 
         {/* Payment Details Container */}
         <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full">
@@ -71,7 +63,7 @@ function PayLight() {
           </div>
           <div className="border-t-2 border-dashed border-gray-400 mt-6 mb-4"></div>
           <p className="text-lg mb-2"><strong>Date/Time:</strong> {new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</p>
-          <p className="text-lg mb-2"><strong>Total Amount:</strong> ${totalAmount}</p>
+          <p className="text-lg mb-2"><strong>Total Amount:</strong> $55.87</p>
           <p className="text-lg mb-2"><strong>Payment Attribute:</strong> {card.overallAccountNumber} /XXXX Payment</p>
           <p className="text-lg mb-2"><strong>Service Name:</strong> Gas Payment</p>
           <p className="text-lg mb-2"><strong>Mobile Number:</strong> 555-123-4567</p>
@@ -79,7 +71,7 @@ function PayLight() {
           <div className="border-t-2 border-dashed border-gray-400 mt-6 mb-4"></div>
           <div className="flex justify-between font-bold mb-6">
             <span>Total Charge:</span>
-            <span>${totalAmount}</span>
+            <span>$55.87</span>
           </div>
         </div>
 
@@ -121,7 +113,7 @@ function PayLight() {
             </p>
 
             <div className="w-full flex justify-center mt-6">
-              <Link to="/">
+              <Link to="/AccountInfo/QuickServices/PayYourBill/TransactionResponse">
                 <button
                   className={`px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg ${isFingerprintClicked || isOtpSent ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
                   disabled={!isFingerprintClicked && !isOtpSent}

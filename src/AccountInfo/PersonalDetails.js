@@ -13,7 +13,7 @@ function PersonalDetails() {
       </Link>
 
       {/* Profile Info Container */}
-      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between">
+      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
         {/* Profile Picture */}
         <img 
           src={profileplaceholder} 
@@ -32,7 +32,7 @@ function PersonalDetails() {
       </div>
 
       {/* Personal Details Container */}
-      <div className="w-full md:w-5/12 mt-8 bg-white p-6 rounded-lg shadow-md">
+      <div className="w-full md:w-5/12 mt-8 bg-white p-6 rounded-lg shadow-md border-black border-2">
         <h3 className="text-xl font-semibold mb-4">Personal Details</h3>
         <div className="flex flex-col space-y-2">
           <div className="flex justify-between">

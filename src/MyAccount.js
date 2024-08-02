@@ -17,7 +17,7 @@ function MyAccount() {
       </Link>
       
       {/* Profile Header */}
-      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex flex-col items-center">
+      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex flex-col items-center border-black border-2">
         {/* Profile Picture and Details Container */}
         <div className="flex flex-col items-center">
           {/* Profile Picture */}
@@ -42,7 +42,7 @@ function MyAccount() {
       </div>
 
       {/* Profile Info Container */}
-      <div className="w-full md:w-5/12 mt-8 bg-white rounded-lg shadow-md">
+      <div className="w-full md:w-5/12 mt-8 bg-white rounded-lg shadow-md border-black border-2">
         {/* Section Links */}
         <div className="flex flex-col">
           <Link to="/Accountinfo/PersonalDetails" className="flex items-center p-6 hover:bg-gray-100">

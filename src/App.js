@@ -9,9 +9,7 @@ import MyBookings from './AccountInfo/MyBookings';
 import BiometricSetup from './AccountInfo/BiometricSetup';
 import Fingerprint from './AccountInfo/BiometricSetups/Fingerprint';
 import Pinlock from './AccountInfo/BiometricSetups/Pinlock';
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import profileplaceholder from './images/logoplaceholder.png';
 import WaterService from './AccountInfo/QuickServices/WaterService';
 import PayWater from './AccountInfo/QuickServices/PayYourBill/PayWater';
 import TopUpService from './AccountInfo/QuickServices/TopUpService';
@@ -26,6 +24,9 @@ import GiftService from './AccountInfo/QuickServices/GiftService';  // Import Gi
 import PayGift from './AccountInfo/QuickServices/PayYourBill/PayGift';  // Import PayGift
 import TransactionResponse from './AccountInfo/QuickServices/PayYourBill/TransactionResponse';
 import Notifications from './Notification';
+import RecentTransactions from './RecentTransactions';
+import Points from './Points';
+import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/AccountInfo/QuickServices/PayYourBill/TransactionResponse" element={<TransactionResponse toggleComponent={toggleComponent} />} />
           <Route path="/MyAccount" element={<MyAccount toggleComponent={toggleComponent} />} />
           <Route path="/Accountinfo/PersonalDetails" element={<PersonalDetails toggleComponent={toggleComponent} />} />
+          <Route path="/RecentTransactions" element={<RecentTransactions toggleComponent={toggleComponent} />} />
           <Route path="/Accountinfo/BankAccounts" element={<BankAccounts toggleComponent={toggleComponent} />} />
           <Route path="/Accountinfo/MyBookings" element={<MyBookings toggleComponent={toggleComponent} />} />
           <Route path="/Accountinfo/BiometricSetup" element={<BiometricSetup toggleComponent={toggleComponent} />} />
@@ -61,6 +63,8 @@ function App() {
           <Route path="/QuickServices/GiftService" element={<GiftService toggleComponent={toggleComponent} />} />  {/* Add GiftService Route */}
           <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
           <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
+          <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
+          <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  {/* Add PayGift Route */}
         </Routes>
       </div>
     </Router>

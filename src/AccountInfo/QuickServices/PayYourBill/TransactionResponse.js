@@ -13,7 +13,7 @@ function TransactionResponse() {
             className="w-32 h-32 mb-6"
           />
           <h2 className="text-4xl font-bold mb-2">Transaction Successful</h2>
-          <p className="text-xl text-gray-700">Bill Payment Successfully Made</p>
+          <p className="text-xl text-gray-700">Bill Payment of XXXXX Successfully Made to XXXX</p>
         </div>
         <Link to="/">
           <button className="px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg">

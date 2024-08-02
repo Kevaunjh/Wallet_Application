@@ -98,7 +98,7 @@ function Notifications() {
 
   return (
     <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-8">
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl p-8 overflow-auto" style={{ maxHeight: '93vh', scrollbarWidth: 'none' }}>
+      <div className="bg-white rounded-3xl w-full max-w-3xl p-8 overflow-auto shadow-2xl shadow-black border-black border-2" style={{ maxHeight: '93vh', scrollbarWidth: 'none' }}>
         <div className="flex items-center mb-6 relative">
           <Link to="/" className="text-lg text-[#467a4d]">← Back</Link>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full">Notifications</h1>

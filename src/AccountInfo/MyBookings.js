@@ -15,7 +15,7 @@ function MyBookings() {
       </Link>
 
       {/* Profile Info Container */}
-      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between">
+      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
         {/* Profile Picture */}
         <img 
           src={profileplaceholder} 
@@ -34,7 +34,7 @@ function MyBookings() {
       </div>
 
       {/* Bookings Container */}
-      <div className='w-full md:w-5/12 mt-8 bg-white p-6 rounded-lg shadow-md'>
+      <div className='w-full md:w-5/12 mt-8 bg-white p-6 rounded-lg shadow-md border-black border-2'>
         <h2 className='text-2xl font-bold mb-4 text-center'>My Bookings</h2>
         <div className='flex flex-col items-center'>
           {/* Fake Booking List */}
