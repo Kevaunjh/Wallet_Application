@@ -106,7 +106,7 @@ const RecentTransactions = () => {
           </div>
         </div>
         <div className="flex items-center md:mb-6">
-          <h1 className="text-4xl font-bold text-[#467a4d] text-center w-full mt-4">Transaction History</h1>
+          <h1 className="text-4xl font-bold text-[#467a4d] text-center w-full mt-6 mb-8">Transaction History</h1>
         </div>
         {filter === 'all' ? (
           uniqueDates
