@@ -14,6 +14,7 @@ import creditcard from './images/card1.png';
 import arrowUp from './images/arrowup.png';
 import arrowDown from './images/arrowdown.png';
 import cardDetails from './BankingData';
+import cardimg from './images/debitcards.png';
 
 const points = 1652;
 
@@ -62,11 +63,11 @@ function Main() {
         <div className="relative flex-grow bg-[#88ca92] z-0">
           {/* Green Top Section */}
           <div className="relative bg-[#0A9971] w-full md:rounded-t-3xl flex flex-col items-center py-4 md:w-8/12 mx-auto ">
-            <div className="w-full max-w-screen-lg mx-auto flex flex-col items-center">
+            <div className="w-full mx-auto flex flex-col items-center">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
                 <Link to="/MyAccount" className='flex items-center space-x-4'>
-                  <img src={profileplaceholder} alt="Profile Placeholder" className='w-20 h-20 rounded-full p-2 bg-[#F9FFFD] border-2 border-gray-300 shadow-md' />
+                  <img src={profileplaceholder} alt="Profile Placeholder" className='w-20 h-20 rounded-full p-2 bg-[#F9FFFD] border-2 border-gray-300 shadow-md ml-12' />
                   <h2 className='text-white font-bold text-2xl'>John Doe</h2>
                 </Link>
                 <div className="flex items-center space-x-4">
@@ -79,7 +80,7 @@ function Main() {
 
               {/* Points and Balance */}
               <div className='w-full flex mt-4'>
-                <div className="p-2 rounded-lg mx-2 bg-white">
+                <div className="p-2 rounded-lg mx-2 ml-12">
                   <h3 className="text-lg font-semibold">Available Balance</h3>
                   <p className="text-xl">{selectedCard.total}</p>
                 </div>
@@ -179,8 +180,30 @@ function Main() {
               </div>
             </div>
 
+             {/* Buttons Section */}
+        <div className="flex flex-col gap-4 mr-12 ml-12">
+          <div className="flex gap-4">
+            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
+              Send Money
+            </button>
+            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
+              Pay A Bill
+            </button>
+          </div>
+          <div className="flex gap-4">
+            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
+              My Cards
+            </button>
+            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
+              Load Money
+            </button>
+          </div>
+        </div>
+
             {/* Quick Services */}
             <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  md:rounded-b-3xl">
+              <h2 className="text-2xl font-semibold mt-12 text-center text-gray-800 -mb-4">Quick Services</h2>
+              <div className="flex flex-wrap justify-center gap-20 p-4">
               <Link to="/QuickServices/WaterService">
                 <img src={quickservice1} alt="Water Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Water</p>
@@ -210,6 +233,9 @@ function Main() {
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Air Service</p>
               </Link>
             </div>
+            </div>
+          
+            
           </div>
         </div>
       </div>
