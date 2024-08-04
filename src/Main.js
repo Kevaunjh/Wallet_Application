@@ -137,11 +137,11 @@ function Main() {
                         </h4>
                         <div className="relative h-8 bg-gray-200 rounded-full mt-2 overflow-hidden">
                           <div 
-                            className="absolute h-full bg-red-500 rounded-full"
-                            style={{ width: `${spentPercentage + 14}vh`, zIndex: 1 }}
+                            className="absolute h-full bg-red-500 "
+                            style={{ width: `${spentPercentage}vh`, zIndex: 1 }}
                           ></div>
                           <div 
-                            className="absolute h-full bg-green-500 rounded-full"
+                            className="absolute h-full bg-green-500"
                             style={{ width: `${earnedPercentage}vh`, left: `${spentPercentage}vh`, zIndex: 0 }}
                           ></div>
                         </div>
