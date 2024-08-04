@@ -61,7 +61,7 @@ function Main() {
       <div className="flex-grow flex flex-col">
         <div className="relative flex-grow bg-[#88ca92] z-0">
           {/* Green Top Section */}
-          <div className="relative bg-[#0A9971] w-full rounded-t-3xl flex flex-col items-center py-4 md:w-8/12 mx-auto">
+          <div className="relative bg-[#0A9971] w-full md:rounded-t-3xl flex flex-col items-center py-4 md:w-8/12 mx-auto ">
             <div className="w-full max-w-screen-lg mx-auto flex flex-col items-center">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
@@ -94,7 +94,7 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="relative flex-grow bg-[#F9FFFD] rounded-b-3xl mx-auto w-full md:w-8/12 flex flex-col">
+          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full md:w-8/12 flex flex-col md:rounded-b-3xl">
             {/* Card and Account Details */}
             <div className='w-full p-4 flex flex-col md:flex-row '>
               {/* Card */}
@@ -180,27 +180,34 @@ function Main() {
             </div>
 
             {/* Quick Services */}
-            <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8">
-              <Link to="/WaterService">
+            <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  md:rounded-b-3xl">
+              <Link to="/QuickServices/WaterService">
                 <img src={quickservice1} alt="Water Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Water</p>
               </Link>
-              <Link to="/TopUpService">
+              <Link to="/QuickServices/TopUpService">
                 <img src={quickservice2} alt="Top Up Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Top Up</p>
               </Link>
-              <Link to="/LightService">
+              <Link to="/QuickServices/LightService">
                 <img src={quickservice3} alt="Light Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Electricity</p>
               </Link>
-              <Link to="/InternetService">
+              <Link to="/QuickServices/InternetService">
                 <img src={quickservice4} alt="Internet Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Internet</p>
               </Link>
-              <Link to="/GasService">
+              <Link to="/QuickServices/GasService">
                 <img src={quickservice5} alt="Gas Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Gas</p>
               </Link>
-              <Link to="/GiftService">
+              <Link to="/QuickServices/GiftService">
                 <img src={quickservice6} alt="Gift Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Gift</p>
               </Link>
-              <Link to="/AirService">
+              <Link to="/QuickServices/AirService">
                 <img src={quickservice7} alt="Air Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Air Service</p>
               </Link>
             </div>
           </div>
