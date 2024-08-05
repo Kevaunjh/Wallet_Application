@@ -10,11 +10,10 @@ import quickservice5 from './images/gasservice.png';
 import quickservice6 from './images/giftservice.png';
 import quickservice7 from './images/airservice.png';
 import { Link } from 'react-router-dom';
-import creditcard from './images/card1.png';
 import arrowUp from './images/arrowup.png';
 import arrowDown from './images/arrowdown.png';
 import cardDetails from './BankingData';
-import cardimg from './images/debitcards.png';
+import morecards from './images/debitcards.png'
 
 const points = 1652;
 
@@ -25,6 +24,10 @@ function Main() {
   useEffect(() => {
     handleCardClick(1);
   }, []);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -54,6 +57,35 @@ function Main() {
 
   const getArrowImage = (amount) => {
     return amount.startsWith('+') ? arrowUp : arrowDown;
+  };
+
+  const renderCardImages = () => {
+    const cardIds = Object.keys(cardDetails).map(Number);
+    const visibleCards = cardIds.slice(0, 5);
+    const hiddenCards = cardIds.slice(5);
+
+    return (
+      <div className="grid grid-cols-3 items-center -mt-6 gap-4">
+  {visibleCards.map((cardId) => (
+    <img
+      key={cardId}
+      src={cardDetails[cardId].creditCardImage}
+      alt={`Card ${cardId}`}
+      className={`w-full max-w-xs h-auto cursor-pointer hover:opacity-95 ${selectedCardId === cardId ? '' : 'opacity-50'}`}
+      onClick={() => handleCardClick(cardId)}
+    />
+  ))}
+  {hiddenCards.length > 0 && (
+    <div
+      className="cursor-pointer flex items-center justify-center"
+      onClick={handleOpenModal}
+    >
+      <img src={morecards} alt="morecards" />
+    </div>
+  )}
+</div>
+
+    );
   };
 
   return (
@@ -100,13 +132,15 @@ function Main() {
             <div className='w-full p-4 flex flex-col md:flex-row '>
               {/* Card */}
               <div className='w-full md:w-1/2 mt-8'>
-                <div className={`flex justify-center ${selectedCardId === 1 ? '' : 'opacity-50 grayscale'}`}>
+                <div className={`flex justify-center `}>
                   <img 
-                    src={creditcard} 
+                    src={selectedCard.creditCardImage} 
                     alt="Bank Card 1" 
                     className='w-full h-auto cursor-pointer'
-                    onClick={() => handleCardClick(1)}
                   />
+                </div>
+                <div className="mt-4 text-center">
+                  {renderCardImages()}
                 </div>
               </div>
 
@@ -129,7 +163,7 @@ function Main() {
                 {/* Recent Transactions */}
                 <Link to="/RecentTransactions" className="w-full">
                   <div className='flex-grow'>
-                    <div className="p-4 rounded-lg border-black border">
+                    <div className="p-4 rounded-lg border-black border h-full">
                       {/* Spent This Month Section */}
                       <div className="mb-4 p-4">
                         <h4 className="text-sm text-center">
@@ -138,11 +172,11 @@ function Main() {
                         <div className="relative h-8 bg-gray-200 rounded-full mt-2 overflow-hidden">
                           <div 
                             className="absolute h-full bg-red-500 "
-                            style={{ width: `${spentPercentage}vh`, zIndex: 1 }}
+                            style={{ width: `${spentPercentage}%`, zIndex: 1 }}
                           ></div>
                           <div 
                             className="absolute h-full bg-green-500"
-                            style={{ width: `${earnedPercentage}vh`, left: `${spentPercentage}vh`, zIndex: 0 }}
+                            style={{ width: `${earnedPercentage}%`, left: `${spentPercentage}%`, zIndex: 0 }}
                           ></div>
                         </div>
                         <p className="text-md mt-2">Spent: ${totalSpent.toFixed(2)} | Earned: ${totalEarned.toFixed(2)}</p>
@@ -160,17 +194,15 @@ function Main() {
                                 className="w-6 h-6 mr-2"
                               />
                               <div className="flex-grow">
-                                <div className="flex justify-between">
-                                  <span className="text-md font-medium">{transaction.description}</span>
-                                  <span className="text-md font-medium">{transaction.amount}</span>
-                                </div>
-                                <div className="flex justify-between">
-                                  <span className="text-sm">{transaction.time}</span>
-                                  <span className="text-sm">{transaction.day}</span>
-                                </div>
+                                <p className="text-sm">{transaction.description}</p>
+                                <p className="text-xs text-gray-500">{transaction.date}</p>
+                              </div>
+                              <div className="flex flex-col items-end">
+                                <p className="text-sm">{transaction.amount}</p>
+                                <p className="text-xs text-gray-500">{transaction.time}</p>
                               </div>
                             </div>
-                            <div className="w-full h-px bg-gray-200"></div>
+                            <p className="text-xs text-gray-500">{transaction.day}</p>
                           </li>
                         ))}
                       </ul>
@@ -180,28 +212,8 @@ function Main() {
               </div>
             </div>
 
-             {/* Buttons Section */}
-        <div className="flex flex-col gap-4 mr-12 ml-12">
-          <div className="flex gap-4">
-            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
-              Send Money
-            </button>
-            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
-              Pay A Bill
-            </button>
-          </div>
-          <div className="flex gap-4">
-            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
-              My Cards
-            </button>
-            <button className="flex-1 border border-black bg-white text-black py-3 rounded-lg text-lg">
-              Load Money
-            </button>
-          </div>
-        </div>
-
-            {/* Quick Services */}
-            <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  md:rounded-b-3xl">
+              {/* Quick Services */}
+              <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  md:rounded-b-3xl">
               <h2 className="text-2xl font-semibold mt-12 text-center text-gray-800 -mb-4">Quick Services</h2>
               <div className="flex flex-wrap justify-center gap-20 p-4">
               <Link to="/QuickServices/WaterService">
@@ -234,10 +246,50 @@ function Main() {
               </Link>
             </div>
             </div>
-          
-            
+      </div>
+
+      {/* Modal for Additional Cards */}
+      {isModalOpen && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div
+      className="bg-white p-6 rounded-lg relative custom-scrollbar overflow-y-auto lg:w-[100rem] lg:h-[55rem] w-full h-full"
+      style={{ maxWidth: '100rem', maxHeight: '55rem' }}
+    >
+      <h2 className="text-2xl font-semibold mb-6 text-center pt-6">Additional Cards</h2>
+      <div className="grid grid-cols-2 gap-4 mx-auto md:grid-cols-3 lg:grid-cols-4">
+        {Object.keys(cardDetails).slice(5).map((cardId) => (
+          <div key={cardId} className="flex items-center justify-center">
+            <img
+              src={cardDetails[cardId].creditCardImage}
+              alt={`Card ${cardId}`}
+              className={`w-full max-w-xs h-auto cursor-pointer hover:opacity-95 ${selectedCardId === parseInt(cardId) ? '' : 'opacity-50'}`}
+              onClick={() => {
+                handleCardClick(parseInt(cardId));
+                handleCloseModal();
+              }}
+            />
           </div>
-        </div>
+        ))}
+      </div>
+      <button
+        onClick={handleCloseModal}
+        className="absolute top-2 right-2 text-red-500 text-4xl font-bold p-2"
+        style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        &times;
+      </button>
+    </div>
+  </div>
+)}
+
+
+
+
+
+
+
+      </div>
+
       </div>
     </div>
   );

@@ -26,8 +26,10 @@ function PersonalDetails() {
         </div>
         {/* Profile Points */}
         <div className="bg-[#467a4d] p-1 rounded-lg flex items-center">
+
           <p className="text-md text-white mr-2">★ Points:</p>
           <p className="text-lg font-semibold text-white">{points}</p>
+
         </div>
       </div>
 

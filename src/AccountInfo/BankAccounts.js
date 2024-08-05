@@ -5,9 +5,9 @@ import moneyLogo from './../images/money.png'; // Add your money logo image
 import bankLogo from './../images/bank-building.png'; // Add your bank logo image
 import accountLogo from './../images/user.png'; // Add your account logo image
 import cardDetails from './../BankingData'; // Import the banking data
-import creditcard1 from './../images/card1.png';
-import creditcard2 from './../images/card2.png';
-import creditcard3 from './../images/card3.png';
+import creditcard1 from './../images/bankcards/card1.png';
+import creditcard2 from './../images/bankcards/card2.png';
+import creditcard3 from './../images/bankcards/card3.png';
 
 const greenColor = '#467a4d'; // Green color for the "Acc #x"
 const points = 1652;
