@@ -39,44 +39,44 @@ function TopUpService() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex items-center justify-center p-8">
+    <div className="bg-[#88ca92] min-h-screen flex items-center justify-center p-4 md:p-8">
       {/* Container */}
-      <div className="bg-white p-12 rounded-3xl shadow-2xl w-full max-w-4xl h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
+      <div className="bg-white p-6 md:p-12 rounded-3xl shadow-2xl w-full max-w-md md:max-w-4xl h-auto md:h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/" className="text-lg text-[#467a4d]">
+          <Link to="/" className="text-base md:text-lg text-[#467a4d]">
             &larr; Back
           </Link>
         </div>
 
         {/* Set Amount Header */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold mb-4">Set Amount</h2>
-          <div className="text-3xl font-bold mb-4 text-black">
+          <h2 className="text-xl md:text-2xl font-bold mb-4">Set Amount</h2>
+          <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
             ${selectedAmount}
           </div>
           <hr className="mb-6 border-gray-400" />
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <button
-              className="px-6 py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-lg"
+              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
               onClick={() => handleAmountClick(5)}
             >
               $5
             </button>
             <button
-              className="px-6 py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-lg"
+              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
               onClick={() => handleAmountClick(10)}
             >
               $10
             </button>
             <button
-              className="px-6 py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-lg"
+              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
               onClick={() => handleAmountClick(15)}
             >
               $15
             </button>
             <button
-              className="px-6 py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-lg"
+              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
               onClick={() => setIsModalOpen(true)}
             >
               Custom
@@ -86,8 +86,8 @@ function TopUpService() {
 
         {/* Input Fields */}
         <div className="mb-6">
-          <label className="block text-lg font-medium mb-2">Mobile Carrier</label>
-          <select className="w-full px-4 py-3 border rounded-lg text-lg">
+          <label className="block text-base md:text-lg font-medium mb-2">Mobile Carrier</label>
+          <select className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg">
             <option value="">Select Mobile Carrier</option>
             <option value="carrier1">Fido</option>
             <option value="carrier2">Bell</option>
@@ -97,23 +97,23 @@ function TopUpService() {
           </select>
         </div>
         <div className="mb-6">
-          <label className="block text-lg font-medium mb-2">Mobile Number</label>
+          <label className="block text-base md:text-lg font-medium mb-2">Mobile Number</label>
           <input
             type="text"
             placeholder="XXXXXXX"
-            className="w-full px-4 py-3 border rounded-lg text-lg"
+            className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg"
           />
         </div>
 
         {/* Done Button */}
         <div className="w-full flex justify-center">
           <Link to="/QuickServices/PayYourBill/TopUpPayment">
-          <button
-            className="px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg"
-            onClick={handleCompleteTransaction}
-          >
-            Done
-          </button>
+            <button
+              className="px-8 md:px-12 py-2 md:py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg"
+              onClick={handleCompleteTransaction}
+            >
+              Done
+            </button>
           </Link>
         </div>
       </div>
@@ -121,30 +121,30 @@ function TopUpService() {
       {/* Custom Amount Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+          <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg w-full max-w-xs md:max-w-sm">
             <button
-              className="absolute top-4 right-4 text-gray-600"
+              className="absolute top-2 right-2 text-gray-600 text-lg md:text-xl"
               onClick={() => setIsModalOpen(false)}
             >
               &times;
             </button>
-            <h3 className="text-xl font-bold mb-4">Enter Custom Amount</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-4">Enter Custom Amount</h3>
             <input
               type="number"
               value={customAmount}
               onChange={handleCustomAmountChange}
               placeholder="Enter amount"
-              className="w-full px-4 py-3 border rounded-lg text-lg mb-4"
+              className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg mb-4"
             />
-            <div className="flex justify-between">
+            <div className="flex flex-col md:flex-row justify-between gap-4">
               <button
-                className="px-6 py-3 bg-[#467a4d] text-white rounded-lg"
+                className="px-4 md:px-6 py-2 md:py-3 bg-[#467a4d] text-white rounded-lg"
                 onClick={handleSaveCustomAmount}
               >
                 Save
               </button>
               <button
-                className="px-6 py-3 bg-gray-400 text-white rounded-lg"
+                className="px-4 md:px-6 py-2 md:py-3 bg-gray-400 text-white rounded-lg"
                 onClick={() => setIsModalOpen(false)}
               >
                 Cancel

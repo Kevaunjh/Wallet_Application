@@ -59,34 +59,7 @@ function Main() {
     return amount.startsWith('+') ? arrowUp : arrowDown;
   };
 
-  const renderCardImages = () => {
-    const cardIds = Object.keys(cardDetails).map(Number);
-    const visibleCards = cardIds.slice(0, 5);
-    const hiddenCards = cardIds.slice(5);
 
-    return (
-      <div className="grid grid-cols-3 items-center -mt-6 gap-4">
-  {visibleCards.map((cardId) => (
-    <img
-      key={cardId}
-      src={cardDetails[cardId].creditCardImage}
-      alt={`Card ${cardId}`}
-      className={`w-full max-w-xs h-auto cursor-pointer hover:opacity-95 ${selectedCardId === cardId ? '' : 'opacity-50'}`}
-      onClick={() => handleCardClick(cardId)}
-    />
-  ))}
-  {hiddenCards.length > 0 && (
-    <div
-      className="cursor-pointer flex items-center justify-center"
-      onClick={handleOpenModal}
-    >
-      <img src={morecards} alt="morecards" />
-    </div>
-  )}
-</div>
-
-    );
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#88ca92]">
@@ -94,12 +67,12 @@ function Main() {
       <div className="flex-grow flex flex-col">
         <div className="relative flex-grow bg-[#88ca92] z-0">
           {/* Green Top Section */}
-          <div className="relative bg-[#0A9971] w-full md:rounded-t-3xl flex flex-col items-center py-4 md:w-8/12 mx-auto ">
+          <div className="relative bg-[#0A9971] w-full lg:rounded-t-3xl flex flex-col items-center py-4 lg:w-8/12 mx-auto ">
             <div className="w-full mx-auto flex flex-col items-center">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
                 <Link to="/MyAccount" className='flex items-center space-x-4'>
-                  <img src={profileplaceholder} alt="Profile Placeholder" className='w-20 h-20 rounded-full p-2 bg-[#F9FFFD] border-2 border-gray-300 shadow-md ml-12' />
+                  <img src={profileplaceholder} alt="Profile Placeholder" className='w-20 h-20 rounded-full p-2 bg-[#F9FFFD] border-2 border-gray-300 shadow-md ml-2 lg:ml-4' />
                   <h2 className='text-white font-bold text-2xl'>John Doe</h2>
                 </Link>
                 <div className="flex items-center space-x-4">
@@ -112,12 +85,12 @@ function Main() {
 
               {/* Points and Balance */}
               <div className='w-full flex mt-4'>
-                <div className="p-2 rounded-lg mx-2 ml-12">
+                <div className="p-2 rounded-lg mx-2 ml-8">
                   <h3 className="text-lg font-semibold">Available Balance</h3>
                   <p className="text-xl">{selectedCard.total}</p>
                 </div>
                 <Link to="/Points">
-                  <div className="bg-[#467a4d] px-3 py-2 rounded-lg flex items-center ml-8 mt-4">
+                  <div className="bg-[#467a4d] px-3 py-2 rounded-lg flex items-center ml-8 mt-4 mr-4 w-32">
                     <p className="text-lg font-semibold text-white mr-2">★ {points}</p>
                     <p className="text-md text-white"> Pts </p>
                   </div>
@@ -127,11 +100,11 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full md:w-8/12 flex flex-col md:rounded-b-3xl">
+          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full lg:w-8/12 flex flex-col lg:rounded-b-3xl">
             {/* Card and Account Details */}
-            <div className='w-full p-4 flex flex-col md:flex-row '>
+            <div className='w-full p-4 flex flex-col lg:flex-row '>
               {/* Card */}
-              <div className='w-full md:w-1/2 mt-8'>
+              <div className='w-full lg:w-1/2  '>
                 <div className={`flex justify-center `}>
                   <img 
                     src={selectedCard.creditCardImage} 
@@ -139,15 +112,15 @@ function Main() {
                     className='w-full h-auto cursor-pointer'
                   />
                 </div>
-                <div className="mt-4 text-center">
-                  {renderCardImages()}
+                <div className="mt- text-center">
+                 
                 </div>
               </div>
 
               {/* Account Details and Recent Transactions */}
-              <div className='w-full md:w-1/2 p-4 flex flex-col'>
+              <div className='w-full lg:w-1/2 p-2 flex flex-col'>
                 {/* Account Details */}
-                <div className="flex flex-col space-y-4 mb-4 mt-8">
+                <div className="flex flex-col space-y-2 mb-4 mt-2">
                   <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">
                     <h3 className="text-lg font-semibold">Chequing</h3>
                     <p className="text-xl">{selectedCard.chequing}</p>
@@ -213,36 +186,20 @@ function Main() {
             </div>
 
               {/* Quick Services */}
-              <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  md:rounded-b-3xl">
-              <h2 className="text-2xl font-semibold mt-12 text-center text-gray-800 -mb-4">Quick Services</h2>
+              <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  lg:rounded-b-3xl">
               <div className="flex flex-wrap justify-center gap-20 p-4">
               <Link to="/QuickServices/WaterService">
-                <img src={quickservice1} alt="Water Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <img src={quickservice1} alt="Water Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Water</p>
               </Link>
               <Link to="/QuickServices/TopUpService">
-                <img src={quickservice2} alt="Top Up Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+                <img src={quickservice2} alt="Top Up Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Top Up</p>
               </Link>
-              <Link to="/QuickServices/LightService">
-                <img src={quickservice3} alt="Light Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
+              <Link to="/QuickServices/GasService
+              ">
+                <img src={quickservice3} alt="Light Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Electricity</p>
-              </Link>
-              <Link to="/QuickServices/InternetService">
-                <img src={quickservice4} alt="Internet Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Internet</p>
-              </Link>
-              <Link to="/QuickServices/GasService">
-                <img src={quickservice5} alt="Gas Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Gas</p>
-              </Link>
-              <Link to="/QuickServices/GiftService">
-                <img src={quickservice6} alt="Gift Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Gift</p>
-              </Link>
-              <Link to="/QuickServices/AirService">
-                <img src={quickservice7} alt="Air Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Air Service</p>
               </Link>
             </div>
             </div>
@@ -256,7 +213,7 @@ function Main() {
       style={{ maxWidth: '100rem', maxHeight: '55rem' }}
     >
       <h2 className="text-2xl font-semibold mb-6 text-center pt-6">Additional Cards</h2>
-      <div className="grid grid-cols-2 gap-4 mx-auto md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 mx-auto lg:grid-cols-3 lg:grid-cols-4">
         {Object.keys(cardDetails).slice(5).map((cardId) => (
           <div key={cardId} className="flex items-center justify-center">
             <img
@@ -281,12 +238,6 @@ function Main() {
     </div>
   </div>
 )}
-
-
-
-
-
-
 
       </div>
 

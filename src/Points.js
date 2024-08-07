@@ -15,7 +15,7 @@ const Points = () => {
             </button>
           </Link>
           {/* Title */}
-          <div className="flex flex-col items-start mt-16 pl-8">
+          <div className="flex flex-col items-start mt-16 pl-8 mb-24">
             <h2 className="text-xl font-medium text-white mb-2">Welcome to</h2>
             <h1 className="text-4xl font-bold text-white mb-2">SeeTek Rewards</h1>
           </div>
@@ -25,7 +25,7 @@ const Points = () => {
         <div className="absolute bottom-0 left-0 w-full h-3/5 bg-[#F9FFFD] md:rounded-b-3xl ">
           <div className="flex flex-col items-center w-full max-w-3xl md:max-w-full">
             {/* Lifetime Points Container */}
-            <div className="relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 -top-20 mx-3  w-10/12 lg:w-9/12" style={{ boxShadow: 'none' }}>
+            <div className="relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 -top-20 mx-3 mt-8 w-10/12 lg:w-9/12" style={{ boxShadow: 'none' }}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                 <div className="flex items-center">
                   <img src={points} alt="Points" className="w-12 h-12 mr-4" />
@@ -55,7 +55,7 @@ const Points = () => {
                     Coupons
                   </button>
                 </Link>
-                <Link to="/gift-cards" className="w-2/5">
+                <Link to="/QuickServices/GiftService" className="w-2/5">
                   <button className="w-full h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
                     Gift Cards
                   </button>
