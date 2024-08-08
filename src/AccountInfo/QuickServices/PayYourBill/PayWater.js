@@ -36,13 +36,13 @@ function PayWater() {
         
 
         {/* Payment Details Container */}
-        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mb-6 mt-6">
+        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mt-6">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <p className="text-lg">Please review the payment details below.</p>
         </div>
 
         {/* Customer Information Container */}
-        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6">
+        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6 mt-0">
           <div className="flex justify-between mb-4">
             <div>
               <span className="font-semibold">Customer ID:</span>

@@ -1,42 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import profileplaceholder from './images/logoplaceholder.png';
 import notificationlogo from './images/notification.png';
 import searchlogo from './images/search.png';
-import quickservice1 from './images/waterservice.png';
+import quickservice1 from './images/home.png';
 import quickservice2 from './images/topupservice.png';
-import quickservice3 from './images/lightservice.png';
-import quickservice4 from './images/internetservice.png';
-import quickservice5 from './images/gasservice.png';
-import quickservice6 from './images/giftservice.png';
-import quickservice7 from './images/airservice.png';
+import quickservice3 from './images/airservice.png';
+
+
 import { Link } from 'react-router-dom';
 import arrowUp from './images/arrowup.png';
 import arrowDown from './images/arrowdown.png';
 import cardDetails from './BankingData';
-import morecards from './images/debitcards.png'
+
 
 const points = 1652;
 
 function Main() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCardId, setSelectedCardId] = useState(1);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
-  useEffect(() => {
-    handleCardClick(1);
-  }, []);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleNextImage = () => {
+    setCarouselIndex((prevIndex) => (prevIndex + 1) % Object.keys(cardDetails).length);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handlePrevImage = () => {
+    setCarouselIndex((prevIndex) => (prevIndex - 1 + Object.keys(cardDetails).length) % Object.keys(cardDetails).length);
   };
 
-  const handleCardClick = (cardId) => {
-    setSelectedCardId(cardId);
-  };
-
+  const selectedCardId = Object.keys(cardDetails)[carouselIndex];
   const selectedCard = cardDetails[selectedCardId];
 
   // Calculate total spent and earned
@@ -58,8 +48,6 @@ function Main() {
   const getArrowImage = (amount) => {
     return amount.startsWith('+') ? arrowUp : arrowDown;
   };
-
-
 
   return (
     <div className="min-h-screen flex flex-col bg-[#88ca92]">
@@ -104,23 +92,53 @@ function Main() {
             {/* Card and Account Details */}
             <div className='w-full p-4 flex flex-col lg:flex-row '>
               {/* Card */}
-              <div className='w-full lg:w-1/2  '>
-                <div className={`flex justify-center `}>
+              <div className='w-full lg:w-1/2'>
+                <div className="flex justify-center items-center relative">
+                  <button 
+                    onClick={handlePrevImage} 
+                    className="absolute left-0 p-2 bg-gray-200 rounded-full shadow-md"
+                  >
+                    &lt;
+                  </button>
                   <img 
                     src={selectedCard.creditCardImage} 
-                    alt="Bank Card 1" 
-                    className='w-full h-auto cursor-pointer'
+                    alt="Bank Card" 
+                    className='p-4 h-auto cursor-pointer rounded-3xl'
                   />
+                  <button 
+                    onClick={handleNextImage} 
+                    className="absolute right-0 p-2 bg-gray-200 rounded-full shadow-md"
+                  >
+                    &gt;
+                  </button>
                 </div>
-                <div className="mt- text-center">
-                 
-                </div>
+                <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8 lg:rounded-b-3xl xl:h-[22rem] items-center">
+              <div className="flex flex-wrap justify-center gap-20 p-4 2xl:mt-4 lg:max-xl:flex-col  lg:max-xl:gap-y-12">
+              <Link to="/QuickServices/WaterService">
+                <img src={quickservice1} alt="Water Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20  sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Home</p>
+              </Link>
+              <Link to="/QuickServices/TopUpService">
+                <img src={quickservice2} alt="Top Up Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Retail</p>
+              </Link>
+              <Link to="/QuickServices/GasService
+              ">
+                <img src={quickservice3} alt="Light Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <p className="mt-2 text-center text-xs mx-auto font-semibold">Travel</p>
+              </Link>
+            </div>
+            </div>
               </div>
+
+              
+
+              
 
               {/* Account Details and Recent Transactions */}
               <div className='w-full lg:w-1/2 p-2 flex flex-col'>
                 {/* Account Details */}
-                <div className="flex flex-col space-y-2 mb-4 mt-2">
+                <div className="flex flex-col space-y-2 mb-4 ">
                   <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">
                     <h3 className="text-lg font-semibold">Chequing</h3>
                     <p className="text-xl">{selectedCard.chequing}</p>
@@ -133,6 +151,8 @@ function Main() {
                   </div>
                 </div>
 
+                
+
                 {/* Recent Transactions */}
                 <Link to="/RecentTransactions" className="w-full">
                   <div className='flex-grow'>
@@ -144,7 +164,7 @@ function Main() {
                         </h4>
                         <div className="relative h-8 bg-gray-200 rounded-full mt-2 overflow-hidden">
                           <div 
-                            className="absolute h-full bg-red-500 "
+                            className="absolute h-full bg-red-500"
                             style={{ width: `${spentPercentage}%`, zIndex: 1 }}
                           ></div>
                           <div 
@@ -156,7 +176,7 @@ function Main() {
                       </div>
                       <hr className="my-4 border-gray-300" />
 
-                      {/* Transactions */}
+                       {/* Transactions */}
                       <ul className="space-y-4">
                         {selectedCard.transactions.map((transaction) => (
                           <li key={transaction.id}>
@@ -185,63 +205,14 @@ function Main() {
               </div>
             </div>
 
-              {/* Quick Services */}
-              <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8  lg:rounded-b-3xl">
-              <div className="flex flex-wrap justify-center gap-20 p-4">
-              <Link to="/QuickServices/WaterService">
-                <img src={quickservice1} alt="Water Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Water</p>
-              </Link>
-              <Link to="/QuickServices/TopUpService">
-                <img src={quickservice2} alt="Top Up Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Top Up</p>
-              </Link>
-              <Link to="/QuickServices/GasService
-              ">
-                <img src={quickservice3} alt="Light Service" className="lg:w-20 lg:h-20 sm:w-12 sm:h-12 lg:w-16 lg:h-16 w-8 h-8 mx-1" />
-                <p className="mt-2 text-center text-xs mx-auto font-semibold">Electricity</p>
-              </Link>
-            </div>
-            </div>
-      </div>
-
-      {/* Modal for Additional Cards */}
-      {isModalOpen && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div
-      className="bg-white p-6 rounded-lg relative custom-scrollbar overflow-y-auto lg:w-[100rem] lg:h-[55rem] w-full h-full"
-      style={{ maxWidth: '100rem', maxHeight: '55rem' }}
-    >
-      <h2 className="text-2xl font-semibold mb-6 text-center pt-6">Additional Cards</h2>
-      <div className="grid grid-cols-2 gap-4 mx-auto lg:grid-cols-3 lg:grid-cols-4">
-        {Object.keys(cardDetails).slice(5).map((cardId) => (
-          <div key={cardId} className="flex items-center justify-center">
-            <img
-              src={cardDetails[cardId].creditCardImage}
-              alt={`Card ${cardId}`}
-              className={`w-full max-w-xs h-auto cursor-pointer hover:opacity-95 ${selectedCardId === parseInt(cardId) ? '' : 'opacity-50'}`}
-              onClick={() => {
-                handleCardClick(parseInt(cardId));
-                handleCloseModal();
-              }}
-            />
+            {/* Quick Services */}
+            
+            
           </div>
-        ))}
-      </div>
-      <button
-        onClick={handleCloseModal}
-        className="absolute top-2 right-2 text-red-500 text-4xl font-bold p-2"
-        style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-      >
-        &times;
-      </button>
-    </div>
-  </div>
-)}
-
+        </div>
       </div>
 
-      </div>
+    
     </div>
   );
 }

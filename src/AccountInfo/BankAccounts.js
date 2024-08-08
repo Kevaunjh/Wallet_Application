@@ -50,7 +50,7 @@ function BankAccounts() {
           <img
             src={cardImage}
             alt={`Credit Card ${index + 1}`}
-            className='w-64 h-auto p-2'
+            className='w-64 h-auto p-2 rounded-2xl'
           />
         </div>
       </div>
