@@ -43,7 +43,7 @@ function TopUpService() {
       {/* Container */}
       <div className="bg-white p-6 md:p-12 xl:rounded-3xl shadow-2xl w-full xl:max-w-4xl h-screen xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-4">
+        <div className="w-full flex justify-start mb-4 -mt-12">
           <Link to="/" className="text-base md:text-lg text-[#467a4d]">
             &larr; Back
           </Link>

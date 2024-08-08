@@ -22,7 +22,7 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-xl w-full max-w-2xl shadow-2xl shadow-black border-black border-2">
+      <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-screen">
         <Link to="/" className="text-lg text-[#467a4d] absolute">← Back</Link>
         <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-8">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
