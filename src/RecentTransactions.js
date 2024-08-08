@@ -66,13 +66,13 @@ const RecentTransactions = () => {
   const uniqueDates = [...new Set(transactions.map((transaction) => transaction.date))];
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center md:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center xl:p-8">
       <div
         className="bg-white shadow-2xl w-full h-full p-8 overflow-auto shadow-black border-black border-2 
-        md:rounded-3xl 
+        xl:rounded-3xl 
         rounded-none
-        md:max-w-3xl
-        md:max-h-[93vh]"
+        xl:max-w-3xl
+        xl:max-h-[93vh]"
         style={{ scrollbarWidth: 'none' }}
       >
         <div className="w-full flex justify-between md:mb-4">

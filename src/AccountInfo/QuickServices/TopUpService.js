@@ -39,9 +39,9 @@ function TopUpService() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex items-center justify-center p-4 md:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex items-center justify-center xl:p-8">
       {/* Container */}
-      <div className="bg-white p-6 md:p-12 rounded-3xl shadow-2xl w-full max-w-md md:max-w-4xl h-auto md:h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
+      <div className="bg-white p-6 md:p-12 xl:rounded-3xl shadow-2xl w-full xl:max-w-4xl h-screen xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/" className="text-base md:text-lg text-[#467a4d]">

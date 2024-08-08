@@ -77,7 +77,7 @@ function Notifications() {
 
   return (
     <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0">
-      <div className="bg-white w-full h-full md:w-auto md:h-auto p-4 overflow-auto shadow-2xl shadow-black border-black border-2 md:rounded-3xl rounded-none">
+      <div className="bg-white w-full h-screen xl:w-auto xl:h-auto p-4 overflow-auto shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none">
         <div className="flex flex-col items-center mb-6 relative">
           <Link to="/" className="text-lg text-[#467a4d] absolute top-4 left-4">← Back</Link>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-16 md:mt-0">Notifications</h1>
