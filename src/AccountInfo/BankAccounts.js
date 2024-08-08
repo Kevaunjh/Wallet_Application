@@ -6,7 +6,6 @@ import bankLogo from './../images/bank-building.png';
 import accountLogo from './../images/user.png'; 
 import cardDetails from './../BankingData'; 
 
-const greenColor = '#467a4d'; 
 const points = 1652;
 
 function BankAccounts() {
@@ -92,9 +91,11 @@ function BankAccounts() {
         </div>
         {/* Centered Add Bank Card Button */}
         <div className='flex justify-center mt-4'>
+          <Link to="/AccountInfo/AddCard">
           <button className='bg-white text-[#467a4d] border-[#467a4d] border-2 px-4 py-2 rounded-md text-sm'>
             + Add Bank Card
           </button>
+          </Link>
         </div>
       </div>
     </div>

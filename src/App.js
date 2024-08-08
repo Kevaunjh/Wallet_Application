@@ -27,6 +27,7 @@ import Notifications from './Notification';
 import RecentTransactions from './RecentTransactions';
 import Points from './Points';
 import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess';
+import AddCard from './AccountInfo/AddCard';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
     <Router>
       <div>
         <Routes>
+          <Route path="/AccountInfo/Addcard" element={<AddCard toggleComponent={AddCard}/>} />
           <Route path="/" element={<Main toggleComponent={toggleComponent} />} />
           <Route path="/AccountInfo/QuickServices/PayYourBill/TransactionResponse" element={<TransactionResponse toggleComponent={toggleComponent} />} />
           <Route path="/MyAccount" element={<MyAccount toggleComponent={toggleComponent} />} />

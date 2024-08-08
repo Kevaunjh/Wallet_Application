@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import successImage from './../../../images/checked.png'; // Adjust the path to your image file
+
 import fingerprintIcon from './../../../images/fingerprint-scan.png'; // Adjust the path to your image file
 import cardDetails from './../../../BankingData.js'; // Adjust the path to your cardDetails file
 
@@ -26,7 +26,7 @@ function PayLight() {
   const card = cardDetails[1];
 
   const getTotalAmount = () => (Math.random() * (299 - 1) + 1).toFixed(2);
-  const totalAmount = getTotalAmount();
+
   
   return (
     <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-8">

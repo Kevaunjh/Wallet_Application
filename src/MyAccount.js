@@ -34,8 +34,10 @@ function MyAccount() {
               <p className="text-md text-gray-600">Location: New York</p>
             </div>
             <div className="bg-[#467a4d] p-1 rounded-lg flex items-center">
+              <Link className='flex items-center rounded-lg p-1' to="/Points">
           <p className="text-md text-white mr-2">★ Points:</p>
           <p className="text-lg font-semibold text-white">{points}</p>
+            </Link>
         </div>
           </div>
         </div>
@@ -57,7 +59,7 @@ function MyAccount() {
           <Link to="/Accountinfo/BiometricSetup" className="flex items-center p-6 hover:bg-gray-100">
             <img src={fingerprintIcon} alt="Fingerprint Icon" className="w-8 h-8 mr-4" />
             <div className="flex-1">
-              <h3 className="text-lg font-semibold">Biometric Setup</h3>
+              <h3 className="text-lg font-semibold">KYC Details</h3>
               <p className="text-sm text-gray-600">Fingerprint, PIN Setup</p>
             </div>
           </Link>

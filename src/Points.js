@@ -55,7 +55,7 @@ const Points = () => {
                     Coupons
                   </button>
                 </Link>
-                <Link to="/AccountInfo/QuickServices/GiftService" className="w-2/5">
+                <Link to="/QuickServices/GiftService" className="w-2/5">
                   <button className="w-full h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
                     Gift Cards
                   </button>
