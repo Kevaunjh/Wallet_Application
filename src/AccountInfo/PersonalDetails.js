@@ -13,7 +13,7 @@ function PersonalDetails() {
       </Link>
 
       {/* Profile Info Container */}
-      <div className="w-full lg::w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
+      <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
         {/* Profile Picture */}
         <img 
           src={profileplaceholder} 

@@ -11,16 +11,16 @@ function BiometricSetup() {
   };
 
   return (
-    <div className="BiometricSetup bg-[#88ca92] min-h-screen flex flex-col items-center p-8">
+    <div className="BiometricSetup bg-[#88ca92] min-h-screen flex flex-col items-center lg:p-8">
       {/* Container for Instructions, Image, and Proceed Button */}
-      <div className="bg-white p-16 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-3xl mx-auto relative">
+      <div className="bg-white p-8 lg:p-16 lg:rounded-3xl shadow-2xl flex flex-col items-center w-full lg:max-w-3xl mx-auto relative h-screen">
         {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-4 left-4 text-lg text-[#467a4d]">
           &larr; Back
         </Link>
 
         {/* Setup Instructions */}
-        <p className="text-md text-center mb-8 font-semibold text-lg">
+        <p className="text-md text-center mb-8 font-semibold text-lg mt-24">
           Tap on the security feature to set up.
         </p>
 
@@ -32,7 +32,7 @@ function BiometricSetup() {
           <img
             src={fingerprintIcon}
             alt="Fingerprint Icon"
-            className={`w-80 h-80 transition-opacity mt-12 mb-12 duration-[3000ms] ${
+            className={`w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 max-w-full max-h-full object-contain transition-opacity duration-[3000ms] mt-12 ${
               selectedOption ? 'opacity-100' : 'opacity-50'
             }`}
           />
@@ -51,7 +51,7 @@ function BiometricSetup() {
             </p>
           </div>
         ) : (
-          <p className="text-md text-center mb-8">
+          <p className="text-md text-center mb-8 mt-24">
             Place your finger on the sensor.
           </p>
         )}
