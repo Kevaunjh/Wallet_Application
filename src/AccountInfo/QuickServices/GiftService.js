@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaChevronDown } from 'react-icons/fa';
 
 function GiftService() {
   const [amount, setAmount] = useState('');
@@ -98,6 +99,7 @@ function GiftService() {
                 <option value="google_play">Google Play</option>
                 <option value="sephora">Sephora</option>
               </select>
+              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             </div>
           </div>
         </form>

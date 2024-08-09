@@ -77,35 +77,37 @@ function Notifications() {
 
   return (
     <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0">
-      <div className="bg-white w-full h-screen xl:w-auto xl:h-auto p-4 overflow-auto shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none">
-        <div className="flex flex-col items-center mb-6 relative">
-          <Link to="/" className="text-lg text-[#467a4d] absolute top-4 left-4">← Back</Link>
-          <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-16 md:mt-0">Notifications</h1>
-          <div className="absolute right-0 flex items-center mt-4 md:mt-0">
-            <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
-            <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">
-              <FaFilter size={24} />
-            </button>
-            {isFilterOpen && (
-              <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48">
-                <select
-                  id="filter"
-                  value={filter}
-                  onChange={handleFilterSelect}
-                  className="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-                >
-                  <option value="all">All</option>
-                  <option value="today">Today</option>
-                  <option value="yesterday">Yesterday</option>
-                  <option value="lastWeek">Last Week</option>
-                  <option value="lastMonth">Last Month</option>
-                  <option value="older">Older</option>
-                </select>
-              </div>
-            )}
+      <div className="bg-white w-full xl:w-auto h-screen p-4 shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none flex flex-col ">
+        <div className="sticky top-0 bg-white z-10 p-6 w-full">
+          <div className="flex justify-between w-full">
+            <Link to="/" className="text-lg text-[#467a4d]">← Back</Link>
+            <div className="flex items-center">
+              <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
+              <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">
+                <FaFilter size={24} />
+              </button>
+              {isFilterOpen && (
+                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48">
+                  <select
+                    id="filter"
+                    value={filter}
+                    onChange={handleFilterSelect}
+                    className="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  >
+                    <option value="all">All</option>
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="lastWeek">Last Week</option>
+                    <option value="lastMonth">Last Month</option>
+                    <option value="older">Older</option>
+                  </select>
+                </div>
+              )}
+            </div>
           </div>
+          <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Notifications</h1>
         </div>
-        <div className="overflow-y-auto h-[calc(100vh-120px)]">
+        <div className="flex-grow overflow-y-auto custom-scrollbar">
           {filter === 'all' ? (
             Object.keys(notifications).map(period => renderNotificationsForPeriod(period))
           ) : (

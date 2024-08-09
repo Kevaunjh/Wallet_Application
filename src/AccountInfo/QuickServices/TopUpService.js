@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import fingerprintIcon from './../../images/fingerprint-scan.png'; // Adjust the path to your image file
 
 function TopUpService() {
   const [selectedAmount, setSelectedAmount] = useState(5); // Default to $5
@@ -41,9 +40,9 @@ function TopUpService() {
   return (
     <div className="bg-[#88ca92] min-h-screen flex items-center justify-center xl:p-8">
       {/* Container */}
-      <div className="bg-white p-6 md:p-12 xl:rounded-3xl shadow-2xl w-full xl:max-w-4xl h-screen xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2">
+      <div className="bg-white p-6 md:p-12 xl:rounded-3xl shadow-2xl w-full xl:max-w-4xl h-screen xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2 relative">
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-4 -mt-12">
+        <div className="absolute top-12 left-12">
           <Link to="/" className="text-base md:text-lg text-[#467a4d]">
             &larr; Back
           </Link>
@@ -57,30 +56,39 @@ function TopUpService() {
           </div>
           <hr className="mb-6 border-gray-400" />
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <button
-              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
-              onClick={() => handleAmountClick(5)}
-            >
-              $5
-            </button>
-            <button
-              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
-              onClick={() => handleAmountClick(10)}
-            >
-              $10
-            </button>
-            <button
-              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
-              onClick={() => handleAmountClick(15)}
-            >
-              $15
-            </button>
-            <button
-              className="px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#467a4d] text-[#467a4d] rounded-lg text-base md:text-lg"
-              onClick={() => setIsModalOpen(true)}
-            >
-              Custom
-            </button>
+          <button
+  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+    selectedAmount === 5 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+  }`}
+  onClick={() => handleAmountClick(5)}
+>
+  $5
+</button>
+<button
+  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+    selectedAmount === 10 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+  }`}
+  onClick={() => handleAmountClick(10)}
+>
+  $10
+</button>
+<button
+  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+    selectedAmount === 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+  }`}
+  onClick={() => handleAmountClick(15)}
+>
+  $15
+</button>
+<button
+  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+    customAmount !== '' || selectedAmount !== 5 && selectedAmount !== 10 && selectedAmount !== 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+  }`}
+  onClick={() => setIsModalOpen(true)}
+>
+  Custom
+</button>
+
           </div>
         </div>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 
-function WaterService() {
+function GasService() {
   const [serviceProvider, setServiceProvider] = useState('');
   const [selectCounter, setSelectCounter] = useState('');
   const [scNo, setScNo] = useState('');
@@ -226,7 +226,7 @@ function WaterService() {
 
   return (
     <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8">
-      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full h-screen xl:max-w-3xl mx-auto shadow-black border-black border-2">
+      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full h-screen xl:max-w-3xl xl:h-[50rem] mx-auto shadow-black border-black border-2">
         {/* Tabs */}
         <div className="w-full flex justify-between">
           <button
@@ -268,4 +268,4 @@ function WaterService() {
   );
 }
 
-export default WaterService;
+export default GasService;

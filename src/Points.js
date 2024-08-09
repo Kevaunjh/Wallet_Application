@@ -47,7 +47,7 @@ const Points = () => {
           </div>
 
           {/* Buttons Container */}
-          <div className="flex flex-col items-center w-full  space-y-4 bg-[#F9FFFD] p-4 rounded-lg justify-center overflow-hidden !-mt-24" style={{ boxShadow: 'none' }}>
+          <div className="flex flex-col items-center w-full  space-y-4 bg-[#F9FFFD] p-4 rounded-lg justify-center overflow-hidden !-mt-20 " style={{ boxShadow: 'none' }}>
             <div className="flex w-full gap-4 justify-center ">
               <Link to="/coupons" className="w-2/5">
                 <button className="w-full h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
