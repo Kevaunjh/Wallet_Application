@@ -30,7 +30,7 @@ function MyAccount() {
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 
-            className="w-36 h-36 rounded-full mb-4"
+            className="xl:w-36 xl:h-36 h-28 w-28 rounded-full mb-4 border-black border-2"
           />
           {/* Profile Details and Points */}
           <div className="flex flex-col items-center">
