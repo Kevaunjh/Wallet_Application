@@ -8,7 +8,12 @@ function PersonalDetails() {
   return (
     <div className="PersonalDetails bg-[#88ca92] min-h-screen flex flex-col items-center relative xl:p-8">
       {/* XL Screens: Separate Containers */}
-      <div className="hidden xl:flex xl:flex-col xl:items-center xl:w-full">
+      <div className="hidden xl:flex xl:flex-col xl:items-center xl:w-full relative">
+        {/* Back Button for XL Screens */}
+        <Link to="/MyAccount" className="absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+          &larr; Back
+        </Link>
+
         {/* Profile Info Container */}
         <div className="w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
           {/* Profile Picture */}
@@ -72,12 +77,12 @@ function PersonalDetails() {
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 
-            className="xl:w-16 xl:h-16 h-20 w-20 rounded-full mb-4 border-black border-2"
+            className="xl:w-16 xl:h-16 h-20 w-20 rounded-full mb-2 border-black border-2"
           />
           <h2 className="text-lg font-bold">John Doe</h2>
         </div>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-2">
           <div className="bg-[#467a4d] p-1 rounded-lg flex items-center">
             <p className="text-md text-white mr-2">★ Points:</p>
             <p className="text-lg font-semibold text-white">{points}</p>

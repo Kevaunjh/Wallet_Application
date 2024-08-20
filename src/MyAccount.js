@@ -13,7 +13,7 @@ function MyAccount() {
   return (
     <div className="Profile bg-[#88ca92] min-h-screen flex flex-col items-center relative xl:p-8">
       {/* Back Button for Larger Screens */}
-      <Link to="/" className="hidden xl:block absolute top-4 left-4 text-white">
+      <Link to="/" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 

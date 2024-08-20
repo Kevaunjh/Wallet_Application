@@ -34,11 +34,11 @@ function Pinlock() {
   const isProceedEnabled = pinsMatch && fieldsFilled && oldPin.trim() !== '';
 
   return (
-    <div className="Pinlock bg-[#88ca92] min-h-screen flex flex-col justify-center items-center p-8">
+    <div className="Pinlock bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8">
       {/* Container for Title, Back Button, Form, and Proceed Button */}
-      <div className="bg-white p-16 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-3xl mx-auto">
+      <div className="bg-white p-8 xl:p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center w-screen xl:max-w-3xl mx-auto h-screen xl:h-auto xl:border-2 xl:border-black">
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-4">
+        <div className="w-full flex justify-start mb-12">
           <Link to="/MyAccount" className="text-lg text-[#467a4d]">
             &larr; Back
           </Link>

@@ -246,7 +246,7 @@ function GasService() {
 
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4 mt-8 px-16">
-          <Link to="/" className="text-lg text-[#467a4d]">
+          <Link to="/" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
