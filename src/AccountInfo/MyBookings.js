@@ -141,7 +141,7 @@ function MyBookings() {
                         <p className='text-md font-semibold'>Departure Time</p>
                         <p className='text-md'>{booking.departureTime}</p>
                       </div>
-                      <div className='text-right mx-4'>
+                      <div className='text-right mx-4'> 
                         <p className='text-md font-semibold'>Booking ID</p>
                         <p className='text-md'>{booking.bookingID}</p>
                       </div>
