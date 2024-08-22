@@ -273,10 +273,11 @@ function WaterService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8">
+    <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8 xl:mt-0">
       <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl min-h-screen mx-auto shadow-black border-black border-2">
         {/* Tabs */}
-        <div className="w-full flex justify-between">
+        <div className='h-screen w-full'>
+        <div className="w-full flex justify-between xl:mt-0">
           <button
             className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('water')}
@@ -305,7 +306,7 @@ function WaterService() {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold text-[#467a4d] mb-8">
+        <h1 className="text-3xl font-bold text-[#467a4d] mb-8 text-center">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)} Bill
         </h1>
 
@@ -315,7 +316,7 @@ function WaterService() {
         </form>
 
         {/* Show Button as Link */}
-        
+        </div>
       </div>
     </div>
   );
