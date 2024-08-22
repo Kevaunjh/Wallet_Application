@@ -273,52 +273,49 @@ function WaterService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8 xl:mt-0">
-      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl min-h-screen mx-auto xl:shadow-black xl:border-black xl:border-2">
-        {/* Back Button */}
-        <div className="w-full flex justify-start mb-4 mt-12 px-8">
-          <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white">
-            &larr; Back
-          </Link>
-        </div>
-
-        {/* Title */}
-        <h1 className="text-3xl font-bold text-[#467a4d] mb-8 text-center">
-          {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)} Bill
-        </h1>
-
-        {/* Service Form */}
-        <form className="w-full px-16 flex-grow">
-          {renderForm()}
-        </form>
-
+    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8">
+      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl h-screen mx-auto xl:shadow-black xl:border-black xl:border-2">
         {/* Tabs */}
-        <div className="w-full flex justify-between mt-auto">
+        <div className="w-full flex justify-between mt-24 xl:mt-0">
           <button
-            className={`w-1/3 py-4 text-center  ${
-              selectedTab === 'water' ? 'bg-[#467a4d] text-white' : 'bg-gray-200 text-gray-600'
-            }`}
+            className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('water')}
           >
             Water
           </button>
           <button
-            className={`w-1/3 py-4 text-center ${
-              selectedTab === 'internet' ? 'bg-[#467a4d] text-white' : 'bg-gray-200 text-gray-600'
-            }`}
+            className={`w-1/3 py-4 text-center ${selectedTab === 'internet' ? 'bg-white ' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('internet')}
           >
             Internet
           </button>
           <button
-            className={`w-1/3 py-4 text-center ${
-              selectedTab === 'electricity' ? 'bg-[#467a4d] text-white' : 'bg-gray-200 text-gray-600'
-            }`}
+            className={`w-1/3 py-4 text-center rounded-tr-3xl ${selectedTab === 'electricity' ? 'bg-white ' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('electricity')}
           >
             Electricity
           </button>
         </div>
+
+        {/* Back Button */}
+        <div className="w-full flex justify-start mb-4 mt-12 px-8">
+          <Link to="/" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">
+            &larr; Back
+          </Link>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-3xl font-bold text-[#467a4d] mb-8">
+          {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)} Bill
+        </h1>
+
+        {/* Service Form */}
+        <form className="w-full px-16">
+          {renderForm()}
+        </form>
+
+        {/* Show Button as Link */}
+        
       </div>
     </div>
   );
