@@ -22,8 +22,8 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-screen">
-        <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white] absolute">← Back</Link>
+      <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-auto flex flex-col justify-between min-h-screen">
+        <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6">← Back</Link>
         <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-12">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -77,19 +77,17 @@ const AddCard = () => {
               type="text"
               value={bankName}
               onChange={(e) => setBankName(e.target.value)}
-              className="mt-1 block w-full h-12 px-3 py-2 border border-gray-300 rounded-xl  shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+              className="mt-1 block w-full h-12 px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring focus:border-blue-300"
               required
             />
           </div>
           <div className="flex justify-center">
-            <Link to="/AccountInfo/BankAccounts">
             <button
               type="submit"
               className="px-6 py-2 mt-4 rounded-3xl text-white bg-[#467a4d] hover:bg-[#356638] transition duration-300 w-36 h-16 mb-8"
             >
               Add Card
             </button>
-            </Link>
           </div>
         </form>
       </div>
