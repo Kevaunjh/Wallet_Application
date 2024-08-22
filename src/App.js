@@ -29,6 +29,8 @@ import Points from './Points';
 import Signup from './signin';
 import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess';
 import AddCard from './AccountInfo/AddCard';
+import { initializeApp } from 'firebase/app';
+
 
 function App() {
 

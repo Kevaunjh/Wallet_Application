@@ -1,30 +1,85 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom';
 import logo from './images/seeteklogo.png';
+import { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebase';
+import { getDatabase, ref, set } from 'firebase/database';
 
 const Signup = () => {
-  const [activeTab, setActiveTab] = useState('google'); // State to track active tab
+  const [activeTab, setActiveTab] = useState('username');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [repassword, setRepassword] = useState('');
+  const navigate = useNavigate();
+  const db = getDatabase();
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
   };
 
+  const handleSignInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/Main');
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+  };
+
+  const handleSignIn = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, username + '@example.com', password);
+      navigate('/Main');
+    } catch (error) {
+      console.error("Error signing in with email:", error);
+    }
+  };
+
+  const handleSignUp = async () => {
+    if (password !== repassword) {
+      console.error("Passwords do not match");
+      return;
+    }
+    try {
+      // Create a new user with a dummy email
+      const userCredential = await createUserWithEmailAndPassword(auth, username + '@example.com', password);
+      const user = userCredential.user;
+
+      // Push user data to Firebase Realtime Database
+      await set(ref(db, 'users/' + user.uid), {
+        username: username
+      });
+
+      // Redirect to /Main after successful sign-up
+      navigate('/Main');
+    } catch (error) {
+      console.error("Error creating user:", error);
+    }
+  };
+
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
-      <div className="bg-white border-2 xl:border-black w-full min-h-screen xl:w-1/2 xl:h-[65vh] xl:max-h-[65vh] xl:min-h-[65vh]  p-8 xl:rounded-3xl flex flex-col xl:flex-row">
+      <div className="bg-white border-2 xl:border-black w-full min-h-screen xl:w-1/2 xl:h-[65vh] xl:max-h-[65vh] xl:min-h-[65vh] p-8 xl:rounded-3xl flex flex-col xl:flex-row">
         {/* Left Side */}
         <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black">
-          {/* Logo Placeholder */}
           <div className="w-full text-center xl:text-center mt-20 xl:mt-0">
             <img src={logo} alt="SeeTek Logo" className="h-28 mx-auto mb-4" />
             <h2 className="text-lg font-bold text-gray-700 mb-2">
-              {activeTab === 'google' && 'Sign in with Google'}
               {activeTab === 'username' && 'Sign in with Username'}
               {activeTab === 'create' && 'Create Account'}
             </h2>
           </div>
           <div className="text-center xl:text-center text-blue-600">
-            {activeTab === 'google' && (
+            {activeTab === 'username' && (
+              <div>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => handleTabSwitch('create')}
+                >
+                  Create Account
+                </span>
+              </div>
+            )}
+            {activeTab === 'create' && (
               <div>
                 <span
                   className="cursor-pointer"
@@ -34,66 +89,22 @@ const Signup = () => {
                 </span>
               </div>
             )}
-            {activeTab === 'username' && (
-              <div>
-                <span
-                  className="cursor-pointer"
-                  onClick={() => handleTabSwitch('google')}
-                >
-                  Use your SeeTek account
-                </span>
-              </div>
-            )}
-            {activeTab === 'create' && (
-              <div>
-                <span
-                  className="cursor-pointer"
-                  onClick={() => handleTabSwitch('google')}
-                >
-                  Sign in with SeeTek
-                </span>
-              </div>
-            )}
           </div>
+          {activeTab === 'username' && (
+            <button
+              type="button"
+              className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline mt-4"
+              onClick={handleSignInWithGoogle}
+            >
+              Sign in with Google
+            </button>
+          )}
         </div>
 
         {/* Right Side */}
         <div className="w-full xl:w-1/2 flex flex-col justify-between xl:pl-4 xl:items-center xl:justify-center">
           <div className="flex-grow flex flex-col justify-center">
             <form className="flex flex-col w-full max-w-md mx-auto">
-              {activeTab === 'google' && (
-                <>
-                  <div className="mt-4 xl:mt-6">
-                    <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
-                      htmlFor="email"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="Enter your email"
-                      className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                  <div className="mt-4 xl:mt-6">
-                    <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      id="password"
-                      placeholder="Enter your password"
-                      className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                </>
-              )}
-
               {activeTab === 'username' && (
                 <>
                   <div className="mt-4 xl:mt-6">
@@ -108,6 +119,8 @@ const Signup = () => {
                       id="username"
                       placeholder="Enter your username"
                       className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div className="mt-4 xl:mt-6">
@@ -122,6 +135,8 @@ const Signup = () => {
                       id="password"
                       placeholder="Enter your password"
                       className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </>
@@ -141,6 +156,8 @@ const Signup = () => {
                       id="username"
                       placeholder="Enter your username"
                       className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div className="mt-4 xl:mt-6">
@@ -155,6 +172,8 @@ const Signup = () => {
                       id="password"
                       placeholder="Enter your password"
                       className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="mt-4 xl:mt-6">
@@ -169,50 +188,33 @@ const Signup = () => {
                       id="repassword"
                       placeholder="Re-enter your password"
                       className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      value={repassword}
+                      onChange={(e) => setRepassword(e.target.value)}
                     />
                   </div>
                 </>
               )}
+              <div className="flex items-center justify-center mt-8">
+                {activeTab === 'username' && (
+                  <button
+                    type="button"
+                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full"
+                    onClick={handleSignIn}
+                  >
+                    Sign In
+                  </button>
+                )}
+                {activeTab === 'create' && (
+                  <button
+                    type="button"
+                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full"
+                    onClick={handleSignUp}
+                  >
+                    Create Account
+                  </button>
+                )}
+              </div>
             </form>
-          </div>
-
-          {/* Bottom Buttons */}
-          <div className="flex flex-col gap-4 mt-6 xl:mt-8 max-w-md mx-auto">
-            {(activeTab === 'google' || activeTab === 'username') && (
-              <>
-                <button
-                  type="button"
-                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold mb-4 py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
-                  onClick={() => handleTabSwitch('create')}
-                >
-                  Create Account
-                </button>
-                <Link
-                  to="/Main"
-                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
-                >
-                  Sign In
-                </Link>
-              </>
-            )}
-            {activeTab === 'create' && (
-              <>
-                <button
-                  type="button"
-                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
-                  onClick={() => handleTabSwitch('username')}
-                >
-                  Sign In with Username
-                </button>
-                <button
-                  type="button"
-                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
-                  onClick={() => handleTabSwitch('username')}
-                >
-                  Create Account
-                </button>
-              </>
-            )}
           </div>
         </div>
       </div>
