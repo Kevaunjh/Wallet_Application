@@ -11,7 +11,7 @@ const Signup = () => {
 
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
-      <div className="bg-white border-2 xl:border-black w-full h-screen xl:w-1/2 xl:h-[60vh]  p-8 xl:rounded-3xl flex flex-col xl:flex-row">
+      <div className="bg-white border-2 xl:border-black w-full min-h-screen xl:w-1/2 xl:h-[60vh]  p-8 xl:rounded-3xl flex flex-col xl:flex-row">
         {/* Left Side */}
         <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black">
           {/* Logo Placeholder */}
@@ -182,7 +182,7 @@ const Signup = () => {
               <>
                 <button
                   type="button"
-                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
+                  className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold mb-4 py-2 px-4 rounded-xl flex items-center justify-center focus:outline-none focus:shadow-outline w-full"
                   onClick={() => handleTabSwitch('create')}
                 >
                   Create Account
