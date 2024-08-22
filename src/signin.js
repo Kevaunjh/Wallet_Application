@@ -9,11 +9,15 @@ const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
   const db = getDatabase();
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
+    setError(''); // Clear error when switching tabs
+    setSuccess(''); // Clear success message when switching tabs
   };
 
   const handleSignInWithGoogle = async () => {
@@ -22,6 +26,7 @@ const Signup = () => {
       navigate('/Main');
     } catch (error) {
       console.error("Error signing in with Google:", error);
+      setError("Error signing in with Google");
     }
   };
 
@@ -31,30 +36,55 @@ const Signup = () => {
       navigate('/Main');
     } catch (error) {
       console.error("Error signing in with email:", error);
+      setError("Error signing in with email");
     }
   };
 
   const handleSignUp = async () => {
+    // Add error handling and regex validation
+    if (!username || !password || !repassword) {
+        setError("All fields are required.");
+        return;
+    }
+
+    if (password.length < 6) {
+        setError("Password must be at least 6 characters long.");
+        return;
+    }
+
     if (password !== repassword) {
-      console.error("Passwords do not match");
-      return;
+        setError("Passwords do not match.");
+        return;
     }
+
     try {
-      // Create a new user with a dummy email
-      const userCredential = await createUserWithEmailAndPassword(auth, username + '@example.com', password);
-      const user = userCredential.user;
+        // Create a new user with a dummy email
+        const userCredential = await createUserWithEmailAndPassword(auth, username + '@example.com', password);
+        const user = userCredential.user;
 
-      // Push user data to Firebase Realtime Database
-      await set(ref(db, 'users/' + user.uid), {
-        username: username
-      });
+        // Push user data to Firebase Realtime Database
+        const userRef = ref(db, 'users/' + user.uid);
+        await set(userRef, {
+            username: username
+        });
 
-      // Redirect to /Main after successful sign-up
-      navigate('/Main');
+        console.log("User data written to Realtime Database");
+        
+        // Redirect to /Main after successful sign-up
+        navigate('/Main');
     } catch (error) {
-      console.error("Error creating user:", error);
+        console.error("Error creating user:", error);
+
+        // Check for specific Firebase error codes
+        if (error.code === 'auth/weak-password') {
+            setError("Password must be at least 6 characters long.");
+        } else if (error.code === 'auth/email-already-in-use') {
+            setError("This username is already taken.");
+        } else {
+            setError("Failed to create account. Please try again.");
+        }
     }
-  };
+};
 
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
@@ -102,7 +132,7 @@ const Signup = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full xl:w-1/2 flex flex-col justify-between xl:pl-4 xl:items-center xl:justify-center">
+        <div className="w-full xl:w-1/2 flex flex-col justify-between xl:pl-4 xl:items-center xl:justify-center relative">
           <div className="flex-grow flex flex-col justify-center">
             <form className="flex flex-col w-full max-w-md mx-auto">
               {activeTab === 'username' && (
@@ -194,6 +224,21 @@ const Signup = () => {
                   </div>
                 </>
               )}
+
+              {/* Error and Success Handling */}
+              <div className="relative mt-4 xl:mt-6">
+                <div
+                  className={`text-red-500 absolute inset-x-0 text-center transition-opacity duration-300 ${error ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  {error}
+                </div>
+                <div
+                  className={`text-green-500 absolute inset-x-0 text-center transition-opacity duration-300 ${success ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  {success}
+                </div>
+              </div>
+
               <div className="flex items-center justify-center mt-8">
                 {activeTab === 'username' && (
                   <button
@@ -207,7 +252,7 @@ const Signup = () => {
                 {activeTab === 'create' && (
                   <button
                     type="button"
-                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full"
+                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full mt-8"
                     onClick={handleSignUp}
                   >
                     Create Account
