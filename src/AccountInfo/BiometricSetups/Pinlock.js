@@ -39,7 +39,7 @@ function Pinlock() {
       <div className="bg-white p-8 xl:p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center w-screen xl:max-w-3xl mx-auto h-screen xl:h-auto xl:border-2 xl:border-black">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-12">
-          <Link to="/MyAccount" className="text-lg text-[#467a4d]">
+          <Link to="/MyAccount" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
