@@ -24,7 +24,7 @@ const AddCard = () => {
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
       <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-auto flex flex-col justify-between min-h-screen">
         <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6">← Back</Link>
-        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-36">Add a Bank Card</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-36 xl:mt-0">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="cardNumber" className="text-gray-700 text-lg font-bold block">Card Number</label>
