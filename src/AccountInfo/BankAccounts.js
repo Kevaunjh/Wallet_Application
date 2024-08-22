@@ -52,7 +52,7 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts bg-[#88ca92] h-screen flex flex-col items-center justify-center xl:gap-8 overflow-auto relative">
+    <div className="BankAccounts xl:bg-[#88ca92] h-screen flex flex-col items-center justify-center xl:gap-8 overflow-auto relative">
       {/* Back Button on Larger Screens */}
       <Link to="/MyAccount" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
