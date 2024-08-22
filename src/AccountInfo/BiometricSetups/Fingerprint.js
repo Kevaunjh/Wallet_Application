@@ -59,7 +59,7 @@ function BiometricSetup() {
         {/* Proceed Button */}
         <Link
           to="/AccountInfo/BiometricSetup"
-          className={`px-8 py-4 rounded-md text-lg text-white w-72 text-center ${
+          className={`px-8 py-4 rounded-md text-lg text-white w-72 text-center mb-6 ${
             selectedOption ? 'bg-[#467a4d] opacity-100' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms]`}
         >

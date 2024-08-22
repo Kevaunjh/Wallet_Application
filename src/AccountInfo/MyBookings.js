@@ -107,7 +107,7 @@ function MyBookings() {
         </div>
 
         {/* Bookings Container */}
-        <div className='w-full  p-6 rounded-lg -mt-6'>
+        <div className='w-full  p-6 rounded-lg -mt-6 mb-6'>
           <h2 className='text-2xl font-bold mb-4 text-center'>My Bookings</h2>
           <div className='flex flex-col items-center'>
             {/* Fake Booking List */}

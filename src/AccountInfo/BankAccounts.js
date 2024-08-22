@@ -59,13 +59,13 @@ function BankAccounts() {
       </Link>
 
       {/* Mobile Layout */}
-      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 min-h-screen  overflow-auto flex flex-col">
-        <Link to="/MyAccount" className=" mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem] ">
+      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 min-h-screen  overflow-auto flex flex-col ">
+        <Link to="/MyAccount" className=" mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem] mt-10 ">
           &larr; Back
         </Link>
 
         {/* Profile Info */}
-        <div className="flex flex-col items-center mb-6 -mt-6">
+        <div className="flex flex-col items-center mb-6 ">
           <img
             src={profileplaceholder}
             alt="Profile Placeholder"
@@ -116,7 +116,7 @@ function BankAccounts() {
 
         {/* Bank Accounts Container */}
         <div className="w-full bg-white p-6 rounded-lg shadow-md border-black border-2">
-          <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Bank Accounts</h2>
+          <h2 className='text-2xl font-bold mb-12 text-center mt-4'>My Bank Accounts</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             {cardContainers}
           </div>

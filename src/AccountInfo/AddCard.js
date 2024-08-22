@@ -23,8 +23,8 @@ const AddCard = () => {
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
       <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-screen">
-        <Link to="/" className="text-lg text-[#467a4d] absolute">← Back</Link>
-        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-8">Add a Bank Card</h2>
+        <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white] absolute">← Back</Link>
+        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-12">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="cardNumber" className="text-gray-700 text-lg font-bold block">Card Number</label>
@@ -85,7 +85,7 @@ const AddCard = () => {
             <Link to="/AccountInfo/BankAccounts">
             <button
               type="submit"
-              className="px-6 py-2 mt-4 rounded-3xl text-white bg-[#467a4d] hover:bg-[#356638] transition duration-300 w-36 h-16"
+              className="px-6 py-2 mt-4 rounded-3xl text-white bg-[#467a4d] hover:bg-[#356638] transition duration-300 w-36 h-16 mb-8"
             >
               Add Card
             </button>
