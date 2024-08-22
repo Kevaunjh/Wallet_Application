@@ -9,7 +9,7 @@ const Points = () => {
         {/* Top 2/5 - Dark Green */}
         <div className="w-full h-2/5 bg-[#0A9971] xl:rounded-t-3xl flex flex-col p-4 z-1">
           {/* Back Button */}
-          <Link to="/">
+          <Link to="/Main">
             <button className="absolute top-4 left-4 bg-white text-[#0A9971] p-2 rounded-full">
               &larr; Back
             </button>
