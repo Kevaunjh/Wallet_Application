@@ -226,7 +226,7 @@ function GasService() {
 
   return (
     <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8">
-      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full min-h-screen  xl:max-w-3xl xl:h-[50rem] mx-auto shadow-black border-black border-2">
+      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full h-[100vh]  xl:max-w-3xl xl:h-[50rem] mx-auto shadow-black border-black border-2">
         {/* Tabs */}
         <div className="w-full flex justify-between">
           <button
