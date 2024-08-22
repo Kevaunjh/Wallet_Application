@@ -6,7 +6,7 @@ const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
   return (
-    <div className="PersonalDetails bg-[#88ca92] min-h-screen flex flex-col items-center relative xl:p-8">
+    <div className="PersonalDetails bg-[#88ca92] h-screen flex flex-col items-center relative xl:p-8">
       {/* XL Screens: Separate Containers */}
       <div className="hidden xl:flex xl:flex-col xl:items-center xl:w-full relative">
         {/* Back Button for XL Screens */}
@@ -66,7 +66,7 @@ function PersonalDetails() {
       </div>
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col xl:hidden w-screen h-screen bg-white p-6 md:p-10 lg:p-12 shadow-md ">
+      <div className="flex flex-col xl:hidden w-screen min-h-screen  bg-white p-6 md:p-10 lg:p-12 shadow-md ">
         {/* Back Button */}
         <Link to="/MyAccount" className="mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back

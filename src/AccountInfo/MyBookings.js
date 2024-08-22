@@ -8,7 +8,7 @@ const points = 1652;
 
 function MyBookings() {
   return (
-    <div className="MyBookings bg-[#88ca92] min-h-screen flex flex-col items-center xl:p-8">
+    <div className="MyBookings bg-[#88ca92] h-screen flex flex-col items-center xl:p-8">
       {/* Back Button */}
       <Link to="/MyAccount" className="xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
         &larr; Back
@@ -85,7 +85,7 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen xl:hidden bg-white p-6 rounded-lg h-screen overflow-auto flex flex-col">
+      <div className="w-screen xl:hidden bg-white p-6 rounded-lg min-h-screen  overflow-auto flex flex-col">
         {/* Profile Info */}
         <div className="w-full mt-8">
           <div className="w-full bg-white p-6 rounded-lg">

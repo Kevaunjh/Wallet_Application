@@ -52,14 +52,14 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts bg-[#88ca92] min-h-screen flex flex-col items-center justify-center xl:gap-8 overflow-auto relative">
+    <div className="BankAccounts bg-[#88ca92] h-screen flex flex-col items-center justify-center xl:gap-8 overflow-auto relative">
       {/* Back Button on Larger Screens */}
       <Link to="/MyAccount" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 
       {/* Mobile Layout */}
-      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 h-screen overflow-auto flex flex-col">
+      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 min-h-screen  overflow-auto flex flex-col">
         <Link to="/MyAccount" className=" mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem] ">
           &larr; Back
         </Link>
@@ -87,7 +87,7 @@ function BankAccounts() {
         </div>
         <div className='flex justify-center mt-4'>
           <Link to="/AccountInfo/AddCard">
-            <button className='bg-white text-[#467a4d] border-[#467a4d] border-2 px-4 py-2 rounded-md text-sm'>
+            <button className='bg-white text-[#467a4d] border-[#467a4d] border-2 px-4 py-2 rounded-md text-sm mb-6'>
               + Add Bank Card
             </button>
           </Link>

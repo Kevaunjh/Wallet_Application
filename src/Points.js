@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'; // Assuming you're using React Router f
 
 const Points = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center  bg-[#88ca92]">
-      <div className="relative w-full xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 xl:rounded-3xl h-screen  flex flex-col">
+    <div className="h-screen flex flex-col items-center  bg-[#88ca92]">
+      <div className="relative w-full xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 xl:rounded-3xl min-h-screen  flex flex-col">
         {/* Top 2/5 - Dark Green */}
         <div className="w-full h-2/5 bg-[#0A9971] xl:rounded-t-3xl flex flex-col p-4 z-1">
           {/* Back Button */}
