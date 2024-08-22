@@ -157,7 +157,7 @@ function MyAccount() {
               </div>
             </Link>
 
-            <Link to="/SignIn" className="flex items-center p-6 hover:bg-gray-100 mx-6">
+            <Link to="/Main" className="flex items-center p-6 hover:bg-gray-100 mx-6">
               <img src={logoutIcon} alt="Logout Icon" className="w-8 h-8 mr-4 mx-auto" />
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-lg font-semibold">Logout</h3>
