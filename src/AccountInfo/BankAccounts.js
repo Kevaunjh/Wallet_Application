@@ -59,7 +59,7 @@ function BankAccounts() {
       </Link>
 
       {/* Mobile Layout */}
-      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 h-[100vh] overflow-auto flex flex-col ">
+      <div className="w-screen xl:hidden bg-white p-6 xl:rounded-lg shadow-md xl:border-black border-2 h-screen overflow-auto flex flex-col ">
         <Link to="/MyAccount" className=" mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem] mt-10 ">
           &larr; Back
         </Link>
