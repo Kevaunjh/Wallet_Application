@@ -76,7 +76,7 @@ const RecentTransactions = () => {
         style={{ scrollbarWidth: 'none' }}
       >
         <div className="w-full flex justify-between md:mb-4">
-          <Link to="/" className="text-lg text-[#467a4d]">
+          <Link to="/Main" className="text-lg text-[#467a4d]">
             &larr; Back
           </Link>
           <div className="relative">

@@ -31,18 +31,18 @@ function GiftService() {
   const isShowEnabled = fieldsFilled;
 
   return (
-    <div className="GiftService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center p-8">
+    <div className="GiftService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8 ">
       {/* Container for Title, Back Button, Form, and Show Button */}
-      <div className="bg-white p-16 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-3xl mx-auto shadow-black border-black border-2">
+      <div className="bg-white p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center xl:w-7/12 w-screen h-screen xl:h-[90vh]  xl:max-w-3xl mx-auto shadow-black border-black border-2">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/" className="text-lg text-[#467a4d]">
+          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold text-[#467a4d] mb-8">
+        <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
           Gift Card Service
         </h1>
 

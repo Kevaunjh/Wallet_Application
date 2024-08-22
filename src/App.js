@@ -26,12 +26,13 @@ import TransactionResponse from './AccountInfo/QuickServices/PayYourBill/Transac
 import Notifications from './Notification';
 import RecentTransactions from './RecentTransactions';
 import Points from './Points';
+import Signup from './signin';
 import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess';
 import AddCard from './AccountInfo/AddCard';
 
 function App() {
 
-  const [currentComponent, setCurrentComponent] = useState('Main');
+  const [currentComponent, setCurrentComponent] = useState('Signup');
 
   const toggleComponent = (componentName) => {
     setCurrentComponent(componentName);
@@ -42,7 +43,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/AccountInfo/Addcard" element={<AddCard toggleComponent={AddCard}/>} />
-          <Route path="/" element={<Main toggleComponent={toggleComponent} />} />
+          <Route path="/Main" element={<Main toggleComponent={toggleComponent} />} />
           <Route path="/AccountInfo/QuickServices/PayYourBill/TransactionResponse" element={<TransactionResponse toggleComponent={toggleComponent} />} />
           <Route path="/MyAccount" element={<MyAccount toggleComponent={toggleComponent} />} />
           <Route path="/Accountinfo/PersonalDetails" element={<PersonalDetails toggleComponent={toggleComponent} />} />
@@ -66,6 +67,7 @@ function App() {
           <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} /> 
           <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} /> 
           <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
+          <Route path='/' element={<Signup toggleComponent={toggleComponent} />} />
           <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  
         </Routes>
       </div>

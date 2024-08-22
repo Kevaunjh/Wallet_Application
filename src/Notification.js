@@ -80,7 +80,7 @@ function Notifications() {
       <div className="bg-white w-full xl:w-auto h-screen p-4 shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none flex flex-col ">
         <div className="sticky top-0 bg-white z-10 p-6 w-full">
           <div className="flex justify-between w-full">
-            <Link to="/" className="text-lg text-[#467a4d]">← Back</Link>
+            <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">← Back</Link>
             <div className="flex items-center">
               <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
               <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">

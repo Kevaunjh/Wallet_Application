@@ -50,12 +50,12 @@ function Main() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#88ca92]">
+    <div className="min-h-screen flex flex-col ">
       {/* Full Background Container */}
       <div className="flex-grow flex flex-col">
         <div className="relative flex-grow bg-[#88ca92] z-0">
           {/* Green Top Section */}
-          <div className="relative bg-[#0A9971] w-full lg:rounded-t-3xl flex flex-col items-center py-4 lg:w-8/12 mx-auto ">
+          <div className="relative bg-[#0A9971] w-full xl:rounded-t-3xl flex flex-col items-center py-4 xl:w-8/12 mx-auto ">
             <div className="w-full mx-auto flex flex-col items-center">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
@@ -88,7 +88,7 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full lg:w-8/12 flex flex-col lg:rounded-b-3xl">
+          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full xl:w-8/12 flex flex-col xl:rounded-b-3xl">
             {/* Card and Account Details */}
             <div className='w-full p-4 flex flex-col lg:flex-row '>
               {/* Card */}

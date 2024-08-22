@@ -13,14 +13,14 @@ function MyAccount() {
   return (
     <div className="Profile bg-[#88ca92] min-h-screen flex flex-col items-center relative xl:p-8">
       {/* Back Button for Larger Screens */}
-      <Link to="/" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+      <Link to="/Main" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 
       {/* Combined Container for Small Screens */}
       <div className="w-full xl:hidden bg-white p-6 xl:rounded-lg shadow-md flex flex-col items-center border-black border-2 relative min-h-screen h-auto">
         {/* Back Button for Smaller Screens */}
-        <Link to="/" className="absolute top-4 left-4 rounded-full  p-2  bg-[#467a4d] text-white">
+        <Link to="/Main" className="absolute top-4 left-4 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
         </Link>
 
@@ -157,7 +157,7 @@ function MyAccount() {
               </div>
             </Link>
 
-            <Link to="/Logout" className="flex items-center p-6 hover:bg-gray-100 mx-6">
+            <Link to="/SignIn" className="flex items-center p-6 hover:bg-gray-100 mx-6">
               <img src={logoutIcon} alt="Logout Icon" className="w-8 h-8 mr-4 mx-auto" />
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-lg font-semibold">Logout</h3>
