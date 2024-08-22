@@ -274,9 +274,9 @@ function WaterService() {
 
   return (
     <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8">
-      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl h-screen mx-auto xl:shadow-black xl:border-black xl:border-2">
+      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl h-[100vh] mx-auto xl:shadow-black xl:border-black xl:border-2">
         {/* Tabs */}
-        <div className="w-full flex justify-between mt-24 xl:mt-0">
+        <div className="w-full flex justify-between xl:mt-0">
           <button
             className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('water')}
