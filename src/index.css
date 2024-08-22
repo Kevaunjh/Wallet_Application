@@ -74,7 +74,6 @@
 
 @supports (-webkit-touch-callout: none) {
   .h-screen {
-    height: -webkit-fill-available;
+    height: 100dvh; /* Use 100dvh directly if the browser supports it */
   }
 }
-  
