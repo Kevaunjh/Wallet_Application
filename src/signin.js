@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from './images/seeteklogo.png';
 import { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebase';
 import { getDatabase, ref, set } from 'firebase/database';
@@ -41,59 +41,52 @@ const Signup = () => {
   };
 
   const handleSignUp = async () => {
-    // Add error handling and regex validation
     if (!username || !password || !repassword) {
-        setError("All fields are required.");
-        return;
+      setError("All fields are required.");
+      return;
     }
 
     if (password.length < 6) {
-        setError("Password must be at least 6 characters long.");
-        return;
+      setError("Password must be at least 6 characters long.");
+      return;
     }
 
     if (password !== repassword) {
-        setError("Passwords do not match.");
-        return;
+      setError("Passwords do not match.");
+      return;
     }
 
     try {
-        // Create a new user with a dummy email
-        const userCredential = await createUserWithEmailAndPassword(auth, username + '@example.com', password);
-        const user = userCredential.user;
+      const userCredential = await createUserWithEmailAndPassword(auth, username + '@example.com', password);
+      const user = userCredential.user;
 
-        // Push user data to Firebase Realtime Database
-        const userRef = ref(db, 'users/' + user.uid);
-        await set(userRef, {
-            username: username
-        });
+      const userRef = ref(db, 'users/' + user.uid);
+      await set(userRef, {
+        username: username
+      });
 
-        console.log("User data written to Realtime Database");
-        
-        // Redirect to /Main after successful sign-up
-        navigate('/Main');
+      navigate('/Main');
     } catch (error) {
-        console.error("Error creating user:", error);
+      console.error("Error creating user:", error);
 
-        // Check for specific Firebase error codes
-        if (error.code === 'auth/weak-password') {
-            setError("Password must be at least 6 characters long.");
-        } else if (error.code === 'auth/email-already-in-use') {
-            setError("This username is already taken.");
-        } else {
-            setError("Failed to create account. Please try again.");
-        }
+      if (error.code === 'auth/weak-password') {
+        setError("Password must be at least 6 characters long.");
+      } else if (error.code === 'auth/email-already-in-use') {
+        setError("This username is already taken.");
+      } else {
+        setError("Failed to create account. Please try again.");
+      }
     }
-};
+  };
 
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
-      <div className="bg-white border-2 xl:border-black w-full min-h-screen xl:w-1/2 xl:h-[65vh] xl:max-h-[65vh] xl:min-h-[65vh] p-8 xl:rounded-3xl flex flex-col xl:flex-row">
+      <div className="bg-white border-2 xl:border-black w-full xl:w-1/2 p-8 xl:rounded-3xl flex flex-col xl:flex-row xl:h-[650px] h-screen">
         {/* Left Side */}
-        <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black">
+        <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black ">
           <div className="w-full text-center xl:text-center mt-20 xl:mt-0">
             <img src={logo} alt="SeeTek Logo" className="h-28 mx-auto mb-4" />
-            <h2 className="text-lg font-bold text-gray-700 mb-2">
+            <h2 className="text-lg font-bold text-gray-700 mb-2 truncate">
               {activeTab === 'username' && 'Sign in with Username'}
               {activeTab === 'create' && 'Create Account'}
             </h2>
@@ -102,7 +95,7 @@ const Signup = () => {
             {activeTab === 'username' && (
               <div>
                 <span
-                  className="cursor-pointer"
+                  className="cursor-pointer truncate"
                   onClick={() => handleTabSwitch('create')}
                 >
                   Create Account
@@ -112,7 +105,7 @@ const Signup = () => {
             {activeTab === 'create' && (
               <div>
                 <span
-                  className="cursor-pointer"
+                  className="cursor-pointer truncate"
                   onClick={() => handleTabSwitch('username')}
                 >
                   Sign in with Username
@@ -120,26 +113,17 @@ const Signup = () => {
               </div>
             )}
           </div>
-          {activeTab === 'username' && (
-            <button
-              type="button"
-              className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline mt-4"
-              onClick={handleSignInWithGoogle}
-            >
-              Sign in with Google
-            </button>
-          )}
         </div>
 
         {/* Right Side */}
-        <div className="w-full xl:w-1/2 flex flex-col justify-between xl:pl-4 xl:items-center xl:justify-center relative">
+        <div className="w-full xl:w-1/2 flex flex-col justify-between xl:pl-4 xl:items-center xl:justify-center relative overflow-hidden">
           <div className="flex-grow flex flex-col justify-center">
-            <form className="flex flex-col w-full max-w-md mx-auto">
+            <form className="flex flex-col w-full max-w-md mx-auto overflow-hidden">
               {activeTab === 'username' && (
                 <>
                   <div className="mt-4 xl:mt-6">
                     <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
+                      className="block text-gray-700 text-lg font-bold mb-2 text-center truncate"
                       htmlFor="username"
                     >
                       Username
@@ -155,7 +139,7 @@ const Signup = () => {
                   </div>
                   <div className="mt-4 xl:mt-6">
                     <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
+                      className="block text-gray-700 text-lg font-bold mb-2 text-center truncate"
                       htmlFor="password"
                     >
                       Password
@@ -176,7 +160,7 @@ const Signup = () => {
                 <>
                   <div className="mt-4 xl:mt-6">
                     <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
+                      className="block text-gray-700 text-lg font-bold mb-2 text-center truncate"
                       htmlFor="username"
                     >
                       Username
@@ -192,7 +176,7 @@ const Signup = () => {
                   </div>
                   <div className="mt-4 xl:mt-6">
                     <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
+                      className="block text-gray-700 text-lg font-bold mb-2 text-center truncate"
                       htmlFor="password"
                     >
                       Password
@@ -208,7 +192,7 @@ const Signup = () => {
                   </div>
                   <div className="mt-4 xl:mt-6">
                     <label
-                      className="block text-gray-700 text-lg font-bold mb-2 text-center"
+                      className="block text-gray-700 text-lg font-bold mb-2 text-center truncate"
                       htmlFor="repassword"
                     >
                       Re-enter Password
@@ -233,26 +217,36 @@ const Signup = () => {
                   {error}
                 </div>
                 <div
-                  className={`text-green-500 absolute inset-x-0 text-center transition-opacity duration-300 ${success ? 'opacity-100' : 'opacity-0'}`}
+                  className={`text-green-500 absolute inset-x-0 text-center transition-opacity duration-300  ${success ? 'opacity-100' : 'opacity-0'}`}
                 >
                   {success}
                 </div>
               </div>
 
-              <div className="flex items-center justify-center mt-8">
+              {/* Action Button */}
+              <div className="mt-8 xl:mt-12 flex flex-col items-center">
                 {activeTab === 'username' && (
-                  <button
-                    type="button"
-                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full"
-                    onClick={handleSignIn}
-                  >
-                    Sign In
-                  </button>
+                  <>
+                    <button
+                      type="button"
+                      className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto mb-4"
+                      onClick={handleSignIn}
+                    >
+                      SeeTek Sign In
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto"
+                      onClick={handleSignInWithGoogle}
+                    >
+                      Sign in with Google
+                    </button>
+                  </>
                 )}
                 {activeTab === 'create' && (
                   <button
                     type="button"
-                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full mt-8"
+                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto"
                     onClick={handleSignUp}
                   >
                     Create Account
