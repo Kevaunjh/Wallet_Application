@@ -102,7 +102,7 @@ const RecentTransactions = () => {
   });
 
   return (
-    <div className="bg-[#88ca92] min-h-screen xl:min-h-screen flex flex-col items-center xl:p-8 max-h-screen">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center xl:p-2 ">
       <Link
         to="/Main"
         className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
@@ -110,11 +110,11 @@ const RecentTransactions = () => {
         ← Back
       </Link>
       <div
-        className="bg-white shadow-2xl w-full xl:min-h-[700px] h-screen p-8 overflow-auto shadow-black border-black border-2 
+        className="bg-white shadow-2xl w-full 2xl:min-h-[700px] h-screen p-8 overflow-auto shadow-black border-black border-2 
         xl:rounded-3xl 
         rounded-none
         xl:max-w-3xl
-        xl:max-h-[93vh] relative"
+        xl:max-h-[96vh] relative"
         style={{ scrollbarWidth: 'none' }}
       >
         <div className="w-full flex justify-between md:mb-4">
