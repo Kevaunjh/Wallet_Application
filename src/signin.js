@@ -87,7 +87,7 @@ const Signup = () => {
 
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
-      <div className="bg-white border-2 xl:border-black w-full xl:w-1/2 p-8 xl:rounded-3xl flex flex-col xl:flex-row xl:h-[80vh] h-full overflow-auto xl:max-h-screen ">
+      <div className="bg-white border-2 xl:border-black w-full xl:w-1/2 p-2 xl:rounded-3xl flex flex-col xl:flex-row xl:h-[80vh] h-full overflow-auto xl:max-h-screen ">
         {/* Left Side */}
         <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black ">
           <div className="w-full text-center xl:text-center mt-20 xl:mt-0">
@@ -235,18 +235,23 @@ const Signup = () => {
                   <>
                     <button
                       type="button"
-                      className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto mb-4"
+                      className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto mb-2"
                       onClick={handleSignIn}
                     >
                       SeeTek Sign In
                     </button>
                     <button
-                      type="button"
-                      className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full xl:w-auto"
-                      onClick={handleSignInWithGoogle}
-                    >
-                      Sign in with Google
-                    </button>
+                  type="button"
+                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow w-full xl:w-auto mt-2 flex justify-center items-center truncate"
+                  onClick={handleSignInWithGoogle}
+                >
+                  <img
+                    src="https://img.icons8.com/color/16/000000/google-logo.png"
+                    alt="Google logo"
+                    className="h-6 w-6 mr-2"
+                  />
+                  Sign in with Google
+                </button>
                   </>
                 )}
                 {activeTab === 'create' && (
