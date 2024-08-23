@@ -19,7 +19,7 @@ function BiometricSetup() {
         >
           ← Back
         </Link>
-      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl mx-auto relative h-screen z-10">
+      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl mx-auto relative h-screen z-10">
         {/* Back Button */}
         
         <Link to="/MyAccount" className="absolute top-10 left-10 text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
