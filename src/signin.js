@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from './images/seeteklogo.png';
 import { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebase';
 import { getDatabase, ref, set } from 'firebase/database';
+import { signInWithRedirect } from 'firebase/auth';
 
 const Signup = () => {
   const [activeTab, setActiveTab] = useState('username');
@@ -22,7 +23,14 @@ const Signup = () => {
 
   const handleSignInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, provider);
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        await signInWithRedirect(auth, provider);
+      } else {
+        await signInWithPopup(auth, provider);
+      }
+      
       navigate('/Main');
     } catch (error) {
       console.error("Error signing in with Google:", error);
