@@ -77,10 +77,16 @@ function Notifications() {
 
   return (
     <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0">
-      <div className="bg-white w-full xl:w-auto h-screen p-4 shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none flex flex-col ">
+      <Link
+          to="/Main"
+          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+        >
+          ← Back
+        </Link>
+      <div className="bg-white w-full xl:max-w-3xl xl:min-w-3xl xl:w-3xl h-screen p-4 shadow-2xl shadow-black border-black border-2 xl:rounded-3xl rounded-none flex flex-col ">
         <div className="sticky top-0 bg-white z-10 p-6 w-full">
-          <div className="flex justify-between w-full">
-            <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">← Back</Link>
+          <div className="flex justify-between xl:justify-end w-full">
+            <Link to="/Main" className="text-lg rounded-full p-2  bg-[#467a4d] text-white xl:hidden">← Back</Link>
             <div className="flex items-center">
               <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
               <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">

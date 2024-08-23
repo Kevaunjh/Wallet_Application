@@ -22,8 +22,23 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 lg:rounded-xl w-full lg:max-w-2xl shadow-2xl shadow-black border-black border-2 h-auto flex flex-col justify-between min-h-screen">
-        <Link to="/Main" className="text-lg rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6">← Back</Link>
+      <div className="bg-white p-8 lg:rounded-xl w-full xl:max-w-2xl shadow-2xl shadow-black border-black border-2 xl:h-auto flex flex-col justify-between min-h-screen ">
+        {/* Back Button visible on XL screens and larger */}
+        <Link
+          to="/Main"
+          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+        >
+          ← Back
+        </Link>
+
+        {/* Existing Back Button visible on all screen sizes */}
+        <Link
+          to="/Main"
+          className="text-lg rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6 xl:hidden"
+        >
+          ← Back
+        </Link>
+
         <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-36 xl:mt-0">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

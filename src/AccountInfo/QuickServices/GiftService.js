@@ -32,11 +32,17 @@ function GiftService() {
 
   return (
     <div className="GiftService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8 ">
+       <Link
+          to="/Main"
+          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+        >
+          ← Back
+        </Link>
       {/* Container for Title, Back Button, Form, and Show Button */}
-      <div className="bg-white p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center xl:w-7/12 w-screen min-h-screen  xl:h-[90vh]  xl:max-w-3xl mx-auto shadow-black border-black border-2">
+      <div className="bg-white overflow-auto p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center xl:w-7/12 w-screen min-h-screen xl:min-h-[750px]  xl:h-[750px]  xl:max-w-3xl mx-auto shadow-black border-black border-2">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">
+          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white xl:hidden">
             &larr; Back
           </Link>
         </div>

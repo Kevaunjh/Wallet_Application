@@ -24,7 +24,7 @@ const Points = () => {
         {/* Bottom 3/5 - White */}
         <div className="w-full h-3/5 bg-[#F9FFFD] xl:rounded-b-3xl flex flex-col justify-center items-center mx-auto p-4 -top-24 ">
           {/* Lifetime Points Container */}
-          <div className=" -top-24 relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 mx-3 w-10/12 lg:w-9/12 lg:mt-0" style={{ boxShadow: 'none' }}>
+          <div className=" -top-24 relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 mx-3 w-10/12 xl:w-9/12 lg:mt-0" style={{ boxShadow: 'none' }}>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 ">
               <div className="flex items-center">
                 <img src={points} alt="Points" className="w-12 h-12 mr-4" />

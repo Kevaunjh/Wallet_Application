@@ -226,6 +226,12 @@ function GasService() {
 
   return (
     <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8">
+      <Link
+          to="/Main"
+          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+        >
+          ← Back
+        </Link>
       <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full h-[100vh]  xl:max-w-3xl xl:h-[50rem] mx-auto shadow-black border-black border-2">
         {/* Tabs */}
         <div className="w-full flex justify-between">
@@ -246,7 +252,7 @@ function GasService() {
 
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4 mt-8 px-16">
-          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white">
+          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white xl:hidden">
             &larr; Back
           </Link>
         </div>
