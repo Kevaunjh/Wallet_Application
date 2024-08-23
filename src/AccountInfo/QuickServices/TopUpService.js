@@ -123,7 +123,7 @@ function TopUpService() {
         <div className="w-full flex justify-center">
           <Link to="/QuickServices/PayYourBill/TopUpPayment">
             <button
-              className="px-8 md:px-12 py-2 md:py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg"
+              className="px-8 md:px-12 py-2 md:py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg mb-8"
               onClick={handleCompleteTransaction}
             >
               Done
