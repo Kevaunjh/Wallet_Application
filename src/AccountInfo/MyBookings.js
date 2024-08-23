@@ -8,18 +8,18 @@ const points = 1652;
 
 function MyBookings() {
   return (
-    <div className="MyBookings bg-[#88ca92] h-screen flex flex-col items-center xl:p-8">
+    <div className="MyBookings bg-[#88ca92] h-screen flex flex-col items-center 2xl:p-8">
       {/* Back Button */}
-      <Link to="/MyAccount" className="xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+      <Link to="/MyAccount" className="2xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
         &larr; Back
       </Link>
 
-      <Link to="/MyAccount" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 
       {/* Profile Info and Bookings Container on Larger Screens */}
-      <div className="hidden xl:flex flex-col w-7/12 gap-8 mt-16">
+      <div className="hidden 2xl:flex flex-col w-7/12 gap-8 mt-16">
         {/* Profile Info Container */}
         <div className="w-full bg-white p-6 rounded-lg border-black border-2">
           <div className="flex items-center justify-between">
@@ -41,7 +41,7 @@ function MyBookings() {
         {/* Bookings Container */}
         <div className='w-full bg-white p-6 rounded-lg border-black border-2'>
           <h2 className='text-2xl font-bold mb-4 text-center'>My Bookings</h2>
-          <div className='grid grid-cols-1 xl:grid-cols-2 gap-8'>
+          <div className='grid grid-cols-1 2xl:grid-cols-2 gap-8'>
             {/* Fake Booking List */}
             {bookings.map((booking, index) => {
               const bookingDate = new Date(booking.date);
@@ -85,7 +85,7 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen xl:hidden bg-white p-6 rounded-lg min-h-screen  overflow-auto flex flex-col">
+      <div className="w-screen 2xl:hidden bg-white p-6 rounded-lg min-h-screen  overflow-auto flex flex-col">
         {/* Profile Info */}
         <div className="w-full mt-8">
           <div className="w-full bg-white p-6 rounded-lg">

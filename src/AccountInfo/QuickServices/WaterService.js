@@ -273,16 +273,16 @@ function WaterService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center xl:p-8">
+    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center 2xl:p-8">
       <Link
           to="/Main"
-          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
         >
           ← Back
         </Link>
-      <div className="bg-white xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl  mx-auto xl:shadow-black xl:border-black xl:border-2 overflow-auto h-full">
+      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl  mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 overflow-auto 2xl:h-full h-screen">
         {/* Tabs */}
-        <div className="w-full flex justify-between xl:mt-0">
+        <div className="w-full flex justify-between 2xl:mt-0">
           <button
             className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('water')}
@@ -305,7 +305,7 @@ function WaterService() {
 
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4 mt-12 px-8">
-          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white xl:hidden">
+          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white 2xl:hidden">
             &larr; Back
           </Link>
         </div>

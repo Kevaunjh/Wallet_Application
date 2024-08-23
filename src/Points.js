@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'; // Assuming you're using React Router f
 const Points = () => {
   return (
     <div className="h-screen flex flex-col items-center  bg-[#88ca92]">
-      <div className="relative w-full xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 xl:rounded-3xl min-h-screen  flex flex-col">
+      <div className="relative w-full 2xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 2xl:rounded-3xl min-h-screen  flex flex-col">
         {/* Top 2/5 - Dark Green */}
-        <div className="w-full h-2/5 bg-[#0A9971] xl:rounded-t-3xl flex flex-col p-4 z-1">
+        <div className="w-full h-2/5 bg-[#0A9971] 2xl:rounded-t-3xl flex flex-col p-4 z-1">
           {/* Back Button */}
           <Link to="/Main">
             <button className="absolute top-4 left-4 bg-white text-[#0A9971] p-2 rounded-full">
@@ -22,9 +22,9 @@ const Points = () => {
         </div>
 
         {/* Bottom 3/5 - White */}
-        <div className="w-full h-3/5 bg-[#F9FFFD] xl:rounded-b-3xl flex flex-col justify-center items-center mx-auto p-4 -top-24 ">
+        <div className="w-full h-3/5 bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col justify-center items-center mx-auto p-4 -top-24 ">
           {/* Lifetime Points Container */}
-          <div className=" -top-24 relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 mx-3 w-10/12 xl:w-9/12 lg:mt-0" style={{ boxShadow: 'none' }}>
+          <div className=" -top-24 relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 mx-3 w-10/12 2xl:w-9/12 lg:mt-0" style={{ boxShadow: 'none' }}>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 ">
               <div className="flex items-center">
                 <img src={points} alt="Points" className="w-12 h-12 mr-4" />

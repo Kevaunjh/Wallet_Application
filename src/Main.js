@@ -55,7 +55,7 @@ function Main() {
       <div className="flex-grow flex flex-col">
         <div className="relative flex-grow bg-[#88ca92] z-0">
           {/* Green Top Section */}
-          <div className="relative bg-[#0A9971] w-full xl:rounded-t-3xl flex flex-col items-center py-4 xl:w-8/12 mx-auto ">
+          <div className="relative bg-[#0A9971] w-full 2xl:rounded-t-3xl flex flex-col items-center py-4 2xl:w-8/12 mx-auto ">
             <div className="w-full mx-auto flex flex-col items-center">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
@@ -88,7 +88,7 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full xl:w-8/12 flex flex-col xl:rounded-b-3xl">
+          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full 2xl:w-8/12 flex flex-col 2xl:rounded-b-3xl">
             {/* Card and Account Details */}
             <div className='w-full p-4 flex flex-col lg:flex-row '>
               {/* Card */}
@@ -112,19 +112,19 @@ function Main() {
                     &gt;
                   </button>
                 </div>
-                <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8 lg:rounded-b-3xl xl:h-[22rem] items-center">
-              <div className="flex flex-wrap justify-center gap-20 p-4 2xl:mt-4 lg:max-xl:flex-col  lg:max-xl:gap-y-12">
+                <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8 lg:rounded-b-3xl 2xl:h-[22rem] items-center">
+              <div className="flex flex-wrap justify-center gap-20 p-4 22xl:mt-4 lg:max-2xl:flex-col  lg:max-2xl:gap-y-12">
               <Link to="/QuickServices/WaterService">
-                <img src={quickservice1} alt="Water Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20  sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <img src={quickservice1} alt="Water Service" className="2xl:w-28 2xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20  sm:w-12 sm:h-12 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Home</p>
               </Link>
               <Link to="/QuickServices/TopUpService">
-                <img src={quickservice2} alt="Top Up Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <img src={quickservice2} alt="Top Up Service" className="2xl:w-28 2xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Retail</p>
               </Link>
               <Link to="/QuickServices/GasService
               ">
-                <img src={quickservice3} alt="Light Service" className="xl:w-28 xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
+                <img src={quickservice3} alt="Light Service" className="2xl:w-28 2xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20 sm:w-12 sm:h-12 w-8 h-8 mx-1" />
                 <p className="mt-2 text-center text-xs mx-auto font-semibold">Travel</p>
               </Link>
             </div>

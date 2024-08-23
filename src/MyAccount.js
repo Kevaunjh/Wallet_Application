@@ -11,14 +11,14 @@ const points = 1652; // Update this value to match the global points
 
 function MyAccount() {
   return (
-    <div className="Profile bg-[#88ca92] min-h-screen flex flex-col items-center relative xl:p-8">
+    <div className="Profile bg-[#88ca92] min-h-screen flex flex-col items-center relative 2xl:p-8">
       {/* Back Button for Larger Screens */}
-      <Link to="/Main" className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+      <Link to="/Main" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 
       {/* Combined Container for Small Screens */}
-      <div className="w-full xl:hidden bg-white p-6 xl:rounded-lg shadow-md flex flex-col items-center border-black border-2 relative min-h-screen h-auto">
+      <div className="w-full 2xl:hidden bg-white p-6 2xl:rounded-lg shadow-md flex flex-col items-center border-black border-2 relative min-h-screen h-auto">
         {/* Back Button for Smaller Screens */}
         <Link to="/Main" className="absolute top-4 left-4 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
@@ -30,7 +30,7 @@ function MyAccount() {
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 
-            className="xl:w-36 xl:h-36 h-28 w-28 rounded-full mb-4 border-black border-2"
+            className="2xl:w-36 2xl:h-36 h-28 w-28 rounded-full mb-4 border-black border-2"
           />
           {/* Profile Details and Points */}
           <div className="flex flex-col items-center">
@@ -49,7 +49,7 @@ function MyAccount() {
         </div>
 
         {/* Profile Info Section Links */}
-        <div className="flex flex-col mt-8 w-full overflow-y-auto text-left md:text-center xl:text-left">
+        <div className="flex flex-col mt-8 w-full overflow-y-auto text-left md:text-center 2xl:text-left">
           <Link to="/Accountinfo/PersonalDetails" className="flex items-center p-6 hover:bg-gray-100 border-b border-gray-300 mx-4">
             <img src={phoneIcon} alt="Phone Icon" className="w-8 h-8 mr-4 mx-auto" />
             <div className="flex-1 text-center md:text-left">
@@ -93,9 +93,9 @@ function MyAccount() {
       </div>
 
       {/* Separated Containers for Large Screens */}
-      <div className="hidden xl:flex flex-col items-center w-full">
+      <div className="hidden 2xl:flex flex-col items-center w-full">
         {/* Profile Header */}
-        <div className="w-full xl:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex flex-col items-center border-black border-2">
+        <div className="w-full 2xl:w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex flex-col items-center border-black border-2">
           {/* Profile Picture and Details Container */}
           <div className="flex flex-col items-center">
             {/* Profile Picture */}
@@ -122,9 +122,9 @@ function MyAccount() {
         </div>
 
         {/* Profile Info Container */}
-        <div className="w-full xl:w-5/12 mt-8 bg-white rounded-lg shadow-md border-black border-2">
+        <div className="w-full 2xl:w-5/12 mt-8 bg-white rounded-lg shadow-md border-black border-2">
           {/* Section Links */}
-          <div className="flex flex-col text-left md:text-center xl:text-left">
+          <div className="flex flex-col text-left md:text-center 2xl:text-left">
             <Link to="/Accountinfo/PersonalDetails" className="flex items-center p-6 hover:bg-gray-100 border-b border-gray-300 mx-6">
               <img src={phoneIcon} alt="Phone Icon" className="w-8 h-8 mr-4 mx-auto" />
               <div className="flex-1 text-center md:text-left">

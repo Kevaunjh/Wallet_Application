@@ -38,18 +38,18 @@ function TopUpService() {
   };
 
   return (
-    <div className="bg-[#88ca92] h-screen flex items-center justify-center xl:p-8">
+    <div className="bg-[#88ca92] h-screen flex items-center justify-center 2xl:p-8">
       <Link
           to="/Main"
-          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
         >
           ← Back
         </Link>
       {/* Container */}
-      <div className="bg-white  overflow-hidden p-6 md:p-12 xl:rounded-3xl shadow-2xl w-full xl:max-w-4xl h-[100vh]  xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2 relative">
+      <div className="bg-white  overflow-hidden p-6 md:p-12 2xl:rounded-3xl shadow-2xl w-full 2xl:max-w-4xl h-[100vh]  2xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2 relative">
         {/* Back Button */}
         <div className="absolute top-24 left-12">
-          <Link to="/Main" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white xl:hidden">
+          <Link to="/Main" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
             &larr; Back
           </Link>
         </div>

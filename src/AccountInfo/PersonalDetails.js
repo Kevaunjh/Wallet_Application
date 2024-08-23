@@ -6,9 +6,9 @@ const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
   return (
-    <div className="PersonalDetails bg-[#88ca92] h-screen flex flex-col items-center relative xl:p-8">
+    <div className="PersonalDetails bg-[#88ca92] h-screen flex flex-col items-center relative 2xl:p-8">
       {/* XL Screens: Separate Containers */}
-      <div className="hidden xl:flex xl:flex-col xl:items-center xl:w-full relative">
+      <div className="hidden 2xl:flex 2xl:flex-col 2xl:items-center 2xl:w-full relative">
         {/* Back Button for XL Screens */}
         <Link to="/MyAccount" className="absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
           &larr; Back
@@ -66,7 +66,7 @@ function PersonalDetails() {
       </div>
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col xl:hidden w-screen min-h-screen  bg-white p-6 md:p-10 lg:p-12 shadow-md ">
+      <div className="flex flex-col 2xl:hidden w-screen min-h-screen  bg-white p-6 md:p-10 lg:p-12 shadow-md ">
         {/* Back Button */}
         <Link to="/MyAccount" className="mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back
@@ -77,7 +77,7 @@ function PersonalDetails() {
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 
-            className="xl:w-16 xl:h-16 h-20 w-20 rounded-full mb-2 border-black border-2"
+            className="2xl:w-16 2xl:h-16 h-20 w-20 rounded-full mb-2 border-black border-2"
           />
           <h2 className="text-lg font-bold">John Doe</h2>
         </div>
