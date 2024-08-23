@@ -24,13 +24,13 @@ const Signup = () => {
   const handleSignInWithGoogle = async () => {
     try {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
+
       if (isMobile) {
         await signInWithRedirect(auth, provider);
       } else {
         await signInWithPopup(auth, provider);
       }
-      
+
       navigate('/Main');
     } catch (error) {
       console.error("Error signing in with Google:", error);
