@@ -91,7 +91,7 @@ const Signup = () => {
         {/* Left Side */}
         <div className="w-full 2xl:w-1/2 flex flex-col items-center justify-center 2xl:items-center 2xl:justify-center 2xl:border-r-2 2xl:border-black ">
           <div className="w-full text-center 2xl:text-center mt-20 2xl:mt-0">
-            <img src={logo} alt="SeeTek Logo" className="h-28 mx-auto mb-4 2xl:mt-0 -mt-4" />
+            <img src={logo} alt="SeeTek Logo" className="h-28 mx-auto mb-4 2xl:mt-0 -mt-16" />
             <h2 className="text-lg font-bold text-gray-700 mb-2 truncate">
               {activeTab === 'username' && 'Sign in with Username'}
               {activeTab === 'create' && 'Create Account'}

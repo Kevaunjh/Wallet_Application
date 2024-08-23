@@ -48,7 +48,7 @@ function TopUpService() {
       {/* Container */}
       <div className="bg-white  overflow-hidden p-6 md:p-12 2xl:rounded-3xl shadow-2xl w-full 2xl:max-w-4xl h-[100vh]  2xl:h-[80vh] flex flex-col justify-center shadow-black border-black border-2 relative">
         {/* Back Button */}
-        <div className="absolute top-24 left-12">
+        <div className="absolute top-10 left-10">
           <Link to="/Main" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
             &larr; Back
           </Link>
@@ -56,7 +56,7 @@ function TopUpService() {
 
         {/* Set Amount Header */}
         <div className="text-center mb-6">
-          <h2 className="text-xl md:text-2xl font-bold mb-4">Set Amount</h2>
+          <h2 className="text-xl md:text-2xl font-bold mb-4 xl:mt-10">Set Amount</h2>
           <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
             ${selectedAmount}
           </div>

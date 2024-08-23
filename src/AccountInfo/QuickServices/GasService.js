@@ -228,11 +228,11 @@ function GasService() {
     <div className="WaterService bg-[#88ca92] h-screen flex flex-col justify-center items-center 2xl:p-8">
       <Link
           to="/Main"
-          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md border-black border-2 z-10"
         >
           ← Back
         </Link>
-      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full h-[100vh]  2xl:max-w-3xl 2xl:h-[50rem] mx-auto shadow-black border-black border-2">
+      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full min-h-screen  2xl:max-w-3xl 2xl:h-[50rem] mx-auto shadow-black border-black border-2">
         {/* Tabs */}
         <div className="w-full flex justify-between">
           <button
