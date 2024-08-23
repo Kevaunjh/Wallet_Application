@@ -15,14 +15,14 @@ function BiometricSetup() {
       {/* Container for Instructions, Image, and Proceed Button */}
       <Link
           to="/Main"
-          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
         >
           ← Back
         </Link>
-      <div className="bg-white p-8 xl:p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center w-full xl:max-w-3xl mx-auto relative h-screen z-10">
+      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl mx-auto relative h-screen z-10">
         {/* Back Button */}
         
-        <Link to="/MyAccount" className="absolute top-4 left-4 text-lg rounded-full p-2 bg-[#467a4d] text-white xl:hidden">
+        <Link to="/MyAccount" className="absolute top-4 left-4 text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
           &larr; Back
         </Link>
 

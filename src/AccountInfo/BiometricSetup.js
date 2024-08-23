@@ -7,16 +7,16 @@ function BiometricSetup() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
-    <div className="BiometricSetup xl:bg-[#88ca92] bg-white min-h-screen flex flex-col items-center p-8 relative">
+    <div className="BiometricSetup 2xl:bg-[#88ca92] bg-white min-h-screen flex flex-col items-center p-8 relative">
       {/* Back Button for XL Screens */}
-      <div className="hidden xl:flex absolute top-8 left-8">
-        <Link to="/MyAccount" className="hidden xl:block absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10 w-[5.33rem]">
+      <div className="hidden 2xl:flex absolute top-8 left-8">
+        <Link to="/MyAccount" className="hidden 2xl:block absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10 w-[5.33rem]">
           &larr; Back
         </Link>
       </div>
 
       {/* Back Button for smaller screens */}
-      <div className="w-full flex items-center mb-8 xl:hidden">
+      <div className="w-full flex items-center mb-8 2xl:hidden">
         <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back
         </Link>

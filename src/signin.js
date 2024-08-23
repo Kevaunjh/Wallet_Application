@@ -242,7 +242,7 @@ const Signup = () => {
                     </button>
                     <button
                   type="button"
-                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow w-full 2xl:w-auto mt-2 flex justify-center items-center truncate"
+                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow w-full 2xl:w-auto mt-2 flex justify-center items-center mb-6 2xl:mb-0"
                   onClick={handleSignInWithGoogle}
                 >
                   <img
@@ -257,7 +257,7 @@ const Signup = () => {
                 {activeTab === 'create' && (
                   <button
                     type="button"
-                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full 2xl:w-auto"
+                    className="bg-[#467a4d] hover:bg-[#3a643e] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full 2xl:w-auto mb-6 2xl:mb-0"
                     onClick={handleSignUp}
                   >
                     Create Account
