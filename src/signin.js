@@ -87,7 +87,7 @@ const Signup = () => {
 
   return (
     <div className="xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
-      <div className="bg-white border-2 xl:border-black w-full xl:w-1/2 p-8 xl:rounded-3xl flex flex-col xl:flex-row xl:h-[650px] h-full overflow-auto xl:max-h-screen ">
+      <div className="bg-white border-2 xl:border-black w-full xl:w-1/2 p-8 xl:rounded-3xl flex flex-col xl:flex-row xl:h-[80vh] h-full overflow-auto xl:max-h-screen ">
         {/* Left Side */}
         <div className="w-full xl:w-1/2 flex flex-col items-center justify-center xl:items-center xl:justify-center xl:border-r-2 xl:border-black ">
           <div className="w-full text-center xl:text-center mt-20 xl:mt-0">
