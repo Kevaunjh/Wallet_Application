@@ -232,7 +232,7 @@ function GasService() {
         >
           ← Back
         </Link>
-      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full min-h-screen  2xl:max-w-3xl 2xl:h-[50rem] mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2">
+      <div className="bg-white 2xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center w-full min-h-screen  2xl:max-w-3xl 2xl:h-[50rem] mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2">
         {/* Tabs */}
         <div className="w-full flex justify-between">
           <button
