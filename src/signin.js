@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './images/seeteklogo.png';
-import { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebase';
+import { auth, provider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithRedirect } from './firebase';
 import { getDatabase, ref, set } from 'firebase/database';
-import { signInWithRedirect } from 'firebase/auth';
-
 const Signup = () => {
   const [activeTab, setActiveTab] = useState('username');
   const [username, setUsername] = useState('');
