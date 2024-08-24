@@ -83,19 +83,20 @@
   }
 }
 
+/* Target the overscroll areas on mobile */
 html, body {
+  overscroll-behavior: contain;
   background-color: white;
 }
 
-html, body {
-  scroll-snap-type: y mandatory;
-}
-
 .PersonalDetails {
-    background-color: white; /* Ensure the background is white */
-    overflow: hidden; /* Prevent scrolling */
+  background-color: white;
+  /* Ensure the scrollable area stays within this container */
+  overflow-y: auto;
 }
 
-.PersonalDetails * {
-    overflow: auto; /* Allow scrolling for child elements */
+.PersonalDetails .scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  background-color: white;
 }
