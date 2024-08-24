@@ -84,11 +84,6 @@
 }
 
 /* Target the overscroll areas on mobile */
-html, body {
-  overscroll-behavior: contain;
-  background-color: white;
-}
-
 .PersonalDetails {
   background-color: white;
   /* Ensure the scrollable area stays within this container */
@@ -99,4 +94,14 @@ html, body {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: contain;
   background-color: white;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
 }
