@@ -16,7 +16,7 @@ function PersonalDetails() {
         </Link>
 
         {/* Profile Info Container */}
-        <div className="w-5/12 bg-white p-6 rounded-lg shadow-md mt-8 flex items-center justify-between border-black border-2">
+        <div className="w-5/12 bg-white p-6 rounded-lg 2xl:shadow-md mt-8 flex items-center justify-between 2xl:border-black 2xl:border-2">
           {/* Profile Picture */}
           <img 
             src={profileplaceholder} 

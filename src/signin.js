@@ -86,6 +86,7 @@ const Signup = () => {
   };
 
   return (
+    <body className='white'>
     <div className="2xl:min-h-screen bg-[#88ca92] flex items-center justify-center">
       <div className="bg-white 2xl:border-2 2xl:border-black w-full 2xl:w-1/2 p-2 2xl:rounded-3xl flex flex-col 2xl:flex-row 2xl:h-[80vh] h-full overflow-auto 2xl:max-h-[60vh] ">
         {/* Left Side */}
@@ -269,6 +270,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+    </body>
   );
 };
 
