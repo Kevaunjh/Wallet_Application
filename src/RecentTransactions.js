@@ -102,7 +102,7 @@ const RecentTransactions = () => {
   });
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 overflow-hidden"> {/* Prevent main container from scrolling */}
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 overflow-hidden relative"> {/* Prevent main container from scrolling */}
       <Link
         to="/Main"
         className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
@@ -110,7 +110,7 @@ const RecentTransactions = () => {
         ← Back
       </Link>
       <div
-        className="bg-white 2xl:shadow-2xl w-full 2xl:min-h-[700px] h-screen p-8 overflow-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 
+        className="bg-white 2xl:shadow-2xl w-full h-full 2xl:min-h-[700px] fixed top-0 left-0 2xl:static p-8 overflow-hidden 2xl:overflow-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 
         2xl:rounded-3xl 
         rounded-none
         2xl:max-w-3xl
@@ -168,22 +168,24 @@ const RecentTransactions = () => {
             No recent transactions from this time period
           </p>
         ) : (
-          filteredTransactions
-            .sort(
-              (a, b) =>
-                new Date(
-                  b.split(' ')[1] + ' ' + b.split(' ')[0] + ', 2024'
-                ) -
-                new Date(
-                  a.split(' ')[1] + ' ' + a.split(' ')[0] + ', 2024'
-                )
-            )
-            .map((date) => (
-              <React.Fragment key={date}>
-                {renderTransactionsForDate(date)}
-                <hr className="my-6" />
-              </React.Fragment>
-            ))
+          <div className="overflow-y-auto h-[calc(100vh-150px)]"> {/* Scrollable transactions */}
+            {filteredTransactions
+              .sort(
+                (a, b) =>
+                  new Date(
+                    b.split(' ')[1] + ' ' + b.split(' ')[0] + ', 2024'
+                  ) -
+                  new Date(
+                    a.split(' ')[1] + ' ' + a.split(' ')[0] + ', 2024'
+                  )
+              )
+              .map((date) => (
+                <React.Fragment key={date}>
+                  {renderTransactionsForDate(date)}
+                  <hr className="my-6" />
+                </React.Fragment>
+              ))}
+          </div>
         )}
       </div>
     </div>
