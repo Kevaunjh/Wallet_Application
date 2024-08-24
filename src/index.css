@@ -82,3 +82,11 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+
+html, body {
+  background-color: white;
+}
+
+html, body {
+  scroll-snap-type: y mandatory;
+}
