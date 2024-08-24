@@ -42,7 +42,7 @@ function Pinlock() {
           ← Back
         </Link>
       {/* Container for Title, Back Button, Form, and Proceed Button */}
-      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-screen 2xl:max-w-3xl mx-auto h-screen  2xl:h-auto 2xl:border-2 2xl:border-black">
+      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-screen 2xl:max-w-3xl mx-auto min-h-screen  2xl:h-auto 2xl:border-2 2xl:border-black">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-12">
           <Link to="/MyAccount" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
