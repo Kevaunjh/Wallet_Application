@@ -6,6 +6,7 @@ const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
   return (
+    <body>
     <div className="PersonalDetails min-h-screen flex flex-col items-center relative 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6">
       {/* XL Screens: Separate Containers */}
       <div className="hidden 2xl:flex 2xl:flex-col 2xl:items-center 2xl:w-full relative">
@@ -121,6 +122,7 @@ function PersonalDetails() {
         </div>
       </div>
     </div>
+    </body>
   );
 }
 
