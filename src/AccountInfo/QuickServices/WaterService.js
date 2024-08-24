@@ -280,7 +280,7 @@ function WaterService() {
         >
           ← Back
         </Link>
-      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl  mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 overflow-auto 2xl:h-full h-screen">
+      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl  mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 overflow-auto 2xl:h-full min-h-screen">
         {/* Tabs */}
         <div className="w-full flex justify-between 2xl:mt-0">
           <button
