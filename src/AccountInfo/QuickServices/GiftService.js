@@ -34,7 +34,7 @@ function GiftService() {
     <div className="GiftService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8 ">
        <Link
           to="/Main"
-          className="hidden xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="hidden xl:block absolute top-10 left-10 2xl:text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md 2xl:border-black 2xl:border-2 z-10"
         >
           ← Back
         </Link>

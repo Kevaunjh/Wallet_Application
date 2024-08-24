@@ -6,30 +6,35 @@ import arrowDown from './images/arrowdown.png';
 import transactions from './Transactiondata';
 
 const RecentTransactions = () => {
-  const [filter, setFilter] = useState('all');
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [filter, setFilter] = useState('all'); // State for selected filter
+  const [isFilterOpen, setIsFilterOpen] = useState(false); // State to toggle filter dropdown
 
+  // Determine the arrow image based on the amount
   const getArrowImage = (amount) => {
     return amount.startsWith('+') ? arrowUp : arrowDown;
   };
 
+  // Determine the color of the amount based on the sign
   const getAmountColor = (amount) => {
     return amount.startsWith('+') ? 'text-green-500' : 'text-red-500';
   };
 
+  // Toggle the filter dropdown
   const handleFilterClick = () => {
     setIsFilterOpen(!isFilterOpen);
   };
 
+  // Set the selected filter and close the dropdown
   const handleFilterSelect = (e) => {
     setFilter(e.target.value);
     setIsFilterOpen(false); // Close the filter dropdown after selection
   };
 
+  // Render transactions for a specific date
   const renderTransactionsForDate = (date) => {
     const transactionsForDate = transactions
-      .filter((transaction) => transaction.date === date)
-      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Reverse chronological order
+      .filter((transaction) => transaction.date === date) // Filter transactions by date
+      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort in reverse chronological order
 
     return (
       <div className="space-y-4 text-black">
@@ -39,7 +44,7 @@ const RecentTransactions = () => {
         ) : (
           transactionsForDate.map((transaction, index) => (
             <React.Fragment key={transaction.id}>
-              {index > 0 && <hr className="my-4 border-gray-300" />}
+              {index > 0 && <hr className="my-4 border-gray-300" />} {/* Horizontal line between transactions */}
               <div className="flex items-center py-2">
                 <img
                   src={getArrowImage(transaction.amount)}
@@ -63,10 +68,12 @@ const RecentTransactions = () => {
     );
   };
 
+  // Extract unique dates from the transactions
   const uniqueDates = [
     ...new Set(transactions.map((transaction) => transaction.date)),
   ];
 
+  // Filter transactions based on the selected filter
   const filteredTransactions = uniqueDates.filter((date) => {
     const now = new Date();
     const transactionDate = new Date(
@@ -102,7 +109,8 @@ const RecentTransactions = () => {
   });
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 overflow-hidden relative"> {/* Prevent main container from scrolling */}
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 overflow-hidden relative">
+      {/* Main container with background color */}
       <Link
         to="/Main"
         className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
@@ -168,7 +176,8 @@ const RecentTransactions = () => {
             No recent transactions from this time period
           </p>
         ) : (
-          <div className="overflow-y-auto h-[calc(100vh-150px)]"> {/* Scrollable transactions */}
+          <div className="overflow-y-auto h-[calc(100vh-150px)]">
+            {/* Scrollable transactions */}
             {filteredTransactions
               .sort(
                 (a, b) =>
