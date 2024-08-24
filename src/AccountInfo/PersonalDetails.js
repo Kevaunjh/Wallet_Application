@@ -81,7 +81,7 @@ function PersonalDetails() {
       {/* Smaller than XL Screens: Combined Container */}
       <div className="flex flex-col 2xl:hidden w-screen min-h-screen bg-white p-6">
         {/* Back Button */}
-        <Link to="/MyAccount" className="absolute top-10 left-10 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+        <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back
         </Link>
 

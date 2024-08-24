@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './../images/logoplaceholder.png';
 import flightIcon from './../images/airservice.png';
@@ -7,16 +7,28 @@ import bookings from './../Flightinfo.js';
 const points = 1652;
 
 function MyBookings() {
+  useEffect(() => {
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    const container = document.querySelector('.MyBookings');
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      container.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
-    <div className="MyBookings 2xl:bg-[#88ca92] h-screen flex flex-col items-center 2xl:p-8">
+    <div className="MyBookings min-h-screen flex flex-col items-center 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6 overflow-auto">
       {/* Back Button */}
-      
-<Link 
-  to="/MyAccount" 
-  className="hidden 2xl:block fixed top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
->
-  &larr; Back
-</Link>
+      <Link 
+        to="/MyAccount" 
+        className="hidden 2xl:block fixed top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+      >
+        &larr; Back
+      </Link>
 
       {/* Profile Info and Bookings Container on Larger Screens */}
       <div className="hidden 2xl:flex flex-col w-7/12 gap-8 mt-16">
@@ -85,10 +97,10 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden bg-white p-6 min-h-screen  overflow-auto flex flex-col">
-      <Link to="/MyAccount" className="2xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
-        &larr; Back
-      </Link>
+      <div className="w-screen 2xl:hidden bg-white p-6 min-h-screen overflow-auto flex flex-col">
+        <Link to="/MyAccount" className="2xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+          &larr; Back
+        </Link>
         {/* Profile Info */}
         <div className="w-full mt-8">
           <div className="w-full bg-white p-6 rounded-lg">
@@ -110,7 +122,7 @@ function MyBookings() {
         </div>
 
         {/* Bookings Container */}
-        <div className='w-full  p-6 rounded-lg -mt-6 mb-6'>
+        <div className='w-full p-6 rounded-lg -mt-6 mb-6'>
           <h2 className='text-2xl font-bold mb-4 text-center'>My Bookings</h2>
           <div className='flex flex-col items-center'>
             {/* Fake Booking List */}
