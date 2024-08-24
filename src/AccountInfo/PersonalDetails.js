@@ -1,23 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './../images/logoplaceholder.png';
 
 const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
-  useEffect(() => {
-    const handleTouchMove = (event) => {
-      event.preventDefault();
-    };
-
-    const container = document.querySelector('.PersonalDetails');
-    container.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-    return () => {
-      container.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
   return (
     <div className="PersonalDetails min-h-screen flex flex-col items-center relative 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6">
       {/* XL Screens: Separate Containers */}
@@ -79,7 +66,7 @@ function PersonalDetails() {
       </div>
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col 2xl:hidden w-screen min-h-screen bg-white p-6">
+      <div className="flex flex-col 2xl:hidden w-screen h-screen bg-white p-6 fixed top-0 overflow-hidden">
         {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back
@@ -103,7 +90,7 @@ function PersonalDetails() {
         </div>
         
         {/* Personal Details */}
-        <div className="mt-8 flex-1">
+        <div className="mt-8 flex-1 overflow-y-auto">
           <h3 className="text-2xl font-semibold mb-6 text-center">Personal Details</h3>
           <div className="flex flex-col space-y-4">
             <div className="flex justify-between">
