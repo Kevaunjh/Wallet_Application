@@ -11,7 +11,6 @@ function MyBookings() {
     <div className="MyBookings 2xl:bg-[#88ca92] h-screen flex flex-col items-center 2xl:p-8">
       {/* Back Button */}
       
-\
 <Link 
   to="/MyAccount" 
   className="hidden 2xl:block fixed top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"

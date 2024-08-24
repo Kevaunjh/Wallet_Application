@@ -90,3 +90,12 @@ html, body {
 html, body {
   scroll-snap-type: y mandatory;
 }
+
+.PersonalDetails {
+    background-color: white; /* Ensure the background is white */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.PersonalDetails * {
+    overflow: auto; /* Allow scrolling for child elements */
+}

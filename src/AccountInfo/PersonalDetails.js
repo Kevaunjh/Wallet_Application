@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './../images/logoplaceholder.png';
 
 const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
+  useEffect(() => {
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    const container = document.querySelector('.PersonalDetails');
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      container.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
-    <div className="PersonalDetails bg-[#88ca92] min-h-screen flex flex-col items-center relative 2xl:p-8">
+    <div className="PersonalDetails min-h-screen flex flex-col items-center relative 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6">
       {/* XL Screens: Separate Containers */}
       <div className="hidden 2xl:flex 2xl:flex-col 2xl:items-center 2xl:w-full relative">
         {/* Back Button for XL Screens */}
@@ -66,9 +79,9 @@ function PersonalDetails() {
       </div>
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col 2xl:hidden w-screen min-h-screen bg-white p-6  ">
+      <div className="flex flex-col 2xl:hidden w-screen min-h-screen bg-white p-6">
         {/* Back Button */}
-        <Link to="/MyAccount" className="absoulte top-10 left-10 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+        <Link to="/MyAccount" className="absolute top-10 left-10 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
           &larr; Back
         </Link>
 
