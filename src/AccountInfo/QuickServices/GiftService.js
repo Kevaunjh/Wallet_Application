@@ -39,7 +39,7 @@ function GiftService() {
           ← Back
         </Link>
       {/* Container for Title, Back Button, Form, and Show Button */}
-      <div className="bg-white overflow-auto p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center xl:w-7/12 w-screen min-h-screen xl:min-h-[750px]  xl:h-[750px]  xl:max-w-3xl mx-auto shadow-black border-black border-2">
+      <div className="bg-white overflow-auto p-16 xl:rounded-3xl shadow-2xl flex flex-col items-center xl:w-7/12 w-screen min-h-screen xl:min-h-[750px]  xl:h-[750px]  xl:max-w-3xl mx-auto shadow-black border-black border-2 h-full">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white xl:hidden">

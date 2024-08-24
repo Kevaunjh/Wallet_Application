@@ -18,7 +18,7 @@ function MyAccount() {
       </Link>
 
       {/* Combined Container for Small Screens */}
-      <div className="w-full 2xl:hidden bg-white p-6 2xl:rounded-lg shadow-md flex flex-col items-center border-black border-2 relative min-h-screen h-auto">
+      <div className="w-full 2xl:hidden bg-white p-6 2xl:rounded-lg 2xl:shadow-md flex flex-col items-center 2xl:border-black 2xl:border-2 relative min-h-screen h-auto">
         {/* Back Button for Smaller Screens */}
         <Link to="/Main" className="absolute top-8 left-8 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back

@@ -110,7 +110,7 @@ const RecentTransactions = () => {
         ← Back
       </Link>
       <div
-        className="bg-white shadow-2xl w-full 2xl:min-h-[700px] h-screen p-8 overflow-auto shadow-black border-black border-2 
+        className="bg-white 2xl:shadow-2xl w-full 2xl:min-h-[700px] h-screen p-8 overflow-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 
         2xl:rounded-3xl 
         rounded-none
         2xl:max-w-3xl
