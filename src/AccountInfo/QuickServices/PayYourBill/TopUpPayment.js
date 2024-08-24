@@ -33,9 +33,9 @@ function TopUpPayment() {
   const totalAmount = getTotalAmount();
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center xl:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-8">
       {/* White Container */}
-      <div className="bg-white p-8 xl:rounded-3xl shadow-2xl xl:w-full xl:max-w-3xl w-screen h-screen">
+      <div className="bg-white p-8 2xl:rounded-3xl shadow-2xl 2xl:w-full 2xl:max-w-3xl w-screen h-screen">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/QuickServices/TopUpService" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white">

@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom'; // Assuming you're using React Router f
 
 const Points = () => {
   return (
-    <div className="h-screen flex flex-col items-center  bg-[#88ca92]">
-      <div className="relative w-full 2xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 2xl:rounded-3xl min-h-screen  flex flex-col">
-        {/* Top 2/5 - Dark Green */}
-        <div className="w-full h-2/5 bg-[#0A9971] 2xl:rounded-t-3xl flex flex-col p-4 z-1">
+    <div className="min-h-screen flex flex-col items-center bg-[#88ca92]">
+      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+        &larr; Back
+      </Link>
+
+      <div className="relative w-full 2xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 2xl:rounded-3xl min-h-screen flex flex-col">
+        {/* Top - Dark Green */}
+        <div className="w-full bg-[#0A9971] 2xl:rounded-t-3xl flex flex-col p-4 z-1 relative">
           {/* Back Button */}
           <Link to="/Main">
-            <button className="absolute top-4 left-4 bg-white text-[#0A9971] p-2 rounded-full">
+            <button className="absolute top-4 left-4 bg-white text-[#0A9971] p-2 rounded-full 2xl:hidden">
               &larr; Back
             </button>
           </Link>
@@ -21,50 +25,50 @@ const Points = () => {
           </div>
         </div>
 
-        {/* Bottom 3/5 - White */}
-        <div className="w-full h-3/5 bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col justify-center items-center mx-auto p-4 -top-24 ">
-          {/* Lifetime Points Container */}
-          <div className=" -top-24 relative z-10 bg-white rounded-3xl p-8 border-2 border-gray-300 mx-3 w-10/12 2xl:w-9/12 lg:mt-0" style={{ boxShadow: 'none' }}>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 ">
-              <div className="flex items-center">
-                <img src={points} alt="Points" className="w-12 h-12 mr-4" />
-                <p className="text-lg font-medium text-gray-600">Lifetime Points:</p>
+        {/* Bottom - White */}
+        <div className="w-full flex-grow bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col items-center mx-auto p-4 space-y-8 relative h-full">
+          {/* Lifetime Points and Buttons Container */}
+          <div className="w-full flex flex-col items-center space-y-8">
+            {/* Lifetime Points Container */}
+            <div className="relative z-10 bg-white rounded-3xl p-4 sm:p-6 border-2 border-gray-300 mx-3 2xl:w-7/12 h-auto min-h-[12rem] sm:min-h-[16rem] flex flex-col justify-between w-1/2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-4">
+                <div className="flex items-center">
+                  <img src={points} alt="Points" className="w-10 h-10 sm:w-12 sm:h-12 mr-2 sm:mr-4" />
+                  <p className="text-base sm:text-lg font-medium text-gray-600">Lifetime Points:</p>
+                </div>
+                <p className="text-base sm:text-lg font-medium text-black ml-4 text-center">1652</p>
               </div>
-              <p className="text-lg font-medium text-black mt-2 lg:mt-0 lg:ml-4 text-center">1652</p>
-            </div>
-            <div className="p-4 border-t-2 my-8 border-dashed border-gray-400 text-left">
-              <p className="text-sm text-black pl-8 mt-2 font-semibold">Gold (Level 2)</p>
-              <p className="text-sm text-black pl-8 mt-1 font-semibold">500 to reach Level 3</p>
-              <div className="w-full bg-gray-200 rounded-full mt-4 -mb-8">
-                <div
-                  className="bg-green-500 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full"
-                  style={{ width: '66%' }} // 2/3 full
-                >
-                  &nbsp;
+              <div className="p-2 sm:p-4 border-t-2 my-4 sm:my-8 border-dashed border-gray-400 text-left">
+                <p className="text-xs sm:text-sm text-black pl-4 sm:pl-8 mt-2 font-semibold">Gold (Level 2)</p>
+                <p className="text-xs sm:text-sm text-black pl-4 sm:pl-8 mt-1 font-semibold">500 to reach Level 3</p>
+                <div className="w-full bg-gray-200 rounded-full mt-2 sm:mt-4">
+                  <div className="bg-green-500 text-[0.5rem] sm:text-xs font-medium text-white text-center p-0.5 leading-none rounded-full w-2/3">
+                    &nbsp;
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Buttons Container */}
-          <div className="flex flex-col items-center w-full  space-y-4 bg-[#F9FFFD] p-4 rounded-lg justify-center overflow-hidden !-mt-20 " style={{ boxShadow: 'none' }}>
-            <div className="flex w-full gap-4 justify-center ">
-              <Link to="/coupons" className="w-2/5">
-                <button className="w-full h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
-                  Coupons
-                </button>
-              </Link>
-              <Link to="/QuickServices/GiftService" className="w-2/5">
-                <button className="w-full h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
-                  Gift Cards
+            {/* Buttons Container */}
+            <div className="w-full flex flex-col items-center space-y-4">
+              <div className="flex w-full gap-4 justify-center">
+                <Link to="/coupons" className="w-2/5 max-w-72">
+                  <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
+                    Coupons
+                  </button>
+                </Link>
+                <Link to="/QuickServices/GiftService" className="w-2/5 max-w-72">
+                  <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
+                    Gift Cards
+                  </button>
+                </Link>
+              </div>
+              <Link to="/point-history" className="w-2/5 flex justify-center">
+                <button className="h-16 sm:h-20 mt-4 mb-12 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500" style={{ width: '16.8rem' }}>
+                  Point History
                 </button>
               </Link>
             </div>
-            <Link to="/point-history" className="w-full flex justify-center">
-              <button className="h-20 mt-4 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500" style={{ width: '16.8rem' }}>
-                Point History
-              </button>
-            </Link>
           </div>
         </div>
       </div>
