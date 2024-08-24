@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './../images/logoplaceholder.png';
 import flightIcon from './../images/airservice.png';
@@ -7,21 +7,8 @@ import bookings from './../Flightinfo.js';
 const points = 1652;
 
 function MyBookings() {
-  useEffect(() => {
-    const handleTouchMove = (event) => {
-      event.preventDefault();
-    };
-
-    const container = document.querySelector('.MyBookings');
-    container.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-    return () => {
-      container.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
   return (
-    <div className="MyBookings min-h-screen flex flex-col items-center 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6 overflow-auto">
+    <div className="MyBookings min-h-screen flex flex-col items-center 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6">
       {/* Back Button */}
       <Link 
         to="/MyAccount" 
@@ -122,7 +109,7 @@ function MyBookings() {
         </div>
 
         {/* Bookings Container */}
-        <div className='w-full p-6 rounded-lg -mt-6 mb-6'>
+        <div className='w-full p-6 rounded-lg -mt-6 mb-6 flex flex-col flex-grow overflow-auto'>
           <h2 className='text-2xl font-bold mb-4 text-center'>My Bookings</h2>
           <div className='flex flex-col items-center'>
             {/* Fake Booking List */}
