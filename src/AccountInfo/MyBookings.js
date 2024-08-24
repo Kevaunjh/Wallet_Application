@@ -12,9 +12,12 @@ function MyBookings() {
       {/* Back Button */}
       
 \
-      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
-        &larr; Back
-      </Link>
+<Link 
+  to="/MyAccount" 
+  className="hidden 2xl:block fixed top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+>
+  &larr; Back
+</Link>
 
       {/* Profile Info and Bookings Container on Larger Screens */}
       <div className="hidden 2xl:flex flex-col w-7/12 gap-8 mt-16">
