@@ -8,12 +8,10 @@ const points = 1652;
 
 function MyBookings() {
   return (
-    <div className="MyBookings bg-[#88ca92] h-screen flex flex-col items-center 2xl:p-8">
+    <div className="MyBookings 2xl:bg-[#88ca92] h-screen flex flex-col items-center 2xl:p-8">
       {/* Back Button */}
-      <Link to="/MyAccount" className="2xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
-        &larr; Back
-      </Link>
-
+      
+\
       <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
@@ -85,7 +83,10 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden bg-white p-6 rounded-lg min-h-screen  overflow-auto flex flex-col">
+      <div className="w-screen 2xl:hidden bg-white p-6 min-h-screen  overflow-auto flex flex-col">
+      <Link to="/MyAccount" className="2xl:hidden absolute top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+        &larr; Back
+      </Link>
         {/* Profile Info */}
         <div className="w-full mt-8">
           <div className="w-full bg-white p-6 rounded-lg">
