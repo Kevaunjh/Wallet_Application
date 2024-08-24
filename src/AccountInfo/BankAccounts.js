@@ -95,7 +95,7 @@ function BankAccounts() {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden 2xl:flex flex-col w-7/12 gap-8">
+      <div className="hidden 2xl:flex flex-col w-7/12 gap-8 -mt-16">
         {/* Profile Info Container */}
         <div className="w-full bg-white p-6 rounded-lg shadow-md border-black border-2 mb-8 mt-12">
           <div className="flex items-center justify-between">

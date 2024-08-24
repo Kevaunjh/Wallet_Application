@@ -225,7 +225,7 @@ function GasService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center 2xl:p-8">
+    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center ">
       <Link
           to="/Main"
           className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md border-black border-2 z-10"
