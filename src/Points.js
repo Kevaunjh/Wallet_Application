@@ -9,7 +9,7 @@ const Points = () => {
         &larr; Back
       </Link>
 
-      <div className="relative w-full 2xl:max-w-3xl lg:w-full shadow-3xl shadow-black border-black border-2 2xl:rounded-3xl min-h-screen flex flex-col">
+      <div className="relative w-full 2xl:max-w-3xl lg:w-full 2xl:shadow-3xl  2xl:shadow-black  2xl:border-black  2xl:border-2 2xl:rounded-3xl min-h-screen flex flex-col">
         {/* Top - Dark Green */}
         <div className="w-full bg-[#0A9971] 2xl:rounded-t-3xl flex flex-col p-4 z-1 relative">
           {/* Back Button */}

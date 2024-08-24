@@ -11,7 +11,7 @@ function PersonalDetails() {
       {/* XL Screens: Separate Containers */}
       <div className="hidden 2xl:flex 2xl:flex-col 2xl:items-center 2xl:w-full relative">
         {/* Back Button for XL Screens */}
-        <Link to="/MyAccount" className="absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+        <Link to="/MyAccount" className="absolute top-2 left-2 text-black text-lg bg-white px-3 py-1 rounded-md  2xl:shadow-md  2xl:border-black  2xl:border-2 z-10">
           &larr; Back
         </Link>
 

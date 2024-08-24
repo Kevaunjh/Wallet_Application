@@ -102,7 +102,7 @@ const RecentTransactions = () => {
   });
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 ">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-2 overflow-hidden"> {/* Prevent main container from scrolling */}
       <Link
         to="/Main"
         className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
