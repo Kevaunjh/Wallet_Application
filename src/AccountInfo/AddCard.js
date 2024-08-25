@@ -22,7 +22,7 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 lg:rounded-xl w-full 2xl:max-w-2xl shadow-2xl shadow-black border-black border-2 2xl:h-auto flex flex-col justify-between min-h-screen ">
+      <div className="bg-white p-8 lg:rounded-xl w-full 2xl:max-w-2xl shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:h-auto flex flex-col justify-between min-h-screen ">
         {/* Back Button visible on XL screens and larger */}
         <Link
           to="/Main"
