@@ -38,7 +38,7 @@ const RecentTransactions = () => {
 
     return (
       <div className="space-y-4 text-black">
-        <h2 className="text-3xl font-bold text-gray-600 mb-2">{date}</h2>
+        <h2 className="text-2xl font-bold text-gray-600 mb-2">{date}</h2>
         {transactionsForDate.length === 0 ? (
           <p className="text-lg text-gray-500">No Transactions</p>
         ) : (
@@ -109,72 +109,50 @@ const RecentTransactions = () => {
   });
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center overflow-hidden relative 2xl:p-2">
-      {/* Back button for screens 2XL and larger */}
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0 overflow-hidden w-screen">
       <Link
         to="/Main"
         className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
       >
         ← Back
       </Link>
-      {/* Main container */}
-      <div
-        className="bg-white 2xl:shadow-2xl 2xl:border-black 2xl:border-2 2xl:rounded-3xl w-full h-full 2xl:min-h-[700px] fixed top-0 left-0 p-8 overflow-hidden 2xl:overflow-auto 2xl:max-w-3xl 2xl:max-h-[96vh] relative"
-      >
-        <div className="w-full flex justify-between md:mb-4">
-          <Link
-            to="/Main"
-            className=" rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden"
-          >
-            &larr; Back
-          </Link>
-        </div>
-        <div className="flex items-center justify-between">
-          <h1 className="text-4xl font-bold text-[#467a4d] text-center w-full mt-6 mb-8">
-            Transaction History
-          </h1>
-          <div className="absolute right-8 top-8">
-            <div className="relative">
-              <div className="flex items-center">
-                <span className="text-lg font-bold text-[#467a4d] mr-2">
-                  Filter
-                </span>
-                <button
-                  onClick={handleFilterClick}
-                  className="text-[#467a4d] focus:outline-none"
-                >
-                  <FaFilter size={24} />
-                </button>
-                {isFilterOpen && (
-                  <div className="absolute right-0 bg-white border rounded-lg shadow-lg w-48 mt-2 z-20">
-                    <select
-                      id="filter"
-                      value={filter}
-                      onChange={handleFilterSelect}
-                      className="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-                    >
-                      <option value="all">All</option>
-                      <option value="today">Today</option>
-                      <option value="yesterday">Yesterday</option>
-                      <option value="lastWeek">Last Week</option>
-                      <option value="lastMonth">Last Month</option>
-                      <option value="older">Older</option>
-                    </select>
-                  </div>
-                )}
-              </div>
+      <div className="bg-white w-full 2xl:max-w-3xl 2xl:min-w-3xl 2xl:w-3xl h-screen 2xl:h-screen px-4 pt-4 shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:rounded-3xl rounded-none flex flex-col">
+        <div className="2xl:sticky top-0 bg-white z-10 p-6 2xl:w-full absolute w-screen">
+          <div className="flex justify-between 2xl:justify-end w-full">
+            <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">← Back</Link>
+            <div className="flex items-center mr-12 2xl:mr-0">
+              <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
+              <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">
+                <FaFilter size={24} />
+              </button>
+              {isFilterOpen && (
+                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48 mr-12 2xl:mr-0">
+                  <select
+                    id="filter"
+                    value={filter}
+                    onChange={handleFilterSelect}
+                    className="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  >
+                    <option value="all">All</option>
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="lastWeek">Last Week</option>
+                    <option value="lastMonth">Last Month</option>
+                    <option value="older">Older</option>
+                  </select>
+                </div>
+              )}
             </div>
           </div>
+          <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Transaction History</h1>
         </div>
-
-        {filteredTransactions.length === 0 ? (
-          <p className="text-lg text-gray-500 text-center mt-4">
-            No recent transactions from this time period
-          </p>
-        ) : (
-          <div className="overflow-y-auto h-[calc(100vh-150px)]" style={{ overflowY: 'scroll', overflowX: 'hidden' }}>
-            {/* Scrollable transactions */}
-            {filteredTransactions
+        <div className="flex-grow overflow-y-auto mt-32 2xl:mt-0">
+          {filteredTransactions.length === 0 ? (
+            <p className="text-lg text-gray-500 text-center mt-4">
+              No recent transactions from this time period
+            </p>
+          ) : (
+            filteredTransactions
               .sort(
                 (a, b) =>
                   new Date(
@@ -189,9 +167,9 @@ const RecentTransactions = () => {
                   {renderTransactionsForDate(date)}
                   <hr className="my-6" />
                 </React.Fragment>
-              ))}
-          </div>
-        )}
+              ))
+          )}
+        </div>
       </div>
     </div>
   );

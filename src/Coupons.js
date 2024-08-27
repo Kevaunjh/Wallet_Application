@@ -18,7 +18,7 @@ function Coupons() {
       >
         {/* Top Half */}
         <div
-          className='flex justify-between items-center p-4'
+          className='flex justify-between gap-6 items-center p-4'
           style={{ backgroundColor, height: '50%' }}
         >
           {/* Left Side: Logo and Card Type */}
