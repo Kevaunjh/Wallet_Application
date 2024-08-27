@@ -28,18 +28,18 @@ const AddCard = () => {
           to="/Main"
           className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
         >
-          ← Back
+          &larr; Back
         </Link>
 
         {/* Existing Back Button visible on all screen sizes */}
         <Link
           to="/Main"
-          className="text-lg rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6 2xl:hidden"
+          className=" rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6 2xl:hidden"
         >
-          ← Back
+         &larr; Back
         </Link>
 
-        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-36 2xl:mt-0">Add a Bank Card</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-44 2xl:mt-0">Add a Bank Card</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="cardNumber" className="text-gray-700 text-lg font-bold block">Card Number</label>
