@@ -76,24 +76,24 @@ function Notifications() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0 overflow-hidden">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center p-0 m-0 overflow-hidden w-screen">
       <Link
         to="/Main"
         className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
       >
         ← Back
       </Link>
-      <div className="bg-white w-full 2xl:max-w-3xl 2xl:min-w-3xl 2xl:w-3xl h-screen 2xl:h-screen p-4 shadow-2xl 2xl:shadow-black 2xl:border-black border-2 2xl:rounded-3xl rounded-none flex flex-col ">
-        <div className="absolute top-0 bg-white z-10 p-6 w-full">
+      <div className="bg-white w-full 2xl:max-w-3xl 2xl:min-w-3xl 2xl:w-3xl h-screen 2xl:h-screen px-4 pt-4 shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:rounded-3xl rounded-none flex flex-col">
+        <div className="2xl:sticky top-0 bg-white z-10 p-6 2xl:w-full absolute w-screen">
           <div className="flex justify-between 2xl:justify-end w-full">
             <Link to="/Main" className=" rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">← Back</Link>
-            <div className="flex items-center">
+            <div className="flex items-center mr-12 2xl:mr-0">
               <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
-              <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none mr-4">
+              <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">
                 <FaFilter size={24} />
               </button>
               {isFilterOpen && (
-                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48">
+                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48 mr-12 2xl:mr-0">
                   <select
                     id="filter"
                     value={filter}
@@ -113,7 +113,7 @@ function Notifications() {
           </div>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Notifications</h1>
         </div>
-        <div className="flex-grow overflow-y-auto custom-scrollbar">
+        <div className="flex-grow overflow-y-auto custom-scrollbar mt-32 2xl:mt-0">
           {filter === 'all' ? (
             Object.keys(notifications).map(period => renderNotificationsForPeriod(period))
           ) : (
