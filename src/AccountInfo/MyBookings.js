@@ -84,8 +84,8 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden bg-white p-6 min-h-screen overflow-auto flex flex-col">
-        <Link to="/MyAccount" className="2xl:hidden top-4 left-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+      <div className="w-screen 2xl:hidden bg-white p-6 min-h-screen  flex flex-col">
+      <Link to="/MyAccount" className=" -mt-4 ml-2 bg-[#467a4d] text-white rounded-full p-2 w-[4.2rem]">
           &larr; Back
         </Link>
         {/* Profile Info */}

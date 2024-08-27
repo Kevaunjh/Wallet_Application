@@ -48,8 +48,8 @@ function TopUpService() {
       {/* Container */}
       <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 2xl:rounded-3xl shadow-2xl w-full 2xl:max-w-4xl h-[100vh]  2xl:h-[80vh] flex flex-col justify-center 2xl:shadow-black 2xl:border-black 2xl:border-2 relative">
         {/* Back Button */}
-        <div className="absolute top-10 left-10">
-          <Link to="/Main" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
+        <div className="absolute top-10 left-10 ">
+          <Link to="/Main" className=" rounded-full p-[0.55rem] bg-[#467a4d] text-white 2xl:hidden">
             &larr; Back
           </Link>
         </div>
@@ -123,7 +123,7 @@ function TopUpService() {
         <div className="w-full flex justify-center">
           <Link to="/QuickServices/PayYourBill/TopUpPayment">
             <button
-              className="px-8 md:px-12 py-2 md:py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg mb-8"
+              className="px-10 py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg mb-8"
               onClick={handleCompleteTransaction}
             >
               Done

@@ -17,7 +17,7 @@ function BiometricSetup() {
 
       {/* Back Button for smaller screens */}
       <div className="w-full flex items-center mb-8 2xl:hidden">
-        <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem]">
+        <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2">
           &larr; Back
         </Link>
       </div>

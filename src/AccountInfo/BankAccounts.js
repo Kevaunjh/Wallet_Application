@@ -59,8 +59,8 @@ function BankAccounts() {
       </Link>
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden bg-white p-6 2xl:rounded-lg shadow-md 2xl:border-black border-2 h-screen overflow-auto flex flex-col  ">
-        <Link to="/MyAccount" className=" mb-4 bg-[#467a4d] text-white rounded-full p-2 w-[4.5rem] top-10 left-10 ">
+      <div className="w-screen 2xl:hidden bg-white p-6 2xl:rounded-lg 2xl:shadow-md 2xl:border-black border-2 h-screen overflow-auto flex flex-col  ">
+      <Link to="/MyAccount" className=" mt-[0.35rem] ml-[0.35rem] bg-[#467a4d] text-white rounded-full p-2 w-[4.22rem] z-10">
           &larr; Back
         </Link>
 

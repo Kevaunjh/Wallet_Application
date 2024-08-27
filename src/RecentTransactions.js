@@ -124,7 +124,7 @@ const RecentTransactions = () => {
         <div className="w-full flex justify-between md:mb-4">
           <Link
             to="/Main"
-            className="text-lg rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden"
+            className=" rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden"
           >
             &larr; Back
           </Link>
