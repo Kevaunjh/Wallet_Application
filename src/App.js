@@ -31,6 +31,7 @@ import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/Setu
 import AddCard from './AccountInfo/AddCard';
 import Cheques from './Cheques';
 import Coupons from './Coupons';
+import PointHistory from './PointHistory';
 import { initializeApp } from 'firebase/app';
 
 
@@ -48,6 +49,7 @@ function App() {
         <Routes>
           <Route path="/AccountInfo/Addcard" element={<AddCard toggleComponent={toggleComponent} /> } />
           <Route path="/Cheques" element={<Cheques toggleComponent={toggleComponent}/>} />
+          <Route path="/PointHistory" element={<PointHistory toggleComponent={toggleComponent}/>} />
           <Route path="/Main" element={<Main toggleComponent={toggleComponent} />} />
           <Route path="/Coupons" element={<Coupons toggleComponent={toggleComponent} />} />
           <Route path="/AccountInfo/QuickServices/PayYourBill/TransactionResponse" element={<TransactionResponse toggleComponent={toggleComponent} />} />
