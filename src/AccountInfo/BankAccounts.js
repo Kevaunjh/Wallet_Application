@@ -52,9 +52,9 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts 2xl:bg-[#88ca92] h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative">
+    <div className="BankAccounts 2xl:bg-[#88ca92] min-h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative">
       {/* Back Button on Larger Screens */}
-      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
+      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg px-3 py-1 rounded-md shadow-md border-black border-2 z-10">
         &larr; Back
       </Link>
 
@@ -66,8 +66,7 @@ function BankAccounts() {
 
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden bg-white p-6 2xl:rounded-lg 2xl:shadow-md 2xl:border-black 2xl:border-2 h-screen overflow-auto flex flex-col  ">
-
+      <div className="w-screen 2xl:hidden bg-white p-6 2xl:rounded-lg 2xl:shadow-md 2xl:border-black 2xl:border-2 h-screen overflow-auto flex flex-col z-10  ">
 
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6 ">

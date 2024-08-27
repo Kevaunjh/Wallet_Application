@@ -22,21 +22,21 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 lg:rounded-xl w-full 2xl:max-w-2xl shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:h-auto flex flex-col justify-between min-h-screen ">
+      <div className="bg-white p-8 lg:rounded-xl w-full 2xl:max-w-2xl shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:h-auto flex flex-col justify-between min-h-screen relative">
         {/* Back Button visible on XL screens and larger */}
         <Link
-          to="/Main"
+          to="/Accountinfo/BankAccounts"
           className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
         >
           &larr; Back
         </Link>
 
-        {/* Existing Back Button visible on all screen sizes */}
+        {/* Mobile Back Button with absolute positioning */}
         <Link
-          to="/Main"
-          className=" rounded-full p-2 bg-[#467a4d] text-white absolute top-6 left-6 2xl:hidden"
+          to="/Accountinfo/BankAccounts"
+          className="block 2xl:hidden absolute mt-[3.55rem]  text-white bg-[#467a4d] p-2 rounded-full z-20"
         >
-         &larr; Back
+          &larr; Back
         </Link>
 
         <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-44 2xl:mt-0">Add a Bank Card</h2>
