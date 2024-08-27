@@ -52,18 +52,11 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts 2xl:bg-[#88ca92] min-h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative bg-transparent w-screen">
-      {/* Back Button on Larger Screens */}
-      <Link to="/MyAccount" className="hidden 2xl:block absolute top-10 left-10 text-black text-lg px-3 py-1 rounded-md shadow-md border-black border-2 z-10 bg-white">
-        &larr; Back
-      </Link>
-
-     
-
-
+    <div className="BankAccounts 2xl:bg-[#88ca92] min-h-screen flex flex-col items-center justify-center  overflow-auto relative bg-transparent w-screen">
+ 
       {/* Mobile Layout */}
-      <div className="w-full 2xl:hidden bg-white p-6 2xl:rounded-lg 2xl:shadow-md 2xl:border-black 2xl:border-2 h-screen overflow-auto flex flex-col z-20 ">
-      <div className=" flex items-center mb-8 2xl:hidden">
+      <div className="w-full  bg-white p-6  h-screen overflow-auto flex flex-col z-20 ">
+      <div className=" flex items-center mb-8 ">
         <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2 mt-2 ml-2">
           &larr; Back
         </Link>
@@ -73,7 +66,7 @@ function BankAccounts() {
           <img
             src={profileplaceholder}
             alt="Profile Placeholder"
-            className="2xl:w-16 2xl:h-16 w-24 h-24 rounded-full mb-2 border-black border-2"
+            className=" w-24 h-24 rounded-full mb-2 border-black border-2"
           />
           <div className="text-center mb-2">
             <h2 className="text-lg font-bold">John Doe</h2>
@@ -86,7 +79,7 @@ function BankAccounts() {
 
         {/* Bank Accounts */}
         <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Bank Accounts</h2>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 2xl:w-8/12 2xl:mx-auto'>
           {cardContainers}
         </div>
         <div className='flex justify-center mt-4'>
@@ -95,42 +88,6 @@ function BankAccounts() {
               + Add Bank Card
             </button>
           </Link>
-        </div>
-      </div>
-
-      {/* Desktop Layout */}
-      <div className="hidden 2xl:flex flex-col w-7/12 gap-8 -mt-16">
-        {/* Profile Info Container */}
-        <div className="w-full bg-white p-6 rounded-lg shadow-md border-black border-2 mb-8 mt-12">
-          <div className="flex items-center justify-between">
-            <img
-              src={profileplaceholder}
-              alt="Profile Placeholder"
-              className="w-16 h-16 rounded-full mr-4"
-            />
-            <div className="text-center flex-1">
-              <h2 className="text-lg font-bold">John Doe</h2>
-            </div>
-            <div className="bg-[#467a4d] p-1 rounded-lg flex items-center">
-              <p className="text-md text-white mr-2">★ Points:</p>
-              <p className="text-lg font-semibold text-white">{points}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bank Accounts Container */}
-        <div className="w-full bg-white p-6 rounded-lg shadow-md border-black border-2">
-          <h2 className='text-2xl font-bold mb-12 text-center mt-4'>My Bank Accounts</h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-            {cardContainers}
-          </div>
-          <div className='flex justify-center mt-4'>
-            <Link to="/AccountInfo/AddCard">
-              <button className='bg-white text-[#467a4d] border-[#467a4d] border-2 px-4 py-2 rounded-md text-sm'>
-                + Add Bank Card
-              </button>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

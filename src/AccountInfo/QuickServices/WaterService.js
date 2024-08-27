@@ -6,7 +6,7 @@ function WaterService() {
   const [serviceProvider, setServiceProvider] = useState('');
   const [selectCounter, setSelectCounter] = useState('');
   const [scNo, setScNo] = useState('');
-  const [username, setUsername] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleServiceProviderChange = (e) => {
     const value = e.target.value;
@@ -26,9 +26,9 @@ function WaterService() {
     checkFieldsFilled(serviceProvider, selectCounter, value, customerId);
   };
 
-  const handleUsernameChange = (e) => {
+  const handleAddressChange = (e) => {
     const value = e.target.value;
-    setUsername(value);
+    setAddress(value);
     checkFieldsFilled(serviceProvider, value, date);
   };
 
@@ -149,15 +149,15 @@ function WaterService() {
             </div>
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="username">
-              Username
+            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="address">
+              Address
             </label>
             <input
               type="text"
-              id="username"
-              value={username}
-              onChange={handleUsernameChange}
-              placeholder="Enter your username"
+              id="address"
+              value={address}
+              onChange={handleAddressChange}
+              placeholder="Enter your address"
               className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -200,34 +200,20 @@ function WaterService() {
                 className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
               >
                 <option value="">Select a Provider</option>
-                <option value="provider1">Provider 1</option>
-                <option value="provider2">Provider 2</option>
-                <option value="provider3">Provider 3</option>
-                <option value="provider4">Provider 4</option>
+                <option value="duke-energy">Duke Energy</option>
+                <option value="pgande">Pacific Gas and Electric (PG&E)</option>
+                <option value="conedison">Con Edison</option>
+                <option value="southern-company">Southern Company</option>
+                <option value="exelon">Exelon</option>
+                <option value="nextEra">NextEra Energy</option>
+                <option value="aep">American Electric Power (AEP)</option>
+                <option value="xcel-energy">Xcel Energy</option>
+                <option value="nrg-energy">NRG Energy</option>
               </select>
               <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             </div>
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="selectCounter">
-              Select Counter
-            </label>
-            <div className="relative">
-              <select
-                id="selectCounter"
-                value={selectCounter}
-                onChange={handleSelectCounterChange}
-                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
-              >
-                <option value="">Select a Counter</option>
-                <option value="counter1">Counter 1</option>
-                <option value="counter2">Counter 2</option>
-                <option value="counter3">Counter 3</option>
-                <option value="counter4">Counter 4</option>
-              </select>
-              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-            </div>
-          </div>
+
           <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="scNo">
               SC No.
@@ -274,15 +260,10 @@ function WaterService() {
 
   return (
     <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center">
-      <Link
-          to="/Main"
-          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
-        >
-          ← Back
-        </Link>
-      <div className="bg-white 2xl:rounded-3xl shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl  mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2 overflow-auto 2xl:h-full min-h-screen">
+
+      <div className="bg-white shadow-2xl flex flex-col items-center w-full  mx-auto  overflow-auto  min-h-screen">
         {/* Tabs */}
-        <div className="w-full flex justify-between 2xl:mt-0">
+        <div className="w-full flex justify-between 2xl:mt-0 ">
           <button
             className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('water')}
@@ -305,7 +286,7 @@ function WaterService() {
 
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4 mt-12 px-8">
-          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white 2xl:hidden">
+          <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
@@ -316,7 +297,7 @@ function WaterService() {
         </h1>
 
         {/* Service Form */}
-        <form className="w-full px-16">
+        <form className="w-full px-16 2xl:w-8/12">
           {renderForm()}
         </form>
 

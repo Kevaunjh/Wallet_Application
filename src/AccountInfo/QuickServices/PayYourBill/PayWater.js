@@ -22,12 +22,12 @@ function PayWater() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center">
       {/* White Container */}
-      <div className="bg-white p-8 2xl:rounded-3xl shadow-2xl w-full 2xl:max-w-3xl 2xl:h-[700px] h-screen ">
+      <div className="bg-white p-8 w-screen h-screen ">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/QuickServices/WaterService" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white">
+          <Link to="/QuickServices/WaterService" className=" rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
@@ -36,13 +36,13 @@ function PayWater() {
         
 
         {/* Payment Details Container */}
-        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mt-6">
+        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mt-6 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <p className="text-lg">Please review the payment details below.</p>
         </div>
 
         {/* Customer Information Container */}
-        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6 mt-0">
+        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6 mt-0 2xl:mx-auto 2xl:w-8/12">
           <div className="flex justify-between mb-4">
             <div>
               <span className="font-semibold">Customer ID:</span>

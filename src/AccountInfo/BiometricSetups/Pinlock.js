@@ -56,17 +56,12 @@ function Pinlock() {
   const showError = touched.newPin || touched.reEnterNewPin;
 
   return (
-    <div className="Pinlock bg-[#88ca92] min-h-screen flex flex-col justify-center items-center 2xl:p-8">
-      <Link
-        to="/Main"
-        className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
-      >
-        ← Back
-      </Link>
+    <div className="Pinlock bg-[#88ca92] min-h-screen flex flex-col justify-center items-center">
 
-      <div className="bg-white p-8 2xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center w-screen 2xl:max-w-3xl mx-auto flex-grow 2xl:border-2 2xl:border-black">
+
+      <div className="bg-white p-8  flex flex-col items-center w-screen mx-auto flex-grow ">
         <div className="w-full flex justify-start mb-12">
-          <Link to="/MyAccount" className=" rounded-full p-2 bg-[#467a4d] text-white 2xl:hidden">
+          <Link to="/MyAccount" className=" rounded-full p-2 bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
@@ -79,7 +74,7 @@ function Pinlock() {
           Enter a unique combination of characters for your PIN (6 or more characters).
         </p>
 
-        <form className="w-full flex-grow">
+        <form className="w-full flex-grow 2xl:w-8/12">
           <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="oldPin">
               Old PIN

@@ -38,24 +38,19 @@ function TopUpService() {
   };
 
   return (
-    <div className="bg-[#88ca92] h-screen flex items-center justify-center 2xl:p-8">
-      <Link
-          to="/Main"
-          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
-        >
-          ← Back
-        </Link>
+    <div className="bg-[#88ca92] h-screen flex items-center justify-center ">
+
       {/* Container */}
-      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 2xl:rounded-3xl shadow-2xl w-full 2xl:max-w-4xl h-[100vh]  2xl:h-[80vh] flex flex-col justify-center 2xl:shadow-black 2xl:border-black 2xl:border-2 relative">
+      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12  w-full h-screen flex flex-col justify-center relative 2xl:items-center">
         {/* Back Button */}
         <div className="absolute top-10 left-10 ">
-          <Link to="/Main" className=" rounded-full p-[0.55rem] bg-[#467a4d] text-white 2xl:hidden">
+          <Link to="/Main" className=" rounded-full p-[0.55rem] bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
 
         {/* Set Amount Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 2xl:w-8/12">
           <h2 className="text-xl md:text-2xl font-bold mb-4 xl:mt-10">Set Amount</h2>
           <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
             ${selectedAmount}
@@ -63,7 +58,7 @@ function TopUpService() {
           <hr className="mb-6 border-gray-400" />
           <div className="flex flex-wrap justify-center gap-4 mb-6">
           <button
-  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg  ${
     selectedAmount === 5 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
   }`}
   onClick={() => handleAmountClick(5)}
@@ -99,18 +94,22 @@ function TopUpService() {
         </div>
 
         {/* Input Fields */}
-        <div className="mb-6">
+        <div className="mb-6 2xl:w-8/12">
           <label className="block text-base md:text-lg font-medium mb-2">Mobile Carrier</label>
           <select className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg">
-            <option value="">Select Mobile Carrier</option>
-            <option value="carrier1">Fido</option>
-            <option value="carrier2">Bell</option>
-            <option value="carrier3">Rogers</option>
-            <option value="carrier4">T Mobile</option>
-            <option value="carrier5">Freedom</option>
+          <option value="">Select Mobile Carrier</option>
+          <option value="verizon">Verizon</option>
+          <option value="att">AT&T</option>
+          <option value="tmobile">T-Mobile</option>
+          <option value="sprint">Sprint</option>
+          <option value="uscellular">U.S. Cellular</option>
+          <option value="boost">Boost Mobile</option>
+          <option value="cricket">Cricket Wireless</option>
+          <option value="metro">Metro by T-Mobile</option>
+
           </select>
         </div>
-        <div className="mb-6">
+        <div className="mb-6 2xl:w-8/12">
           <label className="block text-base md:text-lg font-medium mb-2">Mobile Number</label>
           <input
             type="text"

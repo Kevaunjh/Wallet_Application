@@ -52,11 +52,11 @@ function Main() {
   return (
     <div className="min-h-screen flex flex-col ">
       {/* Full Background Container */}
-      <div className="flex-grow flex flex-col">
-        <div className="relative flex-grow bg-[#88ca92] z-0">
+      <div className="flex-grow flex flex-col ">
+        <div className="relative flex-grow flex-col flex bg-[#88ca92] z-8">
           {/* Green Top Section */}
-          <div className="relative bg-[#0A9971] w-full 2xl:rounded-t-3xl flex flex-col items-center py-4 2xl:w-8/12 mx-auto ">
-            <div className="w-full mx-auto flex flex-col items-center">
+          <div className="relative bg-[#0A9971] w-full flex flex-col items-center py-4  mx-auto  ">
+            <div className="w-full mx-auto flex flex-col items-center 2xl:w-8/12">
               {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
                 <Link to="/MyAccount" className='flex items-center space-x-4'>
@@ -88,9 +88,9 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="relative flex-grow bg-[#F9FFFD] mx-auto w-full 2xl:w-8/12 flex flex-col 2xl:rounded-b-3xl">
+          <div className="flex-grow bg-[#F9FFFD] mx-auto w-full flex flex-col items-center">
             {/* Card and Account Details */}
-            <div className='w-full p-4 flex flex-col lg:flex-row '>
+            <div className='w-full p-4 flex flex-col lg:flex-row 2xl:w-8/12 '>
               {/* Card */}
               <div className='w-full lg:w-1/2'>
                 <div className="flex justify-center items-center relative">

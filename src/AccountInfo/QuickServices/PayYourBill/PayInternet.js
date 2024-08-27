@@ -31,12 +31,12 @@ function PayGift() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center">
       {/* White Container */}
-      <div className="bg-white p-8 h-screen w-screen 2xl:rounded-3xl shadow-2xl 2xl:w-full 2xl:max-w-3xl">
+      <div className="bg-white p-8 h-screen w-screen">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/QuickServices/WaterService" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white">
+          <Link to="/QuickServices/WaterService" className="  rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
@@ -44,13 +44,13 @@ function PayGift() {
         {/* Check Mark Image at the Top */}
 
         {/* Payment Details Container */}
-        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full">
+        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <h4>Please review the payment details below.</h4>
         </div>
 
         {/* Customer Information Container */}
-        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-0">
+        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-0 2xl:mx-auto 2xl:w-8/12">
           <p className="text-lg mb-2"><strong>Date/Time:</strong> {dateTime}</p>
           <p className="text-lg mb-2"><strong>Total Amount:</strong> $37.22</p>
           <p className="text-lg mb-2"><strong>Payment Attribute:</strong> {cardData.cardNumber}</p>

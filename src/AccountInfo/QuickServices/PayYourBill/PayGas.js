@@ -29,12 +29,12 @@ function PayLight() {
 
   
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center 2xl:p-8">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center">
       {/* White Container */}
-      <div className="bg-white p-8 2xl:rounded-3xl shadow-2xl 2xl:w-full 2xl:max-w-3xl h-screen w-screen">
+      <div className="bg-white p-8 h-screen w-screen">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/QuickServices/GasService" className=" text-lg rounded-full p-2 bg-[#467a4d] text-white">
+          <Link to="/QuickServices/GasService" className="  rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
@@ -42,13 +42,13 @@ function PayLight() {
       
 
         {/* Payment Details Container */}
-        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full">
+        <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <h4>Please review the payment details below.</h4>
         </div>
 
         {/* Customer Information Container */}
-        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6">
+        <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6 2xl:mx-auto 2xl:w-8/12">
           <div className="flex justify-between mb-4">
             <div>
               <span className="font-semibold">Customer ID:</span>

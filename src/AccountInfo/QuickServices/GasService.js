@@ -106,6 +106,56 @@ function GasService() {
                   >
                     <option value="">Select a State</option>
                     <option value="alabama">Alabama</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="arizona">Arizona</option>
+                    <option value="arkansas">Arkansas</option>
+                    <option value="california">California</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="connecticut">Connecticut</option>
+                    <option value="delaware">Delaware</option>
+                    <option value="florida">Florida</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="hawaii">Hawaii</option>
+                    <option value="idaho">Idaho</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="kentucky">Kentucky</option>
+                    <option value="louisiana">Louisiana</option>
+                    <option value="maine">Maine</option>
+                    <option value="maryland">Maryland</option>
+                    <option value="massachusetts">Massachusetts</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="minnesota">Minnesota</option>
+                    <option value="mississippi">Mississippi</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="montana">Montana</option>
+                    <option value="nebraska">Nebraska</option>
+                    <option value="nevada">Nevada</option>
+                    <option value="new-hampshire">New Hampshire</option>
+                    <option value="new-jersey">New Jersey</option>
+                    <option value="new-mexico">New Mexico</option>
+                    <option value="new-york">New York</option>
+                    <option value="north-carolina">North Carolina</option>
+                    <option value="north-dakota">North Dakota</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="oklahoma">Oklahoma</option>
+                    <option value="oregon">Oregon</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="rhode-island">Rhode Island</option>
+                    <option value="south-carolina">South Carolina</option>
+                    <option value="south-dakota">South Dakota</option>
+                    <option value="tennessee">Tennessee</option>
+                    <option value="texas">Texas</option>
+                    <option value="utah">Utah</option>
+                    <option value="vermont">Vermont</option>
+                    <option value="virginia">Virginia</option>
+                    <option value="washington">Washington</option>
+                    <option value="west-virginia">West Virginia</option>
+                    <option value="wisconsin">Wisconsin</option>
+                    <option value="wyoming">Wyoming</option>
+
                     {/* other options */}
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -137,6 +187,9 @@ function GasService() {
                   >
                     <option value="">Select a Price</option>
                     <option value="regular">$3.99 - Regular</option>
+                    <option value="midgrade">$4.99 - midgrade</option>
+                    <option value="premium">$5.99 - Premium/Super</option>
+                    <option value="diesel">$6.99 - Diesel</option>
                     {/* other options */}
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
@@ -171,15 +224,16 @@ function GasService() {
                 onChange={handleServiceProviderChange}
                 className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
               >
-                <option value="">Select a Provider</option>
-                <option value="comcast">Comcast</option>
-                <option value="verizon">Verizon</option>
-                <option value="spectrum">Spectrum</option>
-                <option value="att">AT&T</option>
-                <option value="centurylink">CenturyLink</option>
-                <option value="cox">Cox</option>
-                <option value="googlefiber">Google Fiber</option>
-                <option value="frontier">Frontier</option>
+                <option value="">Select an Airline</option>
+                <option value="delta">Delta Air Lines</option>
+                <option value="american">American Airlines</option>
+                <option value="united">United Airlines</option>
+                <option value="southwest">Southwest Airlines</option>
+                <option value="jetblue">JetBlue Airways</option>
+                <option value="alaska">Alaska Airlines</option>
+                <option value="spirit">Spirit Airlines</option>
+                <option value="frontier">Frontier Airlines</option>
+
               </select>
               <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             </div>
@@ -225,16 +279,11 @@ function GasService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center ">
-      <Link
-          to="/Main"
-          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md border-black border-2 z-10"
-        >
-          ← Back
-        </Link>
-      <div className="bg-white 2xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center w-full min-h-screen  2xl:max-w-3xl mx-auto 2xl:shadow-black 2xl:border-black 2xl:border-2">
+    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center w-screen overflow-x-hidden">
+
+      <div className="bg-white  flex flex-col items-center w-screen min-h-screen   mx-auto overflow-x-hidden">
         {/* Tabs */}
-        <div className="w-full flex justify-between">
+        <div className="w-screen flex justify-between">
           <button
             className={`w-1/2 py-4 text-center rounded-tl-3xl ${selectedTab === 'gas' ? 'bg-white' : 'bg-gray-200'}`}
             onClick={() => setSelectedTab('gas')}
@@ -251,8 +300,8 @@ function GasService() {
         </div>
 
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-4 mt-8 px-16">
-          <Link to="/Main" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white 2xl:hidden">
+        <div className="w-screen flex justify-start mb-4 mt-12 ml-16">
+          <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
@@ -263,7 +312,7 @@ function GasService() {
         </h1>
 
         {/* Service Form */}
-        <form className="w-full px-16">
+        <form className="w-screen px-16 2xl:w-8/12">
           {renderForm()}
         </form>
 

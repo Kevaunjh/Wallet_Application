@@ -4,8 +4,8 @@ import successImage from './../../../images/checked.png'; // Adjust the path to 
 
 function TransactionResponse() {
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center justify-center xl:p-8">
-      <div className="bg-white p-12 xl:rounded-3xl shadow-2xl xl:w-screen xl:max-w-4xl xl:h-[600px] text-center flex flex-col justify-center h-screen w-screen">
+    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center justify-center ">
+      <div className="bg-white p-12 text-center flex flex-col justify-center h-screen w-screen">
         <div className="flex flex-col items-center mb-8">
           <img
             src={successImage}

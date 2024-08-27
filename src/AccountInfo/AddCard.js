@@ -22,25 +22,17 @@ const AddCard = () => {
 
   return (
     <div className="bg-[#88ca92] h-screen flex items-center justify-center">
-      <div className="bg-white p-8 lg:rounded-xl w-full 2xl:max-w-2xl shadow-2xl 2xl:shadow-black 2xl:border-black 2xl:border-2 2xl:h-auto flex flex-col justify-between min-h-screen relative">
-        {/* Back Button visible on XL screens and larger */}
+      <div className="bg-white w-full  2xl:h-auto flex flex-col justify-between min-h-screen relative p-8">
+
         <Link
           to="/Accountinfo/BankAccounts"
-          className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md shadow-md border-black border-2 z-10"
+          className="block absolute  text-white bg-[#467a4d] p-2 rounded-full z-20 mt-6"
         >
           &larr; Back
         </Link>
 
-        {/* Mobile Back Button with absolute positioning */}
-        <Link
-          to="/Accountinfo/BankAccounts"
-          className="block 2xl:hidden absolute mt-[3.55rem]  text-white bg-[#467a4d] p-2 rounded-full z-20"
-        >
-          &larr; Back
-        </Link>
-
-        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-44 2xl:mt-0">Add a Bank Card</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <h2 className="text-3xl font-bold mb-6 text-center text-[#467a4d] mt-28 ">Add a Bank Card</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 2xl:w-8/12 2xl:mx-auto">
           <div>
             <label htmlFor="cardNumber" className="text-gray-700 text-lg font-bold block">Card Number</label>
             <input

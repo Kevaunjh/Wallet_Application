@@ -31,18 +31,13 @@ function GiftService() {
   const isShowEnabled = fieldsFilled;
 
   return (
-    <div className="GiftService bg-[#88ca92] h-screen flex flex-col justify-center items-center xl:p-8 ">
-       <Link
-          to="/Points"
-          className="hidden xl:block absolute top-10 left-10 2xl:text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md 2xl:border-black 2xl:border-2 z-10"
-        >
-          ← Back
-        </Link>
+    <div className="GiftService bg-[#88ca92] h-screen flex flex-col justify-center items-center  ">
+
       {/* Container for Title, Back Button, Form, and Show Button */}
-      <div className="bg-white overflow-auto p-16 xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center xl:w-7/12 w-screen min-h-screen xl:min-h-[750px]  xl:h-[750px]  xl:max-w-3xl mx-auto 2xl:shadow-black 2xl:border-black border-2 h-full">
+      <div className="bg-white overflow-auto p-16  flex flex-col items-center w-screen min-h-screen  mx-auto border-2 h-full">
         {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
-          <Link to="/Points" className="text-lg rounded-full  p-2  bg-[#467a4d] text-white xl:hidden">
+          <Link to="/Points" className="rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
@@ -53,7 +48,7 @@ function GiftService() {
         </h1>
 
         {/* Gift Service Form */}
-        <form className="w-full">
+        <form className="w-full 2xl:w-8/12 2xl:mx-auto">
           <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="amount">
               Amount

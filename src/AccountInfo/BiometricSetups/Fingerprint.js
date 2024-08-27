@@ -18,22 +18,17 @@ function BiometricSetup() {
   return (
     <div className="BiometricSetup bg-[#88ca92] h-screen flex items-center justify-center">
       {/* Container for Instructions, Image, and Proceed Button */}
-      <Link
-        to="/Main"
-        className="hidden 2xl:block absolute top-10 left-10 text-black text-lg bg-white px-3 py-1 rounded-md 2xl:shadow-md 2xl:border-black 2xl:border-2 z-10"
-      >
-        ← Back
-      </Link>
-      <div className="bg-white p-8 2xl:p-16 2xl:rounded-3xl 2xl:shadow-2xl flex flex-col items-center w-full 2xl:max-w-3xl mx-auto relative h-screen z-10 2xl:h-[70vh] 2xl:border-black 2xl:border-2">
+      
+      <div className="bg-white p-8 2xl:p-16  flex flex-col items-center mx-auto relative h-screen z-10 w-screen ">
         {/* Back Button */}
-        <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 2xl:hidden">
+        <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2">
           &larr; Back
         </Link>
 
         {/* Conditional Message for Non-Mobile Devices */}
         {!isMobile() && (
-          <div className="absolute inset-0 flex items-center justify-center bg-white p-24 rounded-3xl">
-            <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 2xl:hidden">
+          <div className="absolute inset-0 flex items-center justify-center bg-white w-screen">
+            <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 ">
           &larr; Back
         </Link>
             <p className="text-md text-center text-red-500 font-semibold">
