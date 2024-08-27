@@ -52,7 +52,7 @@ const Points = () => {
             {/* Buttons Container */}
             <div className="w-full flex flex-col items-center space-y-4">
               <div className="flex w-full gap-4 justify-center">
-                <Link to="/coupons" className="w-2/5 max-w-72">
+                <Link to="/Coupons" className="w-2/5 max-w-72">
                   <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
                     Coupons
                   </button>
@@ -63,11 +63,18 @@ const Points = () => {
                   </button>
                 </Link>
               </div>
-              <Link to="/point-history" className="w-2/5 flex justify-center">
-                <button className="h-16 sm:h-20 mt-4 mb-12 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500" style={{ width: '16.8rem' }}>
-                  Point History
-                </button>
-              </Link>
+              <div className="flex w-full gap-4 justify-center">
+                <Link to="/PointHistory" className="w-2/5 max-w-72">
+                  <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
+                    Point History
+                  </button>
+                </Link>
+                <Link to="/Cheques" className="w-2/5 max-w-72">
+                  <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
+                    Cheque Deposit
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
