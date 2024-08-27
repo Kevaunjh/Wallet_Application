@@ -8,7 +8,7 @@ const points = 1652;
 
 function MyBookings() {
   return (
-    <div className="MyBookings min-h-screen flex flex-col items-center 2xl:bg-[#88ca92] bg-white 2xl:p-8 relative">
+    <div className="MyBookings min-h-screen flex flex-col items-center 2xl:bg-[#88ca92] bg-white 2xl:p-8 relative w-screen">
       {/* Back Button */}
       <Link 
         to="/MyAccount" 
@@ -17,18 +17,14 @@ function MyBookings() {
         &larr; Back
       </Link>
 
-      <div className="w-full flex items-center mb-8 2xl:hidden mt-8 ml-16">
-        <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2">
-          &larr; Back
-        </Link>
-      </div>
+    
 
 
 
       {/* Profile Info and Bookings Container on Larger Screens */}
       <div className="hidden 2xl:flex flex-col w-7/12 gap-8 mt-16">
         {/* Profile Info Container */}
-        <div className="w-full bg-white p-6 rounded-lg border-black border-2">
+        <div className=" bg-white p-6 rounded-lg border-black border-2">
           <div className="flex items-center justify-between">
             <img 
               src={profileplaceholder} 
@@ -92,7 +88,12 @@ function MyBookings() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="w-screen 2xl:hidden p-6 min-h-screen  flex flex-col">
+      <div className="w-full 2xl:hidden p-6 min-h-screen  flex flex-col">
+      <div className=" flex items-center 2xl:hidden mt-2 ml-2  justify-start">
+        <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2">
+          &larr; Back
+        </Link>
+      </div>
         {/* Profile Info */}
         <div className="w-full mt-8">
           <div className="w-full bg-white p-6 rounded-lg">
