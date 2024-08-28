@@ -100,24 +100,21 @@ function Main() {
       <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
         {/* Search Bar with Back Button */}
         <div className="flex items-center p-4 bg-[#0A9971] ">
-          <FaChevronDown className="mr-2 top-1/2 transform rotate-45 text-gray-500" />
+          <FaChevronDown className="mr-2 top-1/2 transform rotate-90 text-white mx-3" onClick={closeSearchModal} />
           <input
             ref={searchInputRef}
             type="text"
             placeholder="Search..."
-            className="flex-grow p-2 border border-gray-300 rounded"
+            className="flex-grow p-2 border border-gray-300 rounded-xl"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-
-        {/* Scrollable Content */}
         <div className="flex-grow overflow-y-auto p-4">
-          {/* Filtered links go here */}
           <ul>
             {filteredLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="block p-2 border-b">
+                <a href={link.href} className="block p-2 border-b my-4">
                   {link.label}
                 </a>
               </li>
