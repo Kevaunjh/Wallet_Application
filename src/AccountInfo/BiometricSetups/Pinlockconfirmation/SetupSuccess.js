@@ -54,6 +54,7 @@ const SetupSuccess = () => {
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none"
                 aria-label={`OTP digit ${index + 1}`}
+                inputMode="numeric" // Ensure numeric keypad on mobile
               />
             ))}
           </div>
@@ -74,7 +75,7 @@ const SetupSuccess = () => {
 
         {/* Proceed Button */}
         <div className="absolute bottom-10 text-center mx-auto">
-          <Link to="/Main">
+          <Link to="/">
             <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">
               Confirm
             </button>
