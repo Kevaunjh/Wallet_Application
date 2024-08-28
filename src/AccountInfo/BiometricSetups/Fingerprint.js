@@ -19,7 +19,7 @@ function BiometricSetup() {
     <div className="BiometricSetup bg-white min-h-screen flex items-center justify-center">
       {/* Container for Instructions, Image, and Proceed Button */}
       
-      <div className="bg-white p-8 2xl:p-16  flex flex-col items-center mx-auto relative h-screen z-10 w-screen ">
+      <div className="bg-white p-8 2xl:p-16 flex flex-col items-center mx-auto relative h-screen z-10 w-screen">
         {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2">
           &larr; Back
@@ -39,7 +39,7 @@ function BiometricSetup() {
 
         {/* Setup Instructions */}
         {isMobile() && (
-          <>
+          <div className="flex flex-col items-center justify-center flex-grow">
             <p className="text-md text-center mb-8 font-semibold text-lg mt-24">
               Tap on the security feature to set up.
             </p>
@@ -85,7 +85,7 @@ function BiometricSetup() {
             >
               Proceed
             </Link>
-          </>
+          </div>
         )}
       </div>
     </div>
