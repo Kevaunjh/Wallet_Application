@@ -100,7 +100,7 @@ function Main() {
       <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
         {/* Search Bar with Back Button */}
         <div className="flex items-center p-4 bg-[#0A9971] ">
-          <FaChevronDown className="mr-2 top-1/2 transform rotate-90 text-white mx-3" onClick={closeSearchModal} />
+          <FaChevronDown className="mr-3 top-1/2 transform rotate-90 text-white ml-2" onClick={closeSearchModal} />
           <input
             ref={searchInputRef}
             type="text"
@@ -114,7 +114,7 @@ function Main() {
           <ul>
             {filteredLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="block p-2 border-b my-4">
+                <a href={link.href} className="block p-2 border-b mt-4 mb-5">
                   {link.label}
                 </a>
               </li>
