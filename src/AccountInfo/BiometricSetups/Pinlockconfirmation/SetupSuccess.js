@@ -13,17 +13,29 @@ const SetupSuccess = () => {
   const handleInputChange = (e, index) => {
     const value = e.target.value;
 
-    if (value && index < inputRefs.current.length - 1) {
-      inputRefs.current[index + 1].focus();
+    if (/^\d$/.test(value)) { // Only proceed if input is a digit
+      if (index < inputRefs.current.length - 1) {
+        inputRefs.current[index + 1].focus();
+      }
+    } else {
+      e.target.value = ''; // Clear the input if it's not a digit
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === 'Backspace' && index > 0 && !e.target.value) {
+      inputRefs.current[index - 1].focus();
     }
   };
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="bg-white w-full h-screen p-4 sm:p-10 flex flex-col items-center relative shadow-2xl border d">
+      <div className="bg-white w-full h-screen p-4 sm:p-10 flex flex-col items-center relative">
         {/* Back Button */}
         <div className="absolute top-8 left-8">
-          <Link to="/AccountInfo/BiometricSetup" className="rounded-full  p-2  bg-[#467a4d] text-white ">← Back</Link>
+          <Link to="/AccountInfo/BiometricSetup" className="rounded-full p-2 bg-[#467a4d] text-white">
+            ← Back
+          </Link>
         </div>
 
         {/* Container for vertical centering */}
@@ -39,6 +51,7 @@ const SetupSuccess = () => {
                 maxLength="1"
                 ref={(el) => inputRefs.current[index] = el}
                 onChange={(e) => handleInputChange(e, index)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
                 className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none"
                 aria-label={`OTP digit ${index + 1}`}
               />
@@ -60,9 +73,11 @@ const SetupSuccess = () => {
         </div>
 
         {/* Proceed Button */}
-        <div className="absolute bottom-10 text-center  mx-auto">
-          <Link to="/">
-            <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">Confirm</button>
+        <div className="absolute bottom-10 text-center mx-auto">
+          <Link to="/Main">
+            <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">
+              Confirm
+            </button>
           </Link>
         </div>
       </div>
