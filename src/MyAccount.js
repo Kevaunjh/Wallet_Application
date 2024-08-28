@@ -11,7 +11,7 @@ const points = 1652; // Update this value to match the global points
 
 function MyAccount() {
   return (
-    <div className="Profile bg-[#88ca92] min-h-screen flex flex-col items-center relative">
+    <div className="Profile bg-white min-h-screen flex flex-col items-center relative">
       {/* Back Button for Larger Screens */}
 
       {/* Combined Container for Small Screens */}

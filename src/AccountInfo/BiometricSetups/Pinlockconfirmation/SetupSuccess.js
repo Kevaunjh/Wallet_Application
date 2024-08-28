@@ -19,7 +19,7 @@ const SetupSuccess = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#88ca92] flex items-center justify-center p-8">
+    <div className="min-h-screen bg-white flex items-center justify-center p-8">
       <div className="bg-white w-full max-w-xl h-[60vh] p-10 rounded-lg flex flex-col items-center relative shadow-2xl border border-black">
         {/* Header with Back Button */}
         <div className="w-full mb-8 text-left">

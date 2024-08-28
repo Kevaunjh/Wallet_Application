@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Assuming you're using React Router f
 
 const Points = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-[#88ca92]">
+    <div className="min-h-screen flex flex-col items-center bg-white">
 
       <div className="relative w-full   min-h-screen flex flex-col">
         {/* Top - Dark Green */}

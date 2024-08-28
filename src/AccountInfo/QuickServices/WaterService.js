@@ -259,7 +259,7 @@ function WaterService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center">
+    <div className="WaterService bg-white min-h-screen flex flex-col justify-center items-center">
 
       <div className="bg-white shadow-2xl flex flex-col items-center w-full  mx-auto  overflow-auto  min-h-screen">
         {/* Tabs */}

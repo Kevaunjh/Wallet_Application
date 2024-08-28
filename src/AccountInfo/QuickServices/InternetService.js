@@ -34,7 +34,7 @@ function InternetService() {
   const isShowEnabled = fieldsFilled;
 
   return (
-    <div className="InternetService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center p-8">
+    <div className="InternetService bg-white min-h-screen flex flex-col justify-center items-center p-8">
       {/* Container for Title, Back Button, Form, and Show Button */}
       <div className="bg-white p-16 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-3xl mx-auto shadow-black border-black border-2">
         {/* Back Button */}

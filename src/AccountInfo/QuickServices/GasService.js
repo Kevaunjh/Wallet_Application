@@ -279,7 +279,7 @@ function GasService() {
   };
 
   return (
-    <div className="WaterService bg-[#88ca92] min-h-screen flex flex-col justify-center items-center w-screen overflow-x-hidden">
+    <div className="WaterService bg-white min-h-screen flex flex-col justify-center items-center w-screen overflow-x-hidden">
 
       <div className="bg-white  flex flex-col items-center w-screen min-h-screen   mx-auto overflow-x-hidden">
         {/* Tabs */}

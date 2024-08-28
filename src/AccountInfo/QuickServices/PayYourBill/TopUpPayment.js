@@ -33,7 +33,7 @@ function TopUpPayment() {
   const totalAmount = getTotalAmount();
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center ">
+    <div className="bg-white min-h-screen flex flex-col items-center ">
       {/* White Container */}
       <div className="bg-white p-8  h-screen w-screen">
         {/* Back Button */}

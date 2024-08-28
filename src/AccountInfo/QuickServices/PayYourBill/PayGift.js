@@ -33,7 +33,7 @@ function PayGift() {
   };
 
   return (
-    <div className="bg-[#88ca92] min-h-screen flex flex-col items-center">
+    <div className="bg-whitemin-h-screen flex flex-col items-center">
       {/* White Container */}
       <div className="bg-white p-8  w-screen h-screen">
         {/* Back Button */}

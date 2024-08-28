@@ -53,7 +53,7 @@ function Main() {
     <div className="min-h-screen flex flex-col ">
       {/* Full Background Container */}
       <div className="flex-grow flex flex-col ">
-        <div className="relative flex-grow flex-col flex bg-[#88ca92] z-8">
+        <div className="relative flex-grow flex-col flex bg-white z-8">
           {/* Green Top Section */}
           <div className="relative bg-[#0A9971] w-full flex flex-col items-center py-4  mx-auto  ">
             <div className="w-full mx-auto flex flex-col items-center 2xl:w-8/12">

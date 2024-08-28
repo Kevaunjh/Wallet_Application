@@ -21,7 +21,7 @@ const AddCard = () => {
   };
 
   return (
-    <div className="bg-[#88ca92] h-screen flex items-center justify-center">
+    <div className=" h-screen flex items-center justify-center">
       <div className="bg-white w-full  2xl:h-auto flex flex-col justify-between min-h-screen relative p-8">
 
         <Link

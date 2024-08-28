@@ -24,7 +24,7 @@ function Cheques() {
 
   return (
     <body className="bg-white">
-      <div className="Cheques min-h-screen flex flex-col items-center relative 2xl:bg-[#88ca92] bg-white 2xl:p-8 p-6">
+      <div className="Cheques min-h-screen flex flex-col items-center relative bg-white 2xl:p-8 p-6">
         {/* XL Screens: Separate Containers */}
        
 

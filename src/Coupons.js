@@ -51,7 +51,7 @@ function Coupons() {
   });
 
   return (
-    <div className="Coupons 2xl:bg-[#88ca92] min-h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative bg-transparent w-screen">
+    <div className="Coupons bg-white min-h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative bg-transparent w-screen">
 
 
       {/* Mobile Layout */}

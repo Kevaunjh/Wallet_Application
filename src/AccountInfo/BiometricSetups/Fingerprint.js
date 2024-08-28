@@ -16,7 +16,7 @@ function BiometricSetup() {
   };
 
   return (
-    <div className="BiometricSetup bg-[#88ca92] h-screen flex items-center justify-center">
+    <div className="BiometricSetup bg-white min-h-screen flex items-center justify-center">
       {/* Container for Instructions, Image, and Proceed Button */}
       
       <div className="bg-white p-8 2xl:p-16  flex flex-col items-center mx-auto relative h-screen z-10 w-screen ">

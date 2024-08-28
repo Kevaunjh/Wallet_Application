@@ -56,7 +56,7 @@ function Pinlock() {
   const showError = touched.newPin || touched.reEnterNewPin;
 
   return (
-    <div className="Pinlock bg-[#88ca92] min-h-screen flex flex-col justify-center items-center">
+    <div className="Pinlock bg-white min-h-screen flex flex-col justify-center items-center">
 
 
       <div className="bg-white p-8  flex flex-col items-center w-screen mx-auto flex-grow ">

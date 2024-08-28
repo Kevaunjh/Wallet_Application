@@ -38,7 +38,7 @@ function TopUpService() {
   };
 
   return (
-    <div className="bg-[#88ca92] h-screen flex items-center justify-center ">
+    <div className="bg-white h-screen flex items-center justify-center ">
 
       {/* Container */}
       <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12  w-full h-screen flex flex-col justify-center relative 2xl:items-center">

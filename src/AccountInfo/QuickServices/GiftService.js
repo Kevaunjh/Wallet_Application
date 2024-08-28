@@ -31,7 +31,7 @@ function GiftService() {
   const isShowEnabled = fieldsFilled;
 
   return (
-    <div className="GiftService bg-[#88ca92] h-screen flex flex-col justify-center items-center  ">
+    <div className="GiftService bg-white h-screen flex flex-col justify-center items-center  ">
 
       {/* Container for Title, Back Button, Form, and Show Button */}
       <div className="bg-white overflow-auto p-16  flex flex-col items-center w-screen min-h-screen  mx-auto border-2 h-full">

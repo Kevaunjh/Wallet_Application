@@ -52,7 +52,7 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts 2xl:bg-[#88ca92] min-h-screen flex flex-col items-center justify-center  overflow-auto relative bg-transparent w-screen">
+    <div className="BankAccounts min-h-screen flex flex-col items-center justify-center  overflow-auto relative bg-transparent w-screen">
  
       {/* Mobile Layout */}
       <div className="w-full  bg-white p-6  h-screen overflow-auto flex flex-col z-20 ">
