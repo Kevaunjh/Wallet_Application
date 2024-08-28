@@ -75,7 +75,7 @@ const SetupSuccess = () => {
 
         {/* Proceed Button */}
         <div className="absolute bottom-10 text-center mx-auto">
-          <Link to="/MainWD">
+          <Link to="/Main">
             <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">
               Confirm
             </button>
