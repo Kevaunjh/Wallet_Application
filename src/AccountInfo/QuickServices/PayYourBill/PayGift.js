@@ -56,7 +56,7 @@ function PayGift() {
           <p className="text-lg mb-2"><strong>Date/Time:</strong> {dateTime}</p>
           <p className="text-lg mb-2"><strong>Total Amount:</strong> $68.87</p>
           <p className="text-lg mb-2"><strong>Payment Attribute:</strong> {cardData.cardNumber}</p>
-          <p className="text-lg mb-2"><strong>Service Name:</strong> Gift Card</p>
+          <p className="text-lg mb-2"><strong>Service Name:</strong> XXX Gift Card</p>
           <p className="text-lg mb-2"><strong>Mobile Number:</strong> 555-123-4567</p>
           <p className="text-lg mb-2"><strong>Initiator:</strong> {cardData.cardNumber}</p>
           <div className="border-t-2 border-dashed border-gray-400 mt-6 mb-4"></div>
@@ -80,7 +80,7 @@ function PayGift() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full 2xl:max-w-md w-screen relative">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               onClick={handleCloseModal}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './images/logoplaceholder.png';
 import couponData from './CouponData';
@@ -6,9 +6,23 @@ import couponData from './CouponData';
 const points = 1652;
 
 function Coupons() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedBarcode, setSelectedBarcode] = useState(null);
+
+  const openModal = (barcodeImage) => {
+    setSelectedBarcode(barcodeImage);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedBarcode(null);
+  };
+
   const couponContainers = Object.values(couponData).map((coupon, index) => {
     const couponImage = coupon.couponImage || '';
     const backgroundColor = coupon.backgroundColor || '#FFF3E6';
+    const barcodeImage = coupon.barcodeImage || '';
 
     return (
       <div
@@ -41,10 +55,12 @@ function Coupons() {
           {/* Expiration Date */}
           <p className='text-md text-gray-700'>{`Expires on: ${coupon.expiryDate}`}</p>
 
-          {/* Shop Now Button */}
-          <Link to="../QuickServices/GiftService" className='text-[#467a4d] font-semibold underline'>
-            Buy More
-          </Link>
+          {/* Show Barcode Button */}
+          <button 
+            onClick={() => openModal(barcodeImage)} 
+            className='text-[#467a4d] font-semibold underline'>
+            Show Barcode
+          </button>
         </div>
       </div>
     );
@@ -52,8 +68,6 @@ function Coupons() {
 
   return (
     <div className="Coupons bg-white min-h-screen flex flex-col items-center justify-center 2xl:gap-8 overflow-auto relative bg-transparent w-screen">
-
-
       {/* Mobile Layout */}
       <div className="w-full  bg-white p-6  h-screen overflow-auto flex flex-col z-20">
         <div className="flex items-center mb-8 ">
@@ -91,7 +105,19 @@ function Coupons() {
         </div>
       </div>
 
-      
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg relative">
+            <button 
+              onClick={closeModal} 
+              className="absolute top-2 right-2 text-gray-500 hover:text-black">
+              &#10005;
+            </button>
+            <img src={selectedBarcode} alt="Coupon Barcode" className="w-full h-auto" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

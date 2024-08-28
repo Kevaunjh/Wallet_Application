@@ -17,7 +17,7 @@ const points = 1652;
 
 function Main() {
   const [carouselIndex, setCarouselIndex] = useState(0);
-
+  const [isSearchVisible, setSearchVisible] = useState(false);
   const handleNextImage = () => {
     setCarouselIndex((prevIndex) => (prevIndex + 1) % Object.keys(cardDetails).length);
   };
@@ -67,7 +67,16 @@ function Main() {
                   <Link to="/Notification">
                     <img src={notificationlogo} alt="Notifications" className='w-8 h-8 cursor-pointer' />
                   </Link>
-                  <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' />
+                  <div className="relative">
+                  <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' onClick={() => setSearchVisible(!isSearchVisible)} />
+                  {isSearchVisible && (
+                      <input
+                        type="text"
+                        placeholder="Search..."
+                        className="absolute top-full mt-2 p-2 border border-gray-300 rounded right-1"
+                      />
+                    )}
+                    </div>
                 </div>
               </div>
 
