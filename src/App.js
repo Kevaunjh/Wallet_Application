@@ -33,6 +33,7 @@ import Cheques from './Cheques';
 import Coupons from './Coupons';
 import PointHistory from './PointHistory';
 import { initializeApp } from 'firebase/app';
+import DepositSuccessful from './DepositSuccessful';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/AccountInfo/Addcard" element={<AddCard toggleComponent={toggleComponent} /> } />
           <Route path="/Cheques" element={<Cheques toggleComponent={toggleComponent}/>} />
+          <Route path="/Depositcallback" element={<DepositSuccessful toggleComponent={toggleComponent}/>} />
           <Route path="/PointHistory" element={<PointHistory toggleComponent={toggleComponent}/>} />
           <Route path="/Main" element={<Main toggleComponent={toggleComponent} />} />
           <Route path="/Coupons" element={<Coupons toggleComponent={toggleComponent} />} />

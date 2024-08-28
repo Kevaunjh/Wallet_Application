@@ -29,14 +29,14 @@ function Cheques() {
        
 
         {/* Smaller than XL Screens: Combined Container */}
-        <div className="flex flex-col  w-screen h-screen bg-white p-6 fixed top-0 overflow-hidden">
+        <div className="flex flex-col w-screen h-screen bg-white p-6 fixed top-0 overflow-y-auto">
           {/* Back Button */}
           <Link to="/Points" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2">
             &larr; Back
           </Link>
 
           {/* Profile Picture and Name */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mt-8">
             <img
               src={profileplaceholder}
               alt="Profile Placeholder"
@@ -53,7 +53,7 @@ function Cheques() {
           </div>
 
           {/* Cheque Images and Proceed Button */}
-          <div className="mt-8 flex-1 overflow-y-auto flex flex-col items-center">
+          <div className="mt-8 flex-1 flex flex-col items-center 2xl:w-8/12 2xl:mx-auto">
             <h3 className="text-2xl font-semibold mb-6 text-center">Upload Cheque Images</h3>
 
             {/* Front Cheque Image Upload */}
@@ -101,7 +101,7 @@ function Cheques() {
             </label>
 
             <Link
-              to="/ProceedChequeDeposit"
+              to="/Depositcallback"
               className={`bg-[#467a4d] text-white px-4 py-2 rounded-md text-lg ${
                 chequeFront && chequeBack ? '' : 'opacity-50 cursor-not-allowed'
               }`}

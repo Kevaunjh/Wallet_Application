@@ -81,6 +81,11 @@
   .overflow-y-scroll {
     -webkit-overflow-scrolling: touch;
   }
+
+
+  .h-screen {
+   height:  -webkit-fill-available;
+  }
 }
 
 /* Target the overscroll areas on mobile */
