@@ -1,4 +1,5 @@
 import React, {  useState, useEffect, useRef  } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 import profileplaceholder from './images/logoplaceholder.png';
 import notificationlogo from './images/notification.png';
 import searchlogo from './images/search.png';
@@ -18,15 +19,26 @@ const points = 1652;
 function Main() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
 
   const isMobile = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
   };
 
+  const links = [
+    { href: '/Accountinfo/PersonalDetails', label: 'Personal Details' },
+    { href: '/Accountinfo/BiometricSetup', label: 'Biometric Setup' },
+    { href: '/AccountInfo/BiometricSetups/Pinlock', label: 'Change Password' },
+  ];
+
   const openSearchModal = () => {
     setIsSearchVisible(true);
   };
+
+  const filteredLinks = links.filter(link =>
+    link.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const closeSearchModal = () => {
     setIsSearchVisible(false);
@@ -85,32 +97,35 @@ function Main() {
                   <div className="relative">
                   <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' onClick={() => { if (isMobile()) { openSearchModal(); } else { setIsSearchVisible(!isSearchVisible); } }}  />
                   {isSearchVisible && isMobile() && (
-        <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
-          {/* Search Bar with Back Button */}
-          <div className="flex items-center p-4 bg-gray-200">
-            <button onClick={closeSearchModal} className="text-blue-500 mr-4">
-              Back
-            </button>
-            <input
-              ref={searchInputRef}
-              type="text"
-              placeholder="Search..."
-              className="flex-grow p-2 border border-gray-300 rounded"
-            />
-          </div>
-
-          {/* Scrollable Content */}
-          <div className="flex-grow overflow-y-auto p-4">
-            {/* Your links go here */}
-            <ul>
-              <li><a href="/page1" className="block p-2 border-b">Page 1</a></li>
-              <li><a href="/page2" className="block p-2 border-b">Page 2</a></li>
-              <li><a href="/page3" className="block p-2 border-b">Page 3</a></li>
-              {/* Add more links as needed */}
-            </ul>
-          </div>
+      <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
+        {/* Search Bar with Back Button */}
+        <div className="flex items-center p-4 bg-[#0A9971] ">
+          <FaChevronDown className="mr-2 top-1/2 transform rotate-45 text-gray-500" />
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search..."
+            className="flex-grow p-2 border border-gray-300 rounded"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
-      )}
+
+        {/* Scrollable Content */}
+        <div className="flex-grow overflow-y-auto p-4">
+          {/* Filtered links go here */}
+          <ul>
+            {filteredLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="block p-2 border-b">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
 
         {!isMobile() && isSearchVisible && (
           <input
