@@ -30,6 +30,20 @@ function Main() {
     { href: '/Accountinfo/PersonalDetails', label: 'Personal Details' },
     { href: '/Accountinfo/BiometricSetup', label: 'Biometric Setup' },
     { href: '/AccountInfo/BiometricSetups/Pinlock', label: 'Change Password' },
+    { href: '/Accountinfo/BankAccounts', label: 'My Bank Accounts' },
+    { href: '/Accountinfo/MyBookings', label: 'My Bookings' },
+    { href: '/Coupons', label: 'My Coupons' },
+    { href: '/AccountInfo/AddCard', label: 'Add New Bank Card' },
+    { href: '/QuickServices/GiftService', label: 'Buy a Giftcard' },
+    { href: '/RecentTransactions', label: 'Transaction History' },
+    { href: '/Cheques', label: 'Cheque Deposit' },
+    { href: '/AccountInfo/BiometricSetups/Pinlock', label: 'Points' },
+    { href: '/Notification', label: 'Notifications' },
+    { href: '/QuickServices/WaterService', label: 'Pay a House Bill' },
+    { href: '/QuickServices/TopUpService', label: 'Pay a Phone Bill' },
+    { href: '/QuickServices/GasService', label: 'Pay for Travel' },
+
+
   ];
 
   const openSearchModal = () => {
@@ -113,8 +127,8 @@ function Main() {
         <div className="flex-grow overflow-y-auto p-4">
           <ul>
             {filteredLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="block p-2 border-b mt-4 mb-5">
+              <li key={link.href} className='my-3'>
+                <a href={link.href} className="block p-2 border-b ">
                   {link.label}
                 </a>
               </li>
