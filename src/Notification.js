@@ -78,7 +78,7 @@ function Notifications() {
   return (
     <div className="bg-white min-h-screen flex flex-col items-center p-0 m-0 overflow-hidden w-screen overflow-x-hidden">
 
-      <div className="bg-white w-full h-screen px-4 pt-4 shadow-2xl  rounded-none flex flex-col overflow-x-hidden">
+      <div className="bg-white w-full h-screen px-4 pt-4 rounded-none flex flex-col overflow-x-hidden">
         <div className="2xl:sticky top-0 bg-white z-10 p-6 2xl:w-full absolute w-screen">
           <div className="flex justify-between  w-full">
             <Link to="/Main" className=" rounded-full p-2 bg-[#467a4d] text-white ">← Back</Link>
