@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState, useEffect, useRef  } from 'react';
 import profileplaceholder from './images/logoplaceholder.png';
 import notificationlogo from './images/notification.png';
 import searchlogo from './images/search.png';
@@ -17,7 +17,22 @@ const points = 1652;
 
 function Main() {
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [isSearchVisible, setSearchVisible] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const searchInputRef = useRef(null);
+
+  const isMobile = () => {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  };
+
+  const openSearchModal = () => {
+    setIsSearchVisible(true);
+  };
+
+  const closeSearchModal = () => {
+    setIsSearchVisible(false);
+  };
+
+
   const handleNextImage = () => {
     setCarouselIndex((prevIndex) => (prevIndex + 1) % Object.keys(cardDetails).length);
   };
@@ -68,17 +83,47 @@ function Main() {
                     <img src={notificationlogo} alt="Notifications" className='w-8 h-8 cursor-pointer' />
                   </Link>
                   <div className="relative">
-                  <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' onClick={() => setSearchVisible(!isSearchVisible)} />
-                  {isSearchVisible && (
-                      <input
-                        type="text"
-                        placeholder="Search..."
-                        className="absolute top-full mt-2 p-2 border border-gray-300 rounded right-1"
-                      />
-                    )}
+                  <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' onClick={() => { if (isMobile()) { openSearchModal(); } else { setIsSearchVisible(!isSearchVisible); } }}  />
+                  {isSearchVisible && isMobile() && (
+        <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
+          {/* Search Bar with Back Button */}
+          <div className="flex items-center p-4 bg-gray-200">
+            <button onClick={closeSearchModal} className="text-blue-500 mr-4">
+              Back
+            </button>
+            <input
+              ref={searchInputRef}
+              type="text"
+              placeholder="Search..."
+              className="flex-grow p-2 border border-gray-300 rounded"
+            />
+          </div>
+
+          {/* Scrollable Content */}
+          <div className="flex-grow overflow-y-auto p-4">
+            {/* Your links go here */}
+            <ul>
+              <li><a href="/page1" className="block p-2 border-b">Page 1</a></li>
+              <li><a href="/page2" className="block p-2 border-b">Page 2</a></li>
+              <li><a href="/page3" className="block p-2 border-b">Page 3</a></li>
+              {/* Add more links as needed */}
+            </ul>
+          </div>
+        </div>
+      )}
+
+        {!isMobile() && isSearchVisible && (
+          <input
+          type="text"
+          placeholder="Search..."
+          className="absolute top-full mt-2 p-2 border border-gray-300 rounded right-1"
+        />
+        )}
+
                     </div>
                 </div>
               </div>
+
 
               {/* Points and Balance */}
               <div className='w-full flex mt-4'>
