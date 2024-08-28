@@ -37,7 +37,7 @@ function Main() {
     { href: '/QuickServices/GiftService', label: 'Buy a Giftcard' },
     { href: '/RecentTransactions', label: 'Transaction History' },
     { href: '/Cheques', label: 'Cheque Deposit' },
-    { href: '/AccountInfo/BiometricSetups/Pinlock', label: 'Points' },
+    { href: '/Points', label: 'Points' },
     { href: '/Notification', label: 'Notifications' },
     { href: '/QuickServices/WaterService', label: 'Pay a House Bill' },
     { href: '/QuickServices/TopUpService', label: 'Pay a Phone Bill' },
@@ -127,8 +127,8 @@ function Main() {
         <div className="flex-grow overflow-y-auto p-4">
           <ul>
             {filteredLinks.map((link) => (
-              <li key={link.href} className='my-3'>
-                <a href={link.href} className="block p-2 border-b ">
+              <li key={link.href} className='my-3 text-center'>
+                <a href={link.href} className="block p-2 border-b text-centerd  ">
                   {link.label}
                 </a>
               </li>
