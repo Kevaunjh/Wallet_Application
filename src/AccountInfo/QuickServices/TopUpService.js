@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function TopUpService() {
   const [selectedAmount, setSelectedAmount] = useState(5); // Default to $5
   const [customAmount, setCustomAmount] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFingerprintModalOpen, setIsFingerprintModalOpen] = useState(false);
-  const [isFingerprintDetected, setIsFingerprintDetected] = useState(false);
+  const [mobileCarrier, setMobileCarrier] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
 
-  const navigate = useNavigate();
 
   const handleAmountClick = (amount) => {
     setSelectedAmount(amount);
@@ -25,26 +24,21 @@ function TopUpService() {
     setIsModalOpen(false);
   };
 
-  const handleCompleteTransaction = () => {
-    setIsFingerprintModalOpen(true);
+
+  const isPhoneNumberValid = (number) => {
+    const regex = /^[0-9]{10}$/; 
+    return regex.test(number);
   };
 
-  const handleFingerprintClick = () => {
-    setIsFingerprintDetected(true);
-  };
-
-  const handleFingerprintOrOtp = () => {
-    navigate('/QuickServices/PayYourBill/TopUpPayment'); // Navigate to the TopUpPayment page
-  };
+  const allFieldsFilled = mobileCarrier && mobileNumber && isPhoneNumberValid(mobileNumber);
 
   return (
-    <div className="bg-white h-screen flex items-center justify-center ">
-
+    <div className="bg-white h-screen flex items-center justify-center">
       {/* Container */}
-      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12  w-full h-screen flex flex-col justify-center relative 2xl:items-center">
+      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 w-full h-screen flex flex-col justify-center relative 2xl:items-center">
         {/* Back Button */}
-        <div className="absolute top-10 left-10 ">
-          <Link to="/Main" className=" rounded-full p-2 bg-[#467a4d] text-white">
+        <div className="absolute top-10 left-10">
+          <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
@@ -57,76 +51,84 @@ function TopUpService() {
           </div>
           <hr className="mb-6 border-gray-400" />
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <button
-  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg  ${
-    selectedAmount === 5 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
-  }`}
-  onClick={() => handleAmountClick(5)}
->
-  $5
-</button>
-<button
-  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
-    selectedAmount === 10 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
-  }`}
-  onClick={() => handleAmountClick(10)}
->
-  $10
-</button>
-<button
-  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
-    selectedAmount === 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
-  }`}
-  onClick={() => handleAmountClick(15)}
->
-  $15
-</button>
-<button
-  className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
-    customAmount !== '' || selectedAmount !== 5 && selectedAmount !== 10 && selectedAmount !== 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
-  }`}
-  onClick={() => setIsModalOpen(true)}
->
-  Custom
-</button>
-
+            <button
+              className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+                selectedAmount === 5 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+              }`}
+              onClick={() => handleAmountClick(5)}
+            >
+              $5
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+                selectedAmount === 10 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+              }`}
+              onClick={() => handleAmountClick(10)}
+            >
+              $10
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+                selectedAmount === 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+              }`}
+              onClick={() => handleAmountClick(15)}
+            >
+              $15
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 md:py-3 border-2 border-[#467a4d] text-base md:text-lg rounded-lg ${
+                customAmount !== '' || selectedAmount !== 5 && selectedAmount !== 10 && selectedAmount !== 15 ? 'bg-[#d0e8d1] text-[#467a4d]' : 'bg-white text-[#467a4d]'
+              }`}
+              onClick={() => setIsModalOpen(true)}
+            >
+              Custom
+            </button>
           </div>
         </div>
 
         {/* Input Fields */}
         <div className="mb-6 2xl:w-8/12">
           <label className="block text-base md:text-lg font-medium mb-2">Mobile Carrier</label>
-          <select className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg">
-          <option value="">Select Mobile Carrier</option>
-          <option value="verizon">Verizon</option>
-          <option value="att">AT&T</option>
-          <option value="tmobile">T-Mobile</option>
-          <option value="sprint">Sprint</option>
-          <option value="uscellular">U.S. Cellular</option>
-          <option value="boost">Boost Mobile</option>
-          <option value="cricket">Cricket Wireless</option>
-          <option value="metro">Metro by T-Mobile</option>
-
+          <select
+            className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg"
+            value={mobileCarrier}
+            onChange={(e) => setMobileCarrier(e.target.value)}
+          >
+            <option value="">Select Mobile Carrier</option>
+            <option value="verizon">Verizon</option>
+            <option value="att">AT&T</option>
+            <option value="tmobile">T-Mobile</option>
+            <option value="sprint">Sprint</option>
+            <option value="uscellular">U.S. Cellular</option>
+            <option value="boost">Boost Mobile</option>
+            <option value="cricket">Cricket Wireless</option>
+            <option value="metro">Metro by T-Mobile</option>
           </select>
         </div>
         <div className="mb-6 2xl:w-8/12">
           <label className="block text-base md:text-lg font-medium mb-2">Mobile Number</label>
           <input
-            type="text"
-            placeholder="XXXXXXX"
+            type="tel"
+            placeholder="XXXXXXXXXX"
             className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg"
+            value={mobileNumber}
+            onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, ''))} // Restrict input to numbers only
+            pattern="[0-9]{10}" // Restrict input to 10 digits
           />
         </div>
 
         {/* Done Button */}
         <div className="w-full flex justify-center">
-          <Link to="/QuickServices/PayYourBill/TopUpPayment">
-            <button
-              className="px-10 py-4 bg-[#467a4d] text-white rounded-2xl text-base md:text-lg mb-8"
-              onClick={handleCompleteTransaction}
-            >
-              Done
-            </button>
+          <Link
+            to={allFieldsFilled ? "/QuickServices/PayYourBill/TopUpPayment" : "#"}
+            className={`px-10 py-4 rounded-2xl text-base md:text-lg mb-8 ${
+              allFieldsFilled ? 'bg-[#467a4d] text-white' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+            } transition-opacity duration-[1500ms]`}
+            onClick={(e) => {
+              if (!allFieldsFilled) e.preventDefault();
+            }}
+          >
+            Done
           </Link>
         </div>
       </div>

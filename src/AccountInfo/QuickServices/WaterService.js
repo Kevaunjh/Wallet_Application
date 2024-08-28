@@ -7,6 +7,7 @@ function WaterService() {
   const [selectCounter, setSelectCounter] = useState('');
   const [scNo, setScNo] = useState('');
   const [address, setAddress] = useState('');
+  
 
   const handleServiceProviderChange = (e) => {
     const value = e.target.value;
