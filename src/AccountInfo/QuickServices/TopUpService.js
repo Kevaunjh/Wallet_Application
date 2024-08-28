@@ -44,7 +44,7 @@ function TopUpService() {
       <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12  w-full h-screen flex flex-col justify-center relative 2xl:items-center">
         {/* Back Button */}
         <div className="absolute top-10 left-10 ">
-          <Link to="/Main" className=" rounded-full p-[0.55rem] bg-[#467a4d] text-white">
+          <Link to="/Main" className=" rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
