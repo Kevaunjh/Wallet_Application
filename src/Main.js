@@ -127,8 +127,8 @@ function Main() {
         <div className="flex-grow overflow-y-auto p-4">
           <ul>
             {filteredLinks.map((link) => (
-              <li key={link.href} className='my-3 text-center'>
-                <a href={link.href} className="block p-2 border-b text-centerd  ">
+              <li key={link.href} className='my-3'>
+                <a href={link.href} className="block p-2 border-b">
                   {link.label}
                 </a>
               </li>
@@ -139,12 +139,31 @@ function Main() {
     )}
 
         {!isMobile() && isSearchVisible && (
+        <div className="relative z-10">
           <input
-          type="text"
-          placeholder="Search..."
-          className="absolute top-full mt-2 p-2 border border-gray-300 rounded right-1"
-        />
-        )}
+            type="text"
+            placeholder="Search..."
+            className="absolute top-full mt-2 p-2 border border-gray-300 rounded right-1"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+
+          {/* Display filtered links only when there is a search term */}
+          {searchTerm && (
+            <div className="absolute top-full mt-10 w-[12.5rem] right-1 top-2.5 bg-white border border-gray-300 rounded shadow-lg z-50">
+              <ul>
+                {filteredLinks.map(link => (
+                  <li key={link.href} className="p-2 border-b hover:bg-gray-200">
+                    <a href={link.href} className="block ">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
 
                     </div>
                 </div>
