@@ -254,7 +254,7 @@ function Main() {
 
                 {/* Recent Transactions */}
                 <Link to="/RecentTransactions" className="w-full">
-                  <div className='flex-grow'>
+                  <div className='flex-grow bg-white'>
                     <div className="p-4 rounded-lg border-black border h-full">
                       {/* Spent This Month Section */}
                       <div className="mb-4 p-4">

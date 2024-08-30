@@ -216,6 +216,30 @@ function WaterService() {
           </div>
 
           <div className="mb-6">
+            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
+              Select Counter
+            </label>
+            <div className="relative">
+              <select
+                id="serviceCounter"
+                value={selectCounter}
+                onChange={handleSelectCounterChange}
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+              >
+<option value="">Select a Counter</option>
+<option value="ge-analog">General Electric I-70-S (Analog Meter)</option>
+<option value="landisgyr-digital">Landis+Gyr E350 (Digital Meter)</option>
+<option value="itron-smart">Itron OpenWay Riva (Smart Meter)</option>
+<option value="sensus-net">Sensus iConA™ Gen 4 (Net Meter)</option>
+<option value="aclala-prepaid">Aclara STAR® Network (Prepaid Meter)</option>
+<option value="schneider-commercial">Schneider Electric ION9000 (Commercial/Industrial Meter)</option>
+
+              </select>
+              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            </div>
+          </div>
+
+          <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="scNo">
               SC No.
             </label>

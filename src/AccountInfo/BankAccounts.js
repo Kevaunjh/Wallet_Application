@@ -78,7 +78,7 @@ function BankAccounts() {
         </div>
 
         {/* Bank Accounts */}
-        <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Bank Accounts</h2>
+        <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Cards</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 2xl:w-8/12 2xl:mx-auto'>
           {cardContainers}
         </div>

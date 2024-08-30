@@ -6,7 +6,6 @@ const CouponData = {
     barcodeImage: require('./images/Barcode.png'), 
     backgroundColor: "green", // Example background color
     expiryDate: "2024-12-31",
-    cardType: "Gold",
   },
   2: {
     couponName: "Amazon",
@@ -15,7 +14,6 @@ const CouponData = {
     barcodeImage: require('./images/Barcode.png'),
     backgroundColor: "#FF9900",
     expiryDate: "2024-11-30",
-    cardType: "Prime",
   },
   3: {
     couponName: "Tim Hortons",
@@ -24,7 +22,6 @@ const CouponData = {
     barcodeImage: require('./images/Barcode.png'),
     backgroundColor: "red",
     expiryDate: "2024-10-31",
-    cardType: "Brown",
   },
 };
 

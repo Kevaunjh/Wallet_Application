@@ -35,6 +35,7 @@ function PayWater() {
         {/* Image at the Top */}
         
 
+
         {/* Payment Details Container */}
         <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mt-6 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>

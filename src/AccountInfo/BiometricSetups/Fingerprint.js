@@ -72,7 +72,7 @@ function BiometricSetup() {
               </div>
             ) : (
               <p className="text-md text-center mb-8">
-                Place your finger on the sensor.
+                Place your finger tip on the sensor.
               </p>
             )}
 

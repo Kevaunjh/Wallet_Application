@@ -12,14 +12,14 @@ function PersonalDetails() {
       
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col w-screen h-screen bg-white p-6 fixed top-0 overflow-hidden">
+      <div className="flex flex-col w-screen h-screen bg-white 2xl:p-6 p-16 fixed top-0 overflow-hidden">
         {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 ">
           &larr; Back
         </Link>
 
         {/* Profile Picture and Name */}
-        <div className="flex flex-col items-center 2xl:mt-16">
+        <div className="flex flex-col items-center 2xl:mt-16 mt-24">
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 

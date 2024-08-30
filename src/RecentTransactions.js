@@ -115,13 +115,13 @@ const RecentTransactions = () => {
         <div className="2xl:sticky top-0 bg-white z-10 p-6 2xl:w-full absolute w-screen">
           <div className="flex justify-between w-full">
             <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white ">← Back</Link>
-            <div className="flex items-center mr-12 2xl:mr-0">
-              <span className="text-lg font-bold text-[#467a4d] mr-2">Filter</span>
+            <div className="flex items-center mr-12 2xl:mr-72">
+              <span className="text-lg font-bold text-[#467a4d] mr-2 ">Filter</span>
               <button onClick={handleFilterClick} className="text-[#467a4d] focus:outline-none">
                 <FaFilter size={24} />
               </button>
               {isFilterOpen && (
-                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48 mr-12 2xl:mr-0">
+                <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg w-48 mr-12 2xl:mr-72">
                   <select
                     id="filter"
                     value={filter}
@@ -141,7 +141,7 @@ const RecentTransactions = () => {
           </div>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Transaction History</h1>
         </div>
-        <div className="flex-grow overflow-y-auto mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto custom-scrollbar">
+        <div className="flex-grow overflow-y-auto mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto custom-scrollbar px-10">
           {filteredTransactions.length === 0 ? (
             <p className="text-lg text-gray-500 text-center mt-4">
               No recent transactions from this time period

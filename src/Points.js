@@ -2,6 +2,8 @@ import React from 'react';
 import points from './images/Points.png';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
+const pointsnumber = 1652;
+
 const Points = () => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-white">
@@ -28,12 +30,12 @@ const Points = () => {
           <div className="w-full flex flex-col items-center space-y-8">
             {/* Lifetime Points Container */}
             <div className="relative z-10 bg-white  w-5/6 lg:w-2/3 xl:w-7/12 2xl:w-2/5 rounded-3xl p-4 sm:p-6 border-2 border-gray-300 mx-3 h-auto min-h-[12rem] sm:min-h-[16rem] flex flex-col justify-between">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-4 mt-2 sm:mt-4">
                 <div className="flex items-center">
                   <img src={points} alt="Points" className="w-10 h-10 sm:w-12 sm:h-12 mr-2 sm:mr-4" />
                   <p className="text-base sm:text-lg font-medium text-gray-600">Lifetime Points:</p>
                 </div>
-                <p className="text-base sm:text-lg font-medium text-black ml-4 text-center">1652</p>
+                <p className="text-base sm:text-lg font-medium text-black ml-4 text-center">{pointsnumber} Pts</p>
               </div>
               <div className="p-2 sm:p-4 border-t-2 my-4 sm:my-8 border-dashed border-gray-400 text-left">
                 <p className="text-xs sm:text-sm text-black pl-4 sm:pl-8 mt-2 font-semibold">Gold (Level 2)</p>
@@ -54,7 +56,7 @@ const Points = () => {
                     Coupons
                   </button>
                 </Link>
-                <Link to="/QuickServices/GiftService" className="w-2/5 max-w-96">
+                <Link to="/Giftcards" className="w-2/5 max-w-96">
                   <button className="w-full h-16 sm:h-20 bg-white text-black p-4 rounded-lg border border-transparent hover:bg-gray-100 shadow-md border-gray-500">
                     Gift Cards
                   </button>
