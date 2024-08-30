@@ -68,10 +68,10 @@ function Coupons() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-white">
+    <div className="min-h-screen flex flex-col items-center bg-white overflow-x-hidden">
       <div className="relative w-full min-h-screen flex flex-col">
         {/* Top - Dark Green */}
-        <div className="w-full bg-[#0A9971] flex flex-col p-4 z-1 relative">
+        <div className=" bg-[#0A9971] flex flex-col p-4 z-1 relative w-screen">
           {/* Back Button */}
           <Link to="/Points">
             <button className="absolute top-8 left-8 bg-white text-[#0A9971] p-2 rounded-full">
@@ -86,7 +86,7 @@ function Coupons() {
         </div>
 
         {/* Bottom - White */}
-        <div className="w-full flex-grow bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col items-center mx-auto p-4 space-y-8 relative h-full">
+        <div className="w-screen flex-grow bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col items-center mx-auto p-4 space-y-8 relative h-full">
 
           {/* Life Time Points Container*/}
         <div className="relative z-10 bg-white  w-5/6 lg:w-2/3 xl:w-7/12 2xl:w-2/5 rounded-3xl p-4 sm:p-6 border-2 border-gray-300 mx-3 h-auto min-h-[8rem] sm:min-h-[8rem] flex flex-col justify-between">

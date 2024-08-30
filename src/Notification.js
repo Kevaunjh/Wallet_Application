@@ -51,7 +51,7 @@ function Notifications() {
       <div className="space-y-4 text-black">
         <h2 className="text-2xl font-bold text-gray-600 mb-2 capitalize">{formatPeriod(period)}</h2>
         {notificationsForPeriod.length === 0 ? (
-          <p className="text-lg text-gray-500">No Notifications</p>
+          <p className="text-lg text-gray-500 mb-4">No Notifications</p>
         ) : (
           notificationsForPeriod.map((notification, index) => (
             <React.Fragment key={notification.id}>
@@ -108,7 +108,7 @@ function Notifications() {
           </div>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Notifications</h1>
         </div>
-        <div className="flex-grow overflow-y-auto custom-scrollbar mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto px-10">
+        <div className="flex-grow overflow-y-auto custom-scrollbar mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto px-5">
           {filter === 'all' ? (
             Object.keys(notifications).map(period => renderNotificationsForPeriod(period))
           ) : (

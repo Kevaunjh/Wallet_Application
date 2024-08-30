@@ -42,6 +42,7 @@ function Main() {
     { href: '/QuickServices/WaterService', label: 'Pay a House Bill' },
     { href: '/QuickServices/TopUpService', label: 'Pay a Phone Bill' },
     { href: '/QuickServices/GasService', label: 'Pay for Travel' },
+    { href: '/Giftcards', label: 'My Giftcard' },
 
 
   ];
@@ -187,7 +188,7 @@ function Main() {
           </div>
 
           {/* White Container */}
-          <div className="flex-grow bg-[#F9FFFD] mx-auto w-full flex flex-col items-center">
+          <div className="flex-grow bg-[#e9f7f2] mx-auto w-full flex flex-col items-center">
             {/* Card and Account Details */}
             <div className='w-full p-4 flex flex-col lg:flex-row 2xl:w-8/12 '>
               {/* Card */}
@@ -211,7 +212,7 @@ function Main() {
                     &gt;
                   </button>
                 </div>
-                <div className="w-full bg-[#F9FFFD] py-4 flex flex-wrap justify-center space-x-4 gap-8 lg:rounded-b-3xl 2xl:h-[22rem] items-center">
+                <div className="w-full  py-4 flex flex-wrap justify-center space-x-4 gap-8 lg:rounded-b-3xl 2xl:h-[22rem] items-center">
               <div className="flex flex-wrap justify-center gap-20 p-4 22xl:mt-4 lg:max-2xl:flex-col  lg:max-2xl:gap-y-12">
               <Link to="/QuickServices/WaterService">
                 <img src={quickservice1} alt="Water Service" className="2xl:w-28 2xl:h-28 lg:h-20 lg:w-20 md:h-20 md:w-20  sm:w-12 sm:h-12 w-8 h-8 mx-1" />

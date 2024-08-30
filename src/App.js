@@ -35,6 +35,7 @@ import PointHistory from './PointHistory';
 import { initializeApp } from 'firebase/app';
 import DepositSuccessful from './DepositSuccessful';
 import Giftcards from './Giftcards';
+import Introduction from './Introduction';
 
 
 function App() {
@@ -79,7 +80,8 @@ function App() {
           <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} /> 
           <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} /> 
           <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
-          <Route path='/' element={<Signup toggleComponent={toggleComponent} />} />
+          <Route path='/Signup' element={<Signup toggleComponent={toggleComponent} />} />
+          <Route path='/' element={<Introduction toggleComponent={toggleComponent} /> } />
           <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  
         </Routes>
       </div>

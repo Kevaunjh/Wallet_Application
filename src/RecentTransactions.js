@@ -141,7 +141,7 @@ const RecentTransactions = () => {
           </div>
           <h1 className="text-3xl font-bold text-[#467a4d] text-center w-full mt-4">Transaction History</h1>
         </div>
-        <div className="flex-grow overflow-y-auto mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto custom-scrollbar px-10">
+        <div className="flex-grow overflow-y-auto mt-32 2xl:mt-0 2xl:w-8/12 2xl:mx-auto custom-scrollbar px-5">
           {filteredTransactions.length === 0 ? (
             <p className="text-lg text-gray-500 text-center mt-4">
               No recent transactions from this time period

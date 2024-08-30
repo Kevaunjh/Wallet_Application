@@ -4,6 +4,7 @@ import { FaChevronDown } from 'react-icons/fa';
 
 function GiftService() {
   const [amount, setAmount] = useState('');
+  const [purchase, setPurchase] = useState('Coupon');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
 
@@ -11,21 +12,26 @@ function GiftService() {
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value);
-    checkFieldsFilled(e.target.value, email, company);
+    checkFieldsFilled(purchase, e.target.value, email, company);
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    checkFieldsFilled(amount, e.target.value, company);
+    checkFieldsFilled(purchase, amount, e.target.value, company);
+  };
+
+  const handlePurchaseChange = (e) => {
+    setPurchase(e.target.value);
+    checkFieldsFilled( e.target.value, amount, email, company);
   };
 
   const handleCompanyChange = (e) => {
     setCompany(e.target.value);
-    checkFieldsFilled(amount, email, e.target.value);
+    checkFieldsFilled(purchase, amount, email, e.target.value);
   };
 
   const checkFieldsFilled = (amount, email, company) => {
-    setFieldsFilled(amount && email && company);
+    setFieldsFilled(purchase, amount && email && company);
   };
 
   const isShowEnabled = fieldsFilled;
@@ -44,11 +50,28 @@ function GiftService() {
 
         {/* Title */}
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
-         Purchase Gift Cards
+         Point Purchase
         </h1>
 
         {/* Gift Service Form */}
         <form className="w-full 2xl:w-8/12 2xl:mx-auto">
+        <div className="mb-6">
+            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="company">
+              Type Of Purchase
+            </label>
+            <div className="relative">
+              <select
+                id="purchase"
+                value={purchase}
+                onChange={handlePurchaseChange}
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+              >
+                <option value="amazon">Coupon</option>
+                <option value="walmart">Giftcard</option>
+              </select>
+              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            </div>
+          </div>
           <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="amount">
               Amount

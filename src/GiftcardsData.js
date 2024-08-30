@@ -35,7 +35,7 @@ export const giftcardsData = [
       id: 4,
       category:  'Education',
       name: 'Steam',
-      amount: '$10',
+      amount: '$5',
       image: require('./images/audible.png'), // Replace with actual image path
       barcodeImage: require('./images/Barcode.png'), 
     },
@@ -43,7 +43,7 @@ export const giftcardsData = [
       id: 4,
       category:  'PrePaid',
       name: 'Steam',
-      amount: '$10',
+      amount: '$35',
       image: require('./images/visa.png'), // Replace with actual image path
       barcodeImage: require('./images/Barcode.png'), 
     },

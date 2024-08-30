@@ -112,7 +112,7 @@ function WaterService() {
             </div>
             <div className="flex justify-center items-center ">
           <Link
-          to="/QuickServices/PayYourBill/PayWater" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayWater"
            className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms] flex justify-center items-center`}
@@ -176,7 +176,7 @@ function WaterService() {
           </div>
           <div className="flex justify-center items-center ">
           <Link
-          to="/QuickServices/PayYourBill/PayInternet" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayInternet"
            className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms] flex justify-center items-center`}
