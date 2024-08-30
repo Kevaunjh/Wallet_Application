@@ -12,14 +12,14 @@ function PersonalDetails() {
       
 
       {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col w-screen h-screen bg-white 2xl:p-6 p-16 fixed top-0 overflow-hidden">
+      <div className="flex flex-col w-screen h-screen bg-white 2xl:p-6 p-16 fixed top-0 ">
         {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 ">
           &larr; Back
         </Link>
 
         {/* Profile Picture and Name */}
-        <div className="flex flex-col items-center 2xl:mt-16 mt-24">
+        <div className="flex flex-col items-center 2xl:mt-16 mt-2">
           <img 
             src={profileplaceholder} 
             alt="Profile Placeholder" 
@@ -36,7 +36,7 @@ function PersonalDetails() {
         </div>
         
         {/* Personal Details */}
-        <div className="mt-8 flex-1 overflow-y-auto w-full 2xl:w-8/12 mx-auto">
+        <div className="mt-8 flex-1 flex-grow w-full 2xl:w-8/12 mx-auto">
           <h3 className="text-2xl font-semibold mb-6 text-center">Personal Details</h3>
           <div className="flex flex-col space-y-4">
             <div className="flex justify-between">
