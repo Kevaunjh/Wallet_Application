@@ -4,11 +4,14 @@ import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import checked from './images/checked.png'
+import { getDatabase, ref, set } from 'firebase/database';
 
 const Signup = () => {
   const [view, setView] = useState('home'); // Tracks the current view: 'home', 'signup', or 'login'
   const [currentTab, setCurrentTab] = useState('signup1'); // Tracks the current tab: 'signup1', 'signup2', 'signup3', 'signup4'
   const navigate = useNavigate();
+  const db = getDatabase();
+
   const handleSignInWithGoogle = async () => {
     try {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -27,22 +30,41 @@ const Signup = () => {
 
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
-      // Perform any necessary checks or actions before moving to the next tab
-      const emailInput = document.getElementById('email').value;
-      if (emailInput === '' ) {
-        alert('Please enter a valid email or mobile number.');
+      const numberInput = document.getElementById('number').value.trim();
+      const numberRegex = /^\d{10,}$/; // Example: Ensuring it's a number between 10 to 15 digits
+  
+      if (!numberRegex.test(numberInput)) {
+        alert('Please enter a valid mobile.');
         return false; // Prevent moving to the next tab if validation fails
       }
     } else if (currentTab === 'signup2') {
-      const codeInput = document.getElementById('verificationcode').value;
-      if (codeInput.length !== 6 || isNaN(codeInput)) {
+      const codeInput = document.getElementById('verificationcode').value.trim();
+      const codeRegex = /^\d{6,}$/;
+  
+      if (!codeRegex.test(codeInput)) {
         alert('Please enter a valid 6-digit verification code.');
         return false;
       }
     } else if (currentTab === 'signup3') {
-      const passInput = document.getElementById('password').value;
-      if (passInput.trim === '') {
-        alert('Please enter your full name.');
+      const passInput = document.getElementById('password').value.trim();
+      const confirmPassInput = document.getElementById('repassword').value.trim();
+      const passwordRegex = /^\d{6,}$/;
+  
+      if (!passwordRegex.test(passInput)) {
+        alert('Please enter a valid password with at least 6 characters.');
+        return false;
+      }
+      if (passInput !== confirmPassInput) {
+        alert('Passwords do not match.');
+        return false;
+      }
+    } else if (currentTab === 'signup4') {
+      // Check if all OTP inputs are filled
+      const otpInputs = inputRefs.current;
+      const otpComplete = otpInputs.every(input => /^\d$/.test(input.value));
+      
+      if (!otpComplete) {
+        alert('Please enter the complete OTP.');
         return false;
       }
     }
@@ -103,7 +125,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#3b8d6e] text-white">
+    <div className="w-screen min-h-screen bg-[#3b8d6e] text-white">
       <div className='flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 h-full pb-6 items-center w-full'>
         <div className="flex p-6 ml-1">
           <img src={bnwLogo} alt="Logo" className="w-44 h-24" />
@@ -117,12 +139,14 @@ const Signup = () => {
             <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
               <form className="w-full max-w-md">
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
+                  <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
                   <input
-                    type="email"
-                    id="email"
-                    className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline"
+                    type="number"
+                    id="number"
+                    className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline number-to-text"
                     placeholder="XXXXXXXXXXXX"
+                    min="0"
+                
                   />
                 </div>
                 <button
