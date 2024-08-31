@@ -52,7 +52,7 @@ const SetupSuccess = () => {
                 ref={(el) => inputRefs.current[index] = el}
                 onChange={(e) => handleInputChange(e, index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
-                className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none"
+                className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none text-black"
                 aria-label={`OTP digit ${index + 1}`}
                 inputMode="numeric" // Ensure numeric keypad on mobile
               />

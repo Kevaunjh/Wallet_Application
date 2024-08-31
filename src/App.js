@@ -26,7 +26,7 @@ import TransactionResponse from './AccountInfo/QuickServices/PayYourBill/Transac
 import Notifications from './Notification';
 import RecentTransactions from './RecentTransactions';
 import Points from './Points';
-import Signup from './signin';
+import Signup from './AccountManagement';
 import SetupSuccess from './AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess';
 import AddCard from './AccountInfo/AddCard';
 import Cheques from './Cheques';
@@ -36,6 +36,8 @@ import { initializeApp } from 'firebase/app';
 import DepositSuccessful from './DepositSuccessful';
 import Giftcards from './Giftcards';
 import Introduction from './Introduction';
+import AccountManagement from './AccountManagement';
+import LogoAnimation from './LogoAnimation';
 
 
 function App() {
@@ -56,6 +58,7 @@ function App() {
           <Route path="/Depositcallback" element={<DepositSuccessful toggleComponent={toggleComponent}/>} />
           <Route path="/PointHistory" element={<PointHistory toggleComponent={toggleComponent}/>} />
           <Route path="/Main" element={<Main toggleComponent={toggleComponent} />} />
+          <Route path="/Loading" element={<LogoAnimation toggleComponent={toggleComponent} />} />
           <Route path="/Coupons" element={<Coupons toggleComponent={toggleComponent} />} />
           <Route path="/AccountInfo/QuickServices/PayYourBill/TransactionResponse" element={<TransactionResponse toggleComponent={toggleComponent} />} />
           <Route path="/MyAccount" element={<MyAccount toggleComponent={toggleComponent} />} />
@@ -80,7 +83,7 @@ function App() {
           <Route path="/QuickServices/PayYourBill/PayGift" element={<PayGift toggleComponent={toggleComponent} />} /> 
           <Route path="/Notification" element={<Notifications toggleComponent={toggleComponent} />} /> 
           <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
-          <Route path='/Signup' element={<Signup toggleComponent={toggleComponent} />} />
+          <Route path='/AccountManagement' element={<AccountManagement toggleComponent={toggleComponent} />} />
           <Route path='/' element={<Introduction toggleComponent={toggleComponent} /> } />
           <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  
         </Routes>

@@ -79,7 +79,7 @@ function MyAccount() {
             </div>
           </Link>
 
-          <Link to="/" className="flex items-center p-6 hover:bg-gray-100 mx-4 2xl:w-8/12">
+          <Link to="/AccountManagement" className="flex items-center p-6 hover:bg-gray-100 mx-4 2xl:w-8/12">
             <img src={logoutIcon} alt="Logout Icon" className="w-8 h-8 mr-4 mx-auto" />
             <div className="flex-1 text-center md:text-left">
               <h3 className="text-lg font-semibold">Logout</h3>

@@ -17,7 +17,7 @@ const TabOne = ({ onNext }) => (
         >
           Next
         </button>
-        <Link to="/Signup" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
+        <Link to="/AccountManagement" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
           Skip
         </Link>
       </div>
@@ -40,7 +40,7 @@ const TabTwo = ({ onNext }) => (
         >
           Next
         </button>
-        <Link to="/Signup" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
+        <Link to="/AccountManagement" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
           Skip
         </Link>
       </div>
@@ -58,12 +58,12 @@ const TabThree = () => (
           Securely manage your funds and banking activities.
         </div>
         <Link
-          to="/Signup"
+          to="/AccountManagement"
           className="bg-[#467a4d] text-white py-2 px-4 rounded-md mb-2 w-44 text-center h-12 items-center justify-center flex"
         >
           Next
         </Link>
-        <Link to="/Signup" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
+        <Link to="/AccountManagement" className="text-white underline w-44 text-center h-12 items-center justify-center flex">
           Skip
         </Link>
       </div>
