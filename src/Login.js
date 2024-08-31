@@ -110,7 +110,7 @@ const Login = () => {
   };
 
   return (
-    <>
+
       <div className="w-screen min-h-screen bg-[#3b8d6e] text-white">
         <div className='flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 h-full pb-6 items-center w-full'>
           <div className="flex p-6 ml-1">
@@ -195,7 +195,7 @@ const Login = () => {
                       ref={(el) => inputRefs.current[index] = el}
                       onChange={(e) => handleInputChange(e, index)}
                       onKeyDown={(e) => handleKeyDown(e, index)}
-                      className="w-16 h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none text-black"
+                      className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none text-black"
                       aria-label={`OTP digit ${index + 1}`}
                       inputMode="numeric"
                     />
@@ -256,7 +256,7 @@ const Login = () => {
           </div>
         )}
       </div>
-    </>
+
   );
 };
 
