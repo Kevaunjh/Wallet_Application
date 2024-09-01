@@ -28,24 +28,24 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex flex-col justify-center items-center">
-      {/* Header Section (25% of height) */}
-      <div className="flex flex-col items-center justify-center h-1/4">
-        <img src={bnwLogo} alt="Logo" className="w-24 h-24 mb-2" />
-        <h1 className="text-3xl font-bold text-white">Sign Up</h1>
-        <p className="text-sm text-white">Create an account to enjoy our features</p>
+    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex flex-col justify-between items-center">
+      {/* Header Section */}
+      <div className="flex flex-col items-center justify-center h-1/4 flex-none">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+        <h1 className="text-3xl font-bold text-white pt-4">Sign Up</h1>
+        <p className="text-sm text-white pb-2">Create an account to enjoy our features</p>
       </div>
 
-      {/* Content Section (70% of height) */}
-      <div className="flex flex-col w-full max-w-xl h-3/4 p-4 items-center justify-center">
-        <div className="bg-white w-full h-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-between">
+      {/* Content Section */}
+      <div className="flex flex-col w-full max-w-xl h-3/4 p-4 items-center justify-center flex-grow">
+        <div className="bg-white w-full h-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center">
           <form className="w-full max-w-md">
             <div className="mb-4">
               <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
               <input
                 type="number"
                 id="number"
-                className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline number-to-text"
+                className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="XXXXXXXXXXXX"
                 min="0"
               />
@@ -87,8 +87,8 @@ const Signup = () => {
         </div>
       </div>
 
-      {/* Padding Section (5% of height) */}
-      <div className="h-1/20" />
+      {/* Padding Section */}
+      <div className="h-1/20 flex-none" />
     </div>
   );
 };
