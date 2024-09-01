@@ -28,16 +28,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex flex-col justify-between items-center">
+    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex flex-col justify-center items-center">
       {/* Header Section */}
-      <div className="flex flex-col items-center justify-center h-1/4 flex-none">
-        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+      <div className="flex flex-col items-center justify-center h-2/5 flex-none">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2 pt-8" />
         <h1 className="text-3xl font-bold text-white pt-4">Sign Up</h1>
         <p className="text-sm text-white pb-2">Create an account to enjoy our features</p>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col w-full max-w-xl h-3/4 p-4 items-center justify-center flex-grow">
+      <div className="flex flex-col w-full max-w-xl h-3/5 p-4 items-center justify-center flex-grow h-full">
         <div className="bg-white w-full h-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center">
           <form className="w-full max-w-md">
             <div className="mb-4">
@@ -70,7 +70,7 @@ const Signup = () => {
               Continue with Google
             </button>
           </form>
-          <div className="flex flex-col items-center mt-4">
+          <div className="flex flex-row items-center pt-6">
             <input
               type="checkbox"
               id="terms"
