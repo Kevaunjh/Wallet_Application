@@ -3,12 +3,12 @@ import bnwLogo from './images/bnwbanx.png';
 import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import checked from './images/checked.png'
+import checked from './images/checked.png';
 import { getDatabase, ref, set } from 'firebase/database';
 
 const Signup = () => {
-  const [view, setView] = useState('home'); 
-  const [currentTab, setCurrentTab] = useState('signup1'); 
+  const [view, setView] = useState('home');
+  const [currentTab, setCurrentTab] = useState('signup1');
   const navigate = useNavigate();
   const db = getDatabase();
 
@@ -29,7 +29,7 @@ const Signup = () => {
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
       const numberInput = document.getElementById('number').value.trim();
-      const numberRegex = /^\d{10,}$/; 
+      const numberRegex = /^\d{10,}$/;
       if (!numberRegex.test(numberInput)) {
         alert('Please enter a valid mobile.');
         return false;
@@ -99,12 +99,12 @@ const Signup = () => {
 
   const handleInputChange = (e, index) => {
     const value = e.target.value;
-    if (/^\d$/.test(value)) { 
+    if (/^\d$/.test(value)) {
       if (index < inputRefs.current.length - 1) {
         inputRefs.current[index + 1].focus();
       }
     } else {
-      e.target.value = ''; 
+      e.target.value = '';
     }
   };
 
@@ -115,17 +115,19 @@ const Signup = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-[#3b8d6e] text-white flex justify-center items-center">
-      <div className="flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 h-screen pb-6 items-center w-full">
-        <div className="flex p-6 ml-1">
-          <img src={bnwLogo} alt="Logo" className="w-44 h-24" />
+    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex justify-center items-center">
+      <div className="flex flex-col max-w-2xl w-full h-full max-h-screen p-6 items-center">
+        <div className="flex p-6">
+          <img src={bnwLogo} alt="Logo" className="w-32 h-20" />
         </div>
-        
+
         {currentTab === 'signup1' && (
-          <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full">
-            <h1 className="text-4xl font-bold mb-4 ml-6">Sign Up</h1>
-            <p className="text-md mb-6 ml-6">Create an account to enjoy our features</p>
-            <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center justify-center flex-grow">
+          <div className="flex flex-col flex-1 justify-between w-full">
+            <div className="flex flex-col items-center w-full px-6">
+              <h1 className="text-3xl font-bold mb-4">Sign Up</h1>
+              <p className="text-md mb-6">Create an account to enjoy our features</p>
+            </div>
+            <div className="bg-white w-full max-h-80 p-8 rounded-3xl shadow-md flex flex-col items-center justify-between">
               <form className="w-full max-w-md">
                 <div className="mb-4">
                   <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
@@ -139,14 +141,14 @@ const Signup = () => {
                 </div>
                 <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16"
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center mt-8"
                   onClick={handleNextClick}
                 >
                   Next
                 </button>
                 <button
                   type="button"
-                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8"
+                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center mt-4"
                   onClick={handleSignInWithGoogle}
                 >
                   <img
@@ -156,21 +158,21 @@ const Signup = () => {
                   />
                   Continue with Google
                 </button>
-                <div className="flex items-center mt-12">
-                  <input
-                    type="checkbox"
-                    id="terms"
-                    className="mr-2 leading-tight"
-                  />
-                  <label htmlFor="terms" className="text-gray-700 text-sm">
-                    By creating an account I agree to{' '}
-                    <span className="text-green-600">SeeTek's</span> {' '}
-                    <span className="text-green-600">Terms of Service</span> {' '}
-                    and{' '}
-                    <span className="text-green-600">Privacy Policy</span>
-                  </label>
-                </div>
               </form>
+            </div>
+            <div className="flex flex-col items-center mt-8">
+              <input
+                type="checkbox"
+                id="terms"
+                className="mr-2 leading-tight"
+              />
+              <label htmlFor="terms" className="text-gray-300 text-sm">
+                By creating an account I agree to{' '}
+                <span className="text-green-300">SeeTek's</span> {' '}
+                <span className="text-green-300">Terms of Service</span> {' '}
+                and{' '}
+                <span className="text-green-300">Privacy Policy</span>
+              </label>
             </div>
           </div>
         )}
