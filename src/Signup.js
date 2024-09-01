@@ -133,7 +133,7 @@ const Signup = () => {
         
         {/* Render content based on the currentTab state */}
         {currentTab === 'signup1' && (
-          <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full min-h-[45rem] max-h-[45rem] h-[45rem]">
+          <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full 2xl:min-h-[45rem] 2xl:max-h-[45rem] 2xl:h-[45rem] min-h-[20rem] max-h-[20rem] h-[20rem]  ">
           <h1 className="text-4xl font-bold mb-4 ml-6">Sign Up</h1>
           <p className="text-md mb-6 ml-6">Create an account to enjoy our features</p>
           <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center justify-center flex-grow">
