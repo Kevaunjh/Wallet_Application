@@ -133,58 +133,58 @@ const Signup = () => {
         
         {/* Render content based on the currentTab state */}
         {currentTab === 'signup1' && (
-          <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full">
-            <h1 className="text-4xl font-bold mb-4 ml-6">Sign Up</h1>
-            <p className="text-md mb-6 ml-6">Create an account to enjoy our features</p>
-            <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
+          <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full min-h-[45rem] max-h-[45rem] h-[45rem]">
+          <h1 className="text-4xl font-bold mb-4 ml-6">Sign Up</h1>
+          <p className="text-md mb-6 ml-6">Create an account to enjoy our features</p>
+          <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center justify-center flex-grow">
               <form className="w-full max-w-md">
-                <div className="mb-4">
-                  <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
-                  <input
-                    type="number"
-                    id="number"
-                    className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline number-to-text"
-                    placeholder="XXXXXXXXXXXX"
-                    min="0"
-                
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16"
-                  onClick={handleNextClick}
-                >
-                  Next
-                </button>
-                <button
-                  type="button"
-                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8"
-                  onClick={handleSignInWithGoogle}
-                >
-                  <img
-                    src="https://img.icons8.com/color/16/000000/google-logo.png"
-                    alt="Google logo"
-                    className="h-6 w-6 mr-2"
-                  />
-                  Continue with Google
-                </button>
-                <div className="flex items-center mt-20">
-                  <input
-                    type="checkbox"
-                    id="terms"
-                    className="mr-2 leading-tight"
-                  />
-                  <label htmlFor="terms" className="text-gray-700 text-sm">
-                    By creating an account I agree to{' '}
-                    <span className="text-green-600">SeeTek's</span> {' '}
-                    <span className="text-green-600">Terms of Service</span> {' '}
-                    and{' '}
-                    <span className="text-green-600">Privacy Policy</span>
-                  </label>
-                </div>
+                  <div className="mb-4">
+                      <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
+                      <input
+                          type="number"
+                          id="number"
+                          className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline number-to-text"
+                          placeholder="XXXXXXXXXXXX"
+                          min="0"
+                      />
+                  </div>
+                  <button
+                      type="button"
+                      className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16"
+                      onClick={handleNextClick}
+                  >
+                      Next
+                  </button>
+                  <button
+                      type="button"
+                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8"
+                      onClick={handleSignInWithGoogle}
+                  >
+                      <img
+                          src="https://img.icons8.com/color/16/000000/google-logo.png"
+                          alt="Google logo"
+                          className="h-6 w-6 mr-2"
+                      />
+                      Continue with Google
+                  </button>
+                  <div className="flex items-center mt-12">
+                      <input
+                          type="checkbox"
+                          id="terms"
+                          className="mr-2 leading-tight"
+                      />
+                      <label htmlFor="terms" className="text-gray-700 text-sm">
+                          By creating an account I agree to{' '}
+                          <span className="text-green-600">SeeTek's</span> {' '}
+                          <span className="text-green-600">Terms of Service</span> {' '}
+                          and{' '}
+                          <span className="text-green-600">Privacy Policy</span>
+                      </label>
+                  </div>
               </form>
-            </div>
           </div>
+      </div>
+      
         )}
 
         {currentTab === 'signup2' && (
@@ -193,7 +193,7 @@ const Signup = () => {
             <p className="text-md mb-6 ml-6">Complete your details to finish signing up</p>
             <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
               <form className="w-full max-w-md">
-                <div className="mb-20">
+                <div className="mb-12">
                   <label className="block text-gray-700 text-lg mb-2">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
@@ -211,7 +211,7 @@ const Signup = () => {
                 </div>
                 <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16 mb-8"
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8 mb-8"
                   onClick={handleNextClick}
                 >
                   Next
