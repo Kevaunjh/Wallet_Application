@@ -211,7 +211,7 @@ const Signup = () => {
                 </div>
                 <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8 mb-8"
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-4 mb-8"
                   onClick={handleNextClick}
                 >
                   Next
@@ -259,12 +259,12 @@ const Signup = () => {
                       type="repassword"
                       id="repassword"
                       placeholder="Enter your password"
-                      className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 text-lg leading-tight focus:outline-none focus:shadow-outline truncate"
                     />
                 </div>
                 <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16 mb-8"
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-12 mb-8"
                   onClick={handleNextClick}
                 >
                   Next
@@ -325,7 +325,7 @@ const Signup = () => {
              {/* Action Buttons */}
              <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16 mb-8 "
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-6 mb-8 "
                   onClick={handleNextClick}
                 >
                   Next
@@ -359,7 +359,7 @@ const Signup = () => {
              </div>
          
              {/* Action Buttons */}
-             <div className="w-full max-w-md flex flex-col gap-4 mt-24">
+             <div className="w-full max-w-md flex flex-col gap-4 mt-16">
                <Link
                  to="/Loading"
                  type="button"
