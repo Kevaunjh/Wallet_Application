@@ -112,7 +112,7 @@ const Login = () => {
   return (
 
       <div className="w-screen min-h-screen bg-[#3b8d6e] text-white">
-        <div className='flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 h-full pb-6 items-center w-full'>
+        <div className='flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 pb-6 items-center w-full'>
           <div className="flex p-6 ml-1">
             <img src={bnwLogo} alt="Logo" className="w-44 h-24" />
           </div>
