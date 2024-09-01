@@ -191,7 +191,7 @@ const Signup = () => {
           <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full">
             <h1 className="text-4xl font-bold mb-4 ml-6">Sign Up</h1>
             <p className="text-md mb-6 ml-6">Complete your details to finish signing up</p>
-            <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
+            <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center justify-center flex-grow">
               <form className="w-full max-w-md">
                 <div className="mb-12">
                   <label className="block text-gray-700 text-lg mb-2">
@@ -211,7 +211,7 @@ const Signup = () => {
                 </div>
                 <button
                   type="button"
-                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-4 mb-8"
+                  className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-12 mb-8"
                   onClick={handleNextClick}
                 >
                   Next

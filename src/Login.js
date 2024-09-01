@@ -4,6 +4,7 @@ import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import fingerprint from './images/fingerprint-scan.png';
+import fingerprint2 from'./images/fingerprint2.png';
 import LogoAnimation from './LogoAnimation';
 import { getDatabase, ref, set } from 'firebase/database';
 
@@ -162,7 +163,7 @@ const Login = () => {
                   </button>
                   <div className="flex flex-row justify-center mt-20 items-center">
                     <img
-                      src={fingerprint}
+                      src={fingerprint2}
                       alt="Fingerprint icon"
                       className="h-12 w-12 mb-2 cursor-pointer"
                       onClick={handleOpenModal}
