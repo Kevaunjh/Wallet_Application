@@ -38,14 +38,13 @@ const AccountManagement = () => {
 
   // Home view
   return (
-    <div className='w-screen h-screen bg-[#1c1c1c] p-8'>
-    <div className="h-screen w-screen flex items-center justify-center text-white ">
+    <div className="min-h-screen w-screen flex items-center justify-center bg-[#1c1c1c] text-white p-8">
       <div className="flex flex-col items-center justify-center w-full max-w-md text-center space-y-6">
         {/* Logo */}
         <img src={bnwLogo} alt="Logo" className="h-24 w-auto" />
 
         {/* Welcome Text */}
-        <h1 className="text-4xl font-bold pb-12">Welcome to OuterBanx</h1>
+        <h1 className="text-4xl font-bold">Welcome to OuterBanx</h1>
 
         {/* Sign Up Button */}
         <div
@@ -87,7 +86,6 @@ const AccountManagement = () => {
           </button>
         </div>
       </div>
-    </div>
     </div>
   );
 };

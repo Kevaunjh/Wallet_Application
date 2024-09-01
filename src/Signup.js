@@ -38,7 +38,7 @@ const Signup = () => {
 
       {/* Content Section - Flex-grow to fill remaining space */}
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
-        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
           <form className="w-full max-w-md">
             <div className="mb-4">
               <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
