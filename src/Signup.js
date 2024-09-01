@@ -140,16 +140,17 @@ const Signup = () => {
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
           <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-6 lg:space-y-16">
-            <div>
-              <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
-              <input
-                type="number"
-                id="number"
-                className="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="XXXXXXXXXXXX"
-                min="0"
-              />
-            </div>
+          <div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Mobile Number</legend>
+    <input
+      type="number"
+      id="number"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
             <div className="flex flex-col gap-4">
               <button
                 type="button"
@@ -211,16 +212,77 @@ const Signup = () => {
                   </label>
                 </div>
 
-            <div>
-              <label htmlFor="verificationcode" className="block text-gray-700 text-lg font-bold mb-2">Verification code</label>
-              <input
-                type="verificationcode"
-                id="verificationcode"
-                className="shadow appearance-none border rounded-xl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="XXXXXXXXXXXX"
-                min="0"
-              />
+                <div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Verification Code</legend>
+    <input
+      type="verificationcode"
+      id="verificationcode"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
+            <div className="flex flex-col gap-4">
+              <button
+                type="button"
+                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleNextClick}
+              >
+                Next
+              </button>
+              <button
+                type="button"
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleBackClick}
+              > 
+                Back
+              </button>
             </div>
+          </form>
+        </div>
+      </div>
+
+      <div className="flex-none" />
+      </>
+    )}
+    {currentTab === 'signup3' && (
+        <>
+      <div className="flex flex-col items-center justify-center flex-none py-4">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+
+        
+        <h1 className="text-3xl font-bold">Biometric Setup</h1>
+        <p className="text-sm mt-1">Enter a unique PIN number</p>
+      </div>
+
+      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+
+          <div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Password</legend>
+    <input
+      type="password"
+      id="password"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
+<div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">RePassword</legend>
+    <input
+      type="password"
+      id="repassword"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
             <div className="flex flex-col gap-4">
               <button
                 type="button"
