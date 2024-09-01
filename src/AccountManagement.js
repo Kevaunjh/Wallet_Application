@@ -39,7 +39,7 @@ const AccountManagement = () => {
 
   // Home view
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center bg-[#1c1c1c] text-white space-y-8 p-8 ">
+    <div className="h-screen w-screen flex flex-col items-center justify-center bg-[#1c1c1c] text-white space-y-8 overflow-x-hidden overflow-y-hidden p-8">
       {/* Logo */}
       <img src={bnwLogo} alt="Logo" className="h-24 w-auto mb-4" />
 
@@ -76,7 +76,7 @@ const AccountManagement = () => {
       </button>
 
       {/* Existing Account Link */}
-      <div className="text-white mt-6 flex flex-row">
+      <div className="text-white mt-6 flex flex-row pb-12">
         <p>Already have an account?</p>
         <button
           className="text-green-600 underline ml-1"
