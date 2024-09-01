@@ -139,9 +139,9 @@ const Signup = () => {
 
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
-          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-12 lg:space-y-16">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-6 lg:space-y-16">
             <div>
-              <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-4">Mobile Number</label>
+              <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
               <input
                 type="number"
                 id="number"
@@ -204,15 +204,15 @@ const Signup = () => {
 
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
-          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-3 lg:space-y-16">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
           <div className="mb-2">
-                  <label className="block text-gray-700 text-md 2xl:text-lg text-center mb-2">
+                  <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-2">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
                 </div>
 
             <div>
-              <label htmlFor="verificationcode" className="block text-gray-700 text-lg font-bold mb-4">Verification code</label>
+              <label htmlFor="verificationcode" className="block text-gray-700 text-lg font-bold mb-2">Verification code</label>
               <input
                 type="verificationcode"
                 id="verificationcode"
