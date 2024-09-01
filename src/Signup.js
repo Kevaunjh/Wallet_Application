@@ -139,7 +139,7 @@ const Signup = () => {
 
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
-          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-20">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-12 lg:space-y-16">
             <div>
               <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-4">Mobile Number</label>
               <input
@@ -172,7 +172,7 @@ const Signup = () => {
               </button>
             </div>
           </form>
-          <div className="flex flex-row items-center pt-12 sm:pt-16 md:pt-20">
+          <div className="flex flex-row items-center pt-12 sm:pt-16 md:pt-4">
             <input
               type="checkbox"
               id="terms"
@@ -204,9 +204,9 @@ const Signup = () => {
 
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
-          <form className="w-full max-w-md space-y-8 sm:space-y-12 md:space-y-16">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-3 lg:space-y-16">
           <div className="mb-2">
-                  <label className="block text-gray-700 text-lg mb-2">
+                  <label className="block text-gray-700 text-md 2xl:text-lg text-center mb-2">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
                 </div>
