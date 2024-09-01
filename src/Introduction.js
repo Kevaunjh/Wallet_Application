@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import bnwLogo from './images/bnwbanx.png';
 
 const TabOne = ({ onNext }) => (
-  <div className="w-screen h-screen bg-[#1c1c1c]">
+  <div className="w-screen h-screen bg-[#1c1c1c] ">
     <div className="flex flex-col justify-between items-start max-w-8/12 2xl:max-w-screen-xl mx-auto p-4 ml-8 2xl:pl-72">
       <img src={bnwLogo} alt="Logo" className="mt-8 w-44 h-24" />
       <div className="flex flex-col items-start mb-4 bottom-16  absolute">
