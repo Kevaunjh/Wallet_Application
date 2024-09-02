@@ -207,7 +207,7 @@ const Signup = () => {
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
           <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-          <div className="">
+          <div className="mb-2">
                   <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-8">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
@@ -219,12 +219,12 @@ const Signup = () => {
     <input
       type="verificationcode"
       id="verificationcode"
-      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none mb-4"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
       placeholder="XXXXXXXXXXXX"
     />
   </fieldset>
 </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-4">
               <button
                 type="button"
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
