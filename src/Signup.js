@@ -208,7 +208,7 @@ const Signup = () => {
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
           <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
           <div className="">
-                  <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-6">
+                  <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-8">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
                 </div>
@@ -219,7 +219,7 @@ const Signup = () => {
     <input
       type="verificationcode"
       id="verificationcode"
-      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none mb-4"
       placeholder="XXXXXXXXXXXX"
     />
   </fieldset>
