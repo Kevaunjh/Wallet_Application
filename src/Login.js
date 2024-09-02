@@ -4,7 +4,6 @@ import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import fingerprint from './images/fingerprint-scan.png';
-import fingerprint2 from'./images/fingerprint2.png';
 import LogoAnimation from './LogoAnimation';
 import { getDatabase, ref, set } from 'firebase/database';
 
@@ -18,6 +17,7 @@ const Login = () => {
   const [isCodeResent, setIsCodeResent] = useState(false);
   const navigate = useNavigate();
   const db = getDatabase();
+  const [codeResent, setCodeResent] = useState(false);
 
   const handleSignInWithGoogle = async () => {
     try {
@@ -109,155 +109,144 @@ const Login = () => {
   const handleOtpClick = () => {
     setIsOtpSent(true);
   };
-
   return (
+    <div className="w-screen min-h-screen bg-[#3b8d6e] text-white flex flex-col">
+{currentTab === 'login1' && (
+        <>
+      <div className="flex flex-col items-center justify-center flex-none py-4">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
 
-      <div className="w-screen min-h-screen bg-[#3b8d6e] text-white">
-        <div className='flex flex-col 2xl:max-w-8/12 2xl:mx-auto p-0.5 pb-6 items-center w-full'>
-          <div className="flex p-6 ml-1">
-            <img src={bnwLogo} alt="Logo" className="w-44 h-24" />
-          </div>
-
-          {currentTab === 'login1' && (
-            <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full">
-              <h1 className="text-4xl font-bold mb-4 ml-6">Log in</h1>
-              <p className="text-md mb-6 ml-6">Log in to proceed</p>
-              <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
-                <form className="w-full max-w-md">
-                  <div className="mb-4 mt-8">
-                    <label htmlFor="number" className="block text-gray-700 text-lg font-bold mb-2">Mobile Number</label>
-                    <input
-                      type="number"
-                      id="number"
-                      className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline"
-                      placeholder="XXXXXXXXXX"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label htmlFor="password" className="block text-gray-700 text-lg font-bold mb-2">Password</label>
-                    <input
-                      type="password"
-                      id="password"
-                      className="shadow appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none max-w-md focus:shadow-outline"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-16"
-                    onClick={handleNextClick}
-                  >
-                    Login
-                  </button>
-                  <button
-                    type="button"
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-md flex justify-center items-center text-center mt-8"
-                    onClick={handleSignInWithGoogle}
-                  >
-                    <img
-                      src="https://img.icons8.com/color/16/000000/google-logo.png"
-                      alt="Google logo"
-                      className="h-6 w-6 mr-2"
-                    />
-                    Continue with Google
-                  </button>
-                  <div className="flex flex-row justify-center mt-20 items-center">
-                    <img
-                      src={fingerprint2}
-                      alt="Fingerprint icon"
-                      className="h-12 w-12 mb-2 cursor-pointer"
-                      onClick={handleOpenModal}
-                    />
-                    <p onClick={handleOpenModal} className="text-md mb-1 text-green-600">
-                      Use Biometric to Login
-                    </p>
-                  </div>
-                </form>
-              </div>
-            </div>
-          )}
-
-          {currentTab === 'login2' && (
-            <div className="flex flex-col px-6 flex-1 2xl:w-5/12 w-full">
-              <h1 className="text-4xl font-bold mb-4 ml-6">Enter OTP</h1>
-              <p className="text-md mb-6 ml-6">Please enter your OTP to proceed</p>
-              <div className="bg-white w-full p-8 rounded-3xl shadow-md flex flex-col items-center flex-1 justify-center">
-                <div className="mb-12">
-                  <label className="block text-gray-700 text-lg mb-2">
-                    Enter the OTP you received
-                  </label>
-                </div>
-                <div className="flex gap-2 sm:gap-4 mb-8">
-                  {[1, 2, 3, 4, 5].map((_, index) => (
-                    <input
-                      key={index}
-                      type="text"
-                      maxLength="1"
-                      ref={(el) => inputRefs.current[index] = el}
-                      onChange={(e) => handleInputChange(e, index)}
-                      onKeyDown={(e) => handleKeyDown(e, index)}
-                      className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none text-black"
-                      aria-label={`OTP digit ${index + 1}`}
-                      inputMode="numeric"
-                    />
-                  ))}
-                </div>
-                <div className="w-full max-w-md flex flex-col gap-4 mt-32">
-                  <Link to="/Loading"
-                    type="button"
-                    className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow text-center"
-                  >
-                    Login
-                  </Link>
-                  <button
-                    type="button"
-                    className="hover:bg-gray-100 text-green-600 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow"
-                    onClick={handleBackClick}
-                  >
-                    Back
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Modal */}
-        {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">
-              <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-                onClick={handleCloseModal}
-              >
-                &times;
-              </button>
-              <div className="flex justify-center mb-4">
-                <img
-                  src={fingerprint}
-                  alt="Fingerprint"
-                  className={`w-16 h-16 ${isFingerprintClicked || isOtpSent ? 'opacity-50 cursor-not-allowed' : 'opacity-50 cursor-pointer'}`}
-                  onClick={handleFingerprintClick}
-                />
-              </div>
-              <p className="text-center text-lg mb-4 text-black">
-                Please put your finger on the sensor to complete the transaction
-              </p>
-              <div className="w-full flex justify-center mt-6">
-                <Link to="/Loading">
-                  <button
-                    className={`px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg ${isFingerprintClicked || isOtpSent ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
-                    disabled={!isFingerprintClicked && !isOtpSent}
-                  >
-                    Finish
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+        
+        <h1 className="text-3xl font-bold">Log in</h1>
+        <p className="text-sm mt-1">Log in to proceed</p>
       </div>
 
+      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+          <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+
+          <div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold ">Mobile Number</legend>
+    <input
+      type="number"
+      id="number"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none number-to-text"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
+<div className="relative mb-4">
+  <fieldset className="border border-gray-300 rounded-xl p-0">
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Password</legend>
+    <input
+      type="password"
+      id="password"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      placeholder="XXXXXXXXXXXX"
+    />
+  </fieldset>
+</div>
+            <div className="flex flex-col gap-4">
+              <button
+                type="button"
+                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleNextClick}
+              >
+                Next
+              </button>
+              <button
+                type="button"
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleBackClick}
+              > 
+                Back
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div className="flex-none" />
+      </>
+    )}
+  {currentTab === 'login2' && (
+        <>
+      <div className="flex flex-col items-center justify-center flex-none py-4">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+
+        
+        <h1 className="text-3xl font-bold">Biometric Setup</h1>
+        <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+      </div>
+
+      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+          <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+          <div className="flex flex-col items-center justify-center w-full">
+  <label className="block text-gray-700 text-sm mb-8 text-center 2xl:mb-24 xl:mb-2">
+    Enter the OTP you received
+  </label>
+
+  {/* OTP Input Section */}
+  <div className="flex justify-center gap-2 sm:gap-4  w-full">
+    {[1, 2, 3, 4, 5].map((_, index) => (
+      <input
+        key={index}
+        type="text"
+        maxLength="1"
+        ref={(el) => (inputRefs.current[index] = el)}
+        onChange={(e) => handleInputChange(e, index)}
+        onKeyDown={(e) => handleKeyDown(e, index)}
+        className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
+        aria-label={`OTP digit ${index + 1}`}
+        inputMode="numeric" // Ensure numeric keypad on mobile
+      />
+    ))}
+  </div>
+</div>
+     
+             {/* Didn't receive the code section */}
+             <div className="text-center mb-2 ">
+               <p 
+                 onClick={handleResendCode} 
+                 className="text-blue-500 text-sm cursor-pointer "
+               >
+                 Didn't receive the code?
+               </p>
+               {codeResent && (
+                 <p className="text-green-600 text-sm mt-2 xl:hidden 2xl:block">Code Resent</p>
+               )}
+             </div>
+          
+            <div className="flex flex-col gap-4">
+              <Link
+                type="button"
+                to="/Loading"
+                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleNextClick}
+              >
+                Next
+              </Link>
+              <button
+                type="button"
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleBackClick}
+              > 
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-none" />
+      </>
+    )}
+    
+    </div>
   );
 };
 

@@ -219,12 +219,12 @@ const Signup = () => {
     <input
       type="verificationcode"
       id="verificationcode"
-      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none number-to-text"
       placeholder="XXXXXXXXXXXX"
     />
   </fieldset>
 </div>
-            <div className="flex flex-col gap-4 mt-4">
+            <div className="flex flex-col gap-4 pt-5">
               <button
                 type="button"
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
