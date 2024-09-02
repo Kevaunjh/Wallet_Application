@@ -52,34 +52,41 @@ function BankAccounts() {
   });
 
   return (
-    <div className="BankAccounts min-h-screen flex flex-col items-center justify-center  overflow-auto relative bg-transparent w-screen">
- 
-      {/* Mobile Layout */}
-      <div className="w-full  bg-white p-6  h-screen overflow-auto flex flex-col z-20 ">
-      <div className=" flex items-center mb-8 ">
-        <Link to="/MyAccount" className="mr-4 bg-[#467a4d] text-white rounded-full p-2 mt-2 ml-2">
+    <div className="Profile bg-[#e9f7f2] min-h-screen flex flex-col items-center relative">
+
+      {/* Combined Container for Small Screens */}
+      <div className="w-full bg-[#e9f7f2] p-6  flex flex-col items-center  relative min-h-screen h-auto">
+        {/* Back Button for Smaller Screens */}
+        <Link to="/MyAccount" className="absolute top-8 left-8 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
         </Link>
-      </div>
-        {/* Profile Info */}
-        <div className="flex flex-col items-center mb-6 ">
-          <img
-            src={profileplaceholder}
-            alt="Profile Placeholder"
-            className=" w-24 h-24 rounded-full mb-2 border-black border-2"
-          />
-          <div className="text-center mb-2">
-            <h2 className="text-lg font-bold">John Doe</h2>
-          </div>
-          <div className="bg-[#467a4d] p-1 rounded-lg flex items-center h-8">
-            <p className="text-md text-white mr-2">★ Points:</p>
-            <p className="text-lg font-semibold text-white">{points}</p>
-          </div>
-        </div>
 
-        {/* Bank Accounts */}
+       
+        <div className="flex flex-row items-center justify-between rounded-3xl bg-white border-2 shadow-md 2xl:w-8/12 w-full p-8 gap-6 xl:gap-16 mt-16 py-4">
+  {/* Profile Picture and Name */}
+  <div className="flex items-center gap-6">
+    <img 
+      src={profileplaceholder} 
+      alt="Profile Placeholder" 
+      className="2xl:w-24 2xl:h-24 h-16 w-16 rounded-full shadow-md 2xl:border-2 2xl:border-black"
+    />
+    <div className="text-left">
+      <h2 className="text-xl font-bold">John Doe</h2>
+    </div>
+  </div>
+  {/* Points */}
+  <div className="bg-[#467a4d] p-1 rounded-lg flex items-center w-[7.6rem]">
+    <Link className='flex items-center rounded-lg p-1' to="/Points">
+      <p className="text-md font-semibold text-white mr-2">★ {points}</p>
+      <p className="text-md text-white">Pts</p>
+    </Link>
+  </div>
+</div>
+
+        {/* Profile Info Section Links */}
+        <div className="mt-8 flex-grow 2xl:w-8/12 mx-auto rounded-3xl bg-white border-2 justify-center shadow-md w-full p-8 gap-6 xl:gap-16 xl:justify-center xl:px-24">
         <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Cards</h2>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 2xl:w-8/12 2xl:mx-auto'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4  2xl:mx-auto'>
           {cardContainers}
         </div>
         <div className='flex justify-center mt-4'>
@@ -90,7 +97,9 @@ function BankAccounts() {
           </Link>
         </div>
       </div>
-    </div>
+          </div>
+</div>
+
   );
 }
 

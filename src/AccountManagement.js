@@ -1,31 +1,14 @@
+// AccountManagement.js
 import React, { useState } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 import bnwLogo from './images/bnwbanx.png';
-import { auth, provider, signInWithPopup, signInWithRedirect, getRedirectResult } from './firebase';
+import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const AccountManagement = () => {
-  const [view, setView] = useState('home'); // Tracks the current view: 'home', 'signup', or 'login'
+  const [view, setView] = useState('home');
   const navigate = useNavigate();
-
-  // Handle redirect result on mobile
-  useEffect(() => {
-    const handleRedirectResult = async () => {
-      try {
-        const result = await getRedirectResult(auth);
-        if (result) {
-          navigate('/Loading');
-        }
-      } catch (error) {
-        console.error("Error handling redirect result:", error);
-      }
-    };
-
-    handleRedirectResult();
-  }, [navigate]);
-
   const handleSignUpClick = () => setView('signup');
   const handleLoginClick = () => setView('login');
   const handleHomeClick = () => setView('home');
@@ -42,41 +25,35 @@ const AccountManagement = () => {
     try {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (isMobile) {
-        await signInWithRedirect(auth, provider);
+        navigate('/Loading');
       } else {
         await signInWithPopup(auth, provider);
+       
       }
+
+      navigate('/Loading');
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
   };
 
-  // Home view
   return (
     <div className="min-h-screen w-screen flex items-center justify-center bg-[#1c1c1c] text-white p-8">
       <div className="flex flex-col items-center justify-center w-full max-w-md text-center space-y-6">
-        {/* Logo */}
         <img src={bnwLogo} alt="Logo" className="h-24 w-auto" />
 
-        {/* Welcome Text */}
         <h1 className="text-4xl font-bold">Welcome to OuterBanx</h1>
-
-        {/* Sign Up Button */}
         <div
           className="bg-green-600 text-white py-3 px-8 rounded-lg text-lg font-semibold w-full max-w-xs text-center cursor-pointer"
           onClick={handleSignUpClick}
         >
           Sign Up with Mobile Number
         </div>
-
-        {/* OR Divider */}
         <div className="flex items-center w-full max-w-xs">
           <div className="flex-grow border-t border-gray-500"></div>
           <span className="mx-4">or</span>
           <div className="flex-grow border-t border-gray-500"></div>
         </div>
-
-        {/* Google Sign In Button */}
         <button
           type="button"
           className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-8 border border-gray-400 rounded-lg shadow w-full max-w-xs flex justify-center items-center"
@@ -89,8 +66,6 @@ const AccountManagement = () => {
           />
           Sign In with Google
         </button>
-
-        {/* Existing Account Link */}
         <div className="text-white flex flex-row items-center">
           <p>Already have an account?</p>
           <button

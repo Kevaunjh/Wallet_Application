@@ -304,8 +304,6 @@ function Main() {
                 </Link>
               </div>
             </div>
-
-            {/* Quick Services */}
             
             
           </div>

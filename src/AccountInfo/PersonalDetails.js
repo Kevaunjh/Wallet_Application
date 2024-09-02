@@ -6,39 +6,41 @@ const points = 1652; // Update this value to match the global points
 
 function PersonalDetails() {
   return (
-    <body className="bg-white">
-    <div className="PersonalDetails min-h-screen flex flex-col items-center relative bg-white 2xl:p-8 p-6">
-      {/* XL Screens: Separate Containers */}
-      
+    <div className="Profile bg-[#e9f7f2] min-h-screen flex flex-col items-center relative">
 
-      {/* Smaller than XL Screens: Combined Container */}
-      <div className="flex flex-col w-screen h-screen bg-white 2xl:p-6 p-16 fixed top-0 ">
-        {/* Back Button */}
-        <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 ">
+      {/* Combined Container for Small Screens */}
+      <div className="w-full bg-[#e9f7f2] p-6  flex flex-col items-center  relative min-h-screen h-auto">
+        {/* Back Button for Smaller Screens */}
+        <Link to="/MyAccount" className="absolute top-8 left-8 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
         </Link>
 
-        {/* Profile Picture and Name */}
-        <div className="flex flex-col items-center 2xl:mt-16 mt-2">
-          <img 
-            src={profileplaceholder} 
-            alt="Profile Placeholder" 
-            className="2xl:w-24 2xl:h-24 h-20 w-20 rounded-full mb-2 border-black border-2"
-          />
-          <h2 className="text-lg font-bold">John Doe</h2>
-        </div>
+       
+        <div className="flex flex-row items-center justify-between rounded-3xl bg-white border-2 shadow-md 2xl:w-8/12 w-full p-8 gap-6 xl:gap-16 mt-16 py-4">
+  {/* Profile Picture and Name */}
+  <div className="flex items-center gap-6">
+    <img 
+      src={profileplaceholder} 
+      alt="Profile Placeholder" 
+      className="2xl:w-24 2xl:h-24 h-16 w-16 rounded-full shadow-md 2xl:border-2 2xl:border-black"
+    />
+    <div className="text-left">
+      <h2 className="text-xl font-bold">John Doe</h2>
+    </div>
+  </div>
+  {/* Points */}
+  <div className="bg-[#467a4d] p-1 rounded-lg flex items-center w-[7.6rem]">
+    <Link className='flex items-center rounded-lg p-1' to="/Points">
+      <p className="text-md font-semibold text-white mr-2">★ {points}</p>
+      <p className="text-md text-white">Pts</p>
+    </Link>
+  </div>
+</div>
 
-        <div className="flex justify-center mt-2">
-          <div className="bg-[#467a4d] p-1 rounded-lg flex items-center">
-            <p className="text-md text-white mr-2">★ Points:</p>
-            <p className="text-lg font-semibold text-white">{points}</p>
-          </div>
-        </div>
-        
-        {/* Personal Details */}
-        <div className="mt-8 flex-1 flex-grow w-full 2xl:w-8/12 mx-auto">
-          <h3 className="text-2xl font-semibold mb-6 text-center">Personal Details</h3>
-          <div className="flex flex-col space-y-4">
+        {/* Profile Info Section Links */}
+        <div className="mt-8 flex-grow 2xl:w-8/12 mx-auto rounded-3xl bg-white border-2 justify-center shadow-md w-full p-8 gap-6 xl:gap-16 xl:justify-center xl:px-24">
+          <h3 className="text-2xl font-semibold mb-6 xl:text-center text-left">Personal Details</h3>
+          <div className="flex flex-col space-y-4 xl:mt-12 mt-4">
             <div className="flex justify-between">
               <span className="font-semibold">Email:</span>
               <span>johndoe@example.com</span>
@@ -64,10 +66,9 @@ function PersonalDetails() {
               <span>01/01/2020</span>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
+</div>
     </div>
-    </body>
   );
 }
 
