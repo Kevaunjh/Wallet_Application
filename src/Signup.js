@@ -126,7 +126,7 @@ const Signup = () => {
 
 
   return (
-    <div className="w-screen h-screen bg-[#3b8d6e] text-white flex flex-col">
+    <div className="w-screen min-h-screen bg-[#3b8d6e] text-white flex flex-col">
       {currentTab === 'signup1' && (
         <>
       <div className="flex flex-col items-center justify-center flex-none py-4">
@@ -146,8 +146,9 @@ const Signup = () => {
     <input
       type="number"
       id="number"
-      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
+      className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none number-to-text"
       placeholder="XXXXXXXXXXXX"
+      min="0"
     />
   </fieldset>
 </div>
@@ -300,6 +301,129 @@ const Signup = () => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+
+      <div className="flex-none" />
+      </>
+    )}
+
+{currentTab === 'signup4' && (
+        <>
+      <div className="flex flex-col items-center justify-center flex-none py-4">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+
+        
+        <h1 className="text-3xl font-bold">Biometric Setup</h1>
+        <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+      </div>
+
+      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+          <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+          <div className="flex flex-col items-center justify-center w-full">
+  <label className="block text-gray-700 text-sm mb-8 text-center 2xl:mb-24 xl:mb-2">
+    Enter the OTP you received
+  </label>
+
+  {/* OTP Input Section */}
+  <div className="flex justify-center gap-2 sm:gap-4  w-full">
+    {[1, 2, 3, 4, 5].map((_, index) => (
+      <input
+        key={index}
+        type="text"
+        maxLength="1"
+        ref={(el) => (inputRefs.current[index] = el)}
+        onChange={(e) => handleInputChange(e, index)}
+        onKeyDown={(e) => handleKeyDown(e, index)}
+        className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
+        aria-label={`OTP digit ${index + 1}`}
+        inputMode="numeric" // Ensure numeric keypad on mobile
+      />
+    ))}
+  </div>
+</div>
+     
+             {/* Didn't receive the code section */}
+             <div className="text-center mb-2 ">
+               <p 
+                 onClick={handleResendCode} 
+                 className="text-blue-500 text-sm cursor-pointer "
+               >
+                 Didn't receive the code?
+               </p>
+               {codeResent && (
+                 <p className="text-green-600 text-sm mt-2 xl:hidden 2xl:block">Code Resent</p>
+               )}
+             </div>
+          
+            <div className="flex flex-col gap-4">
+              <button
+                type="button"
+                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleNextClick}
+              >
+                Next
+              </button>
+              <button
+                type="button"
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleBackClick}
+              > 
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-none" />
+      </>
+    )}
+
+{currentTab === 'signup5' && (
+        <>
+      <div className="flex flex-col items-center justify-center flex-none py-4">
+        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+
+        
+        <h1 className="text-3xl font-bold">Biometric Setup</h1>
+        <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+      </div>
+
+      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+          <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+          <div className="flex flex-col items-center">
+               <img
+                 src={checked} // Example checkmark image
+                 alt="Success Checkmark"
+                 className="w-16 h-16 mb-4 xl:w-8 xl:h-8 2xl:w-24 2xl:h-24 mt-3"
+               />
+               <p className="text-black text-md font-bold ">Success</p>
+               <p className="text-gray-500 text-center">
+                 Your Pin Code has been created. Please proceed to login.
+               </p>
+             </div>
+            <div className="flex flex-col gap-4">
+              <Link
+                type="button"
+                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                to="/Loading"
+              >
+                Next
+              </Link>
+              <button
+                type="button"
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                onClick={handleBackClick}
+              > 
+                Back
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
