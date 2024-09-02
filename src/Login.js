@@ -3,8 +3,7 @@ import bnwLogo from './images/bnwbanx.png';
 import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import fingerprint from './images/fingerprint-scan.png';
-import LogoAnimation from './LogoAnimation';
+
 import { getDatabase, ref, set } from 'firebase/database';
 
 const Login = () => {
@@ -29,7 +28,6 @@ const Login = () => {
       }
 
       navigate('/Loading');
-      // Navigate to Main page or other functionality
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
@@ -53,7 +51,7 @@ const Login = () => {
       }
     } else if (currentTab === 'login2') {
       const codeInput = document.getElementById('verificationcode').value;
-      const codeRegex = /^[0-9]{6}$/; // Regex for a 6-digit number
+      const codeRegex = /^[0-9]{6}$/;
       if (!codeRegex.test(codeInput)) {
         alert('Please enter a valid 6-digit verification code.');
         return false;
@@ -202,7 +200,7 @@ const Login = () => {
         onKeyDown={(e) => handleKeyDown(e, index)}
         className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
         aria-label={`OTP digit ${index + 1}`}
-        inputMode="numeric" // Ensure numeric keypad on mobile
+        inputMode="numeric" 
       />
     ))}
   </div>
@@ -226,7 +224,6 @@ const Login = () => {
                 type="button"
                 to="/Loading"
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                onClick={handleNextClick}
               >
                 Next
               </Link>

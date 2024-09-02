@@ -7,8 +7,8 @@ import checked from './images/checked.png'
 import { getDatabase, ref, set } from 'firebase/database';
 
 const Signup = () => {
-  const [view, setView] = useState('home'); // Tracks the current view: 'home', 'signup', or 'login'
-  const [currentTab, setCurrentTab] = useState('signup1'); // Tracks the current tab: 'signup1', 'signup2', 'signup3', 'signup4'
+  const [view, setView] = useState('home');
+  const [currentTab, setCurrentTab] = useState('signup1');
   const navigate = useNavigate();
   const db = getDatabase();
 
@@ -31,7 +31,7 @@ const Signup = () => {
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
       const numberInput = document.getElementById('number').value.trim();
-      const numberRegex = /^\d{10,}$/; // Example: Ensuring it's a number between 10 to 15 digits
+      const numberRegex = /^\d{10,}$/;
   
       if (!numberRegex.test(numberInput)) {
         alert('Please enter a valid mobile.');
@@ -59,7 +59,7 @@ const Signup = () => {
         return false;
       }
     } else if (currentTab === 'signup4') {
-      // Check if all OTP inputs are filled
+     
       const otpInputs = inputRefs.current;
       const otpComplete = otpInputs.every(input => /^\d$/.test(input.value));
       
@@ -68,11 +68,11 @@ const Signup = () => {
         return false;
       }
     }
-    return true; // Allow moving to the next tab if all checks pass
+    return true; 
   };
 
   const handleNextClick = () => {
-    if (!handleBeforeClick()) return; // Only proceed if handleBeforeClick returns true
+    if (!handleBeforeClick()) return; 
 
     if (currentTab === 'signup1') {
       setCurrentTab('signup2');
@@ -103,18 +103,18 @@ const Signup = () => {
 
   const handleResendCode = () => {
     setCodeResent(true);
-    // Add any additional logic for resending the code here
+ 
   };
 
   const handleInputChange = (e, index) => {
     const value = e.target.value;
 
-    if (/^\d$/.test(value)) { // Only proceed if input is a digit
+    if (/^\d$/.test(value)) {
       if (index < inputRefs.current.length - 1) {
         inputRefs.current[index + 1].focus();
       }
     } else {
-      e.target.value = ''; // Clear the input if it's not a digit
+      e.target.value = ''; 
     }
   };
 
@@ -339,7 +339,7 @@ const Signup = () => {
         onKeyDown={(e) => handleKeyDown(e, index)}
         className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
         aria-label={`OTP digit ${index + 1}`}
-        inputMode="numeric" // Ensure numeric keypad on mobile
+        inputMode="numeric" 
       />
     ))}
   </div>
@@ -398,7 +398,7 @@ const Signup = () => {
 
           <div className="flex flex-col items-center">
                <img
-                 src={checked} // Example checkmark image
+                 src={checked} 
                  alt="Success Checkmark"
                  className="w-16 h-16 mb-4 xl:w-8 xl:h-8 2xl:w-24 2xl:h-24 mt-3"
                />

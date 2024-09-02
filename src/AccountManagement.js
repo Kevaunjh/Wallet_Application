@@ -1,14 +1,31 @@
-// AccountManagement.js
 import React, { useState } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 import bnwLogo from './images/bnwbanx.png';
-import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase';
+import { auth, provider, signInWithPopup, signInWithRedirect, getRedirectResult } from './firebase';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const AccountManagement = () => {
   const [view, setView] = useState('home'); // Tracks the current view: 'home', 'signup', or 'login'
   const navigate = useNavigate();
+
+  // Handle redirect result on mobile
+  useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          navigate('/Loading');
+        }
+      } catch (error) {
+        console.error("Error handling redirect result:", error);
+      }
+    };
+
+    handleRedirectResult();
+  }, [navigate]);
+
   const handleSignUpClick = () => setView('signup');
   const handleLoginClick = () => setView('login');
   const handleHomeClick = () => setView('home');
@@ -29,8 +46,6 @@ const AccountManagement = () => {
       } else {
         await signInWithPopup(auth, provider);
       }
-
-      navigate('/Loading');
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
