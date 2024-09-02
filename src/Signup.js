@@ -207,8 +207,8 @@ const Signup = () => {
       <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
         <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
           <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-          <div className="mb-2">
-                  <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-2">
+          <div className="">
+                  <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-6">
                     Please enter the 6-digit verification code that was sent to xxxx@xxx.com
                   </label>
                 </div>
