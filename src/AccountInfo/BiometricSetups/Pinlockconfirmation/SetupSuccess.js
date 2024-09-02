@@ -67,6 +67,9 @@ const SetupSuccess = () => {
             >
               Didn't receive the code?
             </p>
+            {!codeResent && (
+              <p className="text-[#467a4d] text-sm mt-2 opacity-0">Code Resent</p>
+            )}
             {codeResent && (
               <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
             )}

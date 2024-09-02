@@ -353,9 +353,13 @@ const Signup = () => {
                >
                  Didn't receive the code?
                </p>
-               {codeResent && (
-                 <p className="text-green-600 text-sm mt-2 xl:hidden 2xl:block">Code Resent</p>
-               )}
+               {!codeResent && (
+              <p className="text-[#467a4d] text-sm mt-2 opacity-0">Code Resent</p>
+            )}
+            {codeResent && (
+              <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
+            )}
+               
              </div>
           
             <div className="flex flex-col gap-4">
