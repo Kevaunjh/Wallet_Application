@@ -38,7 +38,11 @@ import Giftcards from './Giftcards';
 import Introduction from './Introduction';
 import AccountManagement from './AccountManagement';
 import LogoAnimation from './LogoAnimation';
-
+import Loadmoney from './LoadingMoney/Loadmoney';
+import Loadto from './LoadingMoney/Loadto';
+import LoadConfirm from './LoadingMoney/LoadConfirm';
+import LoadSuccess from './LoadingMoney/LoadSuccess';
+import Loadfrom from './LoadingMoney/Loadfrom';
 
 function App() {
 
@@ -54,6 +58,7 @@ function App() {
         <Routes>
           <Route path="/AccountInfo/Addcard" element={<AddCard toggleComponent={toggleComponent} /> } />
           <Route path="/Cheques" element={<Cheques toggleComponent={toggleComponent}/>} />
+          <Route path="/Loadmoney" element={<Loadmoney toggleComponent={toggleComponent}/>} />
           <Route path="/Giftcards" element={<Giftcards toggleComponent={toggleComponent}/>} />
           <Route path="/Depositcallback" element={<DepositSuccessful toggleComponent={toggleComponent}/>} />
           <Route path="/PointHistory" element={<PointHistory toggleComponent={toggleComponent}/>} />
@@ -85,6 +90,10 @@ function App() {
           <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
           <Route path='/AccountManagement' element={<AccountManagement toggleComponent={toggleComponent} />} />
           <Route path='/' element={<Introduction toggleComponent={toggleComponent} /> } />
+          <Route path='/Loadto' element={<Loadto toggleComponent={toggleComponent} /> } />
+          <Route path='/Loadfrom' element={<Loadfrom toggleComponent={toggleComponent} /> } />
+          <Route path='/LoadConfirm' element={<LoadConfirm toggleComponent={toggleComponent} /> } />
+          <Route path='/LoadCallback' element={<LoadSuccess toggleComponent={toggleComponent} /> } />
           <Route path="/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" element={<SetupSuccess toggleComponent={toggleComponent} />} />  
         </Routes>
       </div>

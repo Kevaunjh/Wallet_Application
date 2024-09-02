@@ -6,6 +6,7 @@ import searchlogo from './images/search.png';
 import quickservice1 from './images/home.png';
 import quickservice2 from './images/topupservice.png';
 import quickservice3 from './images/airservice.png';
+import transfer from './images/transfer.png';
 
 
 import { Link } from 'react-router-dom';
@@ -43,6 +44,7 @@ function Main() {
     { href: '/QuickServices/TopUpService', label: 'Pay a Phone Bill' },
     { href: '/QuickServices/GasService', label: 'Pay for Travel' },
     { href: '/Giftcards', label: 'My Giftcard' },
+    { href: '/Loadmoney', label: 'Money Transfer' },
 
 
   ];
@@ -151,7 +153,7 @@ function Main() {
 
           {/* Display filtered links only when there is a search term */}
           {searchTerm && (
-            <div className="absolute top-full mt-10 w-[12.5rem] right-1 top-2.5 bg-white border border-gray-300 rounded shadow-lg z-50">
+            <div className="absolute mt-10 w-[12.5rem] right-1 top-2.5 bg-white border border-gray-300 rounded shadow-lg z-50">
               <ul>
                 {filteredLinks.map(link => (
                   <li key={link.href} className="p-2 border-b hover:bg-gray-200">
@@ -238,18 +240,21 @@ function Main() {
               {/* Account Details and Recent Transactions */}
               <div className='w-full lg:w-1/2 p-2 flex flex-col'>
                 {/* Account Details */}
-                <div className="flex flex-col space-y-2 mb-4 ">
-                  <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">
-                    <h3 className="text-lg font-semibold">Chequing</h3>
-                    <p className="text-xl">{selectedCard.chequing}</p>
-                    <p className="text-md">Account No: {selectedCard.chequingAccount}</p>
-                  </div>
-                  <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">
-                    <h3 className="text-lg font-semibold">Savings</h3>
-                    <p className="text-xl">{selectedCard.savings}</p>
-                    <p className="text-md">Account No: {selectedCard.savingsAccount}</p>
-                  </div>
-                </div>
+                <div className="relative flex flex-col space-y-2 mb-4">
+
+  <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center relative">
+    <h3 className="text-lg font-semibold">Chequing</h3>
+    <p className="text-xl">{selectedCard.chequing}</p>
+    <p className="text-md">Account No: {selectedCard.chequingAccount}</p>
+    <Link to='/Loadmoney'><img src={transfer} alt="Transfer" className="absolute right-5 top-1/2 transform -translate-y-1/2 w-10 h-10" /></Link>
+  </div>
+
+  <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">
+    <h3 className="text-lg font-semibold">Savings</h3>
+    <p className="text-xl">{selectedCard.savings}</p>
+    <p className="text-md">Account No: {selectedCard.savingsAccount}</p>
+  </div>
+</div>
 
                 
 

@@ -34,11 +34,13 @@ function TopUpService() {
 
   return (
     <div className="bg-white h-screen flex items-center justify-center">
+
+      
       {/* Container */}
       <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 w-full h-screen flex flex-col justify-center relative 2xl:items-center">
         {/* Back Button */}
-        <div className="absolute top-10 left-10">
-          <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white py-3 md:py-2">
+        <div className="absolute top-10 left-10 block">
+          <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
@@ -128,7 +130,7 @@ function TopUpService() {
               if (!allFieldsFilled) e.preventDefault();
             }}
           >
-            Done
+            Show
           </Link>
         </div>
       </div>

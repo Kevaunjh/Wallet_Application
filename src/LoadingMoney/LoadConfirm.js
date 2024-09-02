@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const SetupSuccess = () => {
+const LoadConfirm = () => {
   const [codeResent, setCodeResent] = useState(false);
   const inputRefs = useRef([]);
 
@@ -33,7 +33,7 @@ const SetupSuccess = () => {
       <div className="bg-white w-full h-screen p-4 sm:p-10 flex flex-col items-center relative">
         {/* Back Button */}
         <div className="absolute top-8 left-8">
-          <Link to="/AccountInfo/BiometricSetup" className="rounded-full p-2 bg-[#467a4d] text-white">
+          <Link to="/Loadto" className="rounded-full p-2 bg-[#467a4d] text-white">
             ← Back
           </Link>
         </div>
@@ -75,7 +75,7 @@ const SetupSuccess = () => {
 
         {/* Proceed Button */}
         <div className="absolute bottom-10 text-center mx-auto">
-          <Link to="/Main">
+          <Link to="/LoadCallback">
             <button className="bg-[#467a4d] text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">
               Confirm
             </button>
@@ -86,4 +86,4 @@ const SetupSuccess = () => {
   );
 }
 
-export default SetupSuccess;
+export default LoadConfirm;
