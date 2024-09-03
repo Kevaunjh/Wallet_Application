@@ -252,17 +252,17 @@ function GasService() {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="date">
-              Date (MM/YYYY)
-            </label>
-            <input
-              type="month"
-              id="date"
-              value={date}
-              onChange={handleDateChange}
-              className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="date">
+                Date
+              </label>
+              <input
+                type="date"
+                id="date"
+                value={date}
+                onChange={handleDateChange}
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
           <div className="flex justify-center items-center ">
           <Link
           to="/QuickServices/PayYourBill/PayGas" // Replace with the actual route you want to link to
