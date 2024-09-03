@@ -417,7 +417,7 @@ const Signup = () => {
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
                 to="/Loading"
               >
-                Next
+                Login
               </Link>
               <button
                 type="button"
