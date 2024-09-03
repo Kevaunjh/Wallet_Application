@@ -1,17 +1,46 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 import bnwLogo from './../../images/bnwbanx.png';
-import { auth, provider, signInWithPopup, signInWithRedirect } from '../../firebase';
+import { auth, provider, signInWithPopup, signInWithRedirect, getRedirectResult } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 
 const AccountManagement = () => {
   const [view, setView] = useState('home');
   const navigate = useNavigate();
+
   const handleSignUpClick = () => setView('signup');
   const handleLoginClick = () => setView('login');
   const handleHomeClick = () => setView('home');
+
+  useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          navigate('/Loading');
+        }
+      } catch (error) {
+        console.error("Error handling Google sign-in redirect:", error);
+      }
+    };
+
+    handleRedirectResult();
+  }, [auth, navigate]);
+
+  const handleSignInWithGoogle = async () => {
+    try {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        await signInWithRedirect(auth, provider);
+      } else {
+        await signInWithPopup(auth, provider);
+      }
+      navigate('/Loading');
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+  };
 
   if (view === 'signup') {
     return <Signup />;
@@ -20,22 +49,6 @@ const AccountManagement = () => {
   if (view === 'login') {
     return <Login />;
   }
-
-  const handleSignInWithGoogle = async () => {
-    try {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        navigate('/Loading');
-      } else {
-        await signInWithPopup(auth, provider);
-       
-      }
-
-      navigate('/Loading');
-    } catch (error) {
-      console.error("Error signing in with Google:", error);
-    }
-  };
 
   return (
     <div className="min-h-screen w-screen flex items-center justify-center bg-[#1c1c1c] text-white p-8">

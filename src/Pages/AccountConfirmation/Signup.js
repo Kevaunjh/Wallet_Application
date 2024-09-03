@@ -1,14 +1,65 @@
 import React, { useState, useRef } from 'react';
 import bnwLogo from './../../images/bnwbanx.png';
-import { auth, provider, signInWithPopup, signInWithRedirect } from './../../firebase';
+import { auth, provider, createUserWithEmailAndPassword, signInWithPopup, signInWithRedirect } from './../../firebase';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import checked from './../../images/checked.png'
+import { getDatabase, ref, set } from "firebase/database";
+
+
 
 const Signup = () => {
-;
+
   const [currentTab, setCurrentTab] = useState('signup1');
   const navigate = useNavigate();
+
+  const [mobile, setMobile] = useState('');
+  const [password, setPassword] = useState('');
+  const [isValid, setIsValid] = useState(false);
+  const [checkbox, setCheckbox] = useState(false);
+  const [usernameex, setUsernameex] = useState('');
+  const db = getDatabase();
+
+  const handleSignUp = async () => {
+    try {
+
+      if ( mobile.includes('@')) {
+        setUsernameex( mobile );
+      } else {
+        const account = `${mobile}@SeeTek.com`
+        setUsernameex( account );
+      }
+      const userCredential = await createUserWithEmailAndPassword(auth, usernameex, password);
+      const user = userCredential.user;
+
+      const userRef = ref(db, 'users/' + user.uid);
+      await set(userRef, {
+          username: usernameex
+          
+      });
+
+      setIsValid(true);
+      alert('Account Successfully Made.');
+      setCurrentTab('signup2');
+      console.log("User data written to Realtime Database");
+
+    } catch (error) {
+      console.error("Error creating user:", error);
+
+      if (error.code === 'auth/weak-password') {
+        setIsValid(false);
+          alert("Password must be at least 6 characters long.");
+          
+      } else if (error.code === 'auth/email-already-in-use') {
+        setIsValid(false);
+          alert("This email is already in use.");;
+      } else {
+        setIsValid(false);
+          alert("Failed to create account. Please try again.");
+      }
+    }
+  };
+
 
 
   const handleSignInWithGoogle = async () => {
@@ -28,12 +79,18 @@ const Signup = () => {
 
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
-      const numberInput = document.getElementById('number').value.trim();
-      const numberRegex = /^\d{10,}$/;
+      const input = document.getElementById('number').value.trim();
+      const phoneRegex = /^\d{10,10}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
-      if (!numberRegex.test(numberInput)) {
-        alert('Please enter a valid mobile.');
-        return false; 
+      if (!phoneRegex.test(input) && !emailRegex.test(input)) {
+        alert('Please enter a valid phone number or email.');
+        return false;
+      }
+
+      if (!checkbox) {
+        alert('Please accept terms and conditions.');
+        return false;
       }
     } else if (currentTab === 'signup2') {
       const codeInput = document.getElementById('verificationcode').value.trim();
@@ -46,7 +103,7 @@ const Signup = () => {
     } else if (currentTab === 'signup3') {
       const passInput = document.getElementById('password').value.trim();
       const confirmPassInput = document.getElementById('repassword').value.trim();
-      const passwordRegex = /^\d{6,}$/;
+      const passwordRegex = /^.{6,}$/;
   
       if (!passwordRegex.test(passInput)) {
         alert('Please enter a valid password with at least 6 characters.');
@@ -56,8 +113,12 @@ const Signup = () => {
         alert('Passwords do not match.');
         return false;
       }
+
+      if (!isValid) {
+          return false;
+      }
+
     } else if (currentTab === 'signup4') {
-     
       const otpInputs = inputRefs.current;
       const otpComplete = otpInputs.every(input => /^\d$/.test(input.value));
       
@@ -66,7 +127,7 @@ const Signup = () => {
         return false;
       }
     }
-    return true; 
+    return true;
   };
 
   const handleNextClick = () => {
@@ -101,6 +162,11 @@ const Signup = () => {
 
   const handleResendCode = () => {
     setCodeResent(true);
+ 
+  };
+
+  const toggleTerms = (event) => {
+    setCheckbox(event.target.checked);
  
   };
 
@@ -140,13 +206,14 @@ const Signup = () => {
           <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-6 lg:space-y-16">
           <div className="relative mb-4">
   <fieldset className="border border-gray-300 rounded-xl p-0">
-    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Mobile Number</legend>
+    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Mobile / Email</legend>
     <input
-      type="number"
+      type="text"
       id="number"
       className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none number-to-text"
-      placeholder="XXXXXXXXXXXX"
-      min="0"
+      placeholder="Enter phone number or email"
+      value={mobile}
+      onChange={(e) => setMobile(e.target.value)}
     />
   </fieldset>
 </div>
@@ -177,6 +244,7 @@ const Signup = () => {
               type="checkbox"
               id="terms"
               className="mr-3 leading-tight"
+              onChange={toggleTerms}
             />
             <label htmlFor="terms" className="text-gray-700 text-xs text-center">
               By creating an account, I agree to{' '}
@@ -196,8 +264,6 @@ const Signup = () => {
         <>
       <div className="flex flex-col items-center justify-center flex-none py-4">
         <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
-
-        
         <h1 className="text-3xl font-bold">Sign Up</h1>
         <p className="text-sm mt-1">Complete your details to finish signing up</p>
       </div>
@@ -268,6 +334,8 @@ const Signup = () => {
       id="password"
       className="w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-xl border-none"
       placeholder="XXXXXXXXXXXX"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
     />
   </fieldset>
 </div>
@@ -286,7 +354,12 @@ const Signup = () => {
               <button
                 type="button"
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                onClick={handleNextClick}
+                onClick={() => { 
+                  handleSignUp(); 
+                  
+
+                  
+                }}
               >
                 Next
               </button>
