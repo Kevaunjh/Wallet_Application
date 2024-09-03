@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function TopUpService() {
-  const [selectedAmount, setSelectedAmount] = useState(5); // Default to $5
+  const [selectedAmount, setSelectedAmount] = useState(5);
   const [customAmount, setCustomAmount] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileCarrier, setMobileCarrier] = useState('');
@@ -11,8 +11,8 @@ function TopUpService() {
 
   const handleAmountClick = (amount) => {
     setSelectedAmount(amount);
-    setCustomAmount(''); // Clear custom amount when a predefined amount is selected
-    setIsModalOpen(false); // Close the modal if a predefined amount is selected
+    setCustomAmount('');
+    setIsModalOpen(false);
   };
 
   const handleCustomAmountChange = (event) => {
@@ -36,16 +36,13 @@ function TopUpService() {
     <div className="bg-white h-screen flex items-center justify-center">
 
       
-      {/* Container */}
-      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 w-full h-screen flex flex-col justify-center relative 2xl:items-center">
-        {/* Back Button */}
-        <div className="absolute top-10 left-10 block">
-          <Link to="/Main" className="rounded-full p-2 bg-[#467a4d] text-white ">
+      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 w-full h-screen flex flex-col relative 2xl:items-center">
+        <div className="w-full flex justify-start mb-4 mt-3">
+          <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
-
-        {/* Set Amount Header */}
+        
         <div className="text-center mb-6 2xl:w-8/12">
           <h2 className="text-xl md:text-2xl font-bold mb-4 xl:mt-10">Set Amount</h2>
           <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
@@ -88,7 +85,6 @@ function TopUpService() {
           </div>
         </div>
 
-        {/* Input Fields */}
         <div className="mb-6 2xl:w-8/12">
           <label className="block text-base md:text-lg font-medium mb-2">Mobile Carrier</label>
           <select
@@ -114,12 +110,11 @@ function TopUpService() {
             placeholder="XXXXXXXXXX"
             className="w-full px-3 md:px-4 py-2 md:py-3 border rounded-lg text-base md:text-lg"
             value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, ''))} // Restrict input to numbers only
-            pattern="[0-9]{10}" // Restrict input to 10 digits
+            onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, ''))} 
+            pattern="[0-9]{10}"
           />
         </div>
 
-        {/* Done Button */}
         <div className="w-full flex justify-center">
           <Link
             to={allFieldsFilled ? "/QuickServices/PayYourBill/TopUpPayment" : "#"}
@@ -135,7 +130,6 @@ function TopUpService() {
         </div>
       </div>
 
-      {/* Custom Amount Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
           <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg w-full max-w-xs md:max-w-sm">

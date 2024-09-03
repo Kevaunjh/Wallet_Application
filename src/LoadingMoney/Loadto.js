@@ -7,7 +7,6 @@ import moneyLogo from './../images/money.png';
 import bankLogo from './../images/bank-building.png';
 import accountLogo from './../images/user.png';
 
-const points = 1652; 
 
 function Loadto() {
   const [selectedAmount, setSelectedAmount] = useState(0); 
@@ -56,7 +55,6 @@ function Loadto() {
         key={index}
         onClick={() => handleCardClick(index)}
       >
-        {/* Bank Card Image */}
         <div className='flex justify-center items-center w-auto max-w-96 xl:max-w-xl'>
           <img
             src={cardImage}
@@ -77,7 +75,6 @@ function Loadto() {
         key={index}
         onClick={() => handleBankClick(index)}
       >
-        {/* Card Info Container */}
         <div className='relative w-full p-2'>
           <div className='flex items-center mb-2'>
             <img src={moneyLogo} alt="Money Logo" className='w-6 h-6 mr-2' />
@@ -98,22 +95,16 @@ function Loadto() {
 
   return (
     <div className="Profile bg-white min-h-screen flex flex-col items-center relative">
-      {/* Combined Container for Small Screens */}
       <div className="w-full bg-[#faf7f7] p-6 flex flex-col items-center relative min-h-screen h-auto">
-        {/* Back Button for Smaller Screens */}
         <Link to="/Loadmoney" className="absolute top-8 left-8 rounded-full p-2 bg-[#467a4d] text-white">
           &larr; Back
         </Link>
-
-        {/* Title */}
         <h1 className="text-5xl font-bold text-center mt-20 mb-8">Load Money</h1>
 
-        {/* Subtitle */}
         <p className="text-center text-gray-600 mt-2 mb-12">
           You can use SeeTek bank or Debit cards to load your wallet
         </p>
 
-        {/* Amount Information */}
         <div className="text-center mb-6 2xl:w-8/12 mt-10 max-w-lg">
           <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
             ${selectedAmount || customAmount}
@@ -142,12 +133,9 @@ function Loadto() {
           </div>
         </div>
 
-        {/* Load Via / Load To Title */}
         <h2 className="text-xl md:text-2xl font-semibold text-center mt-8">
           {selectedTab === 'Container 1' ? 'Load To' : 'Load Via'}
         </h2>
-
-        {/* Containers with White Backgrounds and Centered Images */}
         <div className="flex gap-4 mt-6 max-w-screen-lg w-full px-4">
           <div
             className={`flex-1 h-44 md:h-56 lg:h-64 bg-white p-4 rounded-lg text-center cursor-pointer flex items-center justify-center shadow-lg ${
@@ -155,7 +143,6 @@ function Loadto() {
             }`}
             onClick={() => handleTabClick('Container 1')}
           >
-            {/* Centered Image for Container 1 */}
             <img
               src={banks}
               alt="Icon for Container 1"
@@ -168,7 +155,6 @@ function Loadto() {
             }`}
             onClick={() => handleTabClick('Container 2')}
           >
-            {/* Centered Image for Container 2 */}
             <img
               src={debitcard}
               alt="Icon for Container 2"
@@ -176,8 +162,6 @@ function Loadto() {
             />
           </div>
         </div>
-
-        {/* Content for Selected Tab */}
         {selectedTab && (
           <div className="mt-6 p-4 w-full 2xl:w-8/12 text-center">
             {selectedTab === 'Container 1' ? (
@@ -212,7 +196,6 @@ function Loadto() {
           </div>
         )}
 
-        {/* Gray Out the "Proceed" Button Until Both Selections Are Made */}
         <Link
           to="/Loadcallback"
           className={`px-8 py-4 rounded-full text-white mt-6 mb-8 ${
@@ -224,7 +207,6 @@ function Loadto() {
         </Link>
       </div>
 
-      {/* Custom Amount Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">

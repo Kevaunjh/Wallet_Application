@@ -7,7 +7,6 @@ import moneyLogo from './../images/money.png';
 import bankLogo from './../images/bank-building.png';
 import accountLogo from './../images/user.png';
 
-const points = 1652; 
 
 function Loadfrom() {
   const [selectedAmount, setSelectedAmount] = useState(0); 
@@ -142,12 +141,10 @@ function Loadfrom() {
           </div>
         </div>
 
-        {/* Load Via / Load To Title */}
         <h2 className="text-xl md:text-2xl font-semibold text-center mt-8">
           {selectedTab === 'Container 1' ? 'Load Via' : 'Load To'}
         </h2>
 
-        {/* Containers with White Backgrounds and Centered Images */}
         <div className="flex gap-4 mt-6 max-w-screen-lg w-full px-4">
           <div
             className={`flex-1 h-44 md:h-56 lg:h-64 bg-white p-4 rounded-lg text-center cursor-pointer flex items-center justify-center shadow-lg ${
@@ -155,7 +152,6 @@ function Loadfrom() {
             }`}
             onClick={() => handleTabClick('Container 1')}
           >
-            {/* Centered Image for Container 1 */}
             <img
               src={banks}
               alt="Icon for Container 1"
@@ -168,7 +164,6 @@ function Loadfrom() {
             }`}
             onClick={() => handleTabClick('Container 2')}
           >
-            {/* Centered Image for Container 2 */}
             <img
               src={debitcard}
               alt="Icon for Container 2"
@@ -177,7 +172,6 @@ function Loadfrom() {
           </div>
         </div>
 
-        {/* Content for Selected Tab */}
         {selectedTab && (
           <div className="mt-6 p-4 w-full 2xl:w-8/12 text-center">
             {selectedTab === 'Container 1' ? (
@@ -212,7 +206,6 @@ function Loadfrom() {
           </div>
         )}
 
-        {/* Gray Out the "Proceed" Button Until Both Selections Are Made */}
         <Link
           to="/Loadcallback"
           className={`px-8 py-4 rounded-full text-white mt-6 mb-8 ${

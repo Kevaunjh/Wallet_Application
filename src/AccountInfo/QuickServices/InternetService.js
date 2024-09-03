@@ -104,7 +104,7 @@ function InternetService() {
 
         {/* Show Button as Link */}
         <Link
-          to="/QuickServices/PayYourBill/PayInternet" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayInternet"
           className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms]`}

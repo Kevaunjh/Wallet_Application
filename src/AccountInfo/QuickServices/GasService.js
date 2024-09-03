@@ -35,17 +35,8 @@ function GasService() {
     checkFieldsFilled(value, selectCounter, scNo, customerId);
   };
 
-  const handleSelectCounterChange = (e) => {
-    const value = e.target.value;
-    setSelectCounter(value);
-    checkFieldsFilled(serviceProvider, value, scNo, customerId);
-  };
 
-  const handleScNoChange = (e) => {
-    const value = e.target.value;
-    setScNo(value);
-    checkFieldsFilled(serviceProvider, selectCounter, value, customerId);
-  };
+
 
   const handleUsernameChange = (e) => {
     const value = e.target.value;
@@ -63,17 +54,6 @@ function GasService() {
 
   const [fieldsFilled, setFieldsFilled] = useState(true);
 
-  const handleCustomerIdChange = (e) => {
-    const value = e.target.value;
-    setCustomerId(value);
-    checkFieldsFilled(value, waterSystemName, date);
-  };
-
-  const handleWaterSystemNameChange = (e) => {
-    const value = e.target.value;
-    setWaterSystemName(value);
-    checkFieldsFilled(customerId, value, date);
-  };
 
   const handleDateChange = (e) => {
     const value = e.target.value;
@@ -156,7 +136,7 @@ function GasService() {
                     <option value="wisconsin">Wisconsin</option>
                     <option value="wyoming">Wyoming</option>
 
-                    {/* other options */}
+                  
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                 </div>
@@ -190,17 +170,17 @@ function GasService() {
                     <option value="midgrade">$4.99 - midgrade</option>
                     <option value="premium">$5.99 - Premium/Super</option>
                     <option value="diesel">$6.99 - Diesel</option>
-                    {/* other options */}
+                  
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                 </div>
               </div>
             </form>
 
-            {/* Show Button as Link */}
+        
             <div className="flex justify-center items-center ">
           <Link
-          to="/QuickServices/PayYourBill/PayGas" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayGas" 
            className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms] flex justify-center items-center`}
@@ -265,7 +245,7 @@ function GasService() {
             </div>
           <div className="flex justify-center items-center ">
           <Link
-          to="/QuickServices/PayYourBill/PayGas" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayGas" 
            className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms] flex justify-center items-center`}
@@ -299,19 +279,19 @@ function GasService() {
 
         </div>
 
-        {/* Back Button */}
+ 
         <div className="w-screen flex justify-start mb-4 mt-12 ml-16">
           <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
 
-        {/* Title */}
+ 
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </h1>
 
-        {/* Service Form */}
+     
         <form className="w-screen px-16 2xl:w-8/12">
           {renderForm()}
         </form>

@@ -1,4 +1,4 @@
-import React, {  useState, useEffect, useRef  } from 'react';
+import React, {  useState, useRef  } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import profileplaceholder from './images/logoplaceholder.png';
 import notificationlogo from './images/notification.png';
@@ -44,7 +44,7 @@ function Main() {
     { href: '/QuickServices/TopUpService', label: 'Pay a Phone Bill' },
     { href: '/QuickServices/GasService', label: 'Pay for Travel' },
     { href: '/Giftcards', label: 'My Giftcard' },
-    { href: '/Loadmoney', label: 'Money Transfer' },
+    { href: '/Loadmoney', label: 'Load Money' },
 
 
   ];
@@ -73,7 +73,6 @@ function Main() {
   const selectedCardId = Object.keys(cardDetails)[carouselIndex];
   const selectedCard = cardDetails[selectedCardId];
 
-  // Calculate total spent and earned
   const totalSpent = selectedCard.transactions
     .filter(transaction => transaction.amount.startsWith('-'))
     .reduce((acc, transaction) => acc + parseFloat(transaction.amount.replace('$', '').replace('-', '')), 0);
@@ -84,7 +83,6 @@ function Main() {
 
   const totalAmount = totalSpent + totalEarned;
 
-  // Calculate percentages
   const spentPercentage = totalAmount === 0 ? 0 : (totalSpent / totalAmount) * 100;
   const earnedPercentage = totalAmount === 0 ? 0 : (totalEarned / totalAmount) * 100;
   const monthlycost = totalEarned - totalSpent;
@@ -95,13 +93,12 @@ function Main() {
 
   return (
     <div className="min-h-screen flex flex-col ">
-      {/* Full Background Container */}
+
       <div className="flex-grow flex flex-col ">
         <div className="relative flex-grow flex-col flex bg-white z-8">
-          {/* Green Top Section */}
+
           <div className="relative bg-[#0A9971] w-full flex flex-col items-center py-4  mx-auto  ">
             <div className="w-full mx-auto flex flex-col items-center 2xl:w-8/12">
-              {/* Profile and Header Section */}
               <div className="w-full flex items-center justify-between px-4">
                 <Link to="/MyAccount" className='flex items-center space-x-4'>
                   <img src={profileplaceholder} alt="Profile Placeholder" className='w-20 h-20 rounded-full p-2 bg-[#F9FFFD] border-2 border-gray-300 shadow-md ml-2 lg:ml-4' />
@@ -115,7 +112,6 @@ function Main() {
                   <img src={searchlogo} alt="Search" className='w-8 h-8 cursor-pointer' onClick={() => { if (isMobile()) { openSearchModal(); } else { setIsSearchVisible(!isSearchVisible); } }}  />
                   {isSearchVisible && isMobile() && (
       <div className="fixed inset-0 z-50 h-screen w-screen bg-white flex flex-col">
-        {/* Search Bar with Back Button */}
         <div className="flex items-center p-4 bg-[#0A9971] ">
           <FaChevronDown className="mr-3 top-1/2 transform rotate-90 text-white ml-2" onClick={closeSearchModal} />
           <input
@@ -151,7 +147,6 @@ function Main() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
 
-          {/* Display filtered links only when there is a search term */}
           {searchTerm && (
             <div className="absolute mt-10 w-[12.5rem] right-1 top-2.5 bg-white border border-gray-300 rounded shadow-lg z-50">
               <ul>
@@ -173,7 +168,7 @@ function Main() {
               </div>
 
 
-              {/* Points and Balance */}
+            
               <div className='w-full flex mt-4'>
                 <div className="p-2 rounded-lg mx-2 ml-8">
                   <h3 className="text-lg font-semibold">Available Balance</h3>
@@ -189,11 +184,11 @@ function Main() {
             </div>
           </div>
 
-          {/* White Container */}
+
           <div className="flex-grow bg-[#e9f7f2] mx-auto w-full flex flex-col items-center">
-            {/* Card and Account Details */}
+      
             <div className='w-full p-4 flex flex-col lg:flex-row 2xl:w-8/12 '>
-              {/* Card */}
+       
               <div className='w-full lg:w-1/2'>
                 <div className="flex justify-center items-center relative">
                   <button 
@@ -232,14 +227,8 @@ function Main() {
             </div>
             </div>
               </div>
-
-              
-
-              
-
-              {/* Account Details and Recent Transactions */}
               <div className='w-full lg:w-1/2 p-2 flex flex-col'>
-                {/* Account Details */}
+              
                 <div className="relative flex flex-col space-y-2 mb-4">
 
   <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center relative">
@@ -258,11 +247,11 @@ function Main() {
 
                 
 
-                {/* Recent Transactions */}
+      
                 <Link to="/RecentTransactions" className="w-full">
                   <div className='flex-grow bg-white'>
                     <div className="p-4 rounded-lg border-black border h-full">
-                      {/* Spent This Month Section */}
+          
                       <div className="mb-4 p-4">
                         <h4 className="text-sm text-center">
                           <span className='font-medium text-lg'>${monthlycost.toFixed(2)}</span> Made this month
@@ -281,7 +270,7 @@ function Main() {
                       </div>
                       <hr className="my-4 border-gray-300" />
 
-                       {/* Transactions */}
+          
                       <ul className="space-y-4">
                         {selectedCard.transactions.map((transaction) => (
                           <li key={transaction.id}>

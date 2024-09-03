@@ -4,13 +4,12 @@ import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import checked from './images/checked.png'
-import { getDatabase, ref, set } from 'firebase/database';
 
 const Signup = () => {
-  const [view, setView] = useState('home');
+;
   const [currentTab, setCurrentTab] = useState('signup1');
   const navigate = useNavigate();
-  const db = getDatabase();
+
 
   const handleSignInWithGoogle = async () => {
     try {
@@ -26,7 +25,6 @@ const Signup = () => {
     }
   };
 
-  const handleLoginClick = () => setView('login');
 
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
@@ -327,7 +325,6 @@ const Signup = () => {
     Enter the OTP you received
   </label>
 
-  {/* OTP Input Section */}
   <div className="flex justify-center gap-2 sm:gap-4  w-full">
     {[1, 2, 3, 4, 5].map((_, index) => (
       <input
@@ -345,7 +342,6 @@ const Signup = () => {
   </div>
 </div>
      
-             {/* Didn't receive the code section */}
              <div className="text-center mb-2 ">
                <p 
                  onClick={handleResendCode} 

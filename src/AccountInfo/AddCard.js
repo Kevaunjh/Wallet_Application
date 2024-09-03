@@ -10,7 +10,6 @@ const AddCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log({
       cardNumber,
       cardHolder,
@@ -26,7 +25,7 @@ const AddCard = () => {
 
         <Link
           to="/Accountinfo/BankAccounts"
-          className="block absolute  text-white bg-[#467a4d] p-2 rounded-full z-20 mt-6"
+          className="block absolute  text-white bg-[#467a4d] p-2 rounded-full z-20 "
         >
           &larr; Back
         </Link>

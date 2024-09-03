@@ -4,7 +4,7 @@ export const giftcardsData = [
       category: 'Restaurant',
       name: 'Starbucks',
       amount: '$50',
-      image: require('./images/starbucks_coupon.png'), // Replace with actual image path
+      image: require('./images/starbucks_coupon.png'), 
       barcodeImage: require('./images/Barcode.png'), 
     },
     {
@@ -12,7 +12,7 @@ export const giftcardsData = [
       category: 'Restaurant',
       name: 'Tim Hortons',
       amount: '$25',
-      image: require('./images/timhortons_coupon.png'), // Replace with actual image path
+      image: require('./images/timhortons_coupon.png'), 
       barcodeImage: require('./images/Barcode.png'), 
     },
     {
@@ -20,7 +20,7 @@ export const giftcardsData = [
       category: 'Shopping',
       name: 'Amazon',
       amount: '$30',
-      image: require('./images/amazon_coupon.png'), // Replace with actual image path
+      image: require('./images/amazon_coupon.png'), 
       barcodeImage: require('./images/Barcode.png'), 
     },
     {
@@ -28,7 +28,7 @@ export const giftcardsData = [
       category:'Games',
       name: 'Roblox',
       amount: '$10',
-      image: require('./images/roblox_coupon.png'), // Replace with actual image path
+      image: require('./images/roblox_coupon.png'), 
       barcodeImage: require('./images/Barcode.png'), 
     },
     {
@@ -36,7 +36,7 @@ export const giftcardsData = [
       category:  'Education',
       name: 'Steam',
       amount: '$5',
-      image: require('./images/audible.png'), // Replace with actual image path
+      image: require('./images/audible.png'),
       barcodeImage: require('./images/Barcode.png'), 
     },
     {
@@ -44,7 +44,7 @@ export const giftcardsData = [
       category:  'PrePaid',
       name: 'Steam',
       amount: '$35',
-      image: require('./images/visa.png'), // Replace with actual image path
+      image: require('./images/visa.png'),
       barcodeImage: require('./images/Barcode.png'), 
     },
   ];

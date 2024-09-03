@@ -267,7 +267,7 @@ function WaterService() {
           </div>
           <div className="flex justify-center items-center ">
           <Link
-          to="/QuickServices/PayYourBill/PayLight" // Replace with the actual route you want to link to
+          to="/QuickServices/PayYourBill/PayLight"
            className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
             isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
           } transition-opacity duration-[1500ms] flex justify-center items-center`}
@@ -287,7 +287,6 @@ function WaterService() {
     <div className="WaterService bg-white min-h-screen flex flex-col justify-center items-center">
 
       <div className="bg-white shadow-2xl flex flex-col items-center w-full  mx-auto  overflow-auto  min-h-screen">
-        {/* Tabs */}
         <div className="w-full flex justify-between 2xl:mt-0 ">
           <button
             className={`w-1/3 py-4 text-center rounded-tl-3xl ${selectedTab === 'water' ? 'bg-white' : 'bg-gray-200'}`}
@@ -309,24 +308,21 @@ function WaterService() {
           </button>
         </div>
 
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-4 mt-12 px-8">
           <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
 
-        {/* Title */}
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)} Bill
         </h1>
 
-        {/* Service Form */}
         <form className="w-full px-16 2xl:w-8/12">
           {renderForm()}
         </form>
 
-        {/* Show Button as Link */}
+
         
       </div>
     </div>

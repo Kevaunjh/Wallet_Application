@@ -1,39 +1,15 @@
 import React, { useState, useRef } from 'react';
 import bnwLogo from './images/bnwbanx.png';
-import { auth, provider, signInWithPopup, signInWithRedirect } from './firebase';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
-import { getDatabase, ref, set } from 'firebase/database';
 
 const Login = () => {
-  const [view, setView] = useState('home');
+
   const [currentTab, setCurrentTab] = useState('login1');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFingerprintClicked, setIsFingerprintClicked] = useState(false);
-  const [isOtpSent, setIsOtpSent] = useState(false);
+
   const inputRefs = useRef([]);
-  const [isCodeResent, setIsCodeResent] = useState(false);
-  const navigate = useNavigate();
-  const db = getDatabase();
   const [codeResent, setCodeResent] = useState(false);
 
-  const handleSignInWithGoogle = async () => {
-    try {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        await signInWithRedirect(auth, provider);
-      } else {
-        await signInWithPopup(auth, provider);
-      }
 
-      navigate('/Loading');
-    } catch (error) {
-      console.error("Error signing in with Google:", error);
-    }
-  };
-
-  const handleLoginClick = () => setView('login');
 
   const handleBeforeClick = () => {
     if (currentTab === 'login1') {
@@ -75,7 +51,7 @@ const Login = () => {
   };
 
   const handleResendCode = () => {
-    setIsCodeResent(true);
+    setCodeResent(true);
   };
 
   const handleInputChange = (e, index) => {
@@ -96,17 +72,7 @@ const Login = () => {
     }
   };
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
 
-  const handleFingerprintClick = () => {
-    setIsFingerprintClicked(true);
-    setIsOtpSent(false);
-  };
-
-  const handleOtpClick = () => {
-    setIsOtpSent(true);
-  };
   return (
     <div className="w-screen min-h-screen bg-[#3b8d6e] text-white flex flex-col">
 {currentTab === 'login1' && (
@@ -188,7 +154,6 @@ const Login = () => {
     Enter the OTP you received
   </label>
 
-  {/* OTP Input Section */}
   <div className="flex justify-center gap-2 sm:gap-4  w-full">
     {[1, 2, 3, 4, 5].map((_, index) => (
       <input
@@ -206,7 +171,6 @@ const Login = () => {
   </div>
 </div>
      
-             {/* Didn't receive the code section */}
              <div className="text-center mb-2 ">
                <p 
                  onClick={handleResendCode} 

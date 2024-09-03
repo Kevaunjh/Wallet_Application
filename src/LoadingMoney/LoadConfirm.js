@@ -7,18 +7,17 @@ const LoadConfirm = () => {
 
   const handleResendCode = () => {
     setCodeResent(true);
-    // Add any additional logic for resending the code here
   };
 
   const handleInputChange = (e, index) => {
     const value = e.target.value;
 
-    if (/^\d$/.test(value)) { // Only proceed if input is a digit
+    if (/^\d$/.test(value)) { 
       if (index < inputRefs.current.length - 1) {
         inputRefs.current[index + 1].focus();
       }
     } else {
-      e.target.value = ''; // Clear the input if it's not a digit
+      e.target.value = '';
     }
   };
 
@@ -54,7 +53,7 @@ const LoadConfirm = () => {
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 className="w-12 h-12 sm:w-24 sm:h-24 border border-gray-600 rounded-lg bg-gray-100 text-center text-xl sm:text-2xl font-bold focus:outline-none text-black"
                 aria-label={`OTP digit ${index + 1}`}
-                inputMode="numeric" // Ensure numeric keypad on mobile
+                inputMode="numeric" 
               />
             ))}
           </div>
