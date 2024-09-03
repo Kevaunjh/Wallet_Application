@@ -219,7 +219,7 @@ const Login = () => {
             )}
             {codeResent && (
               <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
-            )}
+            )} 
              </div>
           
             <div className="flex flex-col gap-4">
