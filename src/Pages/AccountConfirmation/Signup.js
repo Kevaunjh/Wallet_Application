@@ -17,30 +17,23 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [checkbox, setCheckbox] = useState(false);
-  const [usernameex, setUsernameex] = useState('');
   const db = getDatabase();
 
   const handleSignUp = async () => {
     try {
 
-      if ( mobile.includes('@')) {
-        setUsernameex( mobile );
-      } else {
-        const account = `${mobile}@SeeTek.com`
-        setUsernameex( account );
-      }
-      const userCredential = await createUserWithEmailAndPassword(auth, usernameex, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, mobile, password);
       const user = userCredential.user;
 
       const userRef = ref(db, 'users/' + user.uid);
       await set(userRef, {
-          username: usernameex
+          username: mobile
           
       });
 
       setIsValid(true);
       alert('Account Successfully Made.');
-      setCurrentTab('signup2');
+      setCurrentTab('signup4');
       console.log("User data written to Realtime Database");
 
     } catch (error) {
@@ -52,7 +45,7 @@ const Signup = () => {
           
       } else if (error.code === 'auth/email-already-in-use') {
         setIsValid(false);
-          alert("This email is already in use.");;
+          alert("This mobile phone or email you've chosen is already in use.");;
       } else {
         setIsValid(false);
           alert("Failed to create account. Please try again.");
@@ -80,7 +73,7 @@ const Signup = () => {
   const handleBeforeClick = () => {
     if (currentTab === 'signup1') {
       const input = document.getElementById('number').value.trim();
-      const phoneRegex = /^\d{10,10}$/;
+      const phoneRegex = /^\d{10,11}$/;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
       if (!phoneRegex.test(input) && !emailRegex.test(input)) {
@@ -94,7 +87,7 @@ const Signup = () => {
       }
     } else if (currentTab === 'signup2') {
       const codeInput = document.getElementById('verificationcode').value.trim();
-      const codeRegex = /^\d{6,}$/;
+      const codeRegex = /^\d{6}$/;
   
       if (!codeRegex.test(codeInput)) {
         alert('Please enter a valid 6-digit verification code.');
