@@ -36,9 +36,9 @@ function TopUpService() {
     <div className="bg-white h-screen flex items-center justify-center">
 
       
-      <div className="bg-white min-h-screen overflow-hidden p-6 md:p-12 w-full h-screen flex flex-col relative 2xl:items-center">
+      <div className="bg-white min-h-screen overflow-hidden p-6  w-full h-screen flex flex-col relative 2xl:items-center">
         <div className="w-full flex justify-start mb-4 mt-3">
-          <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
+          <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white -mt-2 ml-2  ">
             &larr; Back
           </Link>
         </div>
