@@ -39,7 +39,7 @@ function ReadQR() {
         />
         <h2 className="text-xl font-semibold text-gray-800">My QR Code</h2>
         {isMobile() ? (
-          <div className="w-64 h-64 border-gray-400 rounded-lg">
+          <div className="w-64 h-64 border-gray-400 rounded-lg border-dashed">
             <input 
               type="file" 
               accept="image/*" 
