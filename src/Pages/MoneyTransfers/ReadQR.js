@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import qrMini from './../../images/qr-code.png'; 
 
-
 const isMobile = () => /Mobi|Android/i.test(navigator.userAgent);
 
 function ReadQR() {
-  const [isQRBlurred, setIsQRBlurred] = useState(true);
   const [uploadedImage, setUploadedImage] = useState(null); 
   const navigate = useNavigate();
 
   const Moveon = () => {
-      navigate("/DepositSuccessful") ;
-    };
+    if (uploadedImage) {
+      navigate("/DepositSuccessful");
+    }
+  };
 
-    const Moveback = () => {
-        navigate("/Transfermoney") ;
-      };
+  const Moveback = () => {
+    navigate("/Transfermoney");
+  };
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -39,16 +39,25 @@ function ReadQR() {
         />
         <h2 className="text-xl font-semibold text-gray-800">My QR Code</h2>
         {isMobile() ? (
-          <div className="w-64 h-64 border-gray-400 rounded-lg border-dashed">
+          <div className="w-64 h-64 border-dashed border-gray-400 rounded-lg relative">
+            {uploadedImage ? (
+              <img 
+                src={uploadedImage} 
+                alt="Uploaded QR Code" 
+                className="w-full h-full object-cover rounded-lg" 
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-gray-500">Capture your QR code</span>
+              </div>
+            )}
             <input 
               type="file" 
               accept="image/*" 
               capture="environment" 
-              className="w-full h-full opacity-0 absolute inset-0 " 
+              className="opacity-0 absolute inset-0 cursor-pointer"
+              onChange={handleImageUpload} 
             />
-            <div className="w-full h-full  flex items-center justify-center">
-              <span className="text-gray-500">Capture your QR code</span>
-            </div>
           </div>
         ) : (
           <div className="w-64 h-64 border-2 border-dashed border-gray-400 rounded-lg flex items-center justify-center">
@@ -87,20 +96,20 @@ function ReadQR() {
         <p className="text-gray-600">
           Hold your phone steady while your QR code is being scanned
         </p>
+
         <button 
-          className="bg-[#467a4d] text-white px-6 py-3 rounded-lg hover:bg-[#37613e]"
+          className={`bg-[#467a4d] text-white px-6 py-3 rounded-lg ${!uploadedImage ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#37613e]'}`}
           onClick={Moveon}
+          disabled={!uploadedImage} // Disable if no image is uploaded
         >
           Finish
         </button>
         <button 
-          className="text-[#467a4d]  px-6  rounded-lg"
+          className="text-[#467a4d] px-6 rounded-lg"
           onClick={Moveback}
         >
           Back
         </button>
-
-       
       </div>
     </div>
   );

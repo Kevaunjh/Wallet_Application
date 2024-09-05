@@ -70,12 +70,12 @@ function Sendtofreind() {
 
   const handleAddFriendSubmit = (event) => {
     event.preventDefault();
-    // Reset form and close the modal
+
     setFriendName('');
     setContactType('phone');
     setContactInfo('');
     setIsAddFriendModalOpen(false);
-    window.location.reload(); // Refresh the page to reset the state
+    window.location.reload(); 
   };
 
   const renderFriend = (friend) => (
@@ -109,7 +109,7 @@ function Sendtofreind() {
     </div>
   );
 
-  const isProceedEnabled = selectedFriend && selectedAmount; // Ensure both are selected
+  const isProceedEnabled = selectedFriend && selectedAmount; 
 
   const cardContainers = Object.values(cardDetails).map((card, index) => {
     const cardImage = card.creditCardImage || '';
@@ -197,18 +197,13 @@ function Sendtofreind() {
         </div>
 
         <div className="container mx-auto py-10">
-          {/* Header */}
           <h2 className="text-xl md:text-2xl font-semibold text-center mb-8">Choose Friend</h2>
-
-          {/* Friend List */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {friends.slice(0, 3).map(renderFriend)}
             {!showMoreFriends && renderAddFriendButton()}
             {showMoreFriends && friends.slice(3).map(renderFriend)}
             {showMoreFriends && renderAddFriendButton()}
           </div>
-
-          {/* Toggle More Friends */}
           <div className="flex justify-center mt-6">
             <button
               className="text-[#467a4d] font-semibold"
@@ -218,9 +213,6 @@ function Sendtofreind() {
             </button>
           </div>
         </div>
-
-        
-        {/* Proceed Button */}
         <button
           className={`mt-12 text-2xl font-semibold py-3 px-8 rounded-full text-white ${
             isProceedEnabled ? 'bg-[#467a4d] hover:bg-[#37613e]' : 'bg-gray-400 cursor-not-allowed'
@@ -231,8 +223,6 @@ function Sendtofreind() {
           Proceed
         </button>
       </div>
-
-      {/* Custom Amount Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg p-8 w-11/12 max-w-lg">
@@ -253,8 +243,6 @@ function Sendtofreind() {
           </div>
         </div>
       )}
-
-      {/* Add Friend Modal */}
       {isAddFriendModalOpen && (
   <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
     <div
