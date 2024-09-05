@@ -45,6 +45,8 @@ function Main() {
     { href: '/QuickServices/GasService', label: 'Pay for Travel' },
     { href: '/Giftcards', label: 'My Giftcard' },
     { href: '/Loadmoney', label: 'Load Money' },
+    { href: '/Transfermoney', label: 'Send E-Transfer' },
+    { href: '/Loadmoney', label: 'Load Money' },
 
 
   ];
@@ -235,7 +237,7 @@ function Main() {
     <h3 className="text-lg font-semibold">Chequing</h3>
     <p className="text-xl">{selectedCard.chequing}</p>
     <p className="text-md">Account No: {selectedCard.chequingAccount}</p>
-    <Link to='/Loadmoney'><img src={transfer} alt="Transfer" className="absolute right-5 top-1/2 transform -translate-y-1/2 w-10 h-10" /></Link>
+    <Link to='/Moneyusage'><img src={transfer} alt="Transfer" className="absolute right-5 top-1/2 transform -translate-y-1/2 w-10 h-10" /></Link>
   </div>
 
   <div className="bg-white border border-black shadow-md p-4 rounded-lg flex flex-col items-center">

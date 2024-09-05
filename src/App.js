@@ -42,10 +42,17 @@ import Loadto from './Pages/LoadingMoney/Loadto';
 import LoadConfirm from './Pages/LoadingMoney/LoadConfirm';
 import LoadSuccess from './Pages/LoadingMoney/LoadSuccess';
 import Loadfrom from './Pages/LoadingMoney/Loadfrom';
+import Moneyusage from './Pages/MoneyTransfers/Moneyusage';
+import Transfermethod from './Pages/MoneyTransfers/Transfermethod';
+import Sendtofriend from './Pages/MoneyTransfers/Sendtofreind';
+import MyQR from './Pages/MoneyTransfers/MyQR';
+import QRSuccess from './Pages/MoneyTransfers/QRSuccess';
+import ReadQR from './Pages/MoneyTransfers/ReadQR';
+import Transferdepositsuccess from './Pages/MoneyTransfers/Transferdepositsuccess';
 
 function App() {
 
-  const [currentComponent, setCurrentComponent] = useState('Signup');
+  const [currentComponent, setCurrentComponent] = useState('/');
 
   const toggleComponent = (componentName) => {
     setCurrentComponent(componentName);
@@ -89,6 +96,13 @@ function App() {
           <Route path="/Points" element={<Points toggleComponent={toggleComponent} />} />
           <Route path='/AccountManagement' element={<AccountManagement toggleComponent={toggleComponent} />} />
           <Route path='/' element={<Introduction toggleComponent={toggleComponent} /> } />
+          <Route path='/DepositSuccessful' element={<Transferdepositsuccess toggleComponent={toggleComponent} /> } />
+          <Route path='/ReadQR' element={<ReadQR toggleComponent={toggleComponent} /> } />
+          <Route path='/QRSuccess' element={<QRSuccess toggleComponent={toggleComponent} /> } />
+          <Route path='/MyQRCode' element={<MyQR toggleComponent={toggleComponent} /> } />
+          <Route path='/Sendtofriend' element={<Sendtofriend toggleComponent={toggleComponent} /> } />
+          <Route path='/Moneyusage' element={<Moneyusage toggleComponent={toggleComponent} /> } />
+          <Route path='/Transfermoney' element={<Transfermethod toggleComponent={toggleComponent} /> } />
           <Route path='/Loadto' element={<Loadto toggleComponent={toggleComponent} /> } />
           <Route path='/Loadfrom' element={<Loadfrom toggleComponent={toggleComponent} /> } />
           <Route path='/LoadConfirm' element={<LoadConfirm toggleComponent={toggleComponent} /> } />

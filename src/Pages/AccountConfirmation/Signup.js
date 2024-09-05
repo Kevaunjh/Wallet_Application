@@ -32,7 +32,7 @@ const Signup = () => {
       });
 
       setIsValid(true);
-      alert('Account Successfully Made.');
+      console.log('Account Successfully Made.');
       setCurrentTab('signup4');
       console.log("User data written to Realtime Database");
 
@@ -45,7 +45,7 @@ const Signup = () => {
           
       } else if (error.code === 'auth/email-already-in-use') {
         setIsValid(false);
-          alert("This mobile phone or email you've chosen is already in use.");;
+          alert("The phone number or email you've chosen is already in use.");;
       } else {
         setIsValid(false);
           alert("Failed to create account. Please try again.");
@@ -96,7 +96,7 @@ const Signup = () => {
     } else if (currentTab === 'signup3') {
       const passInput = document.getElementById('password').value.trim();
       const confirmPassInput = document.getElementById('repassword').value.trim();
-      const passwordRegex = /^.{6,}$/;
+      const passwordRegex = /^.{5,}$/;
   
       if (!passwordRegex.test(passInput)) {
         alert('Please enter a valid password with at least 6 characters.');
