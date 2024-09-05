@@ -15,7 +15,7 @@ function ReadQR() {
     };
 
     const Moveback = () => {
-        navigate(-1) ;
+        navigate("/Transfermoney") ;
       };
 
   const handleImageUpload = (event) => {
@@ -39,14 +39,14 @@ function ReadQR() {
         />
         <h2 className="text-xl font-semibold text-gray-800">My QR Code</h2>
         {isMobile() ? (
-          <div className="w-64 h-64">
+          <div className="w-64 h-64 border-gray-400 rounded-lg">
             <input 
               type="file" 
               accept="image/*" 
               capture="environment" 
-              className="w-full h-full opacity-0 absolute inset-0" 
+              className="w-full h-full opacity-0 absolute inset-0 " 
             />
-            <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+            <div className="w-full h-full  flex items-center justify-center">
               <span className="text-gray-500">Capture your QR code</span>
             </div>
           </div>
