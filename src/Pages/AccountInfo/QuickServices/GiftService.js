@@ -39,15 +39,17 @@ function GiftService() {
   return (
     <div className="GiftService bg-white h-screen flex flex-col justify-center items-center  ">
 
+      
+
       {/* Container for Title, Back Button, Form, and Show Button */}
       <div className="bg-white overflow-auto p-16  flex flex-col items-center w-screen min-h-screen  mx-auto border-2 h-full">
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-4">
-          <Link to="/Points" className="rounded-full  p-2  bg-[#467a4d] text-white ">
+        
+        <div className="w-full flex justify-start mb-4 mr-20 -mt-9">
+          <Link to="/Points" className="rounded-full  p-2  bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
-
         {/* Title */}
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
          Point Purchase
