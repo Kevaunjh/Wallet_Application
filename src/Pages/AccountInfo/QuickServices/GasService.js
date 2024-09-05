@@ -136,7 +136,7 @@ function GasService() {
                     <option value="wisconsin">Wisconsin</option>
                     <option value="wyoming">Wyoming</option>
 
-                  
+
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                 </div>
@@ -170,68 +170,67 @@ function GasService() {
                     <option value="midgrade">$4.99 - midgrade</option>
                     <option value="premium">$5.99 - Premium/Super</option>
                     <option value="diesel">$6.99 - Diesel</option>
-                  
+
                   </select>
                   <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                 </div>
               </div>
             </form>
 
-        
+
             <div className="flex justify-center items-center ">
-          <Link
-          to="/QuickServices/PayYourBill/PayGas" 
-           className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms] flex justify-center items-center`}
-          >
-          Show
-          </Link>
-        </div>
+              <Link
+                to="/QuickServices/PayYourBill/PayGas"
+                className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+                  } transition-opacity duration-[1500ms] flex justify-center items-center`}
+              >
+                Show
+              </Link>
+            </div>
           </>
         );
       case 'air':
         return (
           <>
             <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
-              Service Provider
-            </label>
-            <div className="relative">
-              <select
-                id="serviceProvider"
-                value={serviceProvider}
-                onChange={handleServiceProviderChange}
-                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
-              >
-                <option value="">Select an Airline</option>
-                <option value="delta">Delta Air Lines</option>
-                <option value="american">American Airlines</option>
-                <option value="united">United Airlines</option>
-                <option value="southwest">Southwest Airlines</option>
-                <option value="jetblue">JetBlue Airways</option>
-                <option value="alaska">Alaska Airlines</option>
-                <option value="spirit">Spirit Airlines</option>
-                <option value="frontier">Frontier Airlines</option>
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
+                Service Provider
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceProvider"
+                  value={serviceProvider}
+                  onChange={handleServiceProviderChange}
+                  className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+                >
+                  <option value="">Select an Airline</option>
+                  <option value="delta">Delta Air Lines</option>
+                  <option value="american">American Airlines</option>
+                  <option value="united">United Airlines</option>
+                  <option value="southwest">Southwest Airlines</option>
+                  <option value="jetblue">JetBlue Airways</option>
+                  <option value="alaska">Alaska Airlines</option>
+                  <option value="spirit">Spirit Airlines</option>
+                  <option value="frontier">Frontier Airlines</option>
 
-              </select>
-              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                </select>
+                <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              </div>
             </div>
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="username">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={handleUsernameChange}
-              placeholder="Enter your username"
-              className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-6">
+            <div className="mb-6">
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="username">
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={handleUsernameChange}
+                placeholder="Enter your username"
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="mb-6">
               <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="date">
                 Date
               </label>
@@ -243,16 +242,15 @@ function GasService() {
                 className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
-          <div className="flex justify-center items-center ">
-          <Link
-          to="/QuickServices/PayYourBill/PayGas" 
-           className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms] flex justify-center items-center`}
-          >
-          Show
-          </Link>
-        </div>
+            <div className="flex justify-center items-center ">
+              <Link
+                to="/QuickServices/PayYourBill/PayGas"
+                className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+                  } transition-opacity duration-[1500ms] flex justify-center items-center`}
+              >
+                Show
+              </Link>
+            </div>
           </>
         );
     }
@@ -278,22 +276,22 @@ function GasService() {
 
         </div>
 
- 
+
         <div className="w-screen flex justify-start mb-4 mt-12 ml-16">
           <Link to="/Main" className=" rounded-full  p-2  bg-[#467a4d] text-white ">
             &larr; Back
           </Link>
         </div>
 
- 
+
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </h1>
 
-     
+
         <form className="w-screen px-16 2xl:w-8/12">
           {renderForm()}
-        </form>      
+        </form>
       </div>
     </div>
   );

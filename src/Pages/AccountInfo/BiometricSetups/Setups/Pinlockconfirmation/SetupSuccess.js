@@ -17,7 +17,7 @@ const SetupSuccess = () => {
         inputRefs.current[index + 1].focus();
       }
     } else {
-      e.target.value = ''; 
+      e.target.value = '';
     }
   };
 
@@ -55,8 +55,8 @@ const SetupSuccess = () => {
             ))}
           </div>
           <div className="text-center mb-12">
-            <p 
-              onClick={handleResendCode} 
+            <p
+              onClick={handleResendCode}
               className="text-blue-500 text-sm cursor-pointer"
             >
               Didn't receive the code?

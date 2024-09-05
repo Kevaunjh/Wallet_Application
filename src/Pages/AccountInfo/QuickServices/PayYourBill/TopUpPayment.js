@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import fingerprintIcon from './../../../../images/fingerprint-scan.png'; 
+import fingerprintIcon from './../../../../images/fingerprint-scan.png';
 
 
 const cardData = {
@@ -17,12 +17,12 @@ function TopUpPayment() {
 
   const handleFingerprintClick = () => {
     setIsFingerprintClicked(true);
-    setIsOtpSent(false); 
+    setIsOtpSent(false);
   };
 
   const handleOtpClick = () => {
     setIsOtpSent(true);
-  
+
   };
 
   const now = new Date();

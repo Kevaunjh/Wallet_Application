@@ -20,9 +20,8 @@ function BiometricSetup() {
       <div className="flex justify-center md:gap-12 gap-4 w-full">
         <Link
           to="/AccountInfo/BiometricSetups/Fingerprint"
-          className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${
-            selectedOption === 'fingerprint' ? 'border-[#467a4d] bg-[#E7F5F1] shadow-3xl scale-110' : 'border-[#467a4d] hover:bg-[#E7F5F1] hover:scale-105'
-          }`}
+          className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${selectedOption === 'fingerprint' ? 'border-[#467a4d] bg-[#E7F5F1] shadow-3xl scale-110' : 'border-[#467a4d] hover:bg-[#E7F5F1] hover:scale-105'
+            }`}
           onClick={() => setSelectedOption('fingerprint')}
         >
           <img src={fingerprintIcon} alt="Fingerprint Icon" className={`w-20 sm:w-24 h-20 sm:h-24 mb-4 transition-transform ${selectedOption === 'fingerprint' ? 'scale-125' : ''}`} />
@@ -32,9 +31,8 @@ function BiometricSetup() {
         </Link>
         <Link
           to="/AccountInfo/BiometricSetups/Pinlock"
-          className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${
-            selectedOption === 'pinLock' ? 'border-[#467a4d] bg-[#E7F5F1] shadow-3xl scale-110' : 'border-[#467a4d] hover:bg-[#E7F5F1] hover:scale-105'
-          }`}
+          className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${selectedOption === 'pinLock' ? 'border-[#467a4d] bg-[#E7F5F1] shadow-3xl scale-110' : 'border-[#467a4d] hover:bg-[#E7F5F1] hover:scale-105'
+            }`}
           onClick={() => setSelectedOption('pinLock')}
         >
           <img src={pinLockIcon} alt="PIN Lock Icon" className={`w-20 sm:w-24 h-20 sm:h-24 mb-4 transition-transform ${selectedOption === 'pinLock' ? 'scale-125' : ''}`} />

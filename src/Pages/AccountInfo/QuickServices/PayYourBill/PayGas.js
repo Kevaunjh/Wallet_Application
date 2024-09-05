@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import fingerprintIcon from './../../../../images/fingerprint-scan.png'; 
-import cardDetails from '../../../Datafiles/BankingData.js'; 
+import fingerprintIcon from './../../../../images/fingerprint-scan.png';
+import cardDetails from '../../../Datafiles/BankingData.js';
 
 function PayLight() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +27,7 @@ function PayLight() {
 
   const getTotalAmount = () => (Math.random() * (299 - 1) + 1).toFixed(2);
 
-  
+
   return (
     <div className="bg-white min-h-screen flex flex-col items-center">
       <div className="bg-white p-8 h-screen w-screen">

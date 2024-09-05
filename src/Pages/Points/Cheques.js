@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import profileplaceholder from './../../images/logoplaceholder.png';
 
-const points = 1652; 
+const points = 1652;
 
 function Cheques() {
   const [chequeFront, setChequeFront] = useState(null);
@@ -48,16 +48,16 @@ function Cheques() {
             <h3 className="text-2xl font-semibold mb-6 text-center">Upload Cheque Images</h3>
             <label className="w-10/12 mb-4 cursor-pointer">
               <span className="block text-center font-semibold mb-2">Front of Cheque</span>
-              <input 
-                type="file" 
-                accept="image/*" 
-                onChange={handleChequeFrontUpload} 
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleChequeFrontUpload}
                 className="hidden"
               />
               {chequeFront ? (
-                <img 
-                  src={chequeFront} 
-                  alt="Front of Cheque" 
+                <img
+                  src={chequeFront}
+                  alt="Front of Cheque"
                   className="w-full border-black border-2 rounded-md"
                 />
               ) : (
@@ -68,16 +68,16 @@ function Cheques() {
             </label>
             <label className="w-10/12 mb-6 cursor-pointer">
               <span className="block text-center font-semibold mb-2">Back of Cheque</span>
-              <input 
-                type="file" 
-                accept="image/*" 
-                onChange={handleChequeBackUpload} 
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleChequeBackUpload}
                 className="hidden"
               />
               {chequeBack ? (
-                <img 
-                  src={chequeBack} 
-                  alt="Back of Cheque" 
+                <img
+                  src={chequeBack}
+                  alt="Back of Cheque"
                   className="w-full border-black border-2 rounded-md"
                 />
               ) : (
@@ -86,12 +86,10 @@ function Cheques() {
                 </div>
               )}
             </label>
-
             <Link
               to="/Depositcallback"
-              className={`bg-[#467a4d] text-white px-4 py-2 rounded-md text-lg ${
-                chequeFront && chequeBack ? '' : 'opacity-50 cursor-not-allowed'
-              }`}
+              className={`bg-[#467a4d] text-white px-4 py-2 rounded-md text-lg ${chequeFront && chequeBack ? '' : 'opacity-50 cursor-not-allowed'
+                }`}
             >
               Proceed
             </Link>

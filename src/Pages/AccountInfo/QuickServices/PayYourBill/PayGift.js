@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import fingerprintIcon from './../../../../images/fingerprint-scan.png'; 
+import fingerprintIcon from './../../../../images/fingerprint-scan.png';
 
 const cardData = {
   cardNumber: '1234 5678 9101 / XXXX',
 };
 
 function PayGift() {
- 
+
   const now = new Date();
   const dateTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
 

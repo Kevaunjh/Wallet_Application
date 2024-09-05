@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import bnwLogo from './../../images/bnwbanx.png';
 import { Link } from 'react-router-dom';
-import { signInWithEmailAndPassword, provider, signInWithPopup, signInWithRedirect} from './../../firebase';
+import { signInWithEmailAndPassword, provider, signInWithPopup, signInWithRedirect } from './../../firebase';
 import { auth } from './../../firebase';
 import { useNavigate } from 'react-router-dom';
 const Login = () => {
@@ -24,12 +24,12 @@ const Login = () => {
   const handleBeforeClick = () => {
     if (currentTab === 'login1') {
       const phoneRegex = /^[0-9]{10,11}$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-if (!phoneRegex.test(username) && !emailRegex.test(username)) {
-  alert('Please enter a valid 10-digit phone number or a valid email address.');
-  return false;
-}
+      if (!phoneRegex.test(username) && !emailRegex.test(username)) {
+        alert('Please enter a valid 10-digit phone number or a valid email address.');
+        return false;
+      }
 
 
       if (password === '') {
@@ -142,109 +142,109 @@ if (!phoneRegex.test(username) && !emailRegex.test(username)) {
                     />
                   </fieldset>
                 </div>
-            <div className="flex flex-col gap-4">
-              <button
-                type="button"
-                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                onClick={handleSignIn}
-              >
-                Next
-              </button>
-              <button
-                type="button"
-                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                onClick={handleSignInWithGoogle}
-              >
-                <img
-                  src="https://img.icons8.com/color/16/000000/google-logo.png"
-                  alt="Google logo"
-                  className="h-6 w-6 mr-3"
-                />
-                Continue with Google
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div className="flex-none" />
-      </>
-    )}
-  {currentTab === 'login2' && (
-        <>
-      <div className="flex flex-col items-center justify-center flex-none py-4">
-        <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
-
-        
-        <h1 className="text-3xl font-bold">Biometric Setup</h1>
-        <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
-      </div>
-
-      <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
-        <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
-          <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-
-          <div className="flex flex-col items-center justify-center w-full">
-  <label className="block text-gray-700 text-sm mb-8 text-center 2xl:mb-24 xl:mb-2">
-    Enter the OTP you received
-  </label>
-
-  <div className="flex justify-center gap-2 sm:gap-4  w-full">
-    {[1, 2, 3, 4, 5].map((_, index) => (
-      <input
-        key={index}
-        type="text"
-        maxLength="1"
-        ref={(el) => (inputRefs.current[index] = el)}
-        onChange={(e) => handleInputChange(e, index)}
-        onKeyDown={(e) => handleKeyDown(e, index)}
-        className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
-        aria-label={`OTP digit ${index + 1}`}
-        inputMode="numeric" 
-      />
-    ))}
-  </div>
-</div>
-     
-             <div className="text-center mb-2 ">
-               <p 
-                 onClick={handleResendCode} 
-                 className="text-blue-500 text-sm cursor-pointer "
-               >
-                 Didn't receive the code?
-               </p>
-               {!codeResent && (
-              <p className="text-[#467a4d] text-sm mt-2 opacity-0">Code Resent</p>
-            )}
-            {codeResent && (
-              <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
-            )} 
-             </div>
-          
-            <div className="flex flex-col gap-4">
-              <Link
-                type="button"
-                to="/Loading"
-                className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-              >
-                Login
-              </Link>
-              <button
-                type="button"
-                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                onClick={handleBackClick}
-              > 
-                Back
-              </button>
+                <div className="flex flex-col gap-4">
+                  <button
+                    type="button"
+                    className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                    onClick={handleSignIn}
+                  >
+                    Next
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                    onClick={handleSignInWithGoogle}
+                  >
+                    <img
+                      src="https://img.icons8.com/color/16/000000/google-logo.png"
+                      alt="Google logo"
+                      className="h-6 w-6 mr-3"
+                    />
+                    Continue with Google
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="flex-none" />
-      </>
-    )}
-    
+          <div className="flex-none" />
+        </>
+      )}
+      {currentTab === 'login2' && (
+        <>
+          <div className="flex flex-col items-center justify-center flex-none py-4">
+            <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
+
+
+            <h1 className="text-3xl font-bold">Biometric Setup</h1>
+            <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+          </div>
+
+          <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
+            <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
+              <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
+
+                <div className="flex flex-col items-center justify-center w-full">
+                  <label className="block text-gray-700 text-sm mb-8 text-center 2xl:mb-24 xl:mb-2">
+                    Enter the OTP you received
+                  </label>
+
+                  <div className="flex justify-center gap-2 sm:gap-4  w-full">
+                    {[1, 2, 3, 4, 5].map((_, index) => (
+                      <input
+                        key={index}
+                        type="text"
+                        maxLength="1"
+                        ref={(el) => (inputRefs.current[index] = el)}
+                        onChange={(e) => handleInputChange(e, index)}
+                        onKeyDown={(e) => handleKeyDown(e, index)}
+                        className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:h-12 xl:w-12 border border-gray-600 rounded-lg bg-gray-100 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold focus:outline-none text-black"
+                        aria-label={`OTP digit ${index + 1}`}
+                        inputMode="numeric"
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="text-center mb-2 ">
+                  <p
+                    onClick={handleResendCode}
+                    className="text-blue-500 text-sm cursor-pointer "
+                  >
+                    Didn't receive the code?
+                  </p>
+                  {!codeResent && (
+                    <p className="text-[#467a4d] text-sm mt-2 opacity-0">Code Resent</p>
+                  )}
+                  {codeResent && (
+                    <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
+                  )}
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <Link
+                    type="button"
+                    to="/Loading"
+                    className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                  >
+                    Login
+                  </Link>
+                  <button
+                    type="button"
+                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
+                    onClick={handleBackClick}
+                  >
+                    Back
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-none" />
+        </>
+      )}
+
     </div>
   );
 };

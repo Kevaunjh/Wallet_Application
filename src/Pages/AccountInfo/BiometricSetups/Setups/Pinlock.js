@@ -51,7 +51,7 @@ function Pinlock() {
     setOldPin(e.target.value);
   };
 
-  
+
   const showError = touched.newPin || touched.reEnterNewPin;
 
   return (
@@ -122,9 +122,8 @@ function Pinlock() {
 
         <Link
           to={fieldsFilled ? "/AccountInfo/BiometricSetups/Pinlockconfirmation/SetupSuccess" : "#"}
-          className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${
-            fieldsFilled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms]`}
+          className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${fieldsFilled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+            } transition-opacity duration-[1500ms]`}
           onClick={(e) => {
             if (!fieldsFilled) e.preventDefault();
           }}

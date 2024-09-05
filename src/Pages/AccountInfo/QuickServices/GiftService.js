@@ -22,7 +22,7 @@ function GiftService() {
 
   const handlePurchaseChange = (e) => {
     setPurchase(e.target.value);
-    checkFieldsFilled( e.target.value, amount, email, company);
+    checkFieldsFilled(e.target.value, amount, email, company);
   };
 
   const handleCompanyChange = (e) => {
@@ -45,10 +45,10 @@ function GiftService() {
           </Link>
         </div>
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
-         Point Purchase
+          Point Purchase
         </h1>
         <form className="w-full 2xl:w-8/12 2xl:mx-auto">
-        <div className="mb-6">
+          <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="company">
               Type Of Purchase
             </label>
@@ -121,10 +121,9 @@ function GiftService() {
           </div>
         </form>
         <Link
-          to="/QuickServices/PayYourBill/PayGift" 
-          className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms]`}
+          to="/QuickServices/PayYourBill/PayGift"
+          className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+            } transition-opacity duration-[1500ms]`}
         >
           Show
         </Link>

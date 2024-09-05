@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import fingerprintIcon from './../../../../images/fingerprint-scan.png'; 
+import fingerprintIcon from './../../../../images/fingerprint-scan.png';
 
 function PayWater() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,12 +12,12 @@ function PayWater() {
 
   const handleFingerprintClick = () => {
     setIsFingerprintClicked(true);
-    setIsOtpSent(false); 
+    setIsOtpSent(false);
   };
 
   const handleOtpClick = () => {
     setIsOtpSent(true);
-  
+
   };
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import giftcardsData from './../../Pages/Datafiles/GiftcardsData'; 
+import giftcardsData from './../../Pages/Datafiles/GiftcardsData';
 import points from './../../images/Points.png';
 
 const pointsnumber = 1652;
@@ -17,7 +17,7 @@ function Giftcards() {
 
   const openModal = (barcodeImage, amount) => {
     setSelectedBarcode(barcodeImage);
-    setSelectedCardAmount(amount); 
+    setSelectedCardAmount(amount);
     setIsModalOpen(true);
   };
 
@@ -27,7 +27,7 @@ function Giftcards() {
     setSelectedCardAmount('');
   };
 
-  const filteredGiftcards = Object.values(giftcardsData).filter(giftcard => 
+  const filteredGiftcards = Object.values(giftcardsData).filter(giftcard =>
     selectedFilter === 'All' || giftcard.category.includes(selectedFilter)
   );
 
@@ -36,8 +36,8 @@ function Giftcards() {
     const backgroundColor = giftcard.backgroundColor || '#FFF';
 
     return (
-      <button 
-        onClick={() => openModal(giftcard.barcodeImage, giftcard.amount)} 
+      <button
+        onClick={() => openModal(giftcard.barcodeImage, giftcard.amount)}
         key={index}
         className="sm:w-64 sm:h-40 h-56 w-96 rounded-3xl shadow-md mb-4 text-black border-[#0A9971] border-2 relative overflow-hidden"
         style={{ backgroundImage: `url(${giftcardImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor }}
@@ -84,11 +84,10 @@ function Giftcards() {
                 <button
                   key={category}
                   onClick={() => handleFilterChange(category)}
-                  className={`px-4 py-2 rounded-full border-2 ${
-                    selectedFilter === category
+                  className={`px-4 py-2 rounded-full border-2 ${selectedFilter === category
                       ? 'bg-[#0A9971] text-white border-[#0A9971]'
                       : 'bg-white text-[#0A9971] border-[#0A9971]'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
@@ -104,12 +103,11 @@ function Giftcards() {
                 + Add Gift Card
               </button>
             </Link>
-
             {isModalOpen && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="bg-white p-6 rounded-lg shadow-lg relative">
-                  <button 
-                    onClick={closeModal} 
+                  <button
+                    onClick={closeModal}
                     className="absolute top-2 right-2 text-gray-500 hover:text-black">
                     &#10005;
                   </button>

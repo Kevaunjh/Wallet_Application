@@ -7,7 +7,7 @@ function WaterService() {
   const [selectCounter, setSelectCounter] = useState('');
   const [scNo, setScNo] = useState('');
   const [address, setAddress] = useState('');
-  
+
 
   const handleServiceProviderChange = (e) => {
     const value = e.target.value;
@@ -111,58 +111,57 @@ function WaterService() {
               />
             </div>
             <div className="flex justify-center items-center ">
-          <Link
-          to="/QuickServices/PayYourBill/PayWater"
-           className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms] flex justify-center items-center`}
-          >
-          Show
-          </Link>
-        </div>
+              <Link
+                to="/QuickServices/PayYourBill/PayWater"
+                className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+                  } transition-opacity duration-[1500ms] flex justify-center items-center`}
+              >
+                Show
+              </Link>
+            </div>
           </>
         );
       case 'internet':
         return (
           <>
             <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
-              Service Provider
-            </label>
-            <div className="relative">
-              <select
-                id="serviceProvider"
-                value={serviceProvider}
-                onChange={handleServiceProviderChange}
-                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
-              >
-                <option value="">Select a Provider</option>
-                <option value="comcast">Comcast</option>
-                <option value="verizon">Verizon</option>
-                <option value="spectrum">Spectrum</option>
-                <option value="att">AT&T</option>
-                <option value="centurylink">CenturyLink</option>
-                <option value="cox">Cox</option>
-                <option value="googlefiber">Google Fiber</option>
-                <option value="frontier">Frontier</option>
-              </select>
-              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
+                Service Provider
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceProvider"
+                  value={serviceProvider}
+                  onChange={handleServiceProviderChange}
+                  className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+                >
+                  <option value="">Select a Provider</option>
+                  <option value="comcast">Comcast</option>
+                  <option value="verizon">Verizon</option>
+                  <option value="spectrum">Spectrum</option>
+                  <option value="att">AT&T</option>
+                  <option value="centurylink">CenturyLink</option>
+                  <option value="cox">Cox</option>
+                  <option value="googlefiber">Google Fiber</option>
+                  <option value="frontier">Frontier</option>
+                </select>
+                <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              </div>
             </div>
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="address">
-              Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={handleAddressChange}
-              placeholder="Enter your address"
-              className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-6">
+            <div className="mb-6">
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="address">
+                Address
+              </label>
+              <input
+                type="text"
+                id="address"
+                value={address}
+                onChange={handleAddressChange}
+                placeholder="Enter your address"
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="mb-6">
               <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="date">
                 Date
               </label>
@@ -174,107 +173,105 @@ function WaterService() {
                 className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
-          <div className="flex justify-center items-center ">
-          <Link
-          to="/QuickServices/PayYourBill/PayInternet"
-           className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms] flex justify-center items-center`}
-          >
-          Show
-          </Link>
-        </div>
+            <div className="flex justify-center items-center ">
+              <Link
+                to="/QuickServices/PayYourBill/PayInternet"
+                className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+                  } transition-opacity duration-[1500ms] flex justify-center items-center`}
+              >
+                Show
+              </Link>
+            </div>
           </>
         );
       case 'electricity':
         return (
           <>
             <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
-              Service Provider
-            </label>
-            <div className="relative">
-              <select
-                id="serviceProvider"
-                value={serviceProvider}
-                onChange={handleServiceProviderChange}
-                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
-              >
-                <option value="">Select a Provider</option>
-                <option value="duke-energy">Duke Energy</option>
-                <option value="pgande">Pacific Gas and Electric (PG&E)</option>
-                <option value="conedison">Con Edison</option>
-                <option value="southern-company">Southern Company</option>
-                <option value="exelon">Exelon</option>
-                <option value="nextEra">NextEra Energy</option>
-                <option value="aep">American Electric Power (AEP)</option>
-                <option value="xcel-energy">Xcel Energy</option>
-                <option value="nrg-energy">NRG Energy</option>
-              </select>
-              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
+                Service Provider
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceProvider"
+                  value={serviceProvider}
+                  onChange={handleServiceProviderChange}
+                  className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+                >
+                  <option value="">Select a Provider</option>
+                  <option value="duke-energy">Duke Energy</option>
+                  <option value="pgande">Pacific Gas and Electric (PG&E)</option>
+                  <option value="conedison">Con Edison</option>
+                  <option value="southern-company">Southern Company</option>
+                  <option value="exelon">Exelon</option>
+                  <option value="nextEra">NextEra Energy</option>
+                  <option value="aep">American Electric Power (AEP)</option>
+                  <option value="xcel-energy">Xcel Energy</option>
+                  <option value="nrg-energy">NRG Energy</option>
+                </select>
+                <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              </div>
             </div>
-          </div>
 
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
-              Select Counter
-            </label>
-            <div className="relative">
-              <select
-                id="serviceCounter"
-                value={selectCounter}
-                onChange={handleSelectCounterChange}
-                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
-              >
-<option value="">Select a Counter</option>
-<option value="ge-analog">General Electric I-70-S (Analog Meter)</option>
-<option value="landisgyr-digital">Landis+Gyr E350 (Digital Meter)</option>
-<option value="itron-smart">Itron OpenWay Riva (Smart Meter)</option>
-<option value="sensus-net">Sensus iConA™ Gen 4 (Net Meter)</option>
-<option value="aclala-prepaid">Aclara STAR® Network (Prepaid Meter)</option>
-<option value="schneider-commercial">Schneider Electric ION9000 (Commercial/Industrial Meter)</option>
+            <div className="mb-6">
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
+                Select Counter
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceCounter"
+                  value={selectCounter}
+                  onChange={handleSelectCounterChange}
+                  className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8"
+                >
+                  <option value="">Select a Counter</option>
+                  <option value="ge-analog">General Electric I-70-S (Analog Meter)</option>
+                  <option value="landisgyr-digital">Landis+Gyr E350 (Digital Meter)</option>
+                  <option value="itron-smart">Itron OpenWay Riva (Smart Meter)</option>
+                  <option value="sensus-net">Sensus iConA™ Gen 4 (Net Meter)</option>
+                  <option value="aclala-prepaid">Aclara STAR® Network (Prepaid Meter)</option>
+                  <option value="schneider-commercial">Schneider Electric ION9000 (Commercial/Industrial Meter)</option>
 
-              </select>
-              <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                </select>
+                <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+              </div>
             </div>
-          </div>
 
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="scNo">
-              SC No.
-            </label>
-            <input
-              type="text"
-              id="scNo"
-              value={scNo}
-              onChange={handleScNoChange}
-              placeholder="XXXXXXXXXX"
-              className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="customerId">
-              Customer ID
-            </label>
-            <input
-              type="text"
-              id="customerId"
-              value={customerId}
-              onChange={handleCustomerIdChange}
-              placeholder="XXXXXXXXXX"
-              className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="flex justify-center items-center ">
-          <Link
-          to="/QuickServices/PayYourBill/PayLight"
-           className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${
-            isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
-          } transition-opacity duration-[1500ms] flex justify-center items-center`}
-          >
-          Show
-          </Link>
-        </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="scNo">
+                SC No.
+              </label>
+              <input
+                type="text"
+                id="scNo"
+                value={scNo}
+                onChange={handleScNoChange}
+                placeholder="XXXXXXXXXX"
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="customerId">
+                Customer ID
+              </label>
+              <input
+                type="text"
+                id="customerId"
+                value={customerId}
+                onChange={handleCustomerIdChange}
+                placeholder="XXXXXXXXXX"
+                className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="flex justify-center items-center ">
+              <Link
+                to="/QuickServices/PayYourBill/PayLight"
+                className={`px-12 py-4 mt-8 mb-8 rounded-2xl text-lg text-white w-36 ${isShowEnabled ? 'bg-[#467a4d]' : 'bg-[#467a4d] opacity-50 cursor-not-allowed'
+                  } transition-opacity duration-[1500ms] flex justify-center items-center`}
+              >
+                Show
+              </Link>
+            </div>
 
           </>
         );
@@ -323,7 +320,7 @@ function WaterService() {
         </form>
 
 
-        
+
       </div>
     </div>
   );
