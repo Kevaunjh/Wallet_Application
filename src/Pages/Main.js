@@ -46,7 +46,6 @@ function Main() {
     { href: '/Giftcards', label: 'My Giftcard' },
     { href: '/Loadmoney', label: 'Load Money' },
     { href: '/Transfermoney', label: 'Send E-Transfer' },
-    { href: '/Loadmoney', label: 'Load Money' },
 
 
   ];
