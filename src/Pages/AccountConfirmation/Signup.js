@@ -32,8 +32,10 @@ const Signup = () => {
       });
 
       setIsValid(true);
-      console.log('Account Successfully Made.');
+      handleNextClick();
       setCurrentTab('signup4');
+      console.log('Account Successfully Made.');
+      
       console.log("User data written to Realtime Database");
 
     } catch (error) {
@@ -349,9 +351,7 @@ const Signup = () => {
                 className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
                 onClick={() => { 
                   handleSignUp(); 
-                  
 
-                  
                 }}
               >
                 Next
