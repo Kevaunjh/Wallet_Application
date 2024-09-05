@@ -42,21 +42,15 @@ function LightService() {
 
   return (
     <div className="LightService bg-white min-h-screen flex flex-col justify-center items-center p-8">
-      {/* Container for Title, Back Button, Form, and Show Button */}
       <div className="bg-white p-16 rounded-3xl shadow-2xl flex flex-col items-center w-full max-w-3xl mx-auto shadow-black border-black border-2">
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/" className="text-lg text-[#467a4d]">
             &larr; Back
           </Link>
         </div>
-
-        {/* Title */}
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8">
           Electricity
         </h1>
-
-        {/* Light Service Form */}
         <form className="w-full">
           <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="serviceProvider">
@@ -125,8 +119,6 @@ function LightService() {
             />
           </div>
         </form>
-
-        {/* Show Button as Link */}
         <Link
           to="/QuickServices/PayYourBill/PayLight" 
           className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${

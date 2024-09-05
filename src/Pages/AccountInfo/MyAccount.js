@@ -12,23 +12,16 @@ const points = 1652;
 function MyAccount() {
   return (
     <div className="Profile bg-[#e9f7f2] min-h-screen flex flex-col items-center relative">
-
-      {/* Combined Container for Small Screens */}
       <div className="w-full bg-[#e9f7f2] p-6  flex flex-col items-center  relative min-h-screen h-auto">
-        {/* Back Button for Smaller Screens */}
         <Link to="/Main" className="absolute top-8 left-8 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
         </Link>
-
-       
         <div className="flex flex-row items-center mt-16 rounded-3xl bg-white border-2 justify-center shadow-md 2xl:w-8/12 w-full p-8 gap-6 xl:gap-16 xl:justify-center py-12">
-  {/* Profile Picture */}
   <img 
     src={profileplaceholder} 
     alt="Profile Placeholder" 
     className="2xl:w-36 2xl:h-36 h-32 w-32 rounded-full mb-4 shadow-md 2xl:border-2 2xl:border-black"
   />
-  {/* Profile Details and Points */}
   <div className="flex flex-col justify-start">
     <div className="text-left mb-1">
       <h2 className="text-xl font-bold">John Doe</h2>
@@ -43,9 +36,6 @@ function MyAccount() {
     </div>
   </div>
 </div>
-
-
-        {/* Profile Info Section Links */}
         <div className="flex flex-col mt-8 w-full overflow-y-auto text-left md:text-center 2xl:text-center  rounded-3xl bg-white border-2 2xl:w-8/12 shadow-md ">
   <Link to="/Accountinfo/PersonalDetails" className="w-full hover:bg-gray-100 ">
     <div className="flex items-center p-6 border-b border-gray-300 mx-4">

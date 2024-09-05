@@ -22,26 +22,16 @@ function PayWater() {
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center">
-      {/* White Container */}
       <div className="bg-white p-8 w-screen h-screen ">
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/QuickServices/WaterService" className=" rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
-
-        {/* Image at the Top */}
-        
-
-
-        {/* Payment Details Container */}
         <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full mt-6 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <p className="text-lg">Please review the payment details below.</p>
         </div>
-
-        {/* Customer Information Container */}
         <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mb-6 mt-0 2xl:mx-auto 2xl:w-8/12">
           <div className="flex justify-between mb-4">
             <div>
@@ -55,8 +45,6 @@ function PayWater() {
             <div>123456789</div>
             <div>John Doe</div>
           </div>
-
-          {/* Charges Section */}
           <div className="border-t-2 border-dashed border-gray-400 mt-6 mb-4"></div>
           <div className="mb-4">
             <div className="flex justify-between mb-2">
@@ -82,8 +70,6 @@ function PayWater() {
             <span>$57.00</span>
           </div>
         </div>
-
-        {/* Pay Button */}
         <div className="w-full flex justify-center mt-12">
           <button
             className="px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg"
@@ -93,8 +79,6 @@ function PayWater() {
           </button>
         </div>
       </div>
-
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">

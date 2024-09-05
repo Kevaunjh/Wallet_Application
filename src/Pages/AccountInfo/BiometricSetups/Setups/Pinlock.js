@@ -113,8 +113,6 @@ function Pinlock() {
               className="shadow appearance-none border rounded-2xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-
-          {/* Combined Error Message */}
           <p
             className={`text-red-500 text-sm mt-2 ${showError && errorMessage ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
           >

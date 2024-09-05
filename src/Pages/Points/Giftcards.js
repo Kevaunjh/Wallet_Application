@@ -52,24 +52,18 @@ function Giftcards() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-white overflow-x-hidden">
       <div className="relative w-screen min-h-screen flex flex-col">
-        {/* Top - Dark Green */}
         <div className="w-screen bg-[#0A9971] flex flex-col p-4 z-1 relative">
-          {/* Back Button */}
           <Link to="/Points">
             <button className="absolute top-8 left-8 bg-white text-[#0A9971] p-2 rounded-full">
               &larr; Back
             </button>
           </Link>
-          {/* Title */}
           <div className="flex flex-col mt-16 pl-8 mb-12 2xl:w-8/12 items-center 2xl:mx-auto ">
             <h2 className="text-xl font-medium text-white mb-2 text-left 2xl:w-8/12">Welcome to</h2>
             <h1 className="text-4xl font-bold text-white mb-2 text-left 2xl:w-8/12">SeeTek Gift Cards</h1>
           </div>
         </div>
-
-        {/* Bottom - White */}
         <div className="w-screen flex-grow bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col items-center mx-auto p-4 space-y-8 relative h-full">
-          {/* Life Time Points Container */}
           <div className="relative z-10 bg-white w-5/6 lg:w-2/3 xl:w-7/12 2xl:w-2/5 rounded-3xl p-4 sm:p-6 border-2 border-gray-300 mx-3 h-auto min-h-[8rem] sm:min-h-[8rem] flex flex-col justify-between">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-4 mt-2 sm:mt-4">
               <div className="flex items-center">
@@ -84,8 +78,6 @@ function Giftcards() {
               </div>
             </div>
           </div>
-
-          {/* Gift Cards Filters - Centered and Horizontal Scrolling */}
           <div className="w-full flex justify-center mb-4 px-4 custom-scrollbar">
             <div className="flex gap-4 overflow-x-auto whitespace-nowrap">
               {['All', 'PrePaid', 'Education', 'Games', 'Shopping', 'Restaurant'].map(category => (
@@ -103,13 +95,9 @@ function Giftcards() {
               ))}
             </div>
           </div>
-
-          {/* Gift Cards */}
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 2xl:mx-auto custom-scrollbar'>
             {giftcardContainers}
           </div>
-
-          {/* Add Gift Card Button */}
           <div className='flex justify-center mt-4'>
             <Link to="../QuickServices/GiftService">
               <button className='bg-white text-[#0A9971] border-[#0A9971] border-2 px-4 py-2 rounded-md text-sm mb-6'>
@@ -125,7 +113,7 @@ function Giftcards() {
                     className="absolute top-2 right-2 text-gray-500 hover:text-black">
                     &#10005;
                   </button>
-                  <h3 className='font-bold text-3xl text-center'>{selectedCardAmount}</h3> {/* Display the selected card amount */}
+                  <h3 className='font-bold text-3xl text-center'>{selectedCardAmount}</h3>
                   <img src={selectedBarcode} alt="Coupon Barcode" className="w-full h-auto" />
                 </div>
               </div>

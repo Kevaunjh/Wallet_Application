@@ -44,8 +44,6 @@ function MyQR() {
         >
           Show my QR Code
         </button>
-
-        {/* Cancel/Finish Button */}
         <button 
           onClick={handleCancelOrFinish} 
           className="text-[#467a4d] mt-4"

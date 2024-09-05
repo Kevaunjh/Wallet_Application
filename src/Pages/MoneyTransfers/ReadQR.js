@@ -100,7 +100,7 @@ function ReadQR() {
         <button 
           className={`bg-[#467a4d] text-white px-6 py-3 rounded-lg ${!uploadedImage ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#37613e]'}`}
           onClick={Moveon}
-          disabled={!uploadedImage} // Disable if no image is uploaded
+          disabled={!uploadedImage}
         >
           Finish
         </button>

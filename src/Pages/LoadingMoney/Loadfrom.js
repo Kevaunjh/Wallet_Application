@@ -55,7 +55,6 @@ function Loadfrom() {
         key={index}
         onClick={() => handleCardClick(index)}
       >
-        {/* Bank Card Image */}
         <div className='flex justify-center items-center w-auto max-w-96 xl:max-w-xl'>
           <img
             src={cardImage}
@@ -76,7 +75,6 @@ function Loadfrom() {
         key={index}
         onClick={() => handleBankClick(index)}
       >
-        {/* Card Info Container */}
         <div className='relative w-full p-2'>
           <div className='flex items-center mb-2'>
             <img src={moneyLogo} alt="Money Logo" className='w-6 h-6 mr-2' />
@@ -97,22 +95,14 @@ function Loadfrom() {
 
   return (
     <div className="Profile bg-white min-h-screen flex flex-col items-center relative">
-      {/* Combined Container for Small Screens */}
       <div className="w-full bg-[#faf7f7] p-6 flex flex-col items-center relative min-h-screen h-auto">
-        {/* Back Button for Smaller Screens */}
         <Link to="/Loadmoney" className="absolute top-8 left-8 rounded-full p-2 bg-[#467a4d] text-white">
           &larr; Back
         </Link>
-
-        {/* Title */}
         <h1 className="text-5xl font-bold text-center mt-20 mb-8">Load Money</h1>
-
-        {/* Subtitle */}
         <p className="text-center text-gray-600 mt-2 mb-12">
           You can use SeeTek bank or Debit cards to load your wallet
         </p>
-
-        {/* Amount Information */}
         <div className="text-center mb-6 2xl:w-8/12 mt-10 max-w-lg">
           <div className="text-2xl md:text-3xl font-bold mb-4 text-black">
             ${selectedAmount || customAmount}
@@ -216,8 +206,6 @@ function Loadfrom() {
           Proceed
         </Link>
       </div>
-
-      {/* Custom Amount Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">

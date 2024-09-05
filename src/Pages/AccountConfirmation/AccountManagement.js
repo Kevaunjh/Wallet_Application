@@ -11,7 +11,6 @@ const AccountManagement = () => {
 
   const handleSignUpClick = () => setView('signup');
   const handleLoginClick = () => setView('login');
-  const handleHomeClick = () => setView('home');
 
   useEffect(() => {
     const handleRedirectResult = async () => {

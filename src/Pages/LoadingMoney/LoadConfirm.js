@@ -30,18 +30,13 @@ const LoadConfirm = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="bg-white w-full h-screen p-4 sm:p-10 flex flex-col items-center relative">
-        {/* Back Button */}
         <div className="absolute top-8 left-8">
           <Link to="/Loadto" className="rounded-full p-2 bg-[#467a4d] text-white">
             ← Back
           </Link>
         </div>
-
-        {/* Container for vertical centering */}
         <div className="flex flex-col items-center justify-center flex-grow mt-16 sm:mt-0 w-full">
           <h2 className="text-[#467a4d] text-xl font-bold mb-8 text-center">Enter the OTP you received</h2>
-
-          {/* OTP Input Section */}
           <div className="flex gap-2 sm:gap-4 mb-8">
             {[1, 2, 3, 4, 5].map((_, index) => (
               <input
@@ -57,8 +52,6 @@ const LoadConfirm = () => {
               />
             ))}
           </div>
-
-          {/* Didn't receive the code section */}
           <div className="text-center mb-12">
             <p 
               onClick={handleResendCode} 
@@ -74,8 +67,6 @@ const LoadConfirm = () => {
             )}
           </div>
         </div>
-
-        {/* Proceed Button */}
         <div className="absolute bottom-10 text-center mx-auto">
           <Link to="/LoadCallback">
             <button className="bg-[#467a4d] text-white px-6 py-3 rounded-lg text-lg w-full sm:w-auto">

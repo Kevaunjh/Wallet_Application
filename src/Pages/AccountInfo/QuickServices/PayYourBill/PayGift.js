@@ -33,24 +33,16 @@ function PayGift() {
 
   return (
     <div className="bg-whitemin-h-screen flex flex-col items-center">
-      {/* White Container */}
       <div className="bg-white p-8  w-screen h-screen">
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-4">
           <Link to="/QuickServices/WaterService" className="  rounded-full p-2 bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
-
-
-
-        {/* Payment Details Container */}
         <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full 2xl:mx-auto 2xl:w-8/12">
           <h2 className="text-2xl font-bold mb-4">Payment Details</h2>
           <h4>Please review the payment details below.</h4>
         </div>
-
-        {/* Customer Information Container */}
         <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-0 2xl:mx-auto 2xl:w-8/12">
           <p className="text-lg mb-2"><strong>Date/Time:</strong> {dateTime}</p>
           <p className="text-lg mb-2"><strong>Total Amount:</strong> $68.87</p>
@@ -64,8 +56,6 @@ function PayGift() {
             <span>$68.87</span>
           </div>
         </div>
-
-        {/* Pay Button */}
         <div className="w-full flex justify-center mt-6">
           <button
             className="px-12 py-4 bg-[#467a4d] text-white rounded-2xl text-lg"
@@ -75,8 +65,6 @@ function PayGift() {
           </button>
         </div>
       </div>
-
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full 2xl:max-w-md w-screen relative">

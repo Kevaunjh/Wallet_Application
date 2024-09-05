@@ -30,32 +30,23 @@ function Coupons() {
         key={index}
         style={{ backgroundColor: '#FFF' }}
       >
-        {/* Top Half */}
         <div
           className='flex justify-between gap-6 items-center p-4'
           style={{ backgroundColor, height: '50%' }}
         >
-          {/* Left Side: Logo and Card Type */}
           <div className='flex items-center'>
             <img src={couponImage} alt={`Coupon ${index + 1}`} className='w-16 h-16 rounded-full mr-4' />
             <p className='text-xl font-bold'>{coupon.couponName} Card</p>
           </div>
-
-          {/* Right Side: Coupon Amount */}
           <div>
             <p className='text-4xl font-bold'>{coupon.couponAmount}</p>
           </div>
         </div>
-
-        {/* Bottom Half */}
         <div
           className='flex justify-between items-center p-4 bg-white'
           style={{ height: '50%' }}
         >
-          {/* Expiration Date */}
           <p className='text-md text-gray-700'>{`Expires on: ${coupon.expiryDate}`}</p>
-
-          {/* Show Barcode Button */}
           <button 
             onClick={() => openModal(barcodeImage)} 
             className='text-[#467a4d] font-semibold underline'>
@@ -69,25 +60,18 @@ function Coupons() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-white overflow-x-hidden">
       <div className="relative w-full min-h-screen flex flex-col">
-        {/* Top - Dark Green */}
         <div className=" bg-[#0A9971] flex flex-col p-4 z-1 relative w-screen">
-          {/* Back Button */}
           <Link to="/Points">
             <button className="absolute top-8 left-8 bg-white text-[#0A9971] p-2 rounded-full">
               &larr; Back
             </button>
           </Link>
-          {/* Title */}
           <div className="flex flex-col mt-16 pl-8 mb-12 2xl:w-8/12 items-center 2xl:mx-auto ">
             <h2 className="text-xl font-medium text-white mb-2 text-left 2xl:w-8/12">Welcome to</h2>
             <h1 className="text-4xl font-bold text-white mb-2 text-left 2xl:w-8/12">SeeTek Coupons</h1>
           </div>
         </div>
-
-        {/* Bottom - White */}
         <div className="w-screen flex-grow bg-[#F9FFFD] 2xl:rounded-b-3xl flex flex-col items-center mx-auto p-4 space-y-8 relative h-full">
-
-          {/* Life Time Points Container*/}
         <div className="relative z-10 bg-white  w-5/6 lg:w-2/3 xl:w-7/12 2xl:w-2/5 rounded-3xl p-4 sm:p-6 border-2 border-gray-300 mx-3 h-auto min-h-[8rem] sm:min-h-[8rem] flex flex-col justify-between">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-4 mt-2 sm:mt-4">
                 <div className="flex items-center">
@@ -103,8 +87,6 @@ function Coupons() {
 
               </div>
             </div>
-
-          {/* Coupons */}
           <h2 className='text-2xl font-semibold mb-8 mt-4'>Coupons</h2>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 2xl:mx-auto'>
             {couponContainers}
@@ -116,8 +98,6 @@ function Coupons() {
               </button>
             </Link>
           </div>
-
-          {/* Modal */}
           {isModalOpen && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
               <div className="bg-white p-6 rounded-lg shadow-lg relative">

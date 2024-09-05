@@ -25,17 +25,10 @@ function Cheques() {
   return (
     <body className="bg-white">
       <div className="Cheques min-h-screen flex flex-col items-center relative bg-white 2xl:p-8 p-6">
-        {/* XL Screens: Separate Containers */}
-       
-
-        {/* Smaller than XL Screens: Combined Container */}
         <div className="flex flex-col w-screen h-screen bg-white p-6 fixed top-0 overflow-y-auto">
-          {/* Back Button */}
           <Link to="/Points" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2">
             &larr; Back
           </Link>
-
-          {/* Profile Picture and Name */}
           <div className="flex flex-col items-center mt-8">
             <img
               src={profileplaceholder}
@@ -51,12 +44,8 @@ function Cheques() {
               <p className="text-lg font-semibold text-white">{points}</p>
             </div>
           </div>
-
-          {/* Cheque Images and Proceed Button */}
           <div className="mt-8 flex-1 flex flex-col items-center 2xl:w-8/12 2xl:mx-auto">
             <h3 className="text-2xl font-semibold mb-6 text-center">Upload Cheque Images</h3>
-
-            {/* Front Cheque Image Upload */}
             <label className="w-10/12 mb-4 cursor-pointer">
               <span className="block text-center font-semibold mb-2">Front of Cheque</span>
               <input 
@@ -77,8 +66,6 @@ function Cheques() {
                 </div>
               )}
             </label>
-
-            {/* Back Cheque Image Upload */}
             <label className="w-10/12 mb-6 cursor-pointer">
               <span className="block text-center font-semibold mb-2">Back of Cheque</span>
               <input 

@@ -38,24 +38,15 @@ function GiftService() {
 
   return (
     <div className="GiftService bg-white h-screen flex flex-col justify-center items-center  ">
-
-      
-
-      {/* Container for Title, Back Button, Form, and Show Button */}
       <div className="bg-white overflow-auto p-16  flex flex-col items-center w-screen min-h-screen  mx-auto border-2 h-full">
-        {/* Back Button */}
-        
         <div className="w-full flex justify-start mb-4 mr-20 -mt-9">
           <Link to="/Points" className="rounded-full  p-2  bg-[#467a4d] text-white">
             &larr; Back
           </Link>
         </div>
-        {/* Title */}
         <h1 className="text-3xl font-bold text-[#467a4d] mb-8 mt-8">
          Point Purchase
         </h1>
-
-        {/* Gift Service Form */}
         <form className="w-full 2xl:w-8/12 2xl:mx-auto">
         <div className="mb-6">
             <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="company">
@@ -129,8 +120,6 @@ function GiftService() {
             </div>
           </div>
         </form>
-
-        {/* Show Button as Link */}
         <Link
           to="/QuickServices/PayYourBill/PayGift" 
           className={`px-12 py-4 mt-8 rounded-2xl text-lg text-white ${

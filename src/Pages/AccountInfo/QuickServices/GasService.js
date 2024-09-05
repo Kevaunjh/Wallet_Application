@@ -262,7 +262,6 @@ function GasService() {
     <div className="WaterService bg-white min-h-screen flex flex-col justify-center items-center w-screen overflow-x-hidden">
 
       <div className="bg-white  flex flex-col items-center w-screen min-h-screen   mx-auto overflow-x-hidden">
-        {/* Tabs */}
         <div className="w-screen flex justify-between">
           <button
             className={`w-1/2 py-4 text-center rounded-tl-3xl ${selectedTab === 'gas' ? 'bg-white' : 'bg-gray-200'}`}
@@ -294,10 +293,7 @@ function GasService() {
      
         <form className="w-screen px-16 2xl:w-8/12">
           {renderForm()}
-        </form>
-
-        {/* Show Button as Link */}
-        
+        </form>      
       </div>
     </div>
   );

@@ -9,24 +9,16 @@ function Moneyusage() {
 
   return (
     <div className=" bg-white min-h-screen flex flex-col items-center p-8 relative">
-      {/* Back Button for XL Screens */}
-
-      {/* Back Button for smaller screens */}
       <div className="w-full flex items-center mb-8">
         <Link to="/Main" className="mr-4 bg-[#467a4d] text-white rounded-full p-2">
           &larr; Back
         </Link>
       </div>
-
-      {/* Setup Instructions */}
       <h1 className="text-2xl font-bold justify-center text-center mt-12">Money usage</h1>
       <p className="text-md mb-8 text-center">
         How would you like to handle your money?
       </p>
-
-      {/* Biometric Options */}
       <div className="flex justify-center md:gap-12 gap-4 w-full">
-        {/* Fingerprint Setup */}
         <Link
           to="/Transfermoney"
           className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${
@@ -38,8 +30,6 @@ function Moneyusage() {
             <p className='text-md sm:text-lg font-semibold text-white'>Transfer Money</p>
           </div>
         </Link>
-
-        {/* PIN Lock Setup */}
         <Link
           to="/Loadmoney"
           className={`relative bg-white border rounded-lg shadow-2xl p-6 flex flex-col items-center justify-center w-[48%] h-[400px] sm:w-[300px] sm:h-[500px] cursor-pointer transition-transform transform ${

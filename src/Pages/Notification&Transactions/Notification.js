@@ -55,7 +55,7 @@ function Notifications() {
         ) : (
           notificationsForPeriod.map((notification, index) => (
             <React.Fragment key={notification.id}>
-              {index > 0 && <hr className="my-4 border-gray-300" />} {/* Line before each notification */}
+              {index > 0 && <hr className="my-4 border-gray-300" />} 
               
               <div className="flex items-center py-2">
                 <img src={notification.imageUrl} alt="Notification" className="w-16 h-16 rounded-full mr-4" />

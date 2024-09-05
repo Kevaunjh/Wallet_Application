@@ -17,7 +17,6 @@ function BankAccounts() {
         className='bg-[#FFF3E6] p-4 rounded-lg shadow-md mb-4 w-full text-black border-[#467a4d] border-2 flex flex-col items-center relative'
         key={index}
       >
-        {/* Card Info Container */}
         <div className='relative w-full p-2'>
           <div className='absolute top-4 right-4 bg-[#467a4d] rounded-lg px-2 py-1'>
             <p className='text-md font-semibold text-white'>Acc #{index + 1}</p>
@@ -38,8 +37,6 @@ function BankAccounts() {
             <p className='text-md'>{card.overallAccountNumber}</p>
           </div>
         </div>
-
-        {/* Bank Card Image */}
         <div className='flex justify-center items-center w-full'>
           <img
             src={cardImage}
@@ -53,17 +50,13 @@ function BankAccounts() {
 
   return (
     <div className="Profile bg-[#e9f7f2] min-h-screen flex flex-col items-center relative">
-
-      {/* Combined Container for Small Screens */}
       <div className="w-full bg-[#e9f7f2] p-6  flex flex-col items-center  relative min-h-screen h-auto">
-        {/* Back Button for Smaller Screens */}
         <Link to="/MyAccount" className="absolute top-8 left-8 rounded-full  p-2  bg-[#467a4d] text-white">
           &larr; Back
         </Link>
 
        
         <div className="flex flex-row items-center justify-between rounded-3xl bg-white border-2 shadow-md 2xl:w-8/12 w-full p-8 gap-6 xl:gap-16 mt-16 py-4">
-  {/* Profile Picture and Name */}
   <div className="flex items-center gap-6">
     <img 
       src={profileplaceholder} 
@@ -74,7 +67,6 @@ function BankAccounts() {
       <h2 className="text-xl font-bold">John Doe</h2>
     </div>
   </div>
-  {/* Points */}
   <div className="bg-[#467a4d] p-1 rounded-lg flex items-center w-[7.6rem]">
     <Link className='flex items-center rounded-lg p-1' to="/Points">
       <p className="text-md font-semibold text-white mr-2">★ {points}</p>
@@ -82,8 +74,6 @@ function BankAccounts() {
     </Link>
   </div>
 </div>
-
-        {/* Profile Info Section Links */}
         <div className="mt-8 flex-grow 2xl:w-8/12 mx-auto rounded-3xl bg-white border-2 justify-center shadow-md w-full p-8 gap-6 xl:gap-16 xl:justify-center xl:px-24">
         <h2 className='text-2xl font-bold mb-8 text-center mt-4'>My Cards</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4  2xl:mx-auto'>

@@ -16,16 +16,11 @@ function BiometricSetup() {
   };
 
   return (
-    <div className="BiometricSetup bg-white min-h-screen flex items-center justify-center">
-      {/* Container for Instructions, Image, and Proceed Button */}
-      
+    <div className="BiometricSetup bg-white min-h-screen flex items-center justify-center"> 
       <div className="bg-white p-8 2xl:p-16 flex flex-col items-center mx-auto relative h-screen z-10 w-screen">
-        {/* Back Button */}
         <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2">
           &larr; Back
         </Link>
-
-        {/* Conditional Message for Non-Mobile Devices */}
         {!isMobile() && (
           <div className="absolute inset-0 flex items-center justify-center bg-white w-screen">
             <Link to="/MyAccount" className="absolute top-8 left-8 bg-[#467a4d] text-white rounded-full p-2 ">
@@ -36,15 +31,11 @@ function BiometricSetup() {
             </p>
           </div>
         )}
-
-        {/* Setup Instructions */}
         {isMobile() && (
           <div className="flex flex-col items-center justify-center flex-grow">
             <p className="text-md text-center mb-8 font-semibold text-lg mt-24">
               Tap on the security feature to set up.
             </p>
-
-            {/* Fingerprint Setup */}
             <div
               onClick={handleOptionClick}
               className="cursor-pointer transition-transform transform hover:scale-105 mb-8"
@@ -57,8 +48,6 @@ function BiometricSetup() {
                 }`}
               />
             </div>
-
-            {/* New Instruction or Success Message */}
             {selectedOption === 'fingerprint' ? (
               <div className="flex items-center mb-8">
                 <img
@@ -75,8 +64,6 @@ function BiometricSetup() {
                 Place your finger tip on the sensor.
               </p>
             )}
-
-            {/* Proceed Button */}
             <Link
               to="/AccountInfo/BiometricSetup"
               className={`px-8 py-4 rounded-md text-lg text-white w-72 text-center mb-12 2xl:mb-6 ${
