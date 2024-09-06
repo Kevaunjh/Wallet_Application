@@ -5,7 +5,7 @@ import person from './../../images/add-group.png';
 import qr from './../../images/qr-code.png';
 
 function Transfermethod() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const selectedOption = useState(null);
 
   return (
     <div className=" bg-white min-h-screen flex flex-col items-center p-8 relative">

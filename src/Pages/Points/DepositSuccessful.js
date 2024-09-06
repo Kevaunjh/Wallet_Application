@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import successImage from './../../images/checked.png';
-const points = 1693;
 
 function DepositSuccessful() {
   return (

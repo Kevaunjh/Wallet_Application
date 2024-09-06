@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import banks from './../../images/bank-building.png';
-import debitcard from './../../images/credit-card.png';
-import cardDetails from '../Datafiles/BankingData'; 
-import moneyLogo from './../../images/money.png';
-import bankLogo from './../../images/bank-building.png';
-import accountLogo from './../../images/user.png';
+
 import friends from '../Datafiles/Friends';
 
 function Sendtofreind() {
@@ -13,8 +8,7 @@ function Sendtofreind() {
   const [customAmount, setCustomAmount] = useState(''); 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAddFriendModalOpen, setIsAddFriendModalOpen] = useState(false);
-  const [selectedBank, setSelectedBank] = useState(null);
-  const [selectedCard, setSelectedCard] = useState(null);
+
   const [selectedFriend, setSelectedFriend] = useState(''); 
   const [showMoreFriends, setShowMoreFriends] = useState(false); 
   const [contactType, setContactType] = useState('phone');
@@ -40,14 +34,6 @@ function Sendtofreind() {
   
   const isMobile = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
-  };
-
-  const handleBankClick = (index) => {
-    setSelectedBank(index);
-  };
-
-  const handleCardClick = (index) => {
-    setSelectedCard(index);
   };
 
   const handleFriendSelect = (friendId) => {
@@ -111,54 +97,6 @@ function Sendtofreind() {
 
   const isProceedEnabled = selectedFriend && selectedAmount; 
 
-  const cardContainers = Object.values(cardDetails).map((card, index) => {
-    const cardImage = card.creditCardImage || '';
-
-    return (
-      <div
-        className={`rounded-lg mb-4 w-full text-black flex flex-col items-center relative cursor-pointer ${
-          selectedCard === index ? 'border-4 border-[#467a4d]' : ''
-        }`}
-        key={index}
-        onClick={() => handleCardClick(index)}
-      >
-        <div className='flex justify-center items-center w-auto max-w-96 xl:max-w-xl'>
-          <img
-            src={cardImage}
-            alt={`Credit Card ${index + 1}`}
-            className='w-full h-auto p-2 rounded-2xl'
-          />
-        </div>
-      </div>
-    );
-  });
-
-  const bankContainers = Object.values(cardDetails).map((card, index) => {
-    return (
-      <div
-        className={`bg-[#FFF3E6] p-4 rounded-lg shadow-md mb-4 w-full text-black border-2 flex flex-col relative h-48 items-center justify-center max-w-96 xl:max-w-xl mx-auto cursor-pointer ${
-          selectedBank === index ? 'border-4 border-[#467a4d]' : 'border-[#467a4d]'
-        }`} 
-        key={index}
-        onClick={() => handleBankClick(index)}
-      >
-        <div className='relative w-full p-2'>
-          <div className='flex items-center mb-2'>
-            <img src={moneyLogo} alt="Money Logo" className='w-6 h-6 mr-2' />
-            <p className='text-2xl font-bold tracking-wider'>{card.total}</p>
-          </div>
-          <div className='flex items-center mb-2'>
-            <img src={bankLogo} alt="Bank Logo" className='w-6 h-6 mr-2' />
-            <p className='text-md'>{card.bankName}</p>
-          </div>
-          <div className='flex items-center'>
-            <img src={accountLogo} alt="Account Logo" className='w-6 h-6 mr-2' />
-            <p className='text-md'>{card.overallAccountNumber}</p>
-          </div>
-        </div>
-      </div>
-    );
-  });
 
   return (
     <div className="Profile bg-white min-h-screen flex flex-col items-center relative">

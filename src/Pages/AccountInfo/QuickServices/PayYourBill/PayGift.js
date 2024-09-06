@@ -11,8 +11,6 @@ function PayGift() {
   const now = new Date();
   const dateTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
 
-  const getTotalAmount = () => (Math.random() * (299 - 1) + 1).toFixed(2);
-  const totalAmount = getTotalAmount();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFingerprintClicked, setIsFingerprintClicked] = useState(false);

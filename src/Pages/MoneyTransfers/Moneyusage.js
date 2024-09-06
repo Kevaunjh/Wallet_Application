@@ -5,7 +5,7 @@ import loadarrow from'./../../images/money-transfer.png';
 import loading from './../../images/loading.png';
 
 function Moneyusage() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const selectedOption = useState(null);
 
   return (
     <div className=" bg-white min-h-screen flex flex-col items-center p-8 relative">

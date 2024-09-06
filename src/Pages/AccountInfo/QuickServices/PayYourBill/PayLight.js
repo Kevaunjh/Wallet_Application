@@ -24,8 +24,6 @@ function PayLight() {
 
   const card = cardDetails[1];
 
-  const getTotalAmount = () => (Math.random() * (299 - 1) + 1).toFixed(2);
-  const totalAmount = getTotalAmount();
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center">

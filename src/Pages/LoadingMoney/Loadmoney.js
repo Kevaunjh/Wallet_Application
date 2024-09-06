@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import loadarrow from'./../../images/loadarrow.png';
 
 function Loadmoney() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const selectedOption = useState(null);
 
   return (
     <div className=" bg-white min-h-screen flex flex-col items-center p-8 relative">

@@ -31,7 +31,6 @@ import AddCard from './Pages/AccountInfo/AccountPages/Addcard/AddCard';
 import Cheques from './Pages/Points/Cheques';
 import Coupons from './Pages/Points/Coupons';
 import PointHistory from './Pages/Points/PointHistory';
-import { initializeApp } from 'firebase/app';
 import DepositSuccessful from './Pages/Points/DepositSuccessful';
 import Giftcards from './Pages/Points/Giftcards';
 import Introduction from './Pages/AccountConfirmation/Introduction';
@@ -52,7 +51,7 @@ import Transferdepositsuccess from './Pages/MoneyTransfers/Transferdepositsucces
 
 function App() {
 
-  const [currentComponent, setCurrentComponent] = useState('/');
+  const setCurrentComponent = useState('/');
 
   const toggleComponent = (componentName) => {
     setCurrentComponent(componentName);
