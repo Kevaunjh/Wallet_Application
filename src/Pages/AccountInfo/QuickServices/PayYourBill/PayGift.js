@@ -65,7 +65,7 @@ function PayGift() {
       </div>
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-full 2xl:max-w-md w-screen relative">
+          <div className="bg-white p-8 rounded-lg shadow-lg 2xl:max-w-md w-screen relative">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               onClick={handleCloseModal}
