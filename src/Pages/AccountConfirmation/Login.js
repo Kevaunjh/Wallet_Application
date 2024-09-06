@@ -114,7 +114,7 @@ const Login = () => {
                 <div className="relative mb-4">
                   <fieldset className="border border-gray-300 rounded-xl p-0">
                     <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">
-                      Mobile Number
+                      Mobile/ Email
                     </legend>
                     <input
                       type="text"
