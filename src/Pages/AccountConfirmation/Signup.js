@@ -1,61 +1,63 @@
-import React, { useState, useRef } from 'react';
-import bnwLogo from './../../images/bnwbanx.png';
-import { auth, provider, createUserWithEmailAndPassword, signInWithPopup, signInWithRedirect } from './../../firebase';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import checked from './../../images/checked.png'
+import React, { useState, useRef } from "react";
+import bnwLogo from "./../../images/bnwbanx.png";
+import {
+  auth,
+  provider,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signInWithRedirect,
+} from "./../../firebase";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import checked from "./../../images/checked.png";
 import { getDatabase, ref, set } from "firebase/database";
 
-
-
 const Signup = () => {
-
-  const [currentTab, setCurrentTab] = useState('signup1');
+  const [currentTab, setCurrentTab] = useState("signup1");
   const navigate = useNavigate();
 
-  const [mobile, setMobile] = useState('');
-  const [password, setPassword] = useState('');
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [checkbox, setCheckbox] = useState(false);
   const db = getDatabase();
 
   const handleSignUp = async () => {
+    handleNextClick();
     try {
-
-      const userCredential = await createUserWithEmailAndPassword(auth, mobile, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        mobile,
+        password,
+      );
       const user = userCredential.user;
 
-      const userRef = ref(db, 'users/' + user.uid);
+      const userRef = ref(db, "users/" + user.uid);
       await set(userRef, {
-        username: mobile
-
+        username: mobile,
       });
 
       setIsValid(true);
-      handleNextClick();
-      setCurrentTab('signup4');
-      console.log('Account Successfully Made.');
+
+      setCurrentTab("signup4");
+      console.log("Account Successfully Made.");
 
       console.log("User data written to Realtime Database");
-
     } catch (error) {
       console.error("Error creating user:", error);
 
-      if (error.code === 'auth/weak-password') {
+      if (error.code === "auth/weak-password") {
         setIsValid(false);
         alert("Password must be at least 6 characters long.");
-
-      } else if (error.code === 'auth/email-already-in-use') {
+      } else if (error.code === "auth/email-already-in-use") {
         setIsValid(false);
-        alert("The phone number or email you've chosen is already in use.");;
+        alert("The phone number or email you've chosen is already in use.");
       } else {
         setIsValid(false);
         alert("Failed to create account. Please try again.");
       }
     }
   };
-
-
 
   const handleSignInWithGoogle = async () => {
     try {
@@ -65,60 +67,62 @@ const Signup = () => {
       } else {
         await signInWithPopup(auth, provider);
       }
-      navigate('/Loading');
+      navigate("/Loading");
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
   };
 
-
   const handleBeforeClick = () => {
-    if (currentTab === 'signup1') {
-      const input = document.getElementById('number').value.trim();
+    if (currentTab === "signup1") {
+      const input = document.getElementById("number").value.trim();
       const phoneRegex = /^\d{10,11}$/;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!phoneRegex.test(input) && !emailRegex.test(input)) {
-        alert('Please enter a valid phone number or email.');
+        alert("Please enter a valid phone number or email.");
         return false;
       }
 
       if (!checkbox) {
-        alert('Please accept terms and conditions.');
+        alert("Please accept terms and conditions.");
         return false;
       }
-    } else if (currentTab === 'signup2') {
-      const codeInput = document.getElementById('verificationcode').value.trim();
+    } else if (currentTab === "signup2") {
+      const codeInput = document
+        .getElementById("verificationcode")
+        .value.trim();
       const codeRegex = /^\d{6}$/;
 
       if (!codeRegex.test(codeInput)) {
-        alert('Please enter a valid 6-digit verification code.');
+        alert("Please enter a valid 6-digit verification code.");
         return false;
       }
-    } else if (currentTab === 'signup3') {
-      const passInput = document.getElementById('password').value.trim();
-      const confirmPassInput = document.getElementById('repassword').value.trim();
+    } else if (currentTab === "signup3") {
+      const passInput = document.getElementById("password").value.trim();
+      const confirmPassInput = document
+        .getElementById("repassword")
+        .value.trim();
       const passwordRegex = /^.{5,}$/;
 
       if (!passwordRegex.test(passInput)) {
-        alert('Please enter a valid password with at least 6 characters.');
+        alert("Please enter a valid password with at least 6 characters.");
         return false;
       }
       if (passInput !== confirmPassInput) {
-        alert('Passwords do not match.');
+        alert("Passwords do not match.");
         return false;
       }
 
       if (!isValid) {
         return false;
       }
-
-    } else if (currentTab === 'signup4') {
+    } else if (currentTab === "signup4") {
       const otpInputs = inputRefs.current;
-      const otpComplete = otpInputs.every(input => /^\d$/.test(input.value));
+      const otpComplete = otpInputs.every((input) => /^\d$/.test(input.value));
 
       if (!otpComplete) {
-        alert('Please enter the complete OTP.');
+        alert("Please enter the complete OTP.");
         return false;
       }
     }
@@ -128,27 +132,26 @@ const Signup = () => {
   const handleNextClick = () => {
     if (!handleBeforeClick()) return;
 
-    if (currentTab === 'signup1') {
-      setCurrentTab('signup2');
-    } else if (currentTab === 'signup2') {
-      setCurrentTab('signup3');
-    } else if (currentTab === 'signup3') {
-      setCurrentTab('signup4');
-    } else if (currentTab === 'signup4') {
-      setCurrentTab('signup5');
+    if (currentTab === "signup1") {
+      setCurrentTab("signup2");
+    } else if (currentTab === "signup2") {
+      setCurrentTab("signup3");
+    } else if (currentTab === "signup3") {
+      setCurrentTab("signup4");
+    } else if (currentTab === "signup4") {
+      setCurrentTab("signup5");
     }
   };
 
   const handleBackClick = () => {
-
-    if (currentTab === 'signup2') {
-      setCurrentTab('signup1');
-    } else if (currentTab === 'signup3') {
-      setCurrentTab('signup2');
-    } else if (currentTab === 'signup4') {
-      setCurrentTab('signup3');
-    } else if (currentTab === 'signup5') {
-      setCurrentTab('signup4');
+    if (currentTab === "signup2") {
+      setCurrentTab("signup1");
+    } else if (currentTab === "signup3") {
+      setCurrentTab("signup2");
+    } else if (currentTab === "signup4") {
+      setCurrentTab("signup3");
+    } else if (currentTab === "signup5") {
+      setCurrentTab("signup4");
     }
   };
 
@@ -157,12 +160,10 @@ const Signup = () => {
 
   const handleResendCode = () => {
     setCodeResent(true);
-
   };
 
   const toggleTerms = (event) => {
     setCheckbox(event.target.checked);
-
   };
 
   const handleInputChange = (e, index) => {
@@ -173,27 +174,27 @@ const Signup = () => {
         inputRefs.current[index + 1].focus();
       }
     } else {
-      e.target.value = '';
+      e.target.value = "";
     }
   };
 
   const handleKeyDown = (e, index) => {
-    if (e.key === 'Backspace' && index > 0 && !e.target.value) {
+    if (e.key === "Backspace" && index > 0 && !e.target.value) {
       inputRefs.current[index - 1].focus();
     }
   };
 
-
   return (
     <div className="w-screen min-h-screen bg-[#3b8d6e] text-white flex flex-col">
-      {currentTab === 'signup1' && (
+      {currentTab === "signup1" && (
         <>
           <div className="flex flex-col items-center justify-center flex-none py-4">
             <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
 
-
             <h1 className="text-3xl font-bold">Sign Up</h1>
-            <p className="text-sm mt-1">Create an account to enjoy our features</p>
+            <p className="text-sm mt-1">
+              Create an account to enjoy our features
+            </p>
           </div>
 
           <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
@@ -201,7 +202,9 @@ const Signup = () => {
               <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-4 2xl:space-y-20 xl:space-y-6 lg:space-y-16">
                 <div className="relative mb-4">
                   <fieldset className="border border-gray-300 rounded-xl p-0">
-                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Mobile / Email</legend>
+                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">
+                      Mobile / Email
+                    </legend>
                     <input
                       type="text"
                       id="number"
@@ -241,11 +244,13 @@ const Signup = () => {
                   className="mr-3 leading-tight"
                   onChange={toggleTerms}
                 />
-                <label htmlFor="terms" className="text-gray-700 text-xs text-center">
-                  By creating an account, I agree to{' '}
-                  <span className="text-green-600">SeeTek's</span> {' '}
-                  <span className="text-green-600">Terms of Service</span> {' '}
-                  and{' '}
+                <label
+                  htmlFor="terms"
+                  className="text-gray-700 text-xs text-center"
+                >
+                  By creating an account, I agree to{" "}
+                  <span className="text-green-600">SeeTek's</span>{" "}
+                  <span className="text-green-600">Terms of Service</span> and{" "}
                   <span className="text-green-600">Privacy Policy</span>
                 </label>
               </div>
@@ -255,12 +260,14 @@ const Signup = () => {
           <div className="flex-none" />
         </>
       )}
-      {currentTab === 'signup2' && (
+      {currentTab === "signup2" && (
         <>
           <div className="flex flex-col items-center justify-center flex-none py-4">
             <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
             <h1 className="text-3xl font-bold">Sign Up</h1>
-            <p className="text-sm mt-1">Complete your details to finish signing up</p>
+            <p className="text-sm mt-1">
+              Complete your details to finish signing up
+            </p>
           </div>
 
           <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
@@ -268,13 +275,16 @@ const Signup = () => {
               <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
                 <div className="mb-2">
                   <label className="block text-gray-700 text-sm 2xl:text-lg text-center mb-8">
-                    Please enter the 6-digit verification code that was sent to xxxx@xxx.com
+                    Please enter the 6-digit verification code that was sent to
+                    xxxx@xxx.com
                   </label>
                 </div>
 
                 <div className="relative mb-4">
                   <fieldset className="border border-gray-300 rounded-xl p-0">
-                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Verification Code</legend>
+                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">
+                      Verification Code
+                    </legend>
                     <input
                       type="verificationcode"
                       id="verificationcode"
@@ -306,11 +316,10 @@ const Signup = () => {
           <div className="flex-none" />
         </>
       )}
-      {currentTab === 'signup3' && (
+      {currentTab === "signup3" && (
         <>
           <div className="flex flex-col items-center justify-center flex-none py-4">
             <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
-
 
             <h1 className="text-3xl font-bold">Biometric Setup</h1>
             <p className="text-sm mt-1">Enter a unique PIN number</p>
@@ -319,11 +328,11 @@ const Signup = () => {
           <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
             <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
               <form className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-
-
                 <div className="relative mb-4">
                   <fieldset className="border border-gray-300 rounded-xl p-0">
-                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">Password</legend>
+                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">
+                      Password
+                    </legend>
                     <input
                       type="password"
                       id="password"
@@ -336,7 +345,9 @@ const Signup = () => {
                 </div>
                 <div className="relative mb-4">
                   <fieldset className="border border-gray-300 rounded-xl p-0">
-                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">RePassword</legend>
+                    <legend className="absolute top-0 left-4 transform -translate-y-1/2 bg-white px-2 text-gray-700 text-md font-bold">
+                      RePassword
+                    </legend>
                     <input
                       type="password"
                       id="repassword"
@@ -349,10 +360,7 @@ const Signup = () => {
                   <button
                     type="button"
                     className="bg-green-600 hover:bg-gray-100 text-white font-semibold py-3 px-10 border border-gray-400 rounded-lg shadow w-full flex justify-center items-center text-center"
-                    onClick={() => {
-                      handleSignUp();
-
-                    }}
+                    onClick={handleNextClick}
                   >
                     Next
                   </button>
@@ -372,20 +380,20 @@ const Signup = () => {
         </>
       )}
 
-      {currentTab === 'signup4' && (
+      {currentTab === "signup4" && (
         <>
           <div className="flex flex-col items-center justify-center flex-none py-4">
             <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
 
-
             <h1 className="text-3xl font-bold">Biometric Setup</h1>
-            <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+            <p className="text-sm mt-1">
+              Please Enter your OTP received on your phone
+            </p>
           </div>
 
           <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
             <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
               <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-
                 <div className="flex flex-col items-center justify-center w-full">
                   <label className="block text-gray-700 text-sm mb-8 text-center 2xl:mb-24 xl:mb-2">
                     Enter the OTP you received
@@ -416,12 +424,13 @@ const Signup = () => {
                     Didn't receive the code?
                   </p>
                   {!codeResent && (
-                    <p className="text-[#467a4d] text-sm mt-2 opacity-0">Code Resent</p>
+                    <p className="text-[#467a4d] text-sm mt-2 opacity-0">
+                      Code Resent
+                    </p>
                   )}
                   {codeResent && (
                     <p className="text-[#467a4d] text-sm mt-2">Code Resent</p>
                   )}
-
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -448,20 +457,20 @@ const Signup = () => {
         </>
       )}
 
-      {currentTab === 'signup5' && (
+      {currentTab === "signup5" && (
         <>
           <div className="flex flex-col items-center justify-center flex-none py-4">
             <img src={bnwLogo} alt="Logo" className="h-24 mb-2" />
 
-
             <h1 className="text-3xl font-bold">Biometric Setup</h1>
-            <p className="text-sm mt-1">Please Enter your OTP received on your phone</p>
+            <p className="text-sm mt-1">
+              Please Enter your OTP received on your phone
+            </p>
           </div>
 
           <div className="flex flex-col w-full max-w-xl p-4 items-center justify-center flex-grow mx-auto">
             <div className="bg-white w-full p-6 rounded-3xl shadow-md flex flex-col items-center justify-center h-full flex-grow">
               <div className="w-full max-w-md space-y-12 sm:space-y-16 md:space-y-3 2xl:space-y-20 xl:space-y-3 lg:space-y-5">
-
                 <div className="flex flex-col items-center">
                   <img
                     src={checked}
